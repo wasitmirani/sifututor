@@ -32,6 +32,9 @@ return new class extends Migration
             $table->string('currency')->nullable();
             $table->string('language')->default('en');
             $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('last_login')->nullable();
+            $table->string('google_id')->unique()->nullable();
+            $table->string('facebook_id')->unique()->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->softDeletes();

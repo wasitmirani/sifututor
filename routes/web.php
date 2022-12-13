@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\BackendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,19 @@ Route::get('/', function () {
 });
 
 
-Route::get('/{any?}', function () {
-    return view('layouts.backend.master');
-})->where('any', '[\/\w\.-]*');
-// ->middleware(['auth'])->name('dashboard');
-
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 require __DIR__.'/auth.php';
+
+//
+Route::get('/{any?}',[BackendController::class,'index'])
+       ->middleware('auth')
+       ->name('dashboard')
+       ->where('any', '[\/\w\.-]*');
+
+Route::get('/unauthorized/user',function(){
+    return abort(401,'Unauthorized User');
+});
+
+Route::get('/logout',[AuthenticatedSessionController::class,'destroy']);
