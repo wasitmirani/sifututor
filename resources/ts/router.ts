@@ -26,7 +26,12 @@ let setRoute=(url:string,name:string,path:string)=>{
     },
     setRoute('/:catchAll(.*)','404','error/404'),
     setRoute('/dashboard/overview','dashboard','dashboard/Dashboard'),
-
+    setRoute('/students/customer-list','customer-list-view','student/customer-list/CustomerList'),
+    setRoute('/students/customer-list/edit','customer-list-edit','student/customer-list/EditCustomerList'),
+    setRoute('/students/student-list','student-list-view','student/student-list/StudentList'),
+    setRoute('/students/student-list/create','student-list-create','student/student-list/CreateStudentList'),
+    setRoute('/students/student-list/edit','student-list-edit','student/student-list/EditStudentList'),
+    setRoute('/students/student-assignments','student-assignments-view','student/student-assignment/StudentAssignment'),
 
 
 ];

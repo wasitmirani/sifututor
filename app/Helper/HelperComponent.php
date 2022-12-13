@@ -71,6 +71,33 @@ class HelperComponent
                 ]
 
             ],
+            [
+                "title" => 'Students',
+                'can' => 'student-dropdown',
+                "icon" => "ti-settings",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Customer List",
+                        null,
+                        "customer-list-view",
+                        "/students/customer-list",
+                    ),
+                    setSubMenu(
+                        "Student List",
+                        null,
+                        "student-list-view",
+                        "/students/student-list",
+                    ),
+                    setSubMenu(
+                        "Student Assignments",
+                        null,
+                        "student-assignments-view",
+                        "/students/student-assignments",
+                    ),
+                ]
+
+            ],
 
             [
                 "heading" => "Tools",
