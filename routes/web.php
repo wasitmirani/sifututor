@@ -26,7 +26,7 @@ require __DIR__.'/auth.php';
 
 //
 Route::get('/{any?}',[BackendController::class,'index'])
-       ->middleware('auth')
+    //    ->middleware('auth')
        ->name('dashboard')
        ->where('any', '[\/\w\.-]*');
 
