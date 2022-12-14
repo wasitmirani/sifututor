@@ -122,7 +122,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this2.$router.push('/subject/subject-list');
       })["catch"](function (err) {
         _this2.errors = err.response.data;
-        console.log("errors", _this2.errors); // this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+
+        _this2.$root.alertNotify(err.response.status, null, "error", err.response.data);
       });
     },
     onSubmit: function onSubmit() {

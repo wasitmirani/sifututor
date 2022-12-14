@@ -53,7 +53,7 @@ export default {
                 this.subjectList = res.data.subjects;
                 this.loading = false;
             }).catch((err) => {
-                // this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
             });
         },
         isQuery(query) {
@@ -77,10 +77,10 @@ export default {
             // }).then((result) => {
             //     if (result.isConfirmed) {
                     axios.delete(`/subject/${item.id}`).then((res) => {
-                        // this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+                        this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
                         this.getSubjects();
                     }).catch((err) => {
-                        // this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+                        this.$root.alertNotify(err.response.status, null, "error", err.response.data);
                     });
             //     }
             // });

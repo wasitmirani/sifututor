@@ -227,7 +227,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/subject?page=' + page + '&query=' + this.query).then(function (res) {
         _this.subjectList = res.data.subjects;
         _this.loading = false;
-      })["catch"](function (err) {// this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+      })["catch"](function (err) {
+        _this.$root.alertNotify(err.response.status, null, "error", err.response.data);
       });
     },
     isQuery: function isQuery(query) {
@@ -253,9 +254,11 @@ __webpack_require__.r(__webpack_exports__);
       // }).then((result) => {
       //     if (result.isConfirmed) {
       axios["delete"]("/subject/".concat(item.id)).then(function (res) {
-        // this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+        _this2.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+
         _this2.getSubjects();
-      })["catch"](function (err) {// this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+      })["catch"](function (err) {
+        _this2.$root.alertNotify(err.response.status, null, "error", err.response.data);
       }); //     }
       // });
     }
