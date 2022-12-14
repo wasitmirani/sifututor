@@ -258,8 +258,7 @@
             <div class="row g-3 mb-4">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-HourPerSubject">Hour Per Subject</label>
-                    <input type="date" id="multicol-HourPerSubject" class="form-control"
-                        placeholder="Hour Per Subject" />
+                    <input type="text" id="multicol-HourPerSubject" class="form-control"  placeholder="Hour Per Subject" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-SubscriptionDurationTerm">Subscription Duration Term</label>
@@ -277,8 +276,10 @@
     </div>
 </template>
 <script>
+import Multiselect from 'vue-multiselect';
 export default {
     name: "StudentListForm",
+    components: { Multiselect },
     data: () => ({
         studentInfo: [{
             fullname: "",
@@ -288,6 +289,8 @@ export default {
             nric: "",
         }],
         stdInfo: {},
+        errors: {},
+        subjectList: [],
     }),
     methods: {
         addStudent() {
@@ -303,8 +306,20 @@ export default {
             this.studentInfo = this.studentInfo.filter((todo, index) => {
                 return index !== key
             })
-			
         },
+        getSubjectList() {
+            axios.get('/subject-list').then((res) => {
+                this.subjectList = res.data.subjects.map((item) => {
+                    return { id: item.id, name: item.name }
+                });
+            }).catch((err) => {
+                this.errors = err.response.data;
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            });
+        },
+    },
+    mounted(){
+        this.getSubjectList();
     }
 }
 </script>

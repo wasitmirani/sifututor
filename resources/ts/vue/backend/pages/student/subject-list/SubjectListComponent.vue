@@ -1,11 +1,15 @@
 <template>
     <breadcrumb active_name="Subject"></breadcrumb>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h5 class="card-title">Subject List</h5>
+        </div>
+        <div>
+            <router-link style="float:right" class="btn btn-primary" to="/subject/subject-list/create"> Add Subject  </router-link>
+        </div>
+    </div>
     <div class="card">
         <div class="card-header border-bottom">
-            <h5 class="card-title mb-3">Subject List
-                <router-link style="float:right" class="btn btn-primary" to="/subject/subject-list/create"> Add Subject
-                </router-link>
-            </h5>
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/subject?page=' + this.page_num"

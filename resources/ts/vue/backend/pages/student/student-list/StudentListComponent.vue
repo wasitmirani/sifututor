@@ -1,11 +1,15 @@
 <template>
     <breadcrumb active_name="Student"></breadcrumb>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h5 class="card-title">Students List</h5>
+        </div>
+        <div>
+            <router-link style="float:right" class="btn btn-primary" to="/students/student-list/create"> Add Student </router-link>
+        </div>
+    </div>
     <div class="card">
         <div class="card-header border-bottom">
-            <h5 class="card-title mb-3">Students List
-                <router-link style="float:right" class="btn btn-primary" to="/students/student-list/create"> Add Student
-                </router-link>
-            </h5>
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/students?page=' + this.page_num"

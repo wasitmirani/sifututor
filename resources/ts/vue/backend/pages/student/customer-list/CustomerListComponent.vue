@@ -1,8 +1,12 @@
 <template>
-     <breadcrumb active_name="Customer"></breadcrumb>
+    <breadcrumb active_name="Customer"></breadcrumb>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h5 class="card-title">Customer List</h5>
+        </div>
+    </div>
     <div class="card">
         <div class="card-header border-bottom">
-            <h5 class="card-title mb-3">Customer List</h5>
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/customer?page=' + this.page_num"
@@ -22,9 +26,10 @@
 <script>
 import DataTable from "./DataTable";
 import breadcrumb from "../../../components/BreadcrumbComponent.vue";
+import SearchBox from "../../../components/SearchBoxComponent.vue";
 export default {
     name: "CustomerListComponent",
-    components: { DataTable, breadcrumb },
+    components: { DataTable, breadcrumb, SearchBox },
     data: () => ({
         headers: [
             { text: '#', align: 'start', sortable: false, value: 'name' },

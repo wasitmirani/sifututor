@@ -1,6 +1,434 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@kyvg/vue3-notification/dist/index.es.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@kyvg/vue3-notification/dist/index.es.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ pt),
+/* harmony export */   "notify": () => (/* binding */ A),
+/* harmony export */   "useNotification": () => (/* binding */ ut)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+(function(){"use strict";try{if(typeof document!="undefined"){var e=document.createElement("style");e.appendChild(document.createTextNode(".vue-notification-group{display:block;position:fixed;z-index:5000}.vue-notification-wrapper{display:block;overflow:hidden;width:100%;margin:0;padding:0}.notification-title{font-weight:600}.vue-notification-template{display:block;box-sizing:border-box;background:white;text-align:left}.vue-notification{display:block;box-sizing:border-box;text-align:left;font-size:12px;padding:10px;margin:0 5px 5px;color:#fff;background:#44A4FC;border-left:5px solid #187FE7}.vue-notification.warn{background:#ffb648;border-left-color:#f48a06}.vue-notification.error{background:#E54D42;border-left-color:#b82e24}.vue-notification.success{background:#68CD86;border-left-color:#42a85f}.vn-fade-enter-active,.vn-fade-leave-active,.vn-fade-move{transition:all .5s}.vn-fade-enter-from,.vn-fade-leave-to{opacity:0}")),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
+var _ = Object.defineProperty;
+var B = (t, e, i) => e in t ? _(t, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : t[e] = i;
+var c = (t, e, i) => (B(t, typeof e != "symbol" ? e + "" : e, i), i);
+
+function W(t) {
+  return { all: t = t || /* @__PURE__ */ new Map(), on: function(e, i) {
+    var n = t.get(e);
+    n ? n.push(i) : t.set(e, [i]);
+  }, off: function(e, i) {
+    var n = t.get(e);
+    n && (i ? n.splice(n.indexOf(i) >>> 0, 1) : t.set(e, []));
+  }, emit: function(e, i) {
+    var n = t.get(e);
+    n && n.slice().map(function(s) {
+      s(i);
+    }), (n = t.get("*")) && n.slice().map(function(s) {
+      s(e, i);
+    });
+  } };
+}
+const m = W(), C = /* @__PURE__ */ new Map(), I = {
+  x: ["left", "center", "right"],
+  y: ["top", "bottom"]
+}, Y = ((t) => () => t++)(0), j = (t) => typeof t != "string" ? [] : t.split(/\s+/gi).filter((e) => e), G = (t) => {
+  typeof t == "string" && (t = j(t));
+  let e = null, i = null;
+  return t.forEach((n) => {
+    I.y.indexOf(n) !== -1 && (i = n), I.x.indexOf(n) !== -1 && (e = n);
+  }), { x: e, y: i };
+};
+class z {
+  constructor(e, i, n) {
+    c(this, "start");
+    c(this, "remaining");
+    c(this, "notifyItem");
+    c(this, "callback");
+    this.remaining = i, this.callback = e, this.notifyItem = n, this.resume();
+  }
+  pause() {
+    clearTimeout(this.notifyItem.timer), this.remaining -= Date.now() - this.start;
+  }
+  resume() {
+    this.start = Date.now(), clearTimeout(this.notifyItem.timer), this.notifyItem.timer = setTimeout(this.callback, this.remaining);
+  }
+}
+const h = {
+  position: ["top", "right"],
+  cssAnimation: "vn-fade",
+  velocityAnimation: {
+    enter: (t) => ({
+      height: [t.clientHeight, 0],
+      opacity: [1, 0]
+    }),
+    leave: {
+      height: 0,
+      opacity: [0, 1]
+    }
+  }
+}, F = (0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  name: "velocity-group",
+  emits: ["after-leave", "leave", "enter"],
+  methods: {
+    enter(t, e) {
+      this.$emit("enter", t, e);
+    },
+    leave(t, e) {
+      this.$emit("leave", t, e);
+    },
+    afterLeave() {
+      this.$emit("after-leave");
+    }
+  }
+}), b = (t, e) => {
+  const i = t.__vccOpts || t;
+  for (const [n, s] of e)
+    i[n] = s;
+  return i;
+};
+function P(t, e, i, n, s, u) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.TransitionGroup, {
+    tag: "span",
+    css: !1,
+    onEnter: t.enter,
+    onLeave: t.leave,
+    onAfterLeave: t.afterLeave
+  }, {
+    default: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(() => [
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(t.$slots, "default")
+    ]),
+    _: 3
+  }, 8, ["onEnter", "onLeave", "onAfterLeave"]);
+}
+const q = /* @__PURE__ */ b(F, [["render", P]]), J = (0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  name: "css-group",
+  inheritAttrs: !1,
+  props: {
+    name: { type: String, required: !0 }
+  }
+});
+function K(t, e, i, n, s, u) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.TransitionGroup, {
+    tag: "span",
+    name: t.name
+  }, {
+    default: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(() => [
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(t.$slots, "default")
+    ]),
+    _: 3
+  }, 8, ["name"]);
+}
+const Q = /* @__PURE__ */ b(J, [["render", K]]), y = "[-+]?[0-9]*.?[0-9]+", L = [
+  {
+    name: "px",
+    regexp: new RegExp(`^${y}px$`)
+  },
+  {
+    name: "%",
+    regexp: new RegExp(`^${y}%$`)
+  },
+  {
+    name: "px",
+    regexp: new RegExp(`^${y}$`)
+  }
+], U = (t) => {
+  if (t === "auto")
+    return {
+      type: t,
+      value: 0
+    };
+  for (let e = 0; e < L.length; e++) {
+    const i = L[e];
+    if (i.regexp.test(t))
+      return {
+        type: i.name,
+        value: parseFloat(t)
+      };
+  }
+  return {
+    type: "",
+    value: t
+  };
+}, X = (t) => {
+  switch (typeof t) {
+    case "number":
+      return { type: "px", value: t };
+    case "string":
+      return U(t);
+    default:
+      return { type: "", value: t };
+  }
+}, d = {
+  IDLE: 0,
+  DESTROYED: 2
+}, Z = (0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  name: "notifications",
+  components: {
+    VelocityGroup: q,
+    CssGroup: Q
+  },
+  props: {
+    group: {
+      type: String,
+      default: ""
+    },
+    width: {
+      type: [Number, String],
+      default: 300
+    },
+    reverse: {
+      type: Boolean,
+      default: !1
+    },
+    position: {
+      type: [String, Array],
+      default: h.position
+    },
+    classes: {
+      type: String,
+      default: "vue-notification"
+    },
+    animationType: {
+      type: String,
+      default: "css"
+    },
+    animation: {
+      type: Object,
+      default: h.velocityAnimation
+    },
+    animationName: {
+      type: String,
+      default: h.cssAnimation
+    },
+    speed: {
+      type: Number,
+      default: 300
+    },
+    cooldown: {
+      type: Number,
+      default: 0
+    },
+    duration: {
+      type: Number,
+      default: 3e3
+    },
+    delay: {
+      type: Number,
+      default: 0
+    },
+    max: {
+      type: Number,
+      default: 1 / 0
+    },
+    ignoreDuplicates: {
+      type: Boolean,
+      default: !1
+    },
+    closeOnClick: {
+      type: Boolean,
+      default: !0
+    },
+    pauseOnHover: {
+      type: Boolean,
+      default: !1
+    }
+  },
+  emits: ["click", "destroy"],
+  data() {
+    return {
+      list: [],
+      velocity: C.get("velocity"),
+      timerControl: null
+    };
+  },
+  computed: {
+    actualWidth() {
+      return X(this.width);
+    },
+    isVA() {
+      return this.animationType === "velocity";
+    },
+    componentName() {
+      return this.isVA ? "velocity-group" : "css-group";
+    },
+    styles() {
+      const { x: t, y: e } = G(this.position), i = this.actualWidth.value, n = this.actualWidth.type, s = {
+        width: i + n
+      };
+      return e && (s[e] = "0px"), t && (t === "center" ? s.left = `calc(50% - ${+i / 2}${n})` : s[t] = "0px"), s;
+    },
+    active() {
+      return this.list.filter((t) => t.state !== d.DESTROYED);
+    },
+    botToTop() {
+      return this.styles.hasOwnProperty("bottom");
+    }
+  },
+  mounted() {
+    m.on("add", this.addItem), m.on("close", this.closeItem);
+  },
+  methods: {
+    destroyIfNecessary(t) {
+      this.$emit("click", t), this.closeOnClick && this.destroy(t);
+    },
+    pauseTimeout() {
+      var t;
+      this.pauseOnHover && ((t = this.timerControl) == null || t.pause());
+    },
+    resumeTimeout() {
+      var t;
+      this.pauseOnHover && ((t = this.timerControl) == null || t.resume());
+    },
+    addItem(t = {}) {
+      if (t.group || (t.group = ""), t.data || (t.data = {}), this.group !== t.group)
+        return;
+      if (t.clean || t.clear) {
+        this.destroyAll();
+        return;
+      }
+      const e = typeof t.duration == "number" ? t.duration : this.duration, i = typeof t.speed == "number" ? t.speed : this.speed, n = typeof t.ignoreDuplicates == "boolean" ? t.ignoreDuplicates : this.ignoreDuplicates, { title: s, text: u, type: o, data: a, id: O } = t, l = {
+        id: O || Y(),
+        title: s,
+        text: u,
+        type: o,
+        state: d.IDLE,
+        speed: i,
+        length: e + 2 * i,
+        data: a
+      };
+      e >= 0 && (this.timerControl = new z(() => this.destroy(l), l.length, l));
+      const S = this.reverse ? !this.botToTop : this.botToTop;
+      let p = -1;
+      const k = this.active.some((E) => E.title === t.title && E.text === t.text);
+      (!n || !k) && (S ? (this.list.push(l), this.active.length > this.max && (p = 0)) : (this.list.unshift(l), this.active.length > this.max && (p = this.active.length - 1)), p !== -1 && this.destroy(this.active[p]));
+    },
+    closeItem(t) {
+      this.destroyById(t);
+    },
+    notifyClass(t) {
+      var e;
+      return [
+        "vue-notification-template",
+        this.classes,
+        (e = t.type) != null ? e : ""
+      ];
+    },
+    notifyWrapperStyle(t) {
+      return this.isVA ? void 0 : { transition: `all ${t.speed}ms` };
+    },
+    destroy(t) {
+      clearTimeout(t.timer), t.state = d.DESTROYED, this.clean(), this.$emit("destroy", t);
+    },
+    destroyById(t) {
+      const e = this.list.find((i) => i.id === t);
+      e && this.destroy(e);
+    },
+    destroyAll() {
+      this.active.forEach(this.destroy);
+    },
+    getAnimation(t, e) {
+      var n;
+      const i = (n = this.animation) == null ? void 0 : n[t];
+      return typeof i == "function" ? i.call(this, e) : i;
+    },
+    enter(t, e) {
+      if (!this.isVA)
+        return;
+      const i = this.getAnimation("enter", t);
+      this.velocity(t, i, {
+        duration: this.speed,
+        complete: e
+      });
+    },
+    leave(t, e) {
+      if (!this.isVA)
+        return;
+      const i = this.getAnimation("leave", t);
+      this.velocity(t, i, {
+        duration: this.speed,
+        complete: e
+      });
+    },
+    clean() {
+      this.list = this.list.filter((t) => t.state !== d.DESTROYED);
+    }
+  }
+});
+const tt = ["data-id"], et = ["onClick"], it = ["innerHTML"], nt = ["innerHTML"];
+function st(t, e, i, n, s, u) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    class: "vue-notification-group",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)(t.styles)
+  }, [
+    ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)(t.componentName), {
+      name: t.animationName,
+      onEnter: t.enter,
+      onLeave: t.leave,
+      onAfterLeave: t.clean
+    }, {
+      default: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(() => [
+        ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(!0), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(t.active, (o) => ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+          key: o.id,
+          class: "vue-notification-wrapper",
+          style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)(t.notifyWrapperStyle(o)),
+          "data-id": o.id,
+          onMouseenter: e[0] || (e[0] = (...a) => t.pauseTimeout && t.pauseTimeout(...a)),
+          onMouseleave: e[1] || (e[1] = (...a) => t.resumeTimeout && t.resumeTimeout(...a))
+        }, [
+          (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(t.$slots, "body", {
+            class: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([t.classes, o.type]),
+            item: o,
+            close: () => t.destroy(o)
+          }, () => [
+            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+              class: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(t.notifyClass(o)),
+              onClick: (a) => t.destroyIfNecessary(o)
+            }, [
+              o.title ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+                key: 0,
+                class: "notification-title",
+                innerHTML: o.title
+              }, null, 8, it)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("", !0),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+                class: "notification-content",
+                innerHTML: o.text
+              }, null, 8, nt)
+            ], 10, et)
+          ])
+        ], 44, tt))), 128))
+      ]),
+      _: 3
+    }, 40, ["name", "onEnter", "onLeave", "onAfterLeave"]))
+  ], 4);
+}
+const ot = /* @__PURE__ */ b(Z, [["render", st]]), A = (t) => {
+  typeof t == "string" && (t = { title: "", text: t }), typeof t == "object" && m.emit("add", t);
+};
+A.close = (t) => {
+  m.emit("close", t);
+};
+const ut = () => ({ notify: A });
+function rt(t, e = {}) {
+  Object.entries(e).forEach((n) => C.set(...n));
+  const i = e.name || "notify";
+  t.config.globalProperties["$" + i] = A, t.component(e.componentName || "Notifications", ot);
+}
+const pt = {
+  install: rt
+};
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js":
 /*!***************************************************************************!*\
   !*** ./node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js ***!
@@ -19530,6 +19958,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./resources/ts/router.ts");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _kyvg_vue3_notification__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @kyvg/vue3-notification */ "./node_modules/@kyvg/vue3-notification/dist/index.es.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/ts/bootstrap.js");
 
 
@@ -19537,7 +19966,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/ts/bootstrap.js");
  // import FloatingVue from 'floating-vue'
 
  // import 'floating-vue/dist/style.css';
-// import Notifications from '@kyvg/vue3-notification';
+
 
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_vue_App_vue__WEBPACK_IMPORTED_MODULE_1__["default"], {
   data: function data() {
@@ -19548,8 +19977,8 @@ var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_vue_App_vue__WEBPACK_I
   mounted: function mounted() {
     console.log("app mounted");
   }
-}); // app.use(Notifications)
-// app.use(FloatingVue)
+});
+app.use(_kyvg_vue3_notification__WEBPACK_IMPORTED_MODULE_4__["default"]); // app.use(FloatingVue)
 
 app.config.globalProperties.$filters = {
   DateTimeFormat: function DateTimeFormat(date) {
@@ -19989,7 +20418,7 @@ var _hoisted_1 = {
   id: "layout-navbar"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none\"><a class=\"nav-item nav-link px-0 me-xl-4\" href=\"javascript:void(0)\"><i class=\"ti ti-menu-2 ti-sm\"></i></a></div><div class=\"navbar-nav-right d-flex align-items-center\" id=\"navbar-collapse\"><!-- Search --><!-- /Search --><ul class=\"navbar-nav flex-row align-items-center ms-auto\"><!-- Language --><li class=\"nav-item dropdown-language dropdown me-2 me-xl-0\"><a class=\"nav-link dropdown-toggle hide-arrow\" href=\"javascript:void(0);\" data-bs-toggle=\"dropdown\"><i class=\"fi fi-us fis rounded-circle me-1 fs-3\"></i></a><ul class=\"dropdown-menu dropdown-menu-end\"><li><a class=\"dropdown-item\" href=\"javascript:void(0);\" data-language=\"en\"><i class=\"fi fi-us fis rounded-circle me-1 fs-3\"></i><span class=\"align-middle\">English</span></a></li></ul></li><!--/ Language --><!-- Style Switcher --><li class=\"nav-item me-2 me-xl-0\"><a class=\"nav-link style-switcher-toggle hide-arrow\" href=\"javascript:void(0);\"><i class=\"ti ti-md\"></i></a></li><!--/ Style Switcher --><!-- Notification --><!-- &lt;li class=&quot;nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1&quot;&gt;\n                    &lt;a class=&quot;nav-link dropdown-toggle hide-arrow&quot; href=&quot;javascript:void(0);&quot; data-bs-toggle=&quot;dropdown&quot;\n                        data-bs-auto-close=&quot;outside&quot; aria-expanded=&quot;false&quot;&gt;\n                        &lt;i class=&quot;ti ti-bell ti-md&quot;&gt;&lt;/i&gt;\n                        &lt;span class=&quot;badge bg-danger rounded-pill badge-notifications&quot;&gt;5&lt;/span&gt;\n                    &lt;/a&gt;\n                    &lt;ul class=&quot;dropdown-menu dropdown-menu-end py-0&quot;&gt;\n                        &lt;li class=&quot;dropdown-menu-header border-bottom&quot;&gt;\n                            &lt;div class=&quot;dropdown-header d-flex align-items-center py-3&quot;&gt;\n                                &lt;h5 class=&quot;text-body mb-0 me-auto&quot;&gt;Notification&lt;/h5&gt;\n                                &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-all text-body&quot;\n                                    data-bs-toggle=&quot;tooltip&quot; data-bs-placement=&quot;top&quot; title=&quot;Mark all as read&quot;&gt;&lt;i\n                                        class=&quot;ti ti-mail-opened fs-4&quot;&gt;&lt;/i&gt;&lt;/a&gt;\n                            &lt;/div&gt;\n                        &lt;/li&gt;\n                        &lt;li class=&quot;dropdown-notifications-list scrollable-container&quot;&gt;\n                            &lt;ul class=&quot;list-group list-group-flush&quot;&gt;\n                                &lt;li class=&quot;list-group-item list-group-item-action dropdown-notifications-item&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;img src=&quot;/assets/img/avatars/1.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Congratulation Lettie 🎉&lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;Won the monthly best seller gold badge&lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;1h ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                                &lt;li class=&quot;list-group-item list-group-item-action dropdown-notifications-item&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;span class=&quot;avatar-initial rounded-circle bg-label-danger&quot;&gt;CF&lt;/span&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Charles Franklin&lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;Accepted your connection&lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;12hr ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                                &lt;li\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;img src=&quot;/assets/img/avatars/2.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;New Message ✉️&lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;You have new message from Natalie&lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;1h ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                                &lt;li class=&quot;list-group-item list-group-item-action dropdown-notifications-item&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;span class=&quot;avatar-initial rounded-circle bg-label-success&quot;&gt;&lt;i\n                                                        class=&quot;ti ti-shopping-cart&quot;&gt;&lt;/i&gt;&lt;/span&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Whoo! You have new order 🛒 &lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;ACME Inc. made new order $1,154&lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;1 day ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                                &lt;li\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;img src=&quot;/assets/img/avatars/9.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Application has been approved 🚀 &lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;Your ABC project application has been\n                                                approved.&lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;2 days ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                                &lt;li\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;span class=&quot;avatar-initial rounded-circle bg-label-success&quot;&gt;&lt;i\n                                                        class=&quot;ti ti-chart-pie&quot;&gt;&lt;/i&gt;&lt;/span&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Monthly report is generated&lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;July monthly financial report is generated\n                                            &lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;3 days ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                                &lt;li\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;img src=&quot;/assets/img/avatars/5.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Send connection request&lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;Peter sent you connection request&lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;4 days ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                                &lt;li class=&quot;list-group-item list-group-item-action dropdown-notifications-item&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;img src=&quot;/assets/img/avatars/6.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;New message from Jane&lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;Your have new message from Jane&lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;5 days ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                                &lt;li\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\n                                    &lt;div class=&quot;d-flex&quot;&gt;\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\n                                            &lt;div class=&quot;avatar&quot;&gt;\n                                                &lt;span class=&quot;avatar-initial rounded-circle bg-label-warning&quot;&gt;&lt;i\n                                                        class=&quot;ti ti-alert-triangle&quot;&gt;&lt;/i&gt;&lt;/span&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;CPU is running high&lt;/h6&gt;\n                                            &lt;p class=&quot;mb-0&quot;&gt;CPU Utilization Percent is currently at\n                                                88.63%,&lt;/p&gt;\n                                            &lt;small class=&quot;text-muted&quot;&gt;5 days ago&lt;/small&gt;\n                                        &lt;/div&gt;\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n                                        &lt;/div&gt;\n                                    &lt;/div&gt;\n                                &lt;/li&gt;\n                            &lt;/ul&gt;\n                        &lt;/li&gt;\n                        &lt;li class=&quot;dropdown-menu-footer border-top&quot;&gt;\n                            &lt;a href=&quot;javascript:void(0);&quot;\n                                class=&quot;dropdown-item d-flex justify-content-center text-primary p-2 h-px-40 mb-1 align-items-center&quot;&gt;\n                                View all notifications\n                            &lt;/a&gt;\n                        &lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/li&gt; --><!--/ Notification --><!-- User --><li class=\"nav-item navbar-dropdown dropdown-user dropdown\"><a class=\"nav-link dropdown-toggle hide-arrow\" href=\"javascript:void(0);\" data-bs-toggle=\"dropdown\"><div class=\"avatar avatar-online\"><img src=\"/assets/img/avatars/1.png\" alt class=\"h-auto rounded-circle\"></div></a><ul class=\"dropdown-menu dropdown-menu-end\"><li><a class=\"dropdown-item\" href=\"#\"><div class=\"d-flex\"><div class=\"flex-shrink-0 me-3\"><div class=\"avatar avatar-online\"><img src=\"/assets/img/avatars/1.png\" alt class=\"h-auto rounded-circle\"></div></div><div class=\"flex-grow-1\"><span class=\"fw-semibold d-block\">John Doe</span><small class=\"text-muted\">Admin</small></div></div></a></li><li><div class=\"dropdown-divider\"></div></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-user-check me-2 ti-sm\"></i><span class=\"align-middle\">My Profile</span></a></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-settings me-2 ti-sm\"></i><span class=\"align-middle\">Settings</span></a></li><li><a class=\"dropdown-item\" href=\"#\"><span class=\"d-flex align-items-center align-middle\"><i class=\"flex-shrink-0 ti ti-credit-card me-2 ti-sm\"></i><span class=\"flex-grow-1 align-middle\">Billing</span><span class=\"flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20\">2</span></span></a></li><li><div class=\"dropdown-divider\"></div></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-lifebuoy me-2 ti-sm\"></i><span class=\"align-middle\">Help</span></a></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-help me-2 ti-sm\"></i><span class=\"align-middle\">FAQ</span></a></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-currency-dollar me-2 ti-sm\"></i><span class=\"align-middle\">Pricing</span></a></li><li><div class=\"dropdown-divider\"></div></li><li><a class=\"dropdown-item\" href=\"#\" target=\"_blank\"><i class=\"ti ti-logout me-2 ti-sm\"></i><span class=\"align-middle\">Log Out</span></a></li></ul></li><!--/ User --></ul></div>", 2);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none\"><a class=\"nav-item nav-link px-0 me-xl-4\" href=\"javascript:void(0)\"><i class=\"ti ti-menu-2 ti-sm\"></i></a></div><div class=\"navbar-nav-right d-flex align-items-center\" id=\"navbar-collapse\"><!-- Search --><!-- /Search --><ul class=\"navbar-nav flex-row align-items-center ms-auto\"><!-- Language --><li class=\"nav-item dropdown-language dropdown me-2 me-xl-0\"><a class=\"nav-link dropdown-toggle hide-arrow\" href=\"javascript:void(0);\" data-bs-toggle=\"dropdown\"><i class=\"fi fi-us fis rounded-circle me-1 fs-3\"></i></a><ul class=\"dropdown-menu dropdown-menu-end\"><li><a class=\"dropdown-item\" href=\"javascript:void(0);\" data-language=\"en\"><i class=\"fi fi-us fis rounded-circle me-1 fs-3\"></i><span class=\"align-middle\">English</span></a></li></ul></li><!--/ Language --><!-- Style Switcher --><li class=\"nav-item me-2 me-xl-0\"><a class=\"nav-link style-switcher-toggle hide-arrow\" href=\"javascript:void(0);\"><i class=\"ti ti-md\"></i></a></li><!--/ Style Switcher --><!-- Notification --><!-- &lt;li class=&quot;nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1&quot;&gt;\r\n                    &lt;a class=&quot;nav-link dropdown-toggle hide-arrow&quot; href=&quot;javascript:void(0);&quot; data-bs-toggle=&quot;dropdown&quot;\r\n                        data-bs-auto-close=&quot;outside&quot; aria-expanded=&quot;false&quot;&gt;\r\n                        &lt;i class=&quot;ti ti-bell ti-md&quot;&gt;&lt;/i&gt;\r\n                        &lt;span class=&quot;badge bg-danger rounded-pill badge-notifications&quot;&gt;5&lt;/span&gt;\r\n                    &lt;/a&gt;\r\n                    &lt;ul class=&quot;dropdown-menu dropdown-menu-end py-0&quot;&gt;\r\n                        &lt;li class=&quot;dropdown-menu-header border-bottom&quot;&gt;\r\n                            &lt;div class=&quot;dropdown-header d-flex align-items-center py-3&quot;&gt;\r\n                                &lt;h5 class=&quot;text-body mb-0 me-auto&quot;&gt;Notification&lt;/h5&gt;\r\n                                &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-all text-body&quot;\r\n                                    data-bs-toggle=&quot;tooltip&quot; data-bs-placement=&quot;top&quot; title=&quot;Mark all as read&quot;&gt;&lt;i\r\n                                        class=&quot;ti ti-mail-opened fs-4&quot;&gt;&lt;/i&gt;&lt;/a&gt;\r\n                            &lt;/div&gt;\r\n                        &lt;/li&gt;\r\n                        &lt;li class=&quot;dropdown-notifications-list scrollable-container&quot;&gt;\r\n                            &lt;ul class=&quot;list-group list-group-flush&quot;&gt;\r\n                                &lt;li class=&quot;list-group-item list-group-item-action dropdown-notifications-item&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;img src=&quot;/assets/img/avatars/1.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Congratulation Lettie 🎉&lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;Won the monthly best seller gold badge&lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;1h ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                                &lt;li class=&quot;list-group-item list-group-item-action dropdown-notifications-item&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;span class=&quot;avatar-initial rounded-circle bg-label-danger&quot;&gt;CF&lt;/span&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Charles Franklin&lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;Accepted your connection&lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;12hr ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                                &lt;li\r\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;img src=&quot;/assets/img/avatars/2.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;New Message ✉️&lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;You have new message from Natalie&lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;1h ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                                &lt;li class=&quot;list-group-item list-group-item-action dropdown-notifications-item&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;span class=&quot;avatar-initial rounded-circle bg-label-success&quot;&gt;&lt;i\r\n                                                        class=&quot;ti ti-shopping-cart&quot;&gt;&lt;/i&gt;&lt;/span&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Whoo! You have new order 🛒 &lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;ACME Inc. made new order $1,154&lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;1 day ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                                &lt;li\r\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;img src=&quot;/assets/img/avatars/9.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Application has been approved 🚀 &lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;Your ABC project application has been\r\n                                                approved.&lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;2 days ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                                &lt;li\r\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;span class=&quot;avatar-initial rounded-circle bg-label-success&quot;&gt;&lt;i\r\n                                                        class=&quot;ti ti-chart-pie&quot;&gt;&lt;/i&gt;&lt;/span&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Monthly report is generated&lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;July monthly financial report is generated\r\n                                            &lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;3 days ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                                &lt;li\r\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;img src=&quot;/assets/img/avatars/5.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;Send connection request&lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;Peter sent you connection request&lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;4 days ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                                &lt;li class=&quot;list-group-item list-group-item-action dropdown-notifications-item&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;img src=&quot;/assets/img/avatars/6.png&quot; alt class=&quot;h-auto rounded-circle&quot;&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;New message from Jane&lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;Your have new message from Jane&lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;5 days ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                                &lt;li\r\n                                    class=&quot;list-group-item list-group-item-action dropdown-notifications-item marked-as-read&quot;&gt;\r\n                                    &lt;div class=&quot;d-flex&quot;&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 me-3&quot;&gt;\r\n                                            &lt;div class=&quot;avatar&quot;&gt;\r\n                                                &lt;span class=&quot;avatar-initial rounded-circle bg-label-warning&quot;&gt;&lt;i\r\n                                                        class=&quot;ti ti-alert-triangle&quot;&gt;&lt;/i&gt;&lt;/span&gt;\r\n                                            &lt;/div&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-grow-1&quot;&gt;\r\n                                            &lt;h6 class=&quot;mb-1&quot;&gt;CPU is running high&lt;/h6&gt;\r\n                                            &lt;p class=&quot;mb-0&quot;&gt;CPU Utilization Percent is currently at\r\n                                                88.63%,&lt;/p&gt;\r\n                                            &lt;small class=&quot;text-muted&quot;&gt;5 days ago&lt;/small&gt;\r\n                                        &lt;/div&gt;\r\n                                        &lt;div class=&quot;flex-shrink-0 dropdown-notifications-actions&quot;&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-read&quot;&gt;&lt;span\r\n                                                    class=&quot;badge badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                            &lt;a href=&quot;javascript:void(0)&quot; class=&quot;dropdown-notifications-archive&quot;&gt;&lt;span\r\n                                                    class=&quot;ti ti-x&quot;&gt;&lt;/span&gt;&lt;/a&gt;\r\n                                        &lt;/div&gt;\r\n                                    &lt;/div&gt;\r\n                                &lt;/li&gt;\r\n                            &lt;/ul&gt;\r\n                        &lt;/li&gt;\r\n                        &lt;li class=&quot;dropdown-menu-footer border-top&quot;&gt;\r\n                            &lt;a href=&quot;javascript:void(0);&quot;\r\n                                class=&quot;dropdown-item d-flex justify-content-center text-primary p-2 h-px-40 mb-1 align-items-center&quot;&gt;\r\n                                View all notifications\r\n                            &lt;/a&gt;\r\n                        &lt;/li&gt;\r\n                    &lt;/ul&gt;\r\n                &lt;/li&gt; --><!--/ Notification --><!-- User --><li class=\"nav-item navbar-dropdown dropdown-user dropdown\"><a class=\"nav-link dropdown-toggle hide-arrow\" href=\"javascript:void(0);\" data-bs-toggle=\"dropdown\"><div class=\"avatar avatar-online\"><img src=\"/assets/img/avatars/1.png\" alt class=\"h-auto rounded-circle\"></div></a><ul class=\"dropdown-menu dropdown-menu-end\"><li><a class=\"dropdown-item\" href=\"#\"><div class=\"d-flex\"><div class=\"flex-shrink-0 me-3\"><div class=\"avatar avatar-online\"><img src=\"/assets/img/avatars/1.png\" alt class=\"h-auto rounded-circle\"></div></div><div class=\"flex-grow-1\"><span class=\"fw-semibold d-block\">John Doe</span><small class=\"text-muted\">Admin</small></div></div></a></li><li><div class=\"dropdown-divider\"></div></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-user-check me-2 ti-sm\"></i><span class=\"align-middle\">My Profile</span></a></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-settings me-2 ti-sm\"></i><span class=\"align-middle\">Settings</span></a></li><li><a class=\"dropdown-item\" href=\"#\"><span class=\"d-flex align-items-center align-middle\"><i class=\"flex-shrink-0 ti ti-credit-card me-2 ti-sm\"></i><span class=\"flex-grow-1 align-middle\">Billing</span><span class=\"flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20\">2</span></span></a></li><li><div class=\"dropdown-divider\"></div></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-lifebuoy me-2 ti-sm\"></i><span class=\"align-middle\">Help</span></a></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-help me-2 ti-sm\"></i><span class=\"align-middle\">FAQ</span></a></li><li><a class=\"dropdown-item\" href=\"#\"><i class=\"ti ti-currency-dollar me-2 ti-sm\"></i><span class=\"align-middle\">Pricing</span></a></li><li><div class=\"dropdown-divider\"></div></li><li><a class=\"dropdown-item\" href=\"#\" target=\"_blank\"><i class=\"ti ti-logout me-2 ti-sm\"></i><span class=\"align-middle\">Log Out</span></a></li></ul></li><!--/ User --></ul></div>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Search Small Screens ")]);
@@ -20186,7 +20615,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.validate {\n    border-color: red;\n}\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.validate {\r\n    border-color: red;\n}\r\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -59623,7 +60052,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue_vue_type_template_id_5dbc3020__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=5dbc3020 */ "./resources/ts/vue/App.vue?vue&type=template&id=5dbc3020");
 /* harmony import */ var _App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&lang=js */ "./resources/ts/vue/App.vue?vue&type=script&lang=js");
 /* harmony import */ var _App_vue_vue_type_style_index_0_id_5dbc3020_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.vue?vue&type=style&index=0&id=5dbc3020&lang=css */ "./resources/ts/vue/App.vue?vue&type=style&index=0&id=5dbc3020&lang=css");
-/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -59631,7 +60060,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_App_vue_vue_type_template_id_5dbc3020__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/App.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_App_vue_vue_type_template_id_5dbc3020__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/App.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -59653,13 +60082,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _MasterLayout_vue_vue_type_template_id_1537289e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MasterLayout.vue?vue&type=template&id=1537289e */ "./resources/ts/vue/backend/layouts/MasterLayout.vue?vue&type=template&id=1537289e");
 /* harmony import */ var _MasterLayout_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MasterLayout.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/layouts/MasterLayout.vue?vue&type=script&lang=js");
-/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MasterLayout_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MasterLayout_vue_vue_type_template_id_1537289e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/layouts/MasterLayout.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MasterLayout_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MasterLayout_vue_vue_type_template_id_1537289e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/layouts/MasterLayout.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -59681,13 +60110,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _FooterComponent_vue_vue_type_template_id_5433d0db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FooterComponent.vue?vue&type=template&id=5433d0db */ "./resources/ts/vue/backend/layouts/components/FooterComponent.vue?vue&type=template&id=5433d0db");
 /* harmony import */ var _FooterComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FooterComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/layouts/components/FooterComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_FooterComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FooterComponent_vue_vue_type_template_id_5433d0db__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/layouts/components/FooterComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_FooterComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FooterComponent_vue_vue_type_template_id_5433d0db__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/layouts/components/FooterComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -59709,13 +60138,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _HeaderComponent_vue_vue_type_template_id_812485ae__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderComponent.vue?vue&type=template&id=812485ae */ "./resources/ts/vue/backend/layouts/components/HeaderComponent.vue?vue&type=template&id=812485ae");
 /* harmony import */ var _HeaderComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/layouts/components/HeaderComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_HeaderComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_HeaderComponent_vue_vue_type_template_id_812485ae__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/layouts/components/HeaderComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_HeaderComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_HeaderComponent_vue_vue_type_template_id_812485ae__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/layouts/components/HeaderComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -59737,13 +60166,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _SidebarMenuComponent_vue_vue_type_template_id_57969e0e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarMenuComponent.vue?vue&type=template&id=57969e0e */ "./resources/ts/vue/backend/layouts/components/SidebarMenuComponent.vue?vue&type=template&id=57969e0e");
 /* harmony import */ var _SidebarMenuComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SidebarMenuComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/layouts/components/SidebarMenuComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_SidebarMenuComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SidebarMenuComponent_vue_vue_type_template_id_57969e0e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/layouts/components/SidebarMenuComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_SidebarMenuComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SidebarMenuComponent_vue_vue_type_template_id_57969e0e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/layouts/components/SidebarMenuComponent.vue"]])
 /* hot reload */
 if (false) {}
 

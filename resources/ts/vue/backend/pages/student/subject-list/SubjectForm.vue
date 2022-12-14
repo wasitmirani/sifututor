@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-category">Category</label>
-                    <input type="text" id="multicol-category" class="form-control" placeholder="Category"
-                        v-model="SubjectInfo.category" />
+                    <input type="text" id="multicol-category" placeholder="Category"
+                        v-model="SubjectInfo.category"   :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'category')}`" />
                     <validate-input :errors="errors?.errors" value="category"></validate-input>
                 </div>
                 <div class="col-md-4">
@@ -22,6 +22,7 @@
                 <div class="col-md-12"><label class="form-label" for="basic-icon-default-message">Description</label>
                     <div class="input-group input-group-merge"><textarea rows="3" id="basic-icon-default-message"
                             class="form-control" placeholder="Description"  v-model="SubjectInfo.description"></textarea></div>
+                            <validate-input :errors="errors?.price" value="description"></validate-input>
                 </div>
 
             </div>
@@ -33,10 +34,11 @@
     </div>
 </template>
 <script>
-// import ValidateInput from "./../../components/ValidateInputComponent.vue";
+// import ValidateInput from "../../components/ValidateInputComponent.vue";
+import ValidateInput from "../../../components/ValidateInputComponent.vue";
 export default {
     name: "SubjectForm",
-    // components: {ValidateInput},
+    components: {ValidateInput},
     props: ['edit_mode', 'form'],
     data: () => ({
         SubjectInfo: {},

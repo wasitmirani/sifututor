@@ -1,17 +1,33 @@
 <template>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <DataTable :headers="headers" :desserts="desserts" />
+    <breadcrumb active_name="Student"></breadcrumb>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h5 class="card-title">Student Assigment</h5>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header border-bottom">
+            <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
+                <div class="col-md-5 user_role">
+                    <search-box class="ml-2" label="Search by name" :apiurl="'/customer?page=' + this.page_num"
+                        v-on:query="isQuery($event)" v-on:loading="loadingStart($event)" v-on:reload="getStudents()"
+                        v-on:filterData="filterData($event)">
+                    </search-box>
                 </div>
             </div>
+            <div class="card-datatable table-responsive">
+                <DataTable :headers="headers" :desserts="desserts" />
+            </div>
         </div>
+    </div>
 </template>
 <script>
 import DataTable from "./DataTable";
+import breadcrumb from "../../../components/BreadcrumbComponent.vue";
+import SearchBox from "../../../components/SearchBoxComponent.vue";
 export default {
     name: "StudentAssignmentComponent",
-    components: { DataTable },
+    components: { DataTable, breadcrumb,SearchBox },
     data: () => ({
         headers: [
             { text: '#', align: 'start', sortable: false, value: 'name' },

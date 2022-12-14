@@ -14,7 +14,7 @@ import * as moment from 'moment'
 
 
 
-// import Notifications from '@kyvg/vue3-notification';
+import Notifications from '@kyvg/vue3-notification';
 
 const app =createApp(App,{
       data(){
@@ -28,7 +28,7 @@ const app =createApp(App,{
     }
 });
 
-// app.use(Notifications)
+app.use(Notifications)
 // app.use(FloatingVue)
 app.config.globalProperties.$filters = {
     DateTimeFormat(date:String) {
