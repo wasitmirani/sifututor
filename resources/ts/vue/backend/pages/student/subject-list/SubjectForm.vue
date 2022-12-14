@@ -51,8 +51,7 @@ export default {
                 this.$router.push('/subject/subject-list');
             }).catch((err) => {
                 this.errors = err.response.data;
-                console.log("errors", this.errors);
-                // this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
             });
         },
         onSubmit() {
