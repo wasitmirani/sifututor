@@ -5,16 +5,19 @@
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-name">Name</label>
                     <input type="text" v-model="SubjectInfo.name" id="name-" class="form-control" placeholder="Name" />
+                    <validate-input :errors="errors?.errors" value="name"></validate-input>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-category">Category</label>
                     <input type="text" id="multicol-category" class="form-control" placeholder="Category"
                         v-model="SubjectInfo.category" />
+                    <validate-input :errors="errors?.errors" value="category"></validate-input>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-price">price</label>
                     <input type="number" id="multicol-price" class="form-control" placeholder="price"
                         v-model="SubjectInfo.price" />
+                    <validate-input :errors="errors?.price" value="description"></validate-input>
                 </div>
                 <div class="col-md-12"><label class="form-label" for="basic-icon-default-message">Description</label>
                     <div class="input-group input-group-merge"><textarea rows="3" id="basic-icon-default-message"
@@ -30,17 +33,20 @@
     </div>
 </template>
 <script>
+// import ValidateInput from "./../../components/ValidateInputComponent.vue";
 export default {
     name: "SubjectForm",
+    // components: {ValidateInput},
     props: ['edit_mode', 'form'],
     data: () => ({
         SubjectInfo: {},
         errors: [],
         loading: false,
+        errors: {},
     }),
     methods: {
         updateSubject(data) {
-            axios.put('/subject/' + this.warehouse.id, data).then((res) => {
+            axios.put('/subject/' + this.SubjectInfo.id, data).then((res) => {
                 this.$router.push('/subject/subject-list');
             }).catch((err) => {
                 this.errors = err.response.data;
@@ -57,7 +63,7 @@ export default {
         },
         onSubmit() {
             this.loading = true;
-            let data = { ...this.SubjectInfo};
+            let data = { ...this.SubjectInfo };
             if (!this.edit_mode) {
                 this.createSubject(data);
             } else {
@@ -69,7 +75,7 @@ export default {
 
         },
     },
-    mounted(){
+    mounted() {
         if (this.edit_mode) {
             this.SubjectInfo = [];
             this.SubjectInfo = this.form;
