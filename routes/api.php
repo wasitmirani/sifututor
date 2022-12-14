@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\api\student\StudentController;
 use App\Http\Controllers\backend\api\subject\SubjectController;
 use App\Models\Subject;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ Route::prefix('config')->group(function () {
 
 Route::resource('subject', SubjectController::class);
 Route::get('/subject-list',[SubjectController::class,'getSubjectList']);
-
+Route::resource('student', StudentController::class);
 
 
 

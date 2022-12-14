@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header border-bottom">
+        <div class="card-header border-bottom pb-0">
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/customer?page=' + this.page_num"
@@ -14,11 +14,10 @@
                         v-on:filterData="filterData($event)">
                     </search-box>
                 </div>
-
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :desserts="desserts" />
+            <DataTable :headers="headers" :desserts="desserts" v-on:deleteItem="deleteItem($event)" />
         </div>
     </div>
 
@@ -48,6 +47,7 @@ export default {
                 "phone_number": '601124166237',
                 "email": "nurnisrina040602@gmail.com",
                 "status": "Active",
+                "slug": "Nurnisrina",
             },
             {
                 "id": "2",
@@ -56,9 +56,41 @@ export default {
                 "phone_number": '60178960258',
                 "email": "nhahsheema73@gmail.com",
                 "status": "Active",
+                "slug": "Noor",
             }
         ],
     }),
+    methods: {
+        isQuery(query) {
+            return (this.query = query);
+        },
+        filterData(data) {
+            this.subjectList = data.subjects;
+        },
+        loadingStart(value) {
+            this.loading = value;
+        },
+        deleteItem(item) {
+            // Swal.fire({
+            //     title: "Are you sure?",
+            //     text: "You won't be able to revert this!",
+            //     icon: "warning",
+            //     showCancelButton: true,
+            //     confirmButtonColor: "#3085d6",
+            //     cancelButtonColor: "#d33",
+            //     confirmButtonText: "Yes, delete it!",
+            // }).then((result) => {
+            //     if (result.isConfirmed) {
+                    // axios.delete(`/subject/${item.id}`).then((res) => {
+                    //     this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+                    //     this.getSubjects();
+                    // }).catch((err) => {
+                    //     this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+                    // });
+            //     }
+            // });
+        },
+    },
     mounted() {
     }
 }

@@ -15,6 +15,17 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->string('uid');
+            $table->string('slug')->nullable();
+            $table->string('full_name');
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->integer('age')->nullable();
+            $table->date('dob')->nullable();
+            $table->foreignId('student_id')->nullable()->constrained('students');
+            $table->string('status')->default('active');
+            $table->string('nric')->nullable();
+            $table->json('address')->nullable();
             $table->timestamps();
         });
     }

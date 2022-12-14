@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\backend\api\student;
 
-use App\Http\Controllers\Controller;
+use App\Models\Student;
+use App\Models\Subject;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class StudentController extends Controller
 {
@@ -15,6 +17,11 @@ class StudentController extends Controller
     public function index()
     {
         //
+        $q=!empty(request('query')) ? request('query') : '';
+        $students = Subject::latest()
+                               ->paginate(env('PAR_PAGE'));
+
+        return response()->json(['status' => true, 'students' => $students]);
     }
 
     /**
@@ -35,6 +42,18 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'register_date'=>'required',
+            'admin_charge'=>'required',
+            'payment_attachment'=>'file|max:5048',
+            'fee_payment_date'=>'required',
+            'receiving_account'=>'required|integer',
+            'hour_per_subject'=>'required|integer',
+            'subscription_duration'=>'required',
+            'subjects'=>'array',
+
+
+        ]);
         //
     }
 
@@ -47,6 +66,8 @@ class StudentController extends Controller
     public function show($id)
     {
         //
+        $subject=Student::where('uid',$id)->first();
+        return response()->json(['status' => true,'subject'=>$subject]);
     }
 
     /**

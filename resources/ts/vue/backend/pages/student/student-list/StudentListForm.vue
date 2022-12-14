@@ -92,16 +92,16 @@
                 </div>
             </div>
             <h6>Student Information</h6>
-            <div class="row g-3" v-for="(item, index) in studentInfo" :key="index">
+            <div class="row g-3 mb-3" v-for="(item, index) in studentInfo" :key="index">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Fullname">Fullname</label>
-                    <input type="text" v-model="studentInfo.fullname" id="multicol-Fullname" class="form-control"
+                    <input type="text" v-model="stdInfo[index].fullname" id="multicol-Fullname" class="form-control"
                         placeholder="Fullname" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Gender">Gender</label>
-                    <select id="multicol-Gender" class="select2 form-select" data-allow-clear="true"
-                        v-model="studentInfo.gender">
+                    <select id="multicol-Gender" class="select2 form-select" data-allow-clear="true" 
+                        v-model="stdInfo[index].gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -277,7 +277,7 @@
                             label="name">
                             <span slot="noResult">Oops! No elements found. Consider changing the search query.</span>
                         </multiselect>
-                        <validate-input :errors="errors?.errors" value="subject"></validate-input>
+                        <!-- <validate-input :errors="errors?.errors" value="subject"></validate-input> -->
                     </div>
                 </div>
             </div>
@@ -301,10 +301,10 @@ export default {
             dob: "",
             nric: "",
         }],
-        stdInfo: {},
+        stdInfo: [{}],
         errors: {},
         subjectList: [],
-        subject:[],
+        subject: [],
     }),
     methods: {
         addStudent() {
@@ -315,17 +315,25 @@ export default {
                 dob: "",
                 nric: "",
             })
+            this.stdInfo.push({
+                fullname: "",
+                gender: "",
+                age: "",
+                dob: "",
+                nric: "",
+            })
         },
         removeStudent(key) {
             this.studentInfo = this.studentInfo.filter((todo, index) => {
+                return index !== key
+            });
+            this.stdInfo = this.stdInfo.filter((todo, index) => {
                 return index !== key
             })
         },
         getSubjectList() {
             axios.get('/subject-list').then((res) => {
-                this.subjectList = res.data.subjects.map((item) => {
-                    return { id: item.id, name: item.name }
-                });
+                this.subjectList = res.data.subjects;
             }).catch((err) => {
                 this.errors = err.response.data;
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -334,6 +342,10 @@ export default {
     },
     mounted() {
         this.getSubjectList();
+        if (this.edit_mode) {
+            // this.stdInfo = [];
+            // this.stdInfo = this.form;
+        }
     }
 }
 </script>
