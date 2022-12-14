@@ -95,6 +95,12 @@ class HelperComponent
                         "student-assignments-view",
                         "/students/student-assignments",
                     ),
+                    setSubMenu(
+                        "Subject",
+                        null,
+                        "subject-list-view",
+                        "/subject/subject-list",
+                    ),
                 ]
 
             ],
