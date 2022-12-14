@@ -32,11 +32,14 @@
                 <div class="content-wrapper">
 
                     <!-- Content -->
+                    <div class="container-xxl flex-grow-1 container-p-y">
 
                     <transition name="fade">
                         <router-view />
                     </transition>
                     <notifications   class="mt-1 mr-1"/>
+                    </div>
+
                     <!-- / Content -->
                     <!-- Footer -->
                     <footer-component/>

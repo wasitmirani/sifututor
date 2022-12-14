@@ -1,4 +1,5 @@
 <template>
+    <breadcrumb active_name="Student"></breadcrumb>
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="text-end mb-2">
             <router-link class="btn btn-primary" to="/students/student-list/create"> Add Student </router-link>
@@ -14,9 +15,10 @@
 </template>
 <script>
 import DataTable from "./DataTable";
+import breadcrumb from "../../../components/BreadcrumbComponent.vue";
 export default {
     name: "StudentListComponent",
-    components: { DataTable },
+    components: { DataTable,breadcrumb },
     data: () => ({
         headers: [
             { text: '#', align: 'start', sortable: false, value: 'name' },

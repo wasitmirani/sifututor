@@ -8,7 +8,7 @@ let getComponent=(file_name:string)=>{
 const prefix="/portal";
 let setRoute=(url:string,name:string,path:string)=>{
     return {
-      path: prefix+url,
+      path: url,
       name: name,
       component:()=> getComponent(path),
 

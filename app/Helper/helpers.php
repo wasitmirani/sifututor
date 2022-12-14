@@ -54,7 +54,7 @@ function setSubMenu($title,$icon,$v_can=null,$v_route=null,$prefix="/portal"){
         "title"=>$title,
         "icon"=>$icon,
         "can"=>$v_can,
-        "route"=>$prefix.$v_route,
+        "route"=>$v_route,
     ];
  }
 
