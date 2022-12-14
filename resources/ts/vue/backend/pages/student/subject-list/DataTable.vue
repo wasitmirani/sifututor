@@ -20,7 +20,7 @@
                         <router-link :to="`/subject/subject-list/edit/${item.slug}/${item.uid}`" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
                             <i class="fa-solid fa-pen-to-square"> </i>
                         </router-link>
-                        <a   @click="deleteItem(item)" class="btn btn-icon btn-danger waves-effect waves-light btn-sm">
+                        <a   @click="deleteItem(item)" class="btn btn-icon btn-danger waves-effect waves-light btn-sm text-white">
                             <i class="fa-solid fa-trash"> </i>
                         </a>
                     </td>
