@@ -1,7 +1,8 @@
 <template>
     <div class="table-responsive text-nowrap">
         <table class="table">
-            <caption class="ms-4">List of Projects</caption>
+            <caption class="ms-4">Subjects List
+            </caption>
             <thead>
                 <tr>
                     <th v-for="(head, index) in headers" :key="index"> {{ head.text }} </th>
@@ -15,14 +16,11 @@
                     <td> {{ item.thumbnail ?? "N/A" }}</td>
                     <td> {{ item.price ?? "N/A" }}</td>
                     <td> {{item.created_at ?? "N/A"}}</td>
-                    <td>
-                   
-                        <router-link :to="`/subject/subject-list/edit/${item.slug}/${item.uid}`" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
-                            <i class="fa-solid fa-pen-to-square"> </i>
-                        </router-link>
-                        <a   @click="deleteItem(item)" class="btn btn-icon btn-danger waves-effect waves-light btn-sm">
-                            <i class="fa-solid fa-trash"> </i>
-                        </a>
+                    <td class="" style=""><div class="d-flex align-items-center">
+                        <router-link :to="`/subject/subject-list/edit/${item.slug}/${item.uid}`" class="text-body"><i class="ti ti-edit ti-sm me-2 text-primary"></i></router-link > |
+                        <a  role="button" @click="deleteItem(item)" class="text-body delete-record"><i class="ti ti-trash ti-sm mx-2 text-danger"></i></a>
+                        </div>
+
                     </td>
                 </tr>
             </tbody>

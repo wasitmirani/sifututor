@@ -31,6 +31,7 @@ class SubjectController extends Controller
             'slug' => Str::slug($request->name,'-'),
             'uid'=>Str::uuid(),
             'category' => $request->category,
+            'price' =>$request->price,
             'description' => $request->description,
         ]);
         return response()->json(['status' => true,'subject'=>$subject]);
@@ -76,6 +77,7 @@ class SubjectController extends Controller
             'name' => $request->name,
             'slug' => Str::slug($request->name,'-'),
             'uid'=>Str::uuid(),
+            'price' =>$request->price,
             'category' => $request->category,
             'description' => $request->description,
         ]);
