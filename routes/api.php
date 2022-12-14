@@ -34,4 +34,5 @@ Route::resource('subject', SubjectController::class);
 
 
 
+
 });
