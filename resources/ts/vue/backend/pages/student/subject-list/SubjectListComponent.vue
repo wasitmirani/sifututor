@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :subjectList="subjectList" />
+            <DataTable :headers="headers" :subjectList="subjectList" v-on:deleteItem="deleteItem($event)" />
         </div>
         <!-- Offcanvas to add new user -->
 
@@ -50,7 +50,6 @@ export default {
             this.loading = true;
             this.page_num = page;
             axios.get('/subject?page=' + page + '&query=' + this.query).then((res) => {
-                // console.log('res.data', res.data);
                 this.subjectList = res.data.subjects;
                 this.loading = false;
             }).catch((err) => {
@@ -61,35 +60,30 @@ export default {
             return (this.query = query);
         },
         filterData(data) {
-            this.subjectList = data.warehouses;
+            this.subjectList = data.subjects;
         },
         loadingStart(value) {
             this.loading = value;
         },
         deleteItem(item) {
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
-            }).then((result) => {
-                if (result.isConfirmed) {
+            // Swal.fire({
+            //     title: "Are you sure?",
+            //     text: "You won't be able to revert this!",
+            //     icon: "warning",
+            //     showCancelButton: true,
+            //     confirmButtonColor: "#3085d6",
+            //     cancelButtonColor: "#d33",
+            //     confirmButtonText: "Yes, delete it!",
+            // }).then((result) => {
+            //     if (result.isConfirmed) {
                     axios.delete(`/subject/${item.id}`).then((res) => {
-                        this.$root.alertNotify(
-                            res.status,
-                            "Destroyed Successfuly",
-                            "info",
-                            res.data
-                        );
-                        this.getWarehouses();
+                        // this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+                        this.getSubjects();
                     }).catch((err) => {
                         // this.$root.alertNotify(err.response.status, null, "error", err.response.data);
                     });
-                }
-            });
+            //     }
+            // });
         },
     },
     mounted() {

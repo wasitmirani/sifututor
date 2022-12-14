@@ -22,7 +22,7 @@
                         <router-link :to="`/subject/subject-list/edit/${item.slug}/${item.uid}`" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
                             <i class="fa-solid fa-pen-to-square"> </i>
                         </router-link>
-                        <a href="" class="btn btn-icon btn-danger waves-effect waves-light btn-sm">
+                        <a   @click="deleteItem(item)" class="btn btn-icon btn-danger waves-effect waves-light btn-sm">
                             <i class="fa-solid fa-trash"> </i>
                         </a>
                     </td>
@@ -37,6 +37,11 @@ export default {
     props: ["headers", "subjectList"],
     data: () => ({
     }),
+    methods: {
+        deleteItem(item) {
+            return this.$emit("deleteItem", item);
+        },
+    },
     mounted() {
     }
 }

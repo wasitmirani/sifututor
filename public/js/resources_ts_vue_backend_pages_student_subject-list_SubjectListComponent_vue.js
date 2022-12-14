@@ -150,6 +150,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
+  methods: {
+    deleteItem: function deleteItem(item) {
+      return this.$emit("deleteItem", item);
+    }
+  },
   mounted: function mounted() {}
 });
 
@@ -220,7 +225,6 @@ __webpack_require__.r(__webpack_exports__);
       this.loading = true;
       this.page_num = page;
       axios.get('/subject?page=' + page + '&query=' + this.query).then(function (res) {
-        // console.log('res.data', res.data);
         _this.subjectList = res.data.subjects;
         _this.loading = false;
       })["catch"](function (err) {// this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -230,7 +234,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.query = query;
     },
     filterData: function filterData(data) {
-      this.subjectList = data.warehouses;
+      this.subjectList = data.subjects;
     },
     loadingStart: function loadingStart(value) {
       this.loading = value;
@@ -238,24 +242,22 @@ __webpack_require__.r(__webpack_exports__);
     deleteItem: function deleteItem(item) {
       var _this2 = this;
 
-      Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then(function (result) {
-        if (result.isConfirmed) {
-          axios["delete"]("/subject/".concat(item.id)).then(function (res) {
-            _this2.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
-
-            _this2.getWarehouses();
-          })["catch"](function (err) {// this.$root.alertNotify(err.response.status, null, "error", err.response.data);
-          });
-        }
-      });
+      // Swal.fire({
+      //     title: "Are you sure?",
+      //     text: "You won't be able to revert this!",
+      //     icon: "warning",
+      //     showCancelButton: true,
+      //     confirmButtonColor: "#3085d6",
+      //     cancelButtonColor: "#d33",
+      //     confirmButtonText: "Yes, delete it!",
+      // }).then((result) => {
+      //     if (result.isConfirmed) {
+      axios["delete"]("/subject/".concat(item.id)).then(function (res) {
+        // this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+        _this2.getSubjects();
+      })["catch"](function (err) {// this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+      }); //     }
+      // });
     }
   },
   mounted: function mounted() {
@@ -416,15 +418,15 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "btn btn-icon btn-danger waves-effect waves-light btn-sm"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_6 = ["onClick"];
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa-solid fa-trash"
-})], -1
+}, null, -1
 /* HOISTED */
 );
 
+var _hoisted_8 = [_hoisted_7];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _$props$subjectList;
 
@@ -477,7 +479,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
     }, 1032
     /* PROPS, DYNAMIC_SLOTS */
-    , ["to"]), _hoisted_6])]);
+    , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      onClick: function onClick($event) {
+        return $options.deleteItem(item);
+      },
+      "class": "btn btn-icon btn-danger waves-effect waves-light btn-sm"
+    }, _hoisted_8, 8
+    /* PROPS */
+    , _hoisted_6)])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))])])]);
@@ -565,7 +574,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["apiurl"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     headers: _ctx.headers,
-    subjectList: _ctx.subjectList
+    subjectList: _ctx.subjectList,
+    onDeleteItem: _cache[4] || (_cache[4] = function ($event) {
+      return $options.deleteItem($event);
+    })
   }, null, 8
   /* PROPS */
   , ["headers", "subjectList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Offcanvas to add new user ")])], 64
