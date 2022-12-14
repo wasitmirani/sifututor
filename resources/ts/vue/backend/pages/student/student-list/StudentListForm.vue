@@ -277,7 +277,7 @@
                             label="name">
                             <span slot="noResult">Oops! No elements found. Consider changing the search query.</span>
                         </multiselect>
-                        <validate-input :errors="errors?.errors" value="subject"></validate-input>
+                        <!-- <validate-input :errors="errors?.errors" value="subject"></validate-input> -->
                     </div>
                 </div>
             </div>
@@ -304,7 +304,7 @@ export default {
         stdInfo: {},
         errors: {},
         subjectList: [],
-        subject:[],
+        subject: [],
     }),
     methods: {
         addStudent() {
@@ -323,9 +323,7 @@ export default {
         },
         getSubjectList() {
             axios.get('/subject-list').then((res) => {
-                this.subjectList = res.data.subjects.map((item) => {
-                    return { id: item.id, name: item.name }
-                });
+                this.subjectList = res.data.subjects;
             }).catch((err) => {
                 this.errors = err.response.data;
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);

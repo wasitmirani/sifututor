@@ -11,6 +11,7 @@ import router from "./router";
 // import FloatingVue from 'floating-vue'
 import * as moment from 'moment'
 // import 'floating-vue/dist/style.css';
+// import Multiselect from 'vue-multiselect';
 
 
 
@@ -30,6 +31,7 @@ const app =createApp(App,{
 
 app.use(Notifications)
 // app.use(FloatingVue)
+// app.component('multiselect', Multiselect)
 app.config.globalProperties.$filters = {
     DateTimeFormat(date:String) {
       return  moment.utc(String(date)).local().format('DD-MMM-YYYY , h:mm a')
