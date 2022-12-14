@@ -16,9 +16,7 @@
                     <td> {{ item.price ?? "N/A" }}</td>
                     <td> {{item.created_at ?? "N/A"}}</td>
                     <td>
-                        <router-link to="" class="btn btn-icon btn-primary waves-effect waves-light btn-sm me-2">
-                            <i class="fa-solid fa-eye"> </i>
-                        </router-link>
+                   
                         <router-link :to="`/subject/subject-list/edit/${item.slug}/${item.uid}`" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
                             <i class="fa-solid fa-pen-to-square"> </i>
                         </router-link>
