@@ -50,6 +50,8 @@ class SubjectController extends Controller
     public function edit($id)
     {
         //
+        $subject=Subject::where('uid',$id)->first();
+        return response()->json(['status' => true,'subject'=>$subject]);
     }
 
     /**
