@@ -29,6 +29,7 @@ Route::prefix('config')->group(function () {
 });
 
 Route::resource('subject', SubjectController::class);
+Route::get('/subject-list',[SubjectController::class,'getSubjectList']);
 
 
 

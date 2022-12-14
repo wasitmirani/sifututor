@@ -18,7 +18,14 @@ class SubjectController extends Controller
 
         return response()->json(['status' => true, 'subjects' => $subjects]);
     }
-
+    public function getSubjectList(Request $request){
+        $subjects = Subject::latest()->orderBy('category', 'asc')->get();
+        $subjects=collect($subjects)->groupBy('category');
+        $subjects = collect($subjects)->map(function ($item) {
+            return ['category' => $item->first()->category, 'subjects' => $item->all()];
+        })->values();
+        return response()->json(['status' => true,'subjects' => $subjects]);
+    }
     public function store(Request $request){
         $request->validate([
             'name' =>'required|string|min:2|max:255|unique:subjects',
