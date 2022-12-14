@@ -35,6 +35,12 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/subject/subject-list','subject-list-view','student/subject-list/SubjectList'),
     setRoute('/subject/subject-list/create','subject-list-create','student/subject-list/CreateSubject'),
     setRoute('/subject/subject-list/edit/:slug/:id','subject-list-edit','student/subject-list/EditSubject'),
+    setRoute('/job-ticket/ticket-list','ticket-list-view','job-ticket/ticket-list/TicketList'),
+    setRoute('/job-ticket/ticket-list/create','ticket-list-create','job-ticket/ticket-list/CreateTicketList'),
+    setRoute('/job-ticket/ticket-list/edit/:slug/:id','ticket-list-edit','job-ticket/ticket-list/EditTicketList'),
+    setRoute('/job-ticket/tutor-application','tutor-application-list-view','job-ticket/tutor-application/TutorApplication'),
+
+
 
 
 

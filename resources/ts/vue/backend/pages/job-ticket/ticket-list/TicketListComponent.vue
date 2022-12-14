@@ -1,12 +1,11 @@
 <template>
-    <breadcrumb active_name="Subject"></breadcrumb>
+    <breadcrumb active_name="Ticket"></breadcrumb>
     <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
-            <h5 class="card-title">Subject List</h5>
+            <h5 class="card-title">Ticket List</h5>
         </div>
         <div>
-            <router-link style="float:right" class="btn btn-primary" to="/subject/subject-list/create"> Add Subject
-            </router-link>
+            <router-link style="float:right" class="btn btn-primary" to="/job-ticket/ticket-list/create"> Add Ticket</router-link>
         </div>
     </div>
     <div class="card">
@@ -22,8 +21,8 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :subjectList="subjectList" v-on:deleteItem="deleteItem($event)" />
-        </div>
+        <DataTable :headers="headers" :desserts="desserts"  v-on:deleteItem="deleteItem($event)" />
+    </div>
     </div>
 </template>
 <script>
@@ -31,29 +30,50 @@ import DataTable from "./DataTable";
 import breadcrumb from "../../../components/BreadcrumbComponent.vue";
 import SearchBox from "../../../components/SearchBoxComponent.vue";
 export default {
-    name: "SubjectComponent",
+    name: "JobTicketListComponent",
     components: { DataTable, breadcrumb, SearchBox },
     data: () => ({
         headers: [
-            { text: 'Name', align: 'start', sortable: false, value: 'name' },
-            { text: 'Cateogry', value: 'cateogry' },
-            { text: 'Description', value: 'description' },
-            { text: 'Thumbnail', value: 'thumbnail' },
-            { text: 'Price', value: 'price' },
-            { text: 'Created At', value: 'price' },
+            { text: '#', align: 'start', sortable: false, value: 'name' },
+            { text: 'Ticket No', value: 'Ticket No' },
+            { text: 'Student(s)', value: 'Student(s)' },
+            { text: 'Ticket Status', value: 'Ticket Status' },
+            { text: 'Application Status', value: 'Application Status' },
+            { text: 'Created On', value: 'Created On' },
             { text: 'Actions', value: 'actions', sortable: false },
+        ],
+        desserts: [
+            {
+                "uid": "1",
+                "ticket_no": "J22014379",
+                "students": "Nur Alesha,Adam Muaz",
+                "ticket_status": 'Open',
+                "application_status": "Incomplete",
+                "created_at": "	14/12/2022",
+                "slug": "Nur",
+            },
+            {
+                "uid": "2",
+                "ticket_no": "J22014379",
+                "students": "Muhammad  Alesha,Adam Muaz",
+                "ticket_status": 'Open',
+                "application_status": "Incomplete",
+                "created_at": "	14/12/2022",
+                "slug": "Nurnisrina",
+                "slug": "Noor",
+            }
         ],
         page_num: 1,
         loading: false,
         query: "",
-        subjectList: [],
+        ticketList: [],
     }),
     methods: {
         getSubjects(page = 1) {
             this.loading = true;
             this.page_num = page;
             axios.get('/subject?page=' + page + '&query=' + this.query).then((res) => {
-                this.subjectList = res.data.subjects;
+                this.ticketList = res.data.subjects;
                 this.loading = false;
             }).catch((err) => {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -90,7 +110,7 @@ export default {
         },
     },
     mounted() {
-        this.getSubjects();
+        // this.getSubjects();
     }
 }
 </script>

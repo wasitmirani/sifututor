@@ -104,6 +104,27 @@ class HelperComponent
                 ]
 
             ],
+            [
+                "title" => 'Job Tickets',
+                'can' => 'job-tickets-dropdown',
+                "icon" => "ti-settings",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Ticket List",
+                        null,
+                        "ticket-list-view",
+                        "/job-ticket/ticket-list",
+                    ),
+                    setSubMenu(
+                        "Tutor Application",
+                        null,
+                        "tutor-application-list-view",
+                        "/job-ticket/tutor-application",
+                    ),
+                ]
+
+            ],
 
             [
                 "heading" => "Tools",
