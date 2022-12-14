@@ -423,7 +423,7 @@ var _hoisted_2 = {
   "class": "card"
 };
 var _hoisted_3 = {
-  "class": "card-header border-bottom"
+  "class": "card-header border-bottom pb-0"
 };
 var _hoisted_4 = {
   "class": "d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0"
@@ -461,12 +461,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 8
   /* PROPS */
-  , ["apiurl"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
+  , ["apiurl"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     headers: _ctx.headers,
     desserts: _ctx.desserts
   }, null, 8
   /* PROPS */
-  , ["headers", "desserts"])])])])], 64
+  , ["headers", "desserts"])])])], 64
   /* STABLE_FRAGMENT */
   );
 }

@@ -20,14 +20,9 @@
                         <!-- <router-link to="" class="btn btn-icon btn-primary waves-effect waves-light btn-sm me-2">
                             <i class="fa-solid fa-eye"> </i>
                         </router-link>
-                        <router-link to="/students/student-list/edit" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
-                            <i class="fa-solid fa-pen-to-square"> </i>
-                        </router-link>
-                        <a href="" class="btn btn-icon btn-danger waves-effect waves-light btn-sm">
-                            <i class="fa-solid fa-trash"> </i>
                         </a> -->
                         <div class="d-flex align-items-center">
-                            <router-link :to="`/students/student-list/edit/`"
+                            <router-link :to="`/students/student-list/edit/${item.slug}/${item.id}`"
                                 class="text-body"><i class="ti ti-edit ti-sm me-2 text-primary"></i></router-link> |
                             <a role="button" @click="deleteItem(item)" class="text-body delete-record"><i
                                     class="ti ti-trash ti-sm mx-2 text-danger"></i></a>
@@ -44,6 +39,11 @@ export default {
     props: ["headers", "desserts"],
     data: () => ({
     }),
+    methods: {
+        deleteItem(item) {
+            return this.$emit("deleteItem", item);
+        },
+    },
     mounted() {
     }
 }

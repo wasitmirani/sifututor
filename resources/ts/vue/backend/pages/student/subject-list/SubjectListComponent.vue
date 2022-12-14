@@ -5,11 +5,12 @@
             <h5 class="card-title">Subject List</h5>
         </div>
         <div>
-            <router-link style="float:right" class="btn btn-primary" to="/subject/subject-list/create"> Add Subject  </router-link>
+            <router-link style="float:right" class="btn btn-primary" to="/subject/subject-list/create"> Add Subject
+            </router-link>
         </div>
     </div>
     <div class="card">
-        <div class="card-header border-bottom">
+        <div class="card-header border-bottom pb-0">
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/subject?page=' + this.page_num"
@@ -20,11 +21,9 @@
 
             </div>
         </div>
-        <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :subjectList="subjectList" v-on:deleteItem="deleteItem($event)" />
-        </div>
-        <!-- Offcanvas to add new user -->
-
+    </div>
+    <div class="card-datatable table-responsive">
+        <DataTable :headers="headers" :subjectList="subjectList" v-on:deleteItem="deleteItem($event)" />
     </div>
 </template>
 <script>
@@ -80,18 +79,18 @@ export default {
             //     confirmButtonText: "Yes, delete it!",
             // }).then((result) => {
             //     if (result.isConfirmed) {
-                    axios.delete(`/subject/${item.id}`).then((res) => {
-                        this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
-                        this.getSubjects();
-                    }).catch((err) => {
-                        this.$root.alertNotify(err.response.status, null, "error", err.response.data);
-                    });
+            axios.delete(`/subject/${item.id}`).then((res) => {
+                this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+                this.getSubjects();
+            }).catch((err) => {
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            });
             //     }
             // });
         },
     },
     mounted() {
-        this.getSubjects();  
+        this.getSubjects();
     }
 }
 </script>

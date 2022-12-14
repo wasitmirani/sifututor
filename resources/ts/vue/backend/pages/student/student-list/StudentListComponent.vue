@@ -5,11 +5,12 @@
             <h5 class="card-title">Students List</h5>
         </div>
         <div>
-            <router-link style="float:right" class="btn btn-primary" to="/students/student-list/create"> Add Student </router-link>
+            <router-link style="float:right" class="btn btn-primary" to="/students/student-list/create"> Add Student
+            </router-link>
         </div>
     </div>
     <div class="card">
-        <div class="card-header border-bottom">
+        <div class="card-header border-bottom pb-0">
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/students?page=' + this.page_num"
@@ -18,10 +19,9 @@
                     </search-box>
                 </div>
             </div>
-            <div class="card-datatable table-responsive">
-                <DataTable :headers="headers" :desserts="desserts" />
-            </div>
-            <!-- Offcanvas to add new user -->
+        </div>
+        <div class="card-datatable table-responsive">
+            <DataTable :headers="headers" :desserts="desserts" v-on:deleteItem="deleteItem($event)" />
         </div>
     </div>
 </template>
@@ -51,7 +51,8 @@ export default {
                 "gender": 'Female',
                 "staff_in_charge": "HAZMAN SHAHRILL",
                 "status": "Active",
-                "register_date": "13/12/2022"
+                "register_date": "13/12/2022",
+                "slug": "Musfira",
             },
             {
                 "id": "2",
@@ -60,10 +61,42 @@ export default {
                 "gender": 'Male',
                 "staff_in_charge": "Monisha A/p Chandran",
                 "status": "Active",
-                "register_date": "13/12/2022"
+                "register_date": "13/12/2022",
+                "slug": "Mohamad",
             }
         ],
     }),
+    methods: {
+        isQuery(query) {
+            return (this.query = query);
+        },
+        filterData(data) {
+            this.subjectList = data.subjects;
+        },
+        loadingStart(value) {
+            this.loading = value;
+        },
+        deleteItem(item) {
+            // Swal.fire({
+            //     title: "Are you sure?",
+            //     text: "You won't be able to revert this!",
+            //     icon: "warning",
+            //     showCancelButton: true,
+            //     confirmButtonColor: "#3085d6",
+            //     cancelButtonColor: "#d33",
+            //     confirmButtonText: "Yes, delete it!",
+            // }).then((result) => {
+            //     if (result.isConfirmed) {
+            // axios.delete(`/subject/${item.id}`).then((res) => {
+            //     this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+            //     this.getSubjects();
+            // }).catch((err) => {
+            //     this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            // });
+            //     }
+            // });
+        },
+    },
     mounted() {
     }
 }

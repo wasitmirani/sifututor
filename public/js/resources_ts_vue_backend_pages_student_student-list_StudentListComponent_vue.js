@@ -150,6 +150,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
+  methods: {
+    deleteItem: function deleteItem(item) {
+      return this.$emit("deleteItem", item);
+    }
+  },
   mounted: function mounted() {}
 });
 
@@ -216,7 +221,8 @@ __webpack_require__.r(__webpack_exports__);
         "gender": 'Female',
         "staff_in_charge": "HAZMAN SHAHRILL",
         "status": "Active",
-        "register_date": "13/12/2022"
+        "register_date": "13/12/2022",
+        "slug": "Musfira"
       }, {
         "id": "2",
         "student_id": "S224843",
@@ -224,9 +230,40 @@ __webpack_require__.r(__webpack_exports__);
         "gender": 'Male',
         "staff_in_charge": "Monisha A/p Chandran",
         "status": "Active",
-        "register_date": "13/12/2022"
+        "register_date": "13/12/2022",
+        "slug": "Mohamad"
       }]
     };
+  },
+  methods: {
+    isQuery: function isQuery(query) {
+      return this.query = query;
+    },
+    filterData: function filterData(data) {
+      this.subjectList = data.subjects;
+    },
+    loadingStart: function loadingStart(value) {
+      this.loading = value;
+    },
+    deleteItem: function deleteItem(item) {// Swal.fire({
+      //     title: "Are you sure?",
+      //     text: "You won't be able to revert this!",
+      //     icon: "warning",
+      //     showCancelButton: true,
+      //     confirmButtonColor: "#3085d6",
+      //     cancelButtonColor: "#d33",
+      //     confirmButtonText: "Yes, delete it!",
+      // }).then((result) => {
+      //     if (result.isConfirmed) {
+      // axios.delete(`/subject/${item.id}`).then((res) => {
+      //     this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+      //     this.getSubjects();
+      // }).catch((err) => {
+      //     this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+      // });
+      //     }
+      // });
+    }
   },
   mounted: function mounted() {}
 });
@@ -426,20 +463,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$register_date = item.register_date) !== null && _item$register_date !== void 0 ? _item$register_date : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"\" class=\"btn btn-icon btn-primary waves-effect waves-light btn-sm me-2\">\r\n                            <i class=\"fa-solid fa-eye\"> </i>\r\n                        </router-link>\r\n                        <router-link to=\"/students/student-list/edit\" class=\"btn btn-icon btn-success waves-effect waves-light btn-sm me-2\">\r\n                            <i class=\"fa-solid fa-pen-to-square\"> </i>\r\n                        </router-link>\r\n                        <a href=\"\" class=\"btn btn-icon btn-danger waves-effect waves-light btn-sm\">\r\n                            <i class=\"fa-solid fa-trash\"> </i>\r\n                        </a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-      to: "/students/student-list/edit/",
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"\" class=\"btn btn-icon btn-primary waves-effect waves-light btn-sm me-2\">\r\n                            <i class=\"fa-solid fa-eye\"> </i>\r\n                        </router-link>\r\n                        </a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+      to: "/students/student-list/edit/".concat(item.slug, "/").concat(item.id),
       "class": "text-body"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [_hoisted_6];
       }),
-      _: 1
-      /* STABLE */
+      _: 2
+      /* DYNAMIC */
 
-    }), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"]), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       role: "button",
       onClick: function onClick($event) {
-        return _ctx.deleteItem(item);
+        return $options.deleteItem(item);
       },
       "class": "text-body delete-record"
     }, _hoisted_10, 8
@@ -481,7 +520,7 @@ var _hoisted_4 = {
   "class": "card"
 };
 var _hoisted_5 = {
-  "class": "card-header border-bottom"
+  "class": "card-header border-bottom pb-0"
 };
 var _hoisted_6 = {
   "class": "d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0"
@@ -521,25 +560,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     label: "Search by name",
     apiurl: '/students?page=' + this.page_num,
     onQuery: _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.isQuery($event);
+      return $options.isQuery($event);
     }),
     onLoading: _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.loadingStart($event);
+      return $options.loadingStart($event);
     }),
     onReload: _cache[2] || (_cache[2] = function ($event) {
       return _ctx.getStudents();
     }),
     onFilterData: _cache[3] || (_cache[3] = function ($event) {
-      return _ctx.filterData($event);
+      return $options.filterData($event);
     })
   }, null, 8
   /* PROPS */
-  , ["apiurl"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
+  , ["apiurl"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     headers: _ctx.headers,
-    desserts: _ctx.desserts
+    desserts: _ctx.desserts,
+    onDeleteItem: _cache[4] || (_cache[4] = function ($event) {
+      return $options.deleteItem($event);
+    })
   }, null, 8
   /* PROPS */
-  , ["headers", "desserts"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Offcanvas to add new user ")])])], 64
+  , ["headers", "desserts"])])])], 64
   /* STABLE_FRAGMENT */
   );
 }

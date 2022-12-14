@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header border-bottom">
+        <div class="card-header border-bottom pb-0">
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/customer?page=' + this.page_num"
@@ -15,9 +15,9 @@
                     </search-box>
                 </div>
             </div>
-            <div class="card-datatable table-responsive">
-                <DataTable :headers="headers" :desserts="desserts" />
-            </div>
+        </div>
+        <div class="card-datatable table-responsive">
+            <DataTable :headers="headers" :desserts="desserts" />
         </div>
     </div>
 </template>
@@ -27,7 +27,7 @@ import breadcrumb from "../../../components/BreadcrumbComponent.vue";
 import SearchBox from "../../../components/SearchBoxComponent.vue";
 export default {
     name: "StudentAssignmentComponent",
-    components: { DataTable, breadcrumb,SearchBox },
+    components: { DataTable, breadcrumb, SearchBox },
     data: () => ({
         headers: [
             { text: '#', align: 'start', sortable: false, value: 'name' },

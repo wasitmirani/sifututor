@@ -521,7 +521,7 @@ var _hoisted_4 = {
   "class": "card"
 };
 var _hoisted_5 = {
-  "class": "card-header border-bottom"
+  "class": "card-header border-bottom pb-0"
 };
 var _hoisted_6 = {
   "class": "d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0"
@@ -574,7 +574,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 8
   /* PROPS */
-  , ["apiurl"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
+  , ["apiurl"])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     headers: _ctx.headers,
     subjectList: _ctx.subjectList,
     onDeleteItem: _cache[4] || (_cache[4] = function ($event) {
@@ -582,7 +582,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 8
   /* PROPS */
-  , ["headers", "subjectList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Offcanvas to add new user ")])], 64
+  , ["headers", "subjectList"])])], 64
   /* STABLE_FRAGMENT */
   );
 }
