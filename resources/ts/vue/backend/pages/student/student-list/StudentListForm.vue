@@ -232,7 +232,8 @@
             <hr class="my-4 mx-n4" />
             <h6>Commitment Fee</h6>
             <div class="row g-3">
-                <small class="mt-0">RM 50 payment receipt is required to be uploaded for a new student registration.</small>
+                <small class="mt-0">RM 50 payment receipt is required to be uploaded for a new student
+                    registration.</small>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-PaymentAttachment">Payment Attachment</label>
                     <input type="file" id="multicol-PaymentAttachment" class="form-control"
@@ -258,7 +259,8 @@
             <div class="row g-3 mb-4">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-HourPerSubject">Hour Per Subject</label>
-                    <input type="text" id="multicol-HourPerSubject" class="form-control"  placeholder="Hour Per Subject" />
+                    <input type="text" id="multicol-HourPerSubject" class="form-control"
+                        placeholder="Hour Per Subject" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-SubscriptionDurationTerm">Subscription Duration Term</label>
@@ -266,6 +268,17 @@
                         <option>Short Term</option>
                         <option>Long Term</option>
                     </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label> Subjects </label>
+                        <multiselect v-model="subject" :options="subjectList" :multiple="true" group-values="subjects"
+                            group-label="category" :group-select="true"  placeholder="Search by subject name" track-by="name"
+                            label="name">
+                            <span slot="noResult">Oops! No elements found. Consider changing the search query.</span>
+                        </multiselect>
+                        <validate-input :errors="errors?.errors" value="subject"></validate-input>
+                    </div>
                 </div>
             </div>
             <div class="pt-4">
@@ -291,6 +304,7 @@ export default {
         stdInfo: {},
         errors: {},
         subjectList: [],
+        subject:[],
     }),
     methods: {
         addStudent() {
@@ -318,7 +332,7 @@ export default {
             });
         },
     },
-    mounted(){
+    mounted() {
         this.getSubjectList();
     }
 }

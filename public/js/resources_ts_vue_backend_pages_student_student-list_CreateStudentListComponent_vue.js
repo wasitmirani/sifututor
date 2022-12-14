@@ -85,7 +85,8 @@ __webpack_require__.r(__webpack_exports__);
       }],
       stdInfo: {},
       errors: {},
-      subjectList: []
+      subjectList: [],
+      subject: []
     };
   },
   methods: {
@@ -350,9 +351,50 @@ var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 
 var _hoisted_25 = [_hoisted_23, _hoisted_24];
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<hr class=\"my-4 mx-n4\"><h6>Customer Information</h6><div class=\"row g-3\"><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-FullName\">FullName</label><input type=\"text\" id=\"multicol-FullName\" class=\"form-control\" placeholder=\"FullName\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Gender\">Gender</label><select id=\"multicol-Gender\" class=\"select2 form-select\" data-allow-clear=\"true\"><option value=\"Male\">Male</option><option value=\"Female\">Female</option></select></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-email\">Email</label><div class=\"input-group input-group-merge\"><input type=\"text\" id=\"multicol-email\" class=\"form-control\" placeholder=\"john.doe\" aria-label=\"john.doe\" aria-describedby=\"multicol-email2\"><span class=\"input-group-text\" id=\"multicol-email2\">@example.com</span></div></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Phone-No\">Phone No</label><input type=\"number\" id=\"multicol-Phone-No\" class=\"form-control\" placeholder=\"Phone No\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Fullname\">Age</label><input type=\"number\" id=\"multicol-Age\" class=\"form-control\" placeholder=\"Age\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Dob\">Date of Birth</label><input type=\"date\" id=\"multicol-Dob\" class=\"form-control\" placeholder=\"Dob\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Nric\">Nric</label><input type=\"text\" id=\"multicol-Nric\" class=\"form-control\" placeholder=\"Nric\"></div></div><hr class=\"my-4 mx-n4\"><h6>Customer Address</h6><div class=\"row g-3\"><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-StreetAddress1\">Street Address 1</label><input type=\"text\" id=\"multicol-StreetAddress1\" class=\"form-control\" placeholder=\"Street Address 1\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-StreetAddress2\">Street Address 1</label><input type=\"text\" id=\"multicol-StreetAddress2\" class=\"form-control\" placeholder=\"Street Address 2\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-State\">State</label><select id=\"multicol-State\" class=\"select2 form-select\" data-allow-clear=\"true\"><option value=\"\">Select</option><option>Selangor</option><option>Penang</option><option>Johor</option><option>Kuala Lumpur</option><option>Negeri Sembilan</option><option>Melaka</option><option>Pahang</option><option>Perlis</option><option>Perak</option><option>Kedah</option><option>Terengganu</option><option>Kelantan</option><option>Serawak</option><option>Sabah</option><option>Putrajaya</option></select></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-City\">City</label><select id=\"multicol-State\" class=\"select2 form-select\" data-allow-clear=\"true\"><option>Pulau Indah</option><option>Pulau Ketam</option><option>Puncak Alam</option><option>Rasa</option><option>Rawang</option><option>Sabak Bernam</option><option>Sekinchan</option><option>Semenyih</option><option>Sepang</option><option>Serdang</option><option>Serendah</option><option>Seri Kembangan</option><option>Shah Alam</option><option>Subang Jaya</option><option>Sungai Besar</option><option>Sungai Buloh</option><option>Sungai Pelek</option><option>Tanjong Karang</option><option>Tanjong Sepat</option><option>Telok Panglima Garang</option></select></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-PostCode\">PostCode</label><input type=\"text\" id=\"multicol-PostCode\" class=\"form-control\" placeholder=\"PostCode\"></div></div><hr class=\"my-4 mx-n4\"><h6>Commitment Fee</h6><div class=\"row g-3\"><small class=\"mt-0\">RM 50 payment receipt is required to be uploaded for a new student registration.</small><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-PaymentAttachment\">Payment Attachment</label><input type=\"file\" id=\"multicol-PaymentAttachment\" class=\"form-control\" placeholder=\"Payment Attachment\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-PaymentDate\">Fee Payment Date</label><input type=\"date\" id=\"multicol-PaymentDate\" class=\"form-control\" placeholder=\"Fee Payment Date\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-ReceivingAccountId\">Receiving Account</label><select id=\"multicol-ReceivingAccountId\" class=\"select2 form-select\" data-allow-clear=\"true\"><option value=\"45\">Cash In Hand</option><option value=\"73\">Payment Gateway - BillPlz Sdn Bhd</option><option value=\"76\">Payment Gateway - Ipay88</option><option value=\"68\">Public Bank</option></select></div></div><hr class=\"my-4 mx-n4\"><h6>Subject Subscribes</h6><div class=\"row g-3 mb-4\"><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-HourPerSubject\">Hour Per Subject</label><input type=\"text\" id=\"multicol-HourPerSubject\" class=\"form-control\" placeholder=\"Hour Per Subject\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-SubscriptionDurationTerm\">Subscription Duration Term</label><select id=\"multicol-SubscriptionDurationTerm\" class=\"select2 form-select\" data-allow-clear=\"true\"><option>Short Term</option><option>Long Term</option></select></div></div><div class=\"pt-4\"><button type=\"submit\" class=\"btn btn-primary me-sm-3 me-1\">Submit</button><button type=\"reset\" class=\"btn btn-label-secondary\">Cancel</button></div>", 13);
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<hr class=\"my-4 mx-n4\"><h6>Customer Information</h6><div class=\"row g-3\"><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-FullName\">FullName</label><input type=\"text\" id=\"multicol-FullName\" class=\"form-control\" placeholder=\"FullName\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Gender\">Gender</label><select id=\"multicol-Gender\" class=\"select2 form-select\" data-allow-clear=\"true\"><option value=\"Male\">Male</option><option value=\"Female\">Female</option></select></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-email\">Email</label><div class=\"input-group input-group-merge\"><input type=\"text\" id=\"multicol-email\" class=\"form-control\" placeholder=\"john.doe\" aria-label=\"john.doe\" aria-describedby=\"multicol-email2\"><span class=\"input-group-text\" id=\"multicol-email2\">@example.com</span></div></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Phone-No\">Phone No</label><input type=\"number\" id=\"multicol-Phone-No\" class=\"form-control\" placeholder=\"Phone No\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Fullname\">Age</label><input type=\"number\" id=\"multicol-Age\" class=\"form-control\" placeholder=\"Age\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Dob\">Date of Birth</label><input type=\"date\" id=\"multicol-Dob\" class=\"form-control\" placeholder=\"Dob\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-Nric\">Nric</label><input type=\"text\" id=\"multicol-Nric\" class=\"form-control\" placeholder=\"Nric\"></div></div><hr class=\"my-4 mx-n4\"><h6>Customer Address</h6><div class=\"row g-3\"><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-StreetAddress1\">Street Address 1</label><input type=\"text\" id=\"multicol-StreetAddress1\" class=\"form-control\" placeholder=\"Street Address 1\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-StreetAddress2\">Street Address 1</label><input type=\"text\" id=\"multicol-StreetAddress2\" class=\"form-control\" placeholder=\"Street Address 2\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-State\">State</label><select id=\"multicol-State\" class=\"select2 form-select\" data-allow-clear=\"true\"><option value=\"\">Select</option><option>Selangor</option><option>Penang</option><option>Johor</option><option>Kuala Lumpur</option><option>Negeri Sembilan</option><option>Melaka</option><option>Pahang</option><option>Perlis</option><option>Perak</option><option>Kedah</option><option>Terengganu</option><option>Kelantan</option><option>Serawak</option><option>Sabah</option><option>Putrajaya</option></select></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-City\">City</label><select id=\"multicol-State\" class=\"select2 form-select\" data-allow-clear=\"true\"><option>Pulau Indah</option><option>Pulau Ketam</option><option>Puncak Alam</option><option>Rasa</option><option>Rawang</option><option>Sabak Bernam</option><option>Sekinchan</option><option>Semenyih</option><option>Sepang</option><option>Serdang</option><option>Serendah</option><option>Seri Kembangan</option><option>Shah Alam</option><option>Subang Jaya</option><option>Sungai Besar</option><option>Sungai Buloh</option><option>Sungai Pelek</option><option>Tanjong Karang</option><option>Tanjong Sepat</option><option>Telok Panglima Garang</option></select></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-PostCode\">PostCode</label><input type=\"text\" id=\"multicol-PostCode\" class=\"form-control\" placeholder=\"PostCode\"></div></div><hr class=\"my-4 mx-n4\"><h6>Commitment Fee</h6><div class=\"row g-3\"><small class=\"mt-0\">RM 50 payment receipt is required to be uploaded for a new student registration.</small><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-PaymentAttachment\">Payment Attachment</label><input type=\"file\" id=\"multicol-PaymentAttachment\" class=\"form-control\" placeholder=\"Payment Attachment\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-PaymentDate\">Fee Payment Date</label><input type=\"date\" id=\"multicol-PaymentDate\" class=\"form-control\" placeholder=\"Fee Payment Date\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-ReceivingAccountId\">Receiving Account</label><select id=\"multicol-ReceivingAccountId\" class=\"select2 form-select\" data-allow-clear=\"true\"><option value=\"45\">Cash In Hand</option><option value=\"73\">Payment Gateway - BillPlz Sdn Bhd</option><option value=\"76\">Payment Gateway - Ipay88</option><option value=\"68\">Public Bank</option></select></div></div><hr class=\"my-4 mx-n4\"><h6>Subject Subscribes</h6>", 11);
+
+var _hoisted_37 = {
+  "class": "row g-3 mb-4"
+};
+
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-HourPerSubject\">Hour Per Subject</label><input type=\"text\" id=\"multicol-HourPerSubject\" class=\"form-control\" placeholder=\"Hour Per Subject\"></div><div class=\"col-md-6\"><label class=\"form-label\" for=\"multicol-SubscriptionDurationTerm\">Subscription Duration Term</label><select id=\"multicol-SubscriptionDurationTerm\" class=\"select2 form-select\" data-allow-clear=\"true\"><option>Short Term</option><option>Long Term</option></select></div>", 2);
+
+var _hoisted_40 = {
+  "class": "col-md-6"
+};
+var _hoisted_41 = {
+  "class": "form-group"
+};
+
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, " Subjects ", -1
+/* HOISTED */
+);
+
+var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  slot: "noResult"
+}, "Oops! No elements found. Consider changing the search query.", -1
+/* HOISTED */
+);
+
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "pt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "btn btn-primary me-sm-3 me-1"
+}, "Submit"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "reset",
+  "class": "btn btn-label-secondary"
+}, "Cancel")], -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _ctx$errors;
+
+  var _component_multiselect = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("multiselect");
+
+  var _component_validate_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("validate-input");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_2, [_hoisted_3, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.studentInfo, function (item, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "row g-3",
@@ -423,7 +465,34 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[5] || (_cache[5] = function () {
       return $options.addStudent && $options.addStudent.apply($options, arguments);
     })
-  }, _hoisted_25), _hoisted_26])]);
+  }, _hoisted_25), _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_multiselect, {
+    modelValue: _ctx.subject,
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+      return _ctx.subject = $event;
+    }),
+    options: _ctx.subjectList,
+    multiple: true,
+    "group-values": "subjects",
+    "group-label": "category",
+    "group-select": true,
+    placeholder: "Search by subject name",
+    "track-by": "name",
+    label: "name"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_43];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["modelValue", "options"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+    errors: (_ctx$errors = _ctx.errors) === null || _ctx$errors === void 0 ? void 0 : _ctx$errors.errors,
+    value: "subject"
+  }, null, 8
+  /* PROPS */
+  , ["errors"])])])]), _hoisted_44])]);
 }
 
 /***/ }),

@@ -6,7 +6,7 @@
 //   import "vue3-tel-input/dist/vue3-tel-input.css";
 //   import 'vue-skeletor/dist/vue-skeletor.css';
 
-  // import 'vue-multiselect/dist/vue-multiselect.min.css';
+  import 'vue-multiselect/dist/vue-multiselect.min.css';
 
   export default {
     components: { MasterLayout },
