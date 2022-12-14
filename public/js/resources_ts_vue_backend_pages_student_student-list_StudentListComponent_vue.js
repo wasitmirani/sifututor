@@ -220,7 +220,7 @@ var _hoisted_2 = {
   "class": "text-end mb-2"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" New ");
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Add Student ");
 
 var _hoisted_4 = {
   "class": "row"

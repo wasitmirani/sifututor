@@ -1,7 +1,7 @@
 <template>
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="text-end mb-2">
-            <router-link class="btn btn-primary" to="/students/student-list/create"> New </router-link>
+            <router-link class="btn btn-primary" to="/students/student-list/create"> Add Student </router-link>
         </div>
         <div class="row">
             <div class="col-sm-12">
