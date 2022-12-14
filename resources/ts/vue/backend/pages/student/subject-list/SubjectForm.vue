@@ -31,6 +31,7 @@
 <script>
 export default {
     name: "SubjectForm",
+    props: ['edit_mode', 'form'],
     data: () => ({
         SubjectInfo: {},
         errors: [],
@@ -67,6 +68,12 @@ export default {
             }, 1000);
 
         },
+    },
+    mounted(){
+        if (this.edit_mode) {
+            this.SubjectInfo = [];
+            this.SubjectInfo = this.form;
+        }
     }
 }
 </script>

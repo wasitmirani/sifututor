@@ -34,7 +34,7 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/students/student-assignments','student-assignments-view','student/student-assignment/StudentAssignment'),
     setRoute('/subject/subject-list','subject-list-view','student/subject-list/SubjectList'),
     setRoute('/subject/subject-list/create','subject-list-create','student/subject-list/CreateSubject'),
-    setRoute('/subject/subject-list/edit/:id','subject-list-edit','student/subject-list/EditSubject'),
+    setRoute('/subject/subject-list/edit/:slug/:id','subject-list-edit','student/subject-list/EditSubject'),
 
 
 

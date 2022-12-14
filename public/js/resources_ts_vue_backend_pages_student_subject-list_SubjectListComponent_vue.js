@@ -466,7 +466,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* STABLE */
 
     }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-      to: "/subject/subject-list/edit/".concat(item.id),
+      to: "/subject/subject-list/edit/".concat(item.slug, "/").concat(item.uid),
       "class": "btn btn-icon btn-success waves-effect waves-light btn-sm me-2"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {

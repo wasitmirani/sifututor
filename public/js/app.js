@@ -19602,7 +19602,7 @@ var routes = [{
   redirect: {
     name: 'dashboard'
   }
-}, setRoute('/:catchAll(.*)', '404', 'error/404'), setRoute('/dashboard/overview', 'dashboard', 'dashboard/Dashboard'), setRoute('/students/customer-list', 'customer-list-view', 'student/customer-list/CustomerList'), setRoute('/students/customer-list/edit', 'customer-list-edit', 'student/customer-list/EditCustomerList'), setRoute('/students/student-list', 'student-list-view', 'student/student-list/StudentList'), setRoute('/students/student-list/create', 'student-list-create', 'student/student-list/CreateStudentList'), setRoute('/students/student-list/edit', 'student-list-edit', 'student/student-list/EditStudentList'), setRoute('/students/student-assignments', 'student-assignments-view', 'student/student-assignment/StudentAssignment'), setRoute('/subject/subject-list', 'subject-list-view', 'student/subject-list/SubjectList'), setRoute('/subject/subject-list/create', 'subject-list-create', 'student/subject-list/CreateSubject'), setRoute('/subject/subject-list/edit/:id', 'subject-list-edit', 'student/subject-list/EditSubject')];
+}, setRoute('/:catchAll(.*)', '404', 'error/404'), setRoute('/dashboard/overview', 'dashboard', 'dashboard/Dashboard'), setRoute('/students/customer-list', 'customer-list-view', 'student/customer-list/CustomerList'), setRoute('/students/customer-list/edit', 'customer-list-edit', 'student/customer-list/EditCustomerList'), setRoute('/students/student-list', 'student-list-view', 'student/student-list/StudentList'), setRoute('/students/student-list/create', 'student-list-create', 'student/student-list/CreateStudentList'), setRoute('/students/student-list/edit', 'student-list-edit', 'student/student-list/EditStudentList'), setRoute('/students/student-assignments', 'student-assignments-view', 'student/student-assignment/StudentAssignment'), setRoute('/subject/subject-list', 'subject-list-view', 'student/subject-list/SubjectList'), setRoute('/subject/subject-list/create', 'subject-list-create', 'student/subject-list/CreateSubject'), setRoute('/subject/subject-list/edit/:slug/:id', 'subject-list-edit', 'student/subject-list/EditSubject')];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(),
   routes: routes,
@@ -63689,9 +63689,9 @@ var map = {
 		"./resources/ts/vue/backend/pages/student/subject-list/CreateSubjectComponent.vue",
 		"resources_ts_vue_backend_pages_student_subject-list_CreateSubjectComponent_vue"
 	],
-	"./student/subject-list/EditComponent.vue": [
-		"./resources/ts/vue/backend/pages/student/subject-list/EditComponent.vue",
-		"resources_ts_vue_backend_pages_student_subject-list_EditComponent_vue"
+	"./student/subject-list/EditSubjectComponent.vue": [
+		"./resources/ts/vue/backend/pages/student/subject-list/EditSubjectComponent.vue",
+		"resources_ts_vue_backend_pages_student_subject-list_EditSubjectComponent_vue"
 	],
 	"./student/subject-list/SubjectListComponent.vue": [
 		"./resources/ts/vue/backend/pages/student/subject-list/SubjectListComponent.vue",
@@ -63840,7 +63840,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_ts_vue_backend_pages_dashboard_DashboardComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_CustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_EditCustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-assignment_StudentAssignmentComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_CreateStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_EditStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_StudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_CreateSubjectComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_EditComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_SubjectListComponent_vue":1,"resources_ts_vue_backend_pages_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_ts_vue_backend_pages_dashboard_DashboardComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_CustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_EditCustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-assignment_StudentAssignmentComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_CreateStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_EditStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_StudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_CreateSubjectComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_EditSubjectComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_SubjectListComponent_vue":1,"resources_ts_vue_backend_pages_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
