@@ -19,7 +19,7 @@ export default {
     methods:{
         getSubject(id) {
             axios.get('/subject/' + id).then((res) => {
-                this.form = res.data.subjects;
+                this.form = res.data.subject;
                 this.edit_mode = true;
             }).catch((err) => {
                 this.errors = err.response.data;

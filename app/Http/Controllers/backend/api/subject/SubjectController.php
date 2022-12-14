@@ -23,7 +23,7 @@ class SubjectController extends Controller
         $request->validate([
             'name' =>'required|string|min:2|max:255|unique:subjects',
             'category'=>'required|string|min:2|max:255',
-            'description' =>'string|min:10|max:255',
+            'description' =>'max:255',
         ]);
 
       $subject=  Subject::create([
@@ -39,6 +39,8 @@ class SubjectController extends Controller
     public function show($id)
     {
         //
+        $subject=Subject::where('uid',$id)->first();
+        return response()->json(['status' => true,'subject'=>$subject]);
     }
 
     /**
@@ -67,7 +69,7 @@ class SubjectController extends Controller
         $request->validate([
             'name' =>'required|string|min:2|max:255|unique:subjects,name,'.$id,
             'category'=>'required|string|min:2|max:255',
-            'description' =>'string|min:10|max:255',
+            'description' =>'min:10|max:255',
         ]);
 
       $subject=  Subject::where('id',$id)->update([
