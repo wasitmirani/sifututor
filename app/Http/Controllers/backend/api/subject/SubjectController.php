@@ -70,7 +70,7 @@ class SubjectController extends Controller
 
       $subject=  Subject::where('id',$id)->update([
             'name' => $request->name,
-            'slug' => Str::slug($request->slug,'-'),
+            'slug' => Str::slug($request->name,'-'),
             'uid'=>Str::uuid(),
             'category' => $request->category,
             'description' => $request->description,
