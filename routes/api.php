@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\backend\api\subject\SubjectController;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\api\layout\LayoutController;
@@ -25,6 +27,10 @@ Route::prefix('config')->group(function () {
     Route::get('/sidebar-menu',[LayoutController::class,'getSideBarMenu']);
 
 });
+
+Route::resource('subject', SubjectController::class);
+
+
 
 
 

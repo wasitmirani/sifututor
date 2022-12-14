@@ -13,14 +13,12 @@
                         v-on:filterData="filterData($event)">
                     </search-box>
                 </div>
-
             </div>
+            <div class="card-datatable table-responsive">
+                <DataTable :headers="headers" :desserts="desserts" />
+            </div>
+            <!-- Offcanvas to add new user -->
         </div>
-        <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :desserts="desserts" />
-        </div>
-        <!-- Offcanvas to add new user -->
-
     </div>
 </template>
 <script>
