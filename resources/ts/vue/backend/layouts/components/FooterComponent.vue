@@ -6,8 +6,8 @@
                 <div>
                     ©
                      20222
-                    , made with ❤️ by <a href="https://pixinvent.com/" target="_blank"
-                        class="fw-semibold">Pixinvent</a>
+                    , made with ❤️ by <a href="/" target="_blank"
+                        class="fw-semibold">sifututor</a>
                 </div>
                 <div>
 
