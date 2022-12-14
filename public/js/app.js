@@ -63684,6 +63684,10 @@ var map = {
 	"./student/student-list/StudentListComponent.vue": [
 		"./resources/ts/vue/backend/pages/student/student-list/StudentListComponent.vue",
 		"resources_ts_vue_backend_pages_student_student-list_StudentListComponent_vue"
+	],
+	"./user/UsersComponent.vue": [
+		"./resources/ts/vue/backend/pages/user/UsersComponent.vue",
+		"resources_ts_vue_backend_pages_user_UsersComponent_vue"
 	]
 };
 function webpackAsyncContext(req) {
@@ -63824,7 +63828,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_ts_vue_backend_pages_dashboard_DashboardComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_CustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_EditCustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-assignment_StudentAssignmentComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_CreateStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_EditStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_StudentListComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_ts_vue_backend_pages_dashboard_DashboardComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_CustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_EditCustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-assignment_StudentAssignmentComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_CreateStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_EditStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_StudentListComponent_vue":1,"resources_ts_vue_backend_pages_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
