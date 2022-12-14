@@ -1,12 +1,8 @@
 <template>
-    <breadcrumb active_name="Subject"></breadcrumb>
+    <breadcrumb active_name="Tutor"></breadcrumb>
     <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
-            <h5 class="card-title">Subject List</h5>
-        </div>
-        <div>
-            <router-link style="float:right" class="btn btn-primary" to="/subject/subject-list/create"> Add Subject
-            </router-link>
+            <h5 class="card-title">Tutor Application</h5>
         </div>
     </div>
     <div class="card">
@@ -22,8 +18,8 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :subjectList="subjectList" v-on:deleteItem="deleteItem($event)" />
-        </div>
+        <DataTable :headers="headers" :desserts="desserts"/>
+    </div>
     </div>
 </template>
 <script>
@@ -31,29 +27,58 @@ import DataTable from "./DataTable";
 import breadcrumb from "../../../components/BreadcrumbComponent.vue";
 import SearchBox from "../../../components/SearchBoxComponent.vue";
 export default {
-    name: "SubjectComponent",
+    name: "TutorApplicstionComponent",
     components: { DataTable, breadcrumb, SearchBox },
     data: () => ({
         headers: [
-            { text: 'Name', align: 'start', sortable: false, value: 'name' },
-            { text: 'Cateogry', value: 'cateogry' },
-            { text: 'Description', value: 'description' },
-            { text: 'Thumbnail', value: 'thumbnail' },
-            { text: 'Price', value: 'price' },
-            { text: 'Created At', value: 'price' },
-            { text: 'Actions', value: 'actions', sortable: false },
+            { text: '#', align: 'start', sortable: false, value: 'name' },
+            { text: 'Tutor Id', value: 'Tutor Id' },
+            { text: 'Full Name', value: 'Fullname' },
+            { text: 'Phone No', value: 'Phone No' },
+            { text: 'Subject Applied', value: 'Subject Applied' },
+            { text: 'Application', value: 'Application' },
+            { text: 'State City', value: 'State City'},
+        ],
+        desserts: [
+            {
+                "uid": "1",
+                "tutor_id": "T200329",
+                "full_name": "Nurul Fitriah Binti Patlillah",
+                "phone_no": '60125656519',
+                "subject_applied": "Sejarah (PT3) - ONLINE",
+                "application": "1",
+                "state_city": "All - All",
+            },
+            {
+                "uid": "2",
+                "tutor_id": "T210004",
+                "full_name": "Nor Shuhada bt Md Hishamuddin",
+                "phone_no": '601121520618',
+                "subject_applied": "Sejarah (PT3) - ONLINE",
+                "application": "1",
+                "state_city": "All - All",
+            },
+            {
+                "uid": "3",
+                "tutor_id": "T191515",
+                "full_name": "Kanchana Rajendran",
+                "phone_no": '60103727530',
+                "subject_applied": "Science (PT3) - ONLINE",
+                "application": "1",
+                "state_city": "All - All",
+            }
         ],
         page_num: 1,
         loading: false,
         query: "",
-        subjectList: [],
+        ticketList: [],
     }),
     methods: {
         getSubjects(page = 1) {
             this.loading = true;
             this.page_num = page;
             axios.get('/subject?page=' + page + '&query=' + this.query).then((res) => {
-                this.subjectList = res.data.subjects;
+                this.ticketList = res.data.subjects;
                 this.loading = false;
             }).catch((err) => {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -68,29 +93,9 @@ export default {
         loadingStart(value) {
             this.loading = value;
         },
-        deleteItem(item) {
-            // Swal.fire({
-            //     title: "Are you sure?",
-            //     text: "You won't be able to revert this!",
-            //     icon: "warning",
-            //     showCancelButton: true,
-            //     confirmButtonColor: "#3085d6",
-            //     cancelButtonColor: "#d33",
-            //     confirmButtonText: "Yes, delete it!",
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
-            axios.delete(`/subject/${item.id}`).then((res) => {
-                this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
-                this.getSubjects();
-            }).catch((err) => {
-                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
-            });
-            //     }
-            // });
-        },
     },
     mounted() {
-        this.getSubjects();
+        // this.getSubjects();
     }
 }
 </script>
