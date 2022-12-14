@@ -282,7 +282,7 @@ var _hoisted_2 = {
   "class": "row g-3"
 };
 var _hoisted_3 = {
-  "class": "col-md-6"
+  "class": "col-md-4"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -293,7 +293,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_5 = {
-  "class": "col-md-6"
+  "class": "col-md-4"
 };
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -304,29 +304,30 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_7 = {
-  "class": "col-md-6"
+  "class": "col-md-4"
 };
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "form-label",
+  "for": "multicol-price"
+}, "price", -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
+  "class": "col-md-12"
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "form-label",
   "for": "basic-icon-default-message"
 }, "Description", -1
 /* HOISTED */
 );
 
-var _hoisted_9 = {
+var _hoisted_11 = {
   "class": "input-group input-group-merge"
 };
-var _hoisted_10 = {
-  "class": "col-md-6"
-};
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "class": "form-label",
-  "for": "multicol-price"
-}, "price", -1
-/* HOISTED */
-);
 
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "pt-4"
@@ -341,7 +342,7 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _ctx$errors, _ctx$errors2, _ctx$errors3, _ctx$errors4;
+  var _ctx$errors, _ctx$errors2, _ctx$errors3;
 
   var _component_validate_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("validate-input");
 
@@ -380,36 +381,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: "category"
   }, null, 8
   /* PROPS */
-  , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-    id: "basic-icon-default-message",
-    "class": "form-control",
-    placeholder: "Description",
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return _ctx.SubjectInfo.description = $event;
-    })
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.SubjectInfo.description]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
-    errors: (_ctx$errors3 = _ctx.errors) === null || _ctx$errors3 === void 0 ? void 0 : _ctx$errors3.errors,
-    value: "description"
-  }, null, 8
-  /* PROPS */
-  , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "number",
     id: "multicol-price",
     "class": "form-control",
     placeholder: "price",
-    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return _ctx.SubjectInfo.price = $event;
     })
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.SubjectInfo.price]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
-    errors: (_ctx$errors4 = _ctx.errors) === null || _ctx$errors4 === void 0 ? void 0 : _ctx$errors4.price,
+    errors: (_ctx$errors3 = _ctx.errors) === null || _ctx$errors3 === void 0 ? void 0 : _ctx$errors3.price,
     value: "description"
   }, null, 8
   /* PROPS */
-  , ["errors"])])]), _hoisted_12], 32
+  , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+    rows: "3",
+    id: "basic-icon-default-message",
+    "class": "form-control",
+    placeholder: "Description",
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return _ctx.SubjectInfo.description = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.SubjectInfo.description]])])])]), _hoisted_12], 32
   /* HYDRATE_EVENTS */
   )]);
 }
