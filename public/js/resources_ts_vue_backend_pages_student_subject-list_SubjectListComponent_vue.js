@@ -146,7 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "DataTableComponent",
-  props: ["headers", "desserts"],
+  props: ["headers", "subjectList"],
   data: function data() {
     return {};
   },
@@ -196,29 +196,71 @@ __webpack_require__.r(__webpack_exports__);
         text: 'Thumbnail',
         value: 'thumbnail'
       }, {
-        text: 'Price  ',
-        value: 'price  '
+        text: 'Price',
+        value: 'price'
+      }, {
+        text: 'Created At',
+        value: 'price'
       }, {
         text: 'Actions',
         value: 'actions',
         sortable: false
       }],
-      desserts: [{
-        "name": "1",
-        "cateogry": "S224844",
-        "description": "Musfira Syafia Binti Mustaza",
-        "thumbnail": 'Female',
-        "price  ": "Active"
-      }, {
-        "name": "1",
-        "cateogry": "S224844",
-        "description": "Musfira Syafia Binti Mustaza",
-        "thumbnail": 'Female',
-        "price  ": "Active"
-      }]
+      page_num: 1,
+      loading: false,
+      query: "",
+      subjectList: []
     };
   },
-  mounted: function mounted() {}
+  methods: {
+    getSubjects: function getSubjects() {
+      var _this = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      this.loading = true;
+      this.page_num = page;
+      axios.get('/subject?page=' + page + '&query=' + this.query).then(function (res) {
+        // console.log('res.data', res.data);
+        _this.subjectList = res.data.subjects;
+        _this.loading = false;
+      })["catch"](function (err) {// this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+      });
+    },
+    isQuery: function isQuery(query) {
+      return this.query = query;
+    },
+    filterData: function filterData(data) {
+      this.subjectList = data.warehouses;
+    },
+    loadingStart: function loadingStart(value) {
+      this.loading = value;
+    },
+    deleteItem: function deleteItem(item) {
+      var _this2 = this;
+
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios["delete"]("/subject/".concat(item.id)).then(function (res) {
+            _this2.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+
+            _this2.getWarehouses();
+          })["catch"](function (err) {// this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+          });
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getSubjects();
+  }
 });
 
 /***/ }),
@@ -384,6 +426,8 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _$props$subjectList;
+
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.headers, function (head, index) {
@@ -394,20 +438,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.desserts, function (item, index) {
-    var _item$name, _item$cateogry, _item$description, _item$thumbnail, _item$price;
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)((_$props$subjectList = $props.subjectList) === null || _$props$subjectList === void 0 ? void 0 : _$props$subjectList.data, function (item, index) {
+    var _item$name, _item$category, _item$description, _item$thumbnail, _item$price, _item$created_at;
 
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$name = item.name) !== null && _item$name !== void 0 ? _item$name : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$cateogry = item.cateogry) !== null && _item$cateogry !== void 0 ? _item$cateogry : "N/A"), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$category = item.category) !== null && _item$category !== void 0 ? _item$category : "N/A"), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$description = item.description) !== null && _item$description !== void 0 ? _item$description : "N/A"), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$thumbnail = item.thumbnail) !== null && _item$thumbnail !== void 0 ? _item$thumbnail : "N/A"), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$price = item.price) !== null && _item$price !== void 0 ? _item$price : "N/A"), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$created_at = item.created_at) !== null && _item$created_at !== void 0 ? _item$created_at : "N/A"), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
       to: "",
@@ -420,16 +466,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* STABLE */
 
     }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-      to: "/students/student-list/edit",
+      to: "/subject/subject-list/edit/".concat(item.id),
       "class": "btn btn-icon btn-success waves-effect waves-light btn-sm me-2"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [_hoisted_5];
       }),
-      _: 1
-      /* STABLE */
+      _: 2
+      /* DYNAMIC */
 
-    }), _hoisted_6])]);
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"]), _hoisted_6])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))])])]);
@@ -502,25 +550,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     label: "Search by name",
     apiurl: '/subject?page=' + this.page_num,
     onQuery: _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.isQuery($event);
+      return $options.isQuery($event);
     }),
     onLoading: _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.loadingStart($event);
+      return $options.loadingStart($event);
     }),
     onReload: _cache[2] || (_cache[2] = function ($event) {
       return _ctx.getStudents();
     }),
     onFilterData: _cache[3] || (_cache[3] = function ($event) {
-      return _ctx.filterData($event);
+      return $options.filterData($event);
     })
   }, null, 8
   /* PROPS */
   , ["apiurl"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     headers: _ctx.headers,
-    desserts: _ctx.desserts
+    subjectList: _ctx.subjectList
   }, null, 8
   /* PROPS */
-  , ["headers", "desserts"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Offcanvas to add new user ")])], 64
+  , ["headers", "subjectList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Offcanvas to add new user ")])], 64
   /* STABLE_FRAGMENT */
   );
 }

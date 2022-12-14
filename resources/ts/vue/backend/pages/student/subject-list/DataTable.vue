@@ -8,17 +8,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in desserts" :key="index">
+                <tr v-for="(item, index) in subjectList?.data" :key="index">
                     <td> {{ item.name ?? "N/A" }}</td>
-                    <td> {{ item.cateogry ?? "N/A" }}</td>
+                    <td> {{ item.category ?? "N/A" }}</td>
                     <td> {{ item.description ?? "N/A" }}</td>
                     <td> {{ item.thumbnail ?? "N/A" }}</td>
                     <td> {{ item.price ?? "N/A" }}</td>
+                    <td> {{item.created_at ?? "N/A"}}</td>
                     <td>
                         <router-link to="" class="btn btn-icon btn-primary waves-effect waves-light btn-sm me-2">
                             <i class="fa-solid fa-eye"> </i>
                         </router-link>
-                        <router-link to="/students/student-list/edit" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
+                        <router-link :to="`/subject/subject-list/edit/${item.id}`" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
                             <i class="fa-solid fa-pen-to-square"> </i>
                         </router-link>
                         <a href="" class="btn btn-icon btn-danger waves-effect waves-light btn-sm">
@@ -33,7 +34,7 @@
 <script>
 export default {
     name: "DataTableComponent",
-    props: ["headers", "desserts"],
+    props: ["headers", "subjectList"],
     data: () => ({
     }),
     mounted() {
