@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Customer;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Student extends Model
 {
@@ -13,4 +14,8 @@ class Student extends Model
     protected $casts = [
         'subjects' => 'array',
     ];
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'id', 'student_id');
+    }
 }

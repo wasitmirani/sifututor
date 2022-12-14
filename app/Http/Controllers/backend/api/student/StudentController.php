@@ -22,7 +22,7 @@ class StudentController extends Controller
     {
         //
         $q=!empty(request('query')) ? request('query') : '';
-        $students = Subject::latest()
+        $students = Student::latest()->with('customer')
                                ->paginate(env('PAR_PAGE'));
 
         return response()->json(['status' => true, 'students' => $students]);
@@ -132,7 +132,7 @@ try {
     public function show($id)
     {
         //
-        $student=Student::where('uid',$id)->first();
+        $student=Student::where('uid',$id)->with('customer')->first();
         return response()->json(['status' => true,'student'=>$student]);
     }
 
@@ -145,7 +145,7 @@ try {
     public function edit($id)
     {
         //
-        $student=Student::where('uid',$id)->first();
+        $student=Student::where('uid',$id)->with('customer')->first();
         return response()->json(['status' => true,'student'=>$student]);
     }
 
