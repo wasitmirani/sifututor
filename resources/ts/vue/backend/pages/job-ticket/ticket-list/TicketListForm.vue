@@ -100,8 +100,9 @@
             <div class="row g-3 mb-3">
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label" for="multicol-EstimateCommission">Search Exising Student</label>
-                    <input type="text" id="multicol-EstimateCommission" class="form-control"
-                        placeholder="Estimate Commission" />
+                    <multiselect v-model="student" :options="studentList" track-by="id" label="name"
+                        placeholder="Search by student name" :multiple="true">
+                    </multiselect>
                 </div>
             </div>
             <div class="row g-3 mb-3" v-for="(item, index) in studentInfo" :key="index">
@@ -377,8 +378,10 @@
     </div>
 </template>
 <script>
+import Multiselect from 'vue-multiselect';
 export default {
     name: "TicketListForm",
+    components: { Multiselect },
     data: () => ({
         studentInfo: [{
             fullname: "",
@@ -396,6 +399,8 @@ export default {
             time: "",
         }],
         subjectSub: [{}],
+        studentList: [],
+        student: [],
     }),
     methods: {
         addSubjectSubscription() {
@@ -444,8 +449,19 @@ export default {
                 return index !== key
             })
         },
+        getStudent() {
+            axios.get('/student-list').then((res) => {
+                this.studentList = res.data.students.map((item) => {
+                    return { id: item.id, name: item.name }
+                });
+            }).catch((err) => {
+                this.errors = err.response.data;
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            });
+        },
     },
     mounted() {
+        this.getStudent();
         if (this.edit_mode) {
             // this.stdInfo = [];
             // this.stdInfo = this.form;
