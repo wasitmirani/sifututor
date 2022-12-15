@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :desserts="desserts" v-on:deleteItem="deleteItem($event)" />
+            <DataTable :headers="headers" :customertList="customertList" v-on:deleteItem="deleteItem($event)" />
         </div>
     </div>
 
@@ -39,33 +39,26 @@ export default {
             { text: 'Status', value: 'Status' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
-        desserts: [
-            {
-                "id": "1",
-                "customer_id": "C220000",
-                "fullname": "Nurnisrina",
-                "phone_number": '601124166237',
-                "email": "nurnisrina040602@gmail.com",
-                "status": "Active",
-                "slug": "Nurnisrina",
-            },
-            {
-                "id": "2",
-                "customer_id": "C220000",
-                "fullname": "Noor Hasima",
-                "phone_number": '60178960258',
-                "email": "nhahsheema73@gmail.com",
-                "status": "Active",
-                "slug": "Noor",
-            }
-        ],
+        page_num: 1,
+        loading: false,
+        query: "",
     }),
     methods: {
+        getCustomers(page = 1) {
+            this.loading = true;
+            this.page_num = page;
+            axios.get('/customer?page=' + page + '&query=' + this.query).then((res) => {
+                this.customertList = res.data.customers;
+                this.loading = false;
+            }).catch((err) => {
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            });
+        },
         isQuery(query) {
             return (this.query = query);
         },
         filterData(data) {
-            this.subjectList = data.subjects;
+            this.customertList = data.customers;
         },
         loadingStart(value) {
             this.loading = value;
@@ -92,6 +85,7 @@ export default {
         },
     },
     mounted() {
+        this.getCustomers();
     }
 }
 </script>

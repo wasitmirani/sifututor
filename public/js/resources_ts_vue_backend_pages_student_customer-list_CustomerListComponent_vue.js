@@ -184,31 +184,30 @@ __webpack_require__.r(__webpack_exports__);
         value: 'actions',
         sortable: false
       }],
-      desserts: [{
-        "id": "1",
-        "customer_id": "C220000",
-        "fullname": "Nurnisrina",
-        "phone_number": '601124166237',
-        "email": "nurnisrina040602@gmail.com",
-        "status": "Active",
-        "slug": "Nurnisrina"
-      }, {
-        "id": "2",
-        "customer_id": "C220000",
-        "fullname": "Noor Hasima",
-        "phone_number": '60178960258',
-        "email": "nhahsheema73@gmail.com",
-        "status": "Active",
-        "slug": "Noor"
-      }]
+      page_num: 1,
+      loading: false,
+      query: ""
     };
   },
   methods: {
+    getCustomers: function getCustomers() {
+      var _this = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      this.loading = true;
+      this.page_num = page;
+      axios.get('/customer?page=' + page + '&query=' + this.query).then(function (res) {
+        _this.customertList = res.data.customers;
+        _this.loading = false;
+      })["catch"](function (err) {
+        _this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+      });
+    },
     isQuery: function isQuery(query) {
       return this.query = query;
     },
     filterData: function filterData(data) {
-      this.subjectList = data.subjects;
+      this.customertList = data.customers;
     },
     loadingStart: function loadingStart(value) {
       this.loading = value;
@@ -233,7 +232,9 @@ __webpack_require__.r(__webpack_exports__);
       // });
     }
   },
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    this.getCustomers();
+  }
 });
 
 /***/ }),
@@ -251,7 +252,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "DataTableComponent",
-  props: ["headers", "desserts"],
+  props: ["headers", "customertList"],
   data: function data() {
     return {};
   },
@@ -444,13 +445,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["apiurl"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     headers: _ctx.headers,
-    desserts: _ctx.desserts,
+    customertList: _ctx.customertList,
     onDeleteItem: _cache[4] || (_cache[4] = function ($event) {
       return $options.deleteItem($event);
     })
   }, null, 8
   /* PROPS */
-  , ["headers", "desserts"])])])], 64
+  , ["headers", "customertList"])])])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -508,6 +509,8 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_10 = [_hoisted_9];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _$props$customertList;
+
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.headers, function (head, index) {
@@ -518,7 +521,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.desserts, function (item, index) {
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)((_$props$customertList = $props.customertList) === null || _$props$customertList === void 0 ? void 0 : _$props$customertList.data, function (item, index) {
     var _item$id, _item$customer_id, _item$fullname, _item$phone_number, _item$email, _item$status;
 
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {

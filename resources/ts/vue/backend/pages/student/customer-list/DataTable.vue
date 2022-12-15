@@ -8,7 +8,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in desserts" :key="index">
+                <tr v-for="(item, index) in customertList?.data" :key="index">
                     <td> {{ item.id ?? "N/A" }}</td>
                     <td> {{ item.customer_id ?? "N/A" }}</td>
                     <td> {{ item.fullname ?? "N/A" }}</td>
@@ -34,7 +34,7 @@
 <script>
 export default {
     name: "DataTableComponent",
-    props: ["headers", "desserts"],
+    props: ["headers", "customertList"],
     data: () => ({
     }),
     methods: {
