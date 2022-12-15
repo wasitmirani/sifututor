@@ -27,7 +27,10 @@ class StudentController extends Controller
 
         return response()->json(['status' => true, 'students' => $students]);
     }
-
+    public function getStudentList(Request $request){
+        $students = Student::latest()->get();
+        return response()->json(['status' => true,'students' => $students]);
+    }
     /**
      * Show the form for creating a new resource.
      *

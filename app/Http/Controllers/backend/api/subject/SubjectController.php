@@ -18,6 +18,7 @@ class SubjectController extends Controller
 
         return response()->json(['status' => true, 'subjects' => $subjects]);
     }
+
     public function getSubjectList(Request $request){
         $subjects = Subject::latest()->orderBy('category', 'asc')->get();
         $subjects=collect($subjects)->groupBy('category');
