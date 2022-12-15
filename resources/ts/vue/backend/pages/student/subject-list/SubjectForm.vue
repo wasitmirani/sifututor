@@ -4,7 +4,7 @@
             <div class="row g-3">
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-name">Name</label>
-                    <input type="text" v-model="SubjectInfo.name" id="name-" class="form-control" placeholder="Name" />
+                    <input type="text" v-model="SubjectInfo.name" id="name-" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'name')}`" placeholder="Name" />
                     <validate-input :errors="errors?.errors" value="name"></validate-input>
                 </div>
                 <div class="col-md-4">
@@ -15,13 +15,13 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-price">price</label>
-                    <input type="number" id="multicol-price" class="form-control" placeholder="price"
+                    <input type="number" id="multicol-price" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'price')}`" placeholder="price" 
                         v-model="SubjectInfo.price" />
-                    <validate-input :errors="errors?.price" value="description"></validate-input>
+                    <validate-input :errors="errors?.price" value="price"></validate-input>
                 </div>
                 <div class="col-md-12"><label class="form-label" for="basic-icon-default-message">Description</label>
                     <div class="input-group input-group-merge"><textarea rows="3" id="basic-icon-default-message"
-                            class="form-control" placeholder="Description"  v-model="SubjectInfo.description"></textarea></div>
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'description')}`" placeholder="Description"  v-model="SubjectInfo.description"></textarea></div>
                             <validate-input :errors="errors?.price" value="description"></validate-input>
                 </div>
 
@@ -34,7 +34,6 @@
     </div>
 </template>
 <script>
-// import ValidateInput from "../../components/ValidateInputComponent.vue";
 import ValidateInput from "../../../components/ValidateInputComponent.vue";
 export default {
     name: "SubjectForm",
@@ -44,7 +43,7 @@ export default {
         SubjectInfo: {},
         errors: [],
         loading: false,
-        errors: {},
+        // errors: {},
     }),
     methods: {
         updateSubject(data) {
