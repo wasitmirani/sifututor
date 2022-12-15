@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :desserts="desserts" v-on:deleteItem="deleteItem($event)" />
+            <DataTable :headers="headers" :desserts="desserts" :studentList="studentList" v-on:deleteItem="deleteItem($event)" />
         </div>
     </div>
 </template>
@@ -65,8 +65,22 @@ export default {
                 "slug": "Mohamad",
             }
         ],
+        page_num: 1,
+        loading: false,
+        query: "",
+        studentList: [],
     }),
     methods: {
+        getStudent(page = 1) {
+            this.loading = true;
+            this.page_num = page;
+            axios.get('/student?page=' + page + '&query=' + this.query).then((res) => {
+                this.studentList = res.data.students;
+                this.loading = false;
+            }).catch((err) => {
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            });
+        },
         isQuery(query) {
             return (this.query = query);
         },
@@ -87,17 +101,18 @@ export default {
             //     confirmButtonText: "Yes, delete it!",
             // }).then((result) => {
             //     if (result.isConfirmed) {
-            // axios.delete(`/subject/${item.id}`).then((res) => {
-            //     this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
-            //     this.getSubjects();
-            // }).catch((err) => {
-            //     this.$root.alertNotify(err.response.status, null, "error", err.response.data);
-            // });
+            axios.delete(`/student/${item.id}`).then((res) => {
+                this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+                this.getSubjects();
+            }).catch((err) => {
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            });
             //     }
             // });
         },
     },
     mounted() {
+        this.getStudent();
     }
 }
 </script>

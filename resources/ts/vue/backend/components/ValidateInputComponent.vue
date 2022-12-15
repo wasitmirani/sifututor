@@ -16,6 +16,9 @@
               return value[0];
           }
       }
+    },
+    mounted(){
+      // console.log('errors', errors);
     }
   };
   </script>
