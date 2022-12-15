@@ -125,6 +125,7 @@ class HelperComponent
                 ]
 
             ],
+            setSingleLink("Chart of Accounts", "ti-settings", "chart-account-view", "/chart-account"),
 
             [
                 "heading" => "Tools",

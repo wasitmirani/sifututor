@@ -42,6 +42,7 @@ export default {
         page_num: 1,
         loading: false,
         query: "",
+        customertList:[],
     }),
     methods: {
         getCustomers(page = 1) {

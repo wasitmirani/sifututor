@@ -22,7 +22,8 @@ function setSingleLink($title,$icon,$v_can=null,$v_route=null, $prefix="/portal"
         'type'=> 'single_link',
         "icon"=>$icon,
         "can"=>$v_can,
-        "route"=>$prefix.$v_route,
+        // "route"=>$prefix.$v_route,
+        "route" => $v_route
     ];
 }
 function singleImgUpload($request, $path)

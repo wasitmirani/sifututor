@@ -17,9 +17,9 @@ export default {
         slug: "",
     }),
     methods: {
-        getClient(id) {
-            axios.get('/subject/' + id).then((res) => {
-                this.form = res.data.subject;
+        getCustomer(id) {
+            axios.get('/customer/' + id).then((res) => {
+                this.form = res.data.customer;
                 this.edit_mode = true;
             }).catch((err) => {
                 this.errors = err.response.data;
@@ -30,7 +30,7 @@ export default {
     },
     mounted() {
         this.slug = this.$route.params.slug;
-        this.getClient(this.$route.params.id);
+        this.getCustomer(this.$route.params.id);
     }
 }
 </script>

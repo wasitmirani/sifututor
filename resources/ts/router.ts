@@ -39,6 +39,9 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/job-ticket/ticket-list/create','ticket-list-create','job-ticket/ticket-list/CreateTicketList'),
     setRoute('/job-ticket/ticket-list/edit/:slug/:id','ticket-list-edit','job-ticket/ticket-list/EditTicketList'),
     setRoute('/job-ticket/tutor-application','tutor-application-list-view','job-ticket/tutor-application/TutorApplication'),
+    setRoute('/chart-account','chart-account-view','chart-account/ChartAccount'),
+    setRoute('/chart-account/create','chart-account-create','chart-account/CreateChartAccount'),
+    setRoute('/chart-account/edit/:slug/:id','chart-account-edit','chart-account/EditChartAccount'),
 
 
 

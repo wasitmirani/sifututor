@@ -1,15 +1,19 @@
 <template>
     <div class="card mb-4">
-        <form class="card-body"  v-on:submit.prevent="onSubmit">
+        <form class="card-body" v-on:submit.prevent="onSubmit">
             <div class="row g-3 mb-4">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Register Date">Register Date</label>
-                    <input type="date" v-model="submitData.register_date" id="multicol-Register Date" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'register_date')}`" placeholder="Register Date" />
+                    <input type="date" v-model="submitData.register_date" id="multicol-Register Date"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'register_date')}`"
+                        placeholder="Register Date" />
                     <validate-input :errors="errors?.errors" value="register_date"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-AdmininCharge">Admin in Charge</label>
-                    <select id="multicol-AdmininCharge" :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'admin_charge')}`" data-allow-clear="true" v-model="submitData.admin_charge" >
+                    <select id="multicol-AdmininCharge"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'admin_charge')}`"
+                        data-allow-clear="true" v-model="submitData.admin_charge">
                         <option value="45"> Sorfina</option>
                         <option value="8">Fazira</option>
                         <option value="77">ADIB AZMI</option>
@@ -135,12 +139,16 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-FullName">FullName</label>
-                    <input type="text" id="multicol-FullName" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.full_name')}`" placeholder="FullName" v-model="customer.full_name" />
-                    <validate-input :errors="errors?.errors" value="customer.full_name"></validate-input>
+                    <input type="text" id="multicol-FullName"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.full_name')}`"
+                        placeholder="FullName" v-model="customer.full_name" />
+                    <validate-input :errors="errors?.errors" value="full_name"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Gender">Gender</label>
-                    <select id="multicol-Gender" :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.gender')}`" data-allow-clear="true" v-model="customer.gender">
+                    <select id="multicol-Gender"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.gender')}`"
+                        data-allow-clear="true" v-model="customer.gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -148,30 +156,40 @@
                 </div>
                 <div class="col-md-6"><label class="form-label" for="multicol-email">Email</label>
                     <div class="input-group input-group-merge">
-                        <input type="email" id="multicol-email" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.email')}`" placeholder="john.doe" aria-label="john.doe" v-model="customer.email"
+                        <input type="email" id="multicol-email"
+                            :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.email')}`"
+                            placeholder="john.doe" aria-label="john.doe" v-model="customer.email"
                             aria-describedby="multicol-email2"><span class="input-group-text"
-                            id="multicol-email2">@example.com</span></div>
-                            <validate-input :errors="errors?.errors" value="email"></validate-input>
+                            id="multicol-email2">@example.com</span>
+                    </div>
+                    <validate-input :errors="errors?.errors" value="email"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Phone-No">Phone No</label>
-                    <input type="number" id="multicol-Phone-No" v-model="customer.phone" placeholder="Phone No" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.phone')}`" />
-                    <validate-input :errors="errors?.errors" value="customer.phone"></validate-input>
+                    <input type="number" id="multicol-Phone-No" v-model="customer.phone" placeholder="Phone No"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.phone')}`" />
+                    <validate-input :errors="errors?.errors" value="phone"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Fullname">Age</label>
-                    <input type="number" id="multicol-Age" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.age')}`" placeholder="Age"  v-model="customer.age"  />
-                    <validate-input :errors="errors?.errors" value="customer.age"></validate-input>
+                    <input type="number" id="multicol-Age"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.age')}`"
+                        placeholder="Age" v-model="customer.age" />
+                    <validate-input :errors="errors?.errors" value="age"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Dob">Date of Birth</label>
-                    <input type="date" id="multicol-Dob" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.dob')}`" placeholder="Dob"  v-model="customer.dob"/>
-                    <validate-input :errors="errors?.errors" value="customer.dob"></validate-input>
+                    <input type="date" id="multicol-Dob"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.dob')}`"
+                        placeholder="Dob" v-model="customer.dob" />
+                    <validate-input :errors="errors?.errors" value="dob"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Nric">Nric</label>
-                    <input type="text" id="multicol-Nric" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.nric')}`" placeholder="Nric"   v-model="customer.nric"/>
-                    <validate-input :errors="errors?.errors" value="customer.nric"></validate-input>
+                    <input type="text" id="multicol-Nric"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.nric')}`"
+                        placeholder="Nric" v-model="customer.nric" />
+                    <validate-input :errors="errors?.errors" value="nric"></validate-input>
                 </div>
             </div>
             <hr class="my-4 mx-n4" />
@@ -179,19 +197,23 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-StreetAddress1">Street Address 1</label>
-                    <input type="text" id="multicol-StreetAddress1" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.street_address_1')}`"
-                        placeholder="Street Address 1"  v-model="customer.address.street_address_1"/>
-                        <validate-input :errors="errors?.errors" value="customer.address.street_address_1"></validate-input>
+                    <input type="text" id="multicol-StreetAddress1"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.street_address_1')}`"
+                        placeholder="Street Address 1" v-model="customer.address.street_address_1" />
+                    <validate-input :errors="errors?.errors" value="street_address_1"></validate-input>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="multicol-StreetAddress2">Street Address 1</label>
-                    <input type="text" id="multicol-StreetAddress2" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.street_address_2')}`" v-model="customer.address.street_address_2"
-                        placeholder="Street Address 2" />
-                        <validate-input :errors="errors?.errors" value="customer.address.street_address_2"></validate-input>
+                    <label class="form-label" for="multicol-StreetAddress2">Street Address 2</label>
+                    <input type="text" id="multicol-StreetAddress2"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.street_address_2')}`"
+                        v-model="customer.address.street_address_2" placeholder="Street Address 2" />
+                    <validate-input :errors="errors?.errors" value="street_address_2"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-State">State</label>
-                    <select id="multicol-State" :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.address.state')}`" data-allow-clear="true" v-model="customer.address.state">
+                    <select id="multicol-State"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.address.state')}`"
+                        data-allow-clear="true" v-model="customer.address.state">
                         <option value="">Select</option>
                         <option>Selangor</option>
                         <option>Penang</option>
@@ -209,11 +231,13 @@
                         <option>Sabah</option>
                         <option>Putrajaya</option>
                     </select>
-                    <validate-input :errors="errors?.errors" value="customer.address.state"></validate-input>
+                    <validate-input :errors="errors?.errors" value="state"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-City">City</label>
-                    <select id="multicol-State" :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.address.city')}`" data-allow-clear="true" v-model="customer.address.city">
+                    <select id="multicol-State"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.address.city')}`"
+                        data-allow-clear="true" v-model="customer.address.city">
                         <option>Pulau Indah</option>
                         <option>Pulau Ketam</option>
                         <option>Puncak Alam</option>
@@ -239,8 +263,10 @@
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-PostCode">PostCode</label>
-                    <input type="text" id="multicol-PostCode" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.post_code')}`" placeholder="PostCode" v-model="customer.address.post_code" />
-                    <validate-input :errors="errors?.errors" value="customer.address.post_code"></validate-input>
+                    <input type="text" id="multicol-PostCode"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.post_code')}`"
+                        placeholder="PostCode" v-model="customer.address.post_code" />
+                    <validate-input :errors="errors?.errors" value="post_code"></validate-input>
                 </div>
             </div>
             <hr class="my-4 mx-n4" />
@@ -250,18 +276,23 @@
                     registration.</small>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-PaymentAttachment">Payment Attachment</label>
-                    <input type="file" id="multicol-PaymentAttachment"  :v-model="submitData.payment_attachment" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'payment_attachment')}`"
+                    <input type="file" id="multicol-PaymentAttachment" @change="previewFiles"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'payment_attachment')}`"
                         placeholder="Payment Attachment" />
-                        <validate-input :errors="errors?.errors" value="payment_attachment"></validate-input>
+                    <validate-input :errors="errors?.errors" value="payment_attachment"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-PaymentDate">Fee Payment Date</label>
-                    <input type="date" id="multicol-PaymentDate" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'fee_payment_date')}`" placeholder="Fee Payment Date"  v-model="submitData.fee_payment_date"  />
+                    <input type="date" id="multicol-PaymentDate"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'fee_payment_date')}`"
+                        placeholder="Fee Payment Date" v-model="submitData.fee_payment_date" />
                     <validate-input :errors="errors?.errors" value="fee_payment_date"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-ReceivingAccountId">Receiving Account</label>
-                    <select id="multicol-ReceivingAccountId" :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'receiving_account')}`" data-allow-clear="true" v-model="submitData.receiving_account">
+                    <select id="multicol-ReceivingAccountId"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'receiving_account')}`"
+                        data-allow-clear="true" v-model="submitData.receiving_account">
                         <option value="45">Cash In Hand</option>
                         <option value="73">Payment Gateway - BillPlz Sdn Bhd</option>
                         <option value="76">Payment Gateway - Ipay88</option>
@@ -275,13 +306,16 @@
             <div class="row g-3 mb-4">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-HourPerSubject">Hour Per Subject</label>
-                    <input type="text" id="multicol-HourPerSubject" :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'hour_per_subject')}`"
+                    <input type="text" id="multicol-HourPerSubject"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'hour_per_subject')}`"
                         placeholder="Hour Per Subject" v-model="submitData.hour_per_subject" />
-                        <validate-input :errors="errors?.errors" value="hour_per_subject"></validate-input>
+                    <validate-input :errors="errors?.errors" value="hour_per_subject"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-SubscriptionDurationTerm">Subscription Duration Term</label>
-                    <select id="multicol-SubscriptionDurationTerm"  :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'subscription_duration')}`" data-allow-clear="true" v-model="submitData.subscription_duration">
+                    <select id="multicol-SubscriptionDurationTerm"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'subscription_duration')}`"
+                        data-allow-clear="true" v-model="submitData.subscription_duration">
                         <option>Short Term</option>
                         <option>Long Term</option>
                     </select>
@@ -311,6 +345,7 @@ import ValidateInput from "../../../components/ValidateInputComponent.vue";
 import Multiselect from 'vue-multiselect';
 export default {
     name: "StudentListForm",
+    props: ['edit_mode', 'form'],
     components: { Multiselect, ValidateInput },
     data: () => ({
         studentInfo: [{
@@ -326,11 +361,16 @@ export default {
         subjects: [],
         submitData: {},
         customer: {
-            address:{},
+            address: {},
         },
         customer_address: {},
+        payment_attachment: [],
     }),
     methods: {
+        previewFiles(event) {
+            this.payment_attachment = event.target.files
+            // payment_attachment
+        },
         addStudent() {
             this.studentInfo.push({
                 fullname: "",
@@ -365,7 +405,7 @@ export default {
         },
         updateStudent(data) {
             axios.put('/student/' + this.submitData.id, data).then((res) => {
-                this.$router.push('/studrnts/student-list');
+                this.$router.push('/students/student-list');
             }).catch((err) => {
                 this.errors = err.response.data;
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -381,7 +421,7 @@ export default {
         },
         onSubmit() {
             this.loading = true;
-            let data = { ...this.submitData, customer_address: this.customer_address, customer: this.customer, students : this.stdInfo, subjects: this.subjects};
+            let data = { ...this.submitData, customer_address: this.customer_address, customer: this.customer, students: this.stdInfo, subjects: this.subjects };
             if (!this.edit_mode) {
                 this.createStudent(data);
             } else {
@@ -398,6 +438,11 @@ export default {
         if (this.edit_mode) {
             this.submitData = [];
             this.submitData = this.form;
+            this.subjects = this.form?.subjects;
+            this.customer = this.form?.customer;
+            this.studentInfo = this.form?.students
+            this.stdInfo = this.form?.students;
+            // console.log('this.submitData', this.submitData);
         }
     }
 }

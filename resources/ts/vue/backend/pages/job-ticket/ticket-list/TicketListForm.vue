@@ -328,15 +328,15 @@
             <hr class="my-4 mx-n4" />
             <h6>Subject Subscribes</h6>
             <div class="row g-3 mb-3" v-for="(item, index) in SubjectSubscribe" :key="index">
-                <div class="col-md-2 col-sm-12">
+                <div class="mb-3 col-lg-6 col-xl-3 col-12 mb-0">
                     <label class="form-label" for="multicol-Subject">Subject</label>
                     <input type="text" id="multicol-Subject" class="form-control" placeholder="Subject" />
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div class="mb-3 col-lg-6 col-xl-3 col-12 mb-0">
                     <label class="form-label" for="multicol-Quantity">Quantity</label>
                     <input type="number" id="multicol-Quantity" class="form-control" placeholder="Quantity" min="0" />
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div class="mb-3 col-lg-6 col-xl-2 col-12 mb-0">
                     <label class="form-label" for="multicol-Day">Day</label>
                     <select id="multicol-Day" class="select2 form-select" data-allow-clear="true">
                         <option value="Monday">Monday</option>
@@ -348,12 +348,12 @@
                         <option value="Weekend">Weekend</option>
                     </select>
                 </div>
-                <div class="col-md-3 col-sm-12">
+                <div class="mb-3 col-lg-6 col-xl-2 col-12 mb-0">
                     <label class="form-label" for="multicol-Time">Time (24hrs format)</label>
                     <input type="daye" id="multicol-Time" class="form-control" placeholder="Subject" />
                 </div>
-                <div class="col-md-3 col-sm-12 align-self-end text-end" v-if="index !== 0">
-                    <button type="button" class="btn btn-danger" @click="removeSubjectSubscription(index)"> <i
+                <div class="mb-3 col-lg-12 col-xl-2 col-12 d-flex align-items-center mb-0" v-if="index !== 0">
+                    <button type="button" class="btn btn-label-danger mt-4 waves-effect" @click="removeSubjectSubscription(index)"> <i
                             class="fa-solid fa-trash me-2"></i> Remove Item </button>
                 </div>
             </div>
@@ -452,8 +452,9 @@ export default {
         getStudent() {
             axios.get('/student-list').then((res) => {
                 this.studentList = res.data.students.map((item) => {
-                    return { id: item.id, name: item.name }
+                    return { id: item.fullname.ubstring(0, 2) + Math.floor((Math.random() * 10000000)), name: item.fullname }
                 });
+
             }).catch((err) => {
                 this.errors = err.response.data;
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);

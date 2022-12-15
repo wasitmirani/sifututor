@@ -18,13 +18,14 @@ export default {
     }),
     methods:{
         getStudent(id) {
-            axios.get('/subject/' + id).then((res) => {
-                this.form = res.data.subject;
+            axios.get('/student/' + id).then((res) => {
+                // console.log('res', res.data.student);
+                this.form = res.data.student;
                 this.edit_mode = true;
             }).catch((err) => {
                 this.errors = err.response.data;
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
-                this.$router.push('/subject/subject-list');
+                this.$router.push('/students/student-list');
             });
         }
     },

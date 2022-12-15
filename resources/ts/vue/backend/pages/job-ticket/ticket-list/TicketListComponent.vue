@@ -13,7 +13,7 @@
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/subject?page=' + this.page_num"
-                        v-on:query="isQuery($event)" v-on:loading="loadingStart($event)" v-on:reload="getStudents()"
+                        v-on:query="isQuery($event)" v-on:loading="loadingStart($event)" v-on:reload="getTickets()"
                         v-on:filterData="filterData($event)">
                     </search-box>
                 </div>
@@ -69,10 +69,10 @@ export default {
         ticketList: [],
     }),
     methods: {
-        getSubjects(page = 1) {
+        getTickets(page = 1) {
             this.loading = true;
             this.page_num = page;
-            axios.get('/subject?page=' + page + '&query=' + this.query).then((res) => {
+            axios.get('/tickets?page=' + page + '&query=' + this.query).then((res) => {
                 this.ticketList = res.data.subjects;
                 this.loading = false;
             }).catch((err) => {
@@ -99,9 +99,9 @@ export default {
             //     confirmButtonText: "Yes, delete it!",
             // }).then((result) => {
             //     if (result.isConfirmed) {
-            axios.delete(`/subject/${item.id}`).then((res) => {
+            axios.delete(`/tickets/${item.id}`).then((res) => {
                 this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
-                this.getSubjects();
+                this.getTickets();
             }).catch((err) => {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
             });
@@ -110,7 +110,7 @@ export default {
         },
     },
     mounted() {
-        // this.getSubjects();
+        this.getTickets();
     }
 }
 </script>

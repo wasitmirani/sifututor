@@ -11,8 +11,8 @@
                 <tr v-for="(item, index) in customertList?.data" :key="index">
                     <td> {{ item.id ?? "N/A" }}</td>
                     <td> {{ item.customer_id ?? "N/A" }}</td>
-                    <td> {{ item.fullname ?? "N/A" }}</td>
-                    <td> {{ item.phone_number ?? "N/A" }}</td>
+                    <td> {{ item.full_name ?? "N/A" }}</td>
+                    <td> {{ item.phone ?? "N/A" }}</td>
                     <td> {{ item.email ?? "N/A" }}</td>
                     <td> <span class="badge bg-label-primary me-1">{{ item.status ?? "N/A" }}</span></td>
                     <td>
@@ -20,7 +20,7 @@
                             <i class="fa-solid fa-eye"> </i>
                         </router-link>-->
                         <div class="d-flex align-items-center">
-                            <router-link :to="`/students/customer-list/edit/${item.slug}/${item.id}`"
+                            <router-link :to="`/students/customer-list/edit/${item.slug}/${item.uid}`"
                                 class="text-body"><i class="ti ti-edit ti-sm me-2 text-primary"></i></router-link> |
                             <a role="button" @click="deleteItem(item)" class="text-body delete-record"><i
                                     class="ti ti-trash ti-sm mx-2 text-danger"></i></a>
