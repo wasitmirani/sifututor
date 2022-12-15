@@ -27,7 +27,10 @@ class StudentController extends Controller
 
         return response()->json(['status' => true, 'students' => $students]);
     }
-
+    public function getStudentList(Request $request){
+        $students = Student::latest()->get();
+        return response()->json(['status' => true,'students' => $students]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -64,6 +67,7 @@ class StudentController extends Controller
             'customer.gender'=>'required',
             'customer.nric' =>'required',
             'subjects'=>'array',
+            'students' =>'array',
         ]);
         if ($request->hasfile('payment_attachment')) {
             $name=Str::random(20);
@@ -79,6 +83,7 @@ class StudentController extends Controller
 
 try {
 
+  
     $student = Student::create([
         'register_date'=>$request->register_date,
         'admin_charge'=>$request->admin_charge,
@@ -91,6 +96,7 @@ try {
         'hour_per_subject'=>$request->hour_per_subject,
         'subscription_duration'=>$request->subscription_duration,
         'subjects'=>$request->subjects,
+        'students'=>$request->students,
     ]);
             $customer =(object) $request->customer;
 

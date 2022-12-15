@@ -35,6 +35,7 @@ Route::resource('subject', SubjectController::class);
 Route::get('/subject-list',[SubjectController::class,'getSubjectList']);
 Route::resource('student', StudentController::class);
 Route::resource('customer', CustomerController::class);
+Route::get('/student-list', [StudentController::class, 'getStudentList']);
 
 
 
