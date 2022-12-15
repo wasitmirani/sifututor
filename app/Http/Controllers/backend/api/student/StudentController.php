@@ -28,7 +28,9 @@ class StudentController extends Controller
         return response()->json(['status' => true, 'students' => $students]);
     }
     public function getStudentList(Request $request){
-        $students = Student::latest()->get();
+        $students = Student::latest()->get()->pluck('students')->all();
+        $students= array_filter( $students);
+        $students = collect($students)->collapse();
         return response()->json(['status' => true,'students' => $students]);
     }
     /**
@@ -83,7 +85,7 @@ class StudentController extends Controller
 
 try {
 
-  
+
     $student = Student::create([
         'register_date'=>$request->register_date,
         'admin_charge'=>$request->admin_charge,
