@@ -220,7 +220,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.query = query;
     },
     filterData: function filterData(data) {
-      this.subjectList = data.subjects;
+      this.accountList = data.accounts;
     },
     loadingStart: function loadingStart(value) {
       this.loading = value;
@@ -241,14 +241,14 @@ __webpack_require__.r(__webpack_exports__);
       axios["delete"]("/account/".concat(item.id)).then(function (res) {
         _this2.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
 
-        _this2.getSubjects();
+        _this2.getAccount();
       })["catch"](function (err) {
         _this2.$root.alertNotify(err.response.status, null, "error", err.response.data);
       }); //     }
       // });
     }
   },
-  mounted: function mounted() {// this.getSubjects();
+  mounted: function mounted() {// this.getAccount();
   }
 });
 

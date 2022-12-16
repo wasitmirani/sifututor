@@ -1,8 +1,7 @@
 <template>
     <div class="table-responsive text-nowrap">
         <table class="table">
-            <caption class="ms-4">Tutor List
-            </caption>
+            <caption class="ms-4">Tutor Application</caption>
             <thead>
                 <tr>
                     <th v-for="(head, index) in headers" :key="index"> {{ head.text }} </th>

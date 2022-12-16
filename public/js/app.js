@@ -20033,7 +20033,7 @@ var routes = [{
   redirect: {
     name: 'dashboard'
   }
-}, setRoute('/:catchAll(.*)', '404', 'error/404'), setRoute('/dashboard/overview', 'dashboard', 'dashboard/Dashboard'), setRoute('/students/customer-list', 'customer-list-view', 'student/customer-list/CustomerList'), setRoute('/students/customer-list/edit/:slug/:id', 'customer-list-edit', 'student/customer-list/EditCustomerList'), setRoute('/students/student-list', 'student-list-view', 'student/student-list/StudentList'), setRoute('/students/student-list/create', 'student-list-create', 'student/student-list/CreateStudentList'), setRoute('/students/student-list/edit/:slug/:id', 'student-list-edit', 'student/student-list/EditStudentList'), setRoute('/students/student-assignments', 'student-assignments-view', 'student/student-assignment/StudentAssignment'), setRoute('/subject/subject-list', 'subject-list-view', 'student/subject-list/SubjectList'), setRoute('/subject/subject-list/create', 'subject-list-create', 'student/subject-list/CreateSubject'), setRoute('/subject/subject-list/edit/:slug/:id', 'subject-list-edit', 'student/subject-list/EditSubject'), setRoute('/job-ticket/ticket-list', 'ticket-list-view', 'job-ticket/ticket-list/TicketList'), setRoute('/job-ticket/ticket-list/create', 'ticket-list-create', 'job-ticket/ticket-list/CreateTicketList'), setRoute('/job-ticket/ticket-list/edit/:slug/:id', 'ticket-list-edit', 'job-ticket/ticket-list/EditTicketList'), setRoute('/job-ticket/tutor-application', 'tutor-application-list-view', 'job-ticket/tutor-application/TutorApplication'), setRoute('/chart-account', 'chart-account-view', 'chart-account/ChartAccount'), setRoute('/chart-account/create', 'chart-account-create', 'chart-account/CreateChartAccount'), setRoute('/chart-account/edit/:slug/:id', 'chart-account-edit', 'chart-account/EditChartAccount')];
+}, setRoute('/:catchAll(.*)', '404', 'error/404'), setRoute('/dashboard/overview', 'dashboard', 'dashboard/Dashboard'), setRoute('/students/customer-list', 'customer-list-view', 'student/customer-list/CustomerList'), setRoute('/students/customer-list/edit/:slug/:id', 'customer-list-edit', 'student/customer-list/EditCustomerList'), setRoute('/students/student-list', 'student-list-view', 'student/student-list/StudentList'), setRoute('/students/student-list/create', 'student-list-create', 'student/student-list/CreateStudentList'), setRoute('/students/student-list/edit/:slug/:id', 'student-list-edit', 'student/student-list/EditStudentList'), setRoute('/students/student-assignments', 'student-assignments-view', 'student/student-assignment/StudentAssignment'), setRoute('/subject/subject-list', 'subject-list-view', 'student/subject-list/SubjectList'), setRoute('/subject/subject-list/create', 'subject-list-create', 'student/subject-list/CreateSubject'), setRoute('/subject/subject-list/edit/:slug/:id', 'subject-list-edit', 'student/subject-list/EditSubject'), setRoute('/job-ticket/ticket-list', 'ticket-list-view', 'job-ticket/ticket-list/TicketList'), setRoute('/job-ticket/ticket-list/create', 'ticket-list-create', 'job-ticket/ticket-list/CreateTicketList'), setRoute('/job-ticket/ticket-list/edit/:slug/:id', 'ticket-list-edit', 'job-ticket/ticket-list/EditTicketList'), setRoute('/job-ticket/tutor-application', 'tutor-application-list-view', 'job-ticket/tutor-application/TutorApplication'), setRoute('/chart-account', 'chart-account-view', 'chart-account/ChartAccount'), setRoute('/chart-account/create', 'chart-account-create', 'chart-account/CreateChartAccount'), setRoute('/chart-account/edit/:slug/:id', 'chart-account-edit', 'chart-account/EditChartAccount'), setRoute('/products/product-list', 'product-list-view', 'products/ProductList'), setRoute('/products/product-list/create', 'product-list-create', 'products/CreateProductList'), setRoute('/products/product-list/edit/:slug/:id', 'product-list-edit', 'products/EditProductList'), setRoute('/staff/staff-list', 'staff-list-view', 'staff/staff-list/StaffList'), setRoute('/staff/staff-list/create', 'staff-list-create', 'staff/staff-list/CreateStaffList'), setRoute('/staff/staff-list/edit/:slug/:id', 'staff-list-edit', 'staff/staff-list/EditStaffList'), setRoute('/staff/staff-payment-list', 'staff-payments-view', 'staff/staff-payment/StaffPayment'), setRoute('/staff/staff-payment-list/create', 'staff-payments-create', 'staff/staff-payment/CreateStaffPayment'), setRoute('/staff/staff-payment-list/edit/:slug/:id', 'staff-payments-edit', 'staff/staff-payment/EditStaffPayment'), setRoute('/staff/staff-payment/view-payment-slip/:slug/:id', 'staff-payments-slip-view', 'staff/staff-payment/ViewPaymentSlip'), setRoute('/staff/pic-commission-list', 'pic-commission-view', 'staff/pic-commission/PicCommission'), setRoute('/staff/pic-commission/view-commission-breakdown/:slug/:id', 'commission-breakdown-view', 'staff/pic-commission/commission-breakdown/CommissionBreakDown')];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(),
   routes: routes,
@@ -64120,6 +64120,54 @@ var map = {
 		"./resources/ts/vue/backend/pages/job-ticket/tutor-application/TutorApplicationComponent.vue",
 		"resources_ts_vue_backend_pages_job-ticket_tutor-application_TutorApplicationComponent_vue"
 	],
+	"./products/CreateProductListComponent.vue": [
+		"./resources/ts/vue/backend/pages/products/CreateProductListComponent.vue",
+		"resources_ts_vue_backend_pages_products_CreateProductListComponent_vue"
+	],
+	"./products/EditProductListComponent.vue": [
+		"./resources/ts/vue/backend/pages/products/EditProductListComponent.vue",
+		"resources_ts_vue_backend_pages_products_EditProductListComponent_vue"
+	],
+	"./products/ProductListComponent.vue": [
+		"./resources/ts/vue/backend/pages/products/ProductListComponent.vue",
+		"resources_ts_vue_backend_pages_products_ProductListComponent_vue"
+	],
+	"./staff/pic-commission/PicCommissionComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/pic-commission/PicCommissionComponent.vue",
+		"resources_ts_vue_backend_pages_staff_pic-commission_PicCommissionComponent_vue"
+	],
+	"./staff/pic-commission/commission-breakdown/CommissionBreakDownComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/pic-commission/commission-breakdown/CommissionBreakDownComponent.vue",
+		"resources_ts_vue_backend_pages_staff_pic-commission_commission-breakdown_CommissionBreakDownC-dc57f5"
+	],
+	"./staff/staff-list/CreateStaffListComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/staff-list/CreateStaffListComponent.vue",
+		"resources_ts_vue_backend_pages_staff_staff-list_CreateStaffListComponent_vue"
+	],
+	"./staff/staff-list/EditStaffListComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/staff-list/EditStaffListComponent.vue",
+		"resources_ts_vue_backend_pages_staff_staff-list_EditStaffListComponent_vue"
+	],
+	"./staff/staff-list/StaffListComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/staff-list/StaffListComponent.vue",
+		"resources_ts_vue_backend_pages_staff_staff-list_StaffListComponent_vue"
+	],
+	"./staff/staff-payment/CreateStaffPaymentComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/staff-payment/CreateStaffPaymentComponent.vue",
+		"resources_ts_vue_backend_pages_staff_staff-payment_CreateStaffPaymentComponent_vue"
+	],
+	"./staff/staff-payment/EditStaffPaymentComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/staff-payment/EditStaffPaymentComponent.vue",
+		"resources_ts_vue_backend_pages_staff_staff-payment_EditStaffPaymentComponent_vue"
+	],
+	"./staff/staff-payment/StaffPaymentComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/staff-payment/StaffPaymentComponent.vue",
+		"resources_ts_vue_backend_pages_staff_staff-payment_StaffPaymentComponent_vue"
+	],
+	"./staff/staff-payment/ViewPaymentSlipComponent.vue": [
+		"./resources/ts/vue/backend/pages/staff/staff-payment/ViewPaymentSlipComponent.vue",
+		"resources_ts_vue_backend_pages_staff_staff-payment_ViewPaymentSlipComponent_vue"
+	],
 	"./student/customer-list/CustomerListComponent.vue": [
 		"./resources/ts/vue/backend/pages/student/customer-list/CustomerListComponent.vue",
 		"resources_ts_vue_backend_pages_student_customer-list_CustomerListComponent_vue"
@@ -64299,7 +64347,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_ts_vue_backend_pages_chart-account_ChartAccountComponent_vue":1,"resources_ts_vue_backend_pages_chart-account_CreateChartAccountComponent_vue":1,"resources_ts_vue_backend_pages_chart-account_EditChartAccountComponent_vue":1,"resources_ts_vue_backend_pages_dashboard_DashboardComponent_vue":1,"resources_ts_vue_backend_pages_job-ticket_ticket-list_CreateTicketListComponent_vue":1,"resources_ts_vue_backend_pages_job-ticket_ticket-list_EditTicketListComponent_vue":1,"resources_ts_vue_backend_pages_job-ticket_ticket-list_TicketListComponent_vue":1,"resources_ts_vue_backend_pages_job-ticket_tutor-application_TutorApplicationComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_CustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_EditCustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-assignment_StudentAssignmentComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_CreateStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_EditStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_StudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_CreateSubjectComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_EditSubjectComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_SubjectListComponent_vue":1,"resources_ts_vue_backend_pages_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_ts_vue_backend_pages_chart-account_ChartAccountComponent_vue":1,"resources_ts_vue_backend_pages_chart-account_CreateChartAccountComponent_vue":1,"resources_ts_vue_backend_pages_chart-account_EditChartAccountComponent_vue":1,"resources_ts_vue_backend_pages_dashboard_DashboardComponent_vue":1,"resources_ts_vue_backend_pages_job-ticket_ticket-list_CreateTicketListComponent_vue":1,"resources_ts_vue_backend_pages_job-ticket_ticket-list_EditTicketListComponent_vue":1,"resources_ts_vue_backend_pages_job-ticket_ticket-list_TicketListComponent_vue":1,"resources_ts_vue_backend_pages_job-ticket_tutor-application_TutorApplicationComponent_vue":1,"resources_ts_vue_backend_pages_products_CreateProductListComponent_vue":1,"resources_ts_vue_backend_pages_products_EditProductListComponent_vue":1,"resources_ts_vue_backend_pages_products_ProductListComponent_vue":1,"resources_ts_vue_backend_pages_staff_pic-commission_PicCommissionComponent_vue":1,"resources_ts_vue_backend_pages_staff_pic-commission_commission-breakdown_CommissionBreakDownC-dc57f5":1,"resources_ts_vue_backend_pages_staff_staff-list_CreateStaffListComponent_vue":1,"resources_ts_vue_backend_pages_staff_staff-list_EditStaffListComponent_vue":1,"resources_ts_vue_backend_pages_staff_staff-list_StaffListComponent_vue":1,"resources_ts_vue_backend_pages_staff_staff-payment_CreateStaffPaymentComponent_vue":1,"resources_ts_vue_backend_pages_staff_staff-payment_EditStaffPaymentComponent_vue":1,"resources_ts_vue_backend_pages_staff_staff-payment_StaffPaymentComponent_vue":1,"resources_ts_vue_backend_pages_staff_staff-payment_ViewPaymentSlipComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_CustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_customer-list_EditCustomerListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-assignment_StudentAssignmentComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_CreateStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_EditStudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_student-list_StudentListComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_CreateSubjectComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_EditSubjectComponent_vue":1,"resources_ts_vue_backend_pages_student_subject-list_SubjectListComponent_vue":1,"resources_ts_vue_backend_pages_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -42,6 +42,19 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/chart-account','chart-account-view','chart-account/ChartAccount'),
     setRoute('/chart-account/create','chart-account-create','chart-account/CreateChartAccount'),
     setRoute('/chart-account/edit/:slug/:id','chart-account-edit','chart-account/EditChartAccount'),
+    setRoute('/products/product-list','product-list-view','products/ProductList'),
+    setRoute('/products/product-list/create','product-list-create','products/CreateProductList'),
+    setRoute('/products/product-list/edit/:slug/:id','product-list-edit','products/EditProductList'),
+    setRoute('/staff/staff-list','staff-list-view','staff/staff-list/StaffList'),
+    setRoute('/staff/staff-list/create','staff-list-create','staff/staff-list/CreateStaffList'),
+    setRoute('/staff/staff-list/edit/:slug/:id','staff-list-edit','staff/staff-list/EditStaffList'),
+    setRoute('/staff/staff-payment-list','staff-payments-view','staff/staff-payment/StaffPayment'),
+    setRoute('/staff/staff-payment-list/create','staff-payments-create','staff/staff-payment/CreateStaffPayment'),
+    setRoute('/staff/staff-payment-list/edit/:slug/:id','staff-payments-edit','staff/staff-payment/EditStaffPayment'),
+    setRoute('/staff/staff-payment/view-payment-slip/:slug/:id','staff-payments-slip-view','staff/staff-payment/ViewPaymentSlip'),
+    setRoute('/staff/pic-commission-list','pic-commission-view','staff/pic-commission/PicCommission'),
+    setRoute('/staff/pic-commission/view-commission-breakdown/:slug/:id','commission-breakdown-view','staff/pic-commission/commission-breakdown/CommissionBreakDown'),
+
 
 
 

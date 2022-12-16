@@ -1,7 +1,7 @@
 <template>
     <div class="table-responsive text-nowrap">
         <table class="table">
-            <caption class="ms-4">Student Assigment</caption>
+            <caption class="ms-4">Commsion BreakDown</caption>
             <thead>
                 <tr>
                     <th v-for="(head, index) in headers" :key="index"> {{ head.text }} </th>
@@ -9,12 +9,12 @@
             </thead>
             <tbody>
                 <tr v-for="(item, index) in desserts" :key="index">
-                    <td> {{ item.id ?? "N/A" }}</td>
-                    <td> {{ item.student_id ?? "N/A" }}</td>
-                    <td> {{ item.fullname ?? "N/A" }}</td>
-                    <td> {{ item.staff_in_charge ?? "N/A" }}</td>
-                    <td> {{ item.subject ?? "N/A" }}</td>
-                    <td> {{ item.tutor ?? "N/A"}}</td>
+                    <td> {{ item.invoice_no ?? "N/A" }}</td>
+                    <td> {{ item.invoice_date ?? "N/A" }}</td>
+                    <td> {{ item.payment_date ?? "N/A" }}</td>
+                    <td> {{ item.customer ?? "N/A" }} </td>
+                    <td> {{ item.total_invoice_Ammount ?? "N/A" }}</td>
+                    <td> {{ item.total_commission ?? "N/A" }}</td>
                 </tr>
             </tbody>
         </table>
@@ -25,7 +25,13 @@ export default {
     name: "DataTableComponent",
     props: ["headers", "desserts"],
     data: () => ({
+
     }),
+    methods: {
+        deleteItem(item) {
+            return this.$emit("deleteItem", item);
+        },
+    },
     mounted() {
     }
 }

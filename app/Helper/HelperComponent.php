@@ -105,6 +105,48 @@ class HelperComponent
 
             ],
             [
+                "title" => 'Staffs',
+                'can' => 'staff-dropdown',
+                "icon" => "ti-settings",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Staff List",
+                        null,
+                        "staff-list-view",
+                        "/staff/staff-list",
+                    ),
+                    setSubMenu(
+                        "Staff Payments",
+                        null,
+                        "staff-paymentt-view",
+                        "/staff/staff-payment-list",
+                    ),
+                    setSubMenu(
+                        "PIC Commission",
+                        null,
+                        "pic-commission-view",
+                        "/staff/pic-commission-list",
+                    ),
+                ]
+
+            ],
+            [
+                "title" => 'Products',
+                'can' => 'product-dropdown',
+                "icon" => "ti-settings",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Product List",
+                        null,
+                        "product-list-view",
+                        "/products/product-list",
+                    ),
+                ]
+
+            ],
+            [
                 "title" => 'Job Tickets',
                 'can' => 'job-tickets-dropdown',
                 "icon" => "ti-settings",
