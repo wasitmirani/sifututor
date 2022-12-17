@@ -54,6 +54,17 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/staff/staff-payment/view-payment-slip/:slug/:id','staff-payments-slip-view','staff/staff-payment/ViewPaymentSlip'),
     setRoute('/staff/pic-commission-list','pic-commission-view','staff/pic-commission/PicCommission'),
     setRoute('/staff/pic-commission/view-commission-breakdown/:slug/:id','commission-breakdown-view','staff/pic-commission/commission-breakdown/CommissionBreakDown'),
+    setRoute('/tutor/tutor-list','tutor-list-view','tutor/tutor-list/TutorList'),
+    setRoute('/tutor/tutor-list/create','tutor-list-create','tutor/tutor-list/CreateTutorList'),
+    setRoute('/tutor/tutor-list/edit/:slug/:id','tutor-list-edit','tutor/tutor-list/EditTutorList'),
+    setRoute('/tutor/tutor-assigment','tutor-assigment-view','tutor/tutor-assignments/TutorAssignments'),
+    setRoute('/tutor/tutor-payment','tutor-payment-view','tutor/tutor-payment/TutorPayment'),
+    setRoute('/tutor/tutor-payment/view-payment-slip/:slug/:id','tutor-payments-slip-view','tutor/tutor-payment/ViewTutorPaymentSlip'),
+
+
+
+
+
 
 
 

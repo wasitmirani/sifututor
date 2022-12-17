@@ -105,6 +105,63 @@ class HelperComponent
 
             ],
             [
+                "title" => 'Tutors',
+                'can' => 'tutor-dropdown',
+                "icon" => "ti-settings",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Tutor List",
+                        null,
+                        "tutor-list-view",
+                        "/tutor/tutor-list",
+                    ),
+                    setSubMenu(
+                        "Schedule Calander",
+                        null,
+                        "schedule-calander-view",
+                        "/tutor/schedule-calander",
+                    ),
+                    setSubMenu(
+                        "Reports",
+                        null,
+                        "reports-view",
+                        "/tutor/reports",
+                    ),
+                    setSubMenu(
+                        "Reports V2",
+                        null,
+                        "reports-v2-view",
+                        "/tutor/reports-v2",
+                    ),
+                    setSubMenu(
+                        "Tutor Assigments",
+                        null,
+                        "tutor-assigment-view",
+                        "/tutor/tutor-assigment",
+                    ),
+                    setSubMenu(
+                        "Tutor Payments",
+                        null,
+                        "tutor-payment-view",
+                        "/tutor/tutor-payment",
+                    ),
+                    setSubMenu(
+                        "Tutor Payment Journal",
+                        null,
+                        "tutor-payment-journal-view",
+                        "/tutor/tutor-payment-journal",
+                    ),
+                    setSubMenu(
+                        "Find Tutor",
+                        null,
+                        "find-tutor-view",
+                        "/tutor/find-tutor",
+                    ),
+                ]
+
+            ],
+            [
                 "title" => 'Staffs',
                 'can' => 'staff-dropdown',
                 "icon" => "ti-settings",
