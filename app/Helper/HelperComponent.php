@@ -153,10 +153,10 @@ class HelperComponent
                         "/tutor/tutor-payment-journal",
                     ),
                     setSubMenu(
-                        "Find Tutor",
+                        "Tutor Finder",
                         null,
-                        "find-tutor-view",
-                        "/tutor/find-tutor",
+                        "tutor-finder-view",
+                        "/tutor/tutor-finder",
                     ),
                 ]
 

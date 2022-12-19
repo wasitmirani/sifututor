@@ -15,7 +15,6 @@
                     <td> {{ item.account_name ?? "N/A" }}</td>
                     <td> {{ item.type ?? "N/A" }} </td>
                     <td> {{ item.description ?? "N/A" }}</td>
-                    <td> {{ $filters.DateTimeFormat(item.created_at) ?? "N/A"}}</td>
                     <td class="" style=""><div class="d-flex align-items-center">
                         <router-link :to="`/chart-account/edit/${item.slug}/${item.uid}`" class="text-body"><i class="ti ti-edit ti-sm me-2 text-primary"></i></router-link > |
                         <a role="button" @click="deleteItem(item)" class="text-body delete-record"><i class="ti ti-trash ti-sm mx-2 text-danger"></i></a>

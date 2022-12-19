@@ -60,6 +60,9 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/tutor/tutor-assigment','tutor-assigment-view','tutor/tutor-assignments/TutorAssignments'),
     setRoute('/tutor/tutor-payment','tutor-payment-view','tutor/tutor-payment/TutorPayment'),
     setRoute('/tutor/tutor-payment/view-payment-slip/:slug/:id','tutor-payments-slip-view','tutor/tutor-payment/ViewTutorPaymentSlip'),
+    setRoute('/tutor/tutor-finder','tutor-finder-view','tutor/tutor-finder/TutorFinder'),
+    setRoute('/tutor/tutor-payment-journal','tutor-payment-journal-view','tutor/tutor-payment-journal/TutorPaymentJournal'),
+
 
 
 
