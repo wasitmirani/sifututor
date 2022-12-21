@@ -62,20 +62,15 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/tutor/tutor-payment/view-payment-slip/:slug/:id','tutor-payments-slip-view','tutor/tutor-payment/ViewTutorPaymentSlip'),
     setRoute('/tutor/tutor-finder','tutor-finder-view','tutor/tutor-finder/TutorFinder'),
     setRoute('/tutor/tutor-payment-journal','tutor-payment-journal-view','tutor/tutor-payment-journal/TutorPaymentJournal'),
+    setRoute('/tutor/reports-v2','reports-v2-view','tutor/reports-v2/ReportsV2'),
+    setRoute('/tutor/tutor-reports','tutor-reports-list','tutor/reports/Reports'),
+    setRoute('/tutor/tutor-reports/create','tutor-reports-create','tutor/reports/CreateReport'),
+    setRoute('/tutor/tutor-reports/edit/:slug/:id','tutor-reports-edit','tutor/reports/EditReport'),
+    setRoute('/student-invoices/payment','student-payment-view','student-invoice/payments/Payment'),
+    setRoute('/student-invoices/payment/payment-slip/:slug/:id','student-paymentslip-view','student-invoice/payments/ViewPaymentSlip'),
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    
 ];
 
 const router = createRouter({

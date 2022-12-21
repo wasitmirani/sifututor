@@ -22,8 +22,8 @@
                     <td> <span class="badge bg-label-primary me-1"> {{ item.payment_status ?? "N/A" }}</span> </td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <router-link :to="`/staff/staff-payment-list/edit/${item.slug}/${item.uid}`" class="text-body"> <i class="ti ti-cash-banknote ti-sm me-2 text-success"></i></router-link > |
-                        <router-link :to="`/staff/staff-list/edit/${item.slug}/${item.uid}`" class="text-body"><i class="ti ti-edit ti-sm mx-2 text-primary"></i></router-link > 
+                            <router-link :to="`/`" class="text-body"> <i class="ti ti-cash-banknote ti-sm me-2 text-success"></i></router-link > |
+                        <router-link :to="`/`" class="text-body"><i class="ti ti-edit ti-sm mx-2 text-primary"></i></router-link > 
                         </div>
                     </td>
                 </tr>

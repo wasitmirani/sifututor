@@ -105,6 +105,27 @@ class HelperComponent
 
             ],
             [
+                "title" => 'Student Invoices',
+                'can' => 'students-invoices-dropdown',
+                "icon" => "ti-settings",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Invoice",
+                        null,
+                        "invocie-list-view",
+                        "/student/invoice",
+                    ),
+                    setSubMenu(
+                        "Payments",
+                        null,
+                        "payment-list-view",
+                        "/student-invoices/payment",
+                    ),
+                ]
+
+            ],
+            [
                 "title" => 'Tutors',
                 'can' => 'tutor-dropdown',
                 "icon" => "ti-settings",
@@ -116,17 +137,17 @@ class HelperComponent
                         "tutor-list-view",
                         "/tutor/tutor-list",
                     ),
-                    setSubMenu(
-                        "Schedule Calander",
-                        null,
-                        "schedule-calander-view",
-                        "/tutor/schedule-calander",
-                    ),
+                    // setSubMenu(
+                    //     "Schedule Calander",
+                    //     null,
+                    //     "schedule-calander-view",
+                    //     "/tutor/schedule-calander",
+                    // ),
                     setSubMenu(
                         "Reports",
                         null,
-                        "reports-view",
-                        "/tutor/reports",
+                        "tutor-reports-list",
+                        "/tutor/tutor-reports",
                     ),
                     setSubMenu(
                         "Reports V2",

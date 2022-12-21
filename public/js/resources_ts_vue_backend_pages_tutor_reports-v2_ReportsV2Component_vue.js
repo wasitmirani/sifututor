@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_ts_vue_backend_pages_tutor_tutor-payment-journal_TutorPaymentJournalComponent_vue"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_ts_vue_backend_pages_tutor_reports-v2_ReportsV2Component_vue"],{
 
 /***/ "./node_modules/@babel/runtime/regenerator/index.js":
 /*!**********************************************************!*\
@@ -133,10 +133,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=script&lang=js":
-/*!**************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=script&lang=js ***!
-  \**************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=script&lang=js":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -156,10 +156,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=script&lang=js":
-/*!*********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=script&lang=js ***!
-  \*********************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=script&lang=js":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=script&lang=js ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -167,14 +167,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DataTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable */ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue");
+/* harmony import */ var _DataTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable */ "./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue");
 /* harmony import */ var _components_BreadcrumbComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/BreadcrumbComponent.vue */ "./resources/ts/vue/backend/components/BreadcrumbComponent.vue");
 /* harmony import */ var _components_SearchBoxComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/SearchBoxComponent.vue */ "./resources/ts/vue/backend/components/SearchBoxComponent.vue");
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "TutorPaymentJournalComponent",
+  name: "ReportV2Component",
   components: {
     DataTable: _DataTable__WEBPACK_IMPORTED_MODULE_0__["default"],
     breadcrumb: _components_BreadcrumbComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -191,32 +191,20 @@ __webpack_require__.r(__webpack_exports__);
         text: 'Tutor Id',
         value: 'Tutor Id'
       }, {
-        text: 'Tutor Name',
-        value: 'Tutor name'
+        text: 'Tutor',
+        value: 'Tutor'
       }, {
-        text: 'Month',
-        value: 'Month'
+        text: 'Student Id',
+        value: 'Student Id'
       }, {
-        text: 'Year',
-        value: 'Year'
+        text: 'Student',
+        value: 'Student'
       }, {
-        text: 'Total Duration',
-        value: 'Total Duration'
+        text: 'Report Type',
+        value: 'Report Type'
       }, {
-        text: 'Total Amount',
-        value: 'Total Amount'
-      }, {
-        text: 'Total Invoice Duration',
-        value: 'Total Invoice Duration'
-      }, {
-        text: 'Validation Type',
-        value: 'Validation Type'
-      }, {
-        text: 'Completion Date',
-        value: 'Completion Date'
-      }, {
-        text: 'Payment Status',
-        value: 'Payment Status'
+        text: 'Submitted On',
+        value: 'Submitted On'
       }, {
         text: 'Actions',
         value: 'actions',
@@ -226,57 +214,45 @@ __webpack_require__.r(__webpack_exports__);
         "uid": "1",
         "tutor_id": "T200208",
         "tutor_name": "Mohd Zulhafiz Zakaria",
-        "month": "November",
-        "year": "2022",
-        "total_duration": "10.5",
-        "total_amount": "RM 310.50",
-        "total_invoice_duration": "	10.5",
-        "validation_type": "Fully Manual",
-        "completion_date": "16/12/2022 ",
-        "payment_status": "Paid",
-        "slug": "WAN"
+        "student_id": "S224762",
+        "student": "Muhammad Syahmie",
+        "report_type": "Progressive/Attendance Report",
+        "submitted_on": "21/12/2022 13:00:29",
+        "slug": "Mohd"
       }, {
         "uid": "2",
         "tutor_id": "T200208",
         "tutor_name": "Mohd Zulhafiz Zakaria",
-        "month": "November",
-        "year": "2022",
-        "total_duration": "10.5",
-        "total_amount": "RM 310.50",
-        "total_invoice_duration": "	10.5",
-        "validation_type": "Fully Manual",
-        "completion_date": "16/12/2022 ",
-        "payment_status": "Paid",
+        "student_id": "S224762",
+        "student": "Muhammad Syahmie",
+        "report_type": "Progressive/Attendance Report",
+        "submitted_on": "21/12/2022 13:00:29",
         "slug": "Bushra"
       }, {
         "uid": "3",
         "tutor_id": "T200208",
         "tutor_name": "Mohd Zulhafiz Zakaria",
-        "month": "November",
-        "year": "2022",
-        "total_duration": "10.5",
-        "total_amount": "RM 310.50",
-        "total_invoice_duration": "	10.5",
-        "validation_type": "Fully Manual",
-        "completion_date": "16/12/2022 ",
-        "payment_status": "Paid",
+        "student_id": "S224762",
+        "student": "Muhammad Syahmie",
+        "report_type": "Progressive/Attendance Report",
+        "submitted_on": "21/12/2022 13:00:29",
         "slug": "Nur"
       }],
       page_num: 1,
       loading: false,
       query: "",
-      tutorFind: []
+      reports: {}
     };
   },
   methods: {
-    getTutorPaymentJournal: function getTutorPaymentJournal() {
+    getReportV2: function getReportV2() {
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       this.loading = true;
       this.page_num = page;
-      axios.get('/getTutorPaymentJournal?page=' + page + '&query=' + this.query).then(function (res) {
-        _this.tutorFind = res.data.payments;
+      axios.get('/report-v2?page=' + page + '&query=' + this.query).then(function (res) {
+        _this.reports = res.data.reports;
         _this.loading = false;
       })["catch"](function (err) {
         _this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -286,13 +262,13 @@ __webpack_require__.r(__webpack_exports__);
       return this.query = query;
     },
     filterData: function filterData(data) {
-      this.tutorFind = data.payments;
+      this.reports = data.reports;
     },
     loadingStart: function loadingStart(value) {
       this.loading = value;
     }
   },
-  mounted: function mounted() {// this.getTutorPaymentJournal();
+  mounted: function mounted() {// this.getReportV2();
   }
 });
 
@@ -411,10 +387,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=template&id=3e74feae":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=template&id=3e74feae ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=template&id=78f29a0f":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=template&id=78f29a0f ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -433,27 +409,16 @@ var _hoisted_2 = {
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("caption", {
   "class": "ms-4"
-}, "Tutor Payment Journal", -1
+}, "In App Student Reports", -1
 /* HOISTED */
 );
 
 var _hoisted_4 = {
-  "class": "badge bg-label-primary me-1"
-};
-var _hoisted_5 = {
   "class": "d-flex align-items-center"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti ti-cash-banknote ti-sm me-2 text-success"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" | ");
-
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti ti-edit ti-sm mx-2 text-primary"
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "ti ti-eye ti-sm mx-2 text-primary"
 }, null, -1
 /* HOISTED */
 );
@@ -470,7 +435,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128
   /* KEYED_FRAGMENT */
   ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.desserts, function (item, index) {
-    var _item$uid, _item$tutor_id, _item$tutor_name, _item$month, _item$year, _item$total_duration, _item$total_amount, _item$total_invoice_d, _item$validation_type, _item$completion_date, _item$payment_status;
+    var _item$uid, _item$tutor_id, _item$tutor_name, _item$student_id, _item$student, _item$report_type, _item$submitted_on;
 
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index
@@ -480,38 +445,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$tutor_name = item.tutor_name) !== null && _item$tutor_name !== void 0 ? _item$tutor_name : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$month = item.month) !== null && _item$month !== void 0 ? _item$month : "N/A"), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$student_id = item.student_id) !== null && _item$student_id !== void 0 ? _item$student_id : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$year = item.year) !== null && _item$year !== void 0 ? _item$year : "N/A"), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$student = item.student) !== null && _item$student !== void 0 ? _item$student : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$total_duration = item.total_duration) !== null && _item$total_duration !== void 0 ? _item$total_duration : "N/A"), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$report_type = item.report_type) !== null && _item$report_type !== void 0 ? _item$report_type : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$total_amount = item.total_amount) !== null && _item$total_amount !== void 0 ? _item$total_amount : "N/A"), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$submitted_on = item.submitted_on) !== null && _item$submitted_on !== void 0 ? _item$submitted_on : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$total_invoice_d = item.total_invoice_duration) !== null && _item$total_invoice_d !== void 0 ? _item$total_invoice_d : "N/A"), 1
-    /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$validation_type = item.validation_type) !== null && _item$validation_type !== void 0 ? _item$validation_type : "N/A"), 1
-    /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$completion_date = item.completion_date) !== null && _item$completion_date !== void 0 ? _item$completion_date : "N/A"), 1
-    /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$payment_status = item.payment_status) !== null && _item$payment_status !== void 0 ? _item$payment_status : "N/A"), 1
-    /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
       to: "/",
       "class": "text-body"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [_hoisted_6];
-      }),
-      _: 1
-      /* STABLE */
-
-    }), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-      to: "/",
-      "class": "text-body"
-    }, {
-      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [_hoisted_8];
+        return [_hoisted_5];
       }),
       _: 1
       /* STABLE */
@@ -524,10 +471,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=template&id=d28a37c8":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=template&id=d28a37c8 ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=template&id=2cd73a67":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=template&id=2cd73a67 ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -542,7 +489,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "d-flex justify-content-between align-items-center mb-3"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "card-title"
-}, "Tutor Payment Journal")])], -1
+}, "In App Student Reports")])], -1
 /* HOISTED */
 );
 
@@ -569,11 +516,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_DataTable = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("DataTable");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breadcrumb, {
-    active_name: "Tutor"
+    active_name: "Reports"
   }), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_search_box, {
     "class": "ml-2",
-    label: "Search by name",
-    apiurl: '/tutor-payment-journal?page=' + this.page_num,
+    label: "Search by tutor id",
+    apiurl: '/report-v2?page=' + this.page_num,
     onQuery: _cache[0] || (_cache[0] = function ($event) {
       return $options.isQuery($event);
     }),
@@ -581,7 +528,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.loadingStart($event);
     }),
     onReload: _cache[2] || (_cache[2] = function ($event) {
-      return $options.getTutorPaymentJournal();
+      return $options.getReportV2();
     }),
     onFilterData: _cache[3] || (_cache[3] = function ($event) {
       return $options.filterData($event);
@@ -1423,10 +1370,10 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue":
-/*!**********************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue ***!
-  \**********************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue":
+/*!***********************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue ***!
+  \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1434,15 +1381,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DataTable_vue_vue_type_template_id_3e74feae__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=3e74feae */ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=template&id=3e74feae");
-/* harmony import */ var _DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=script&lang=js");
+/* harmony import */ var _DataTable_vue_vue_type_template_id_78f29a0f__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=78f29a0f */ "./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=template&id=78f29a0f");
+/* harmony import */ var _DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=script&lang=js");
 /* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DataTable_vue_vue_type_template_id_3e74feae__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DataTable_vue_vue_type_template_id_78f29a0f__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1451,10 +1398,10 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue ***!
-  \*****************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue":
+/*!********************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue ***!
+  \********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1462,15 +1409,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _TutorPaymentJournalComponent_vue_vue_type_template_id_d28a37c8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TutorPaymentJournalComponent.vue?vue&type=template&id=d28a37c8 */ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=template&id=d28a37c8");
-/* harmony import */ var _TutorPaymentJournalComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TutorPaymentJournalComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=script&lang=js");
+/* harmony import */ var _ReportsV2Component_vue_vue_type_template_id_2cd73a67__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReportsV2Component.vue?vue&type=template&id=2cd73a67 */ "./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=template&id=2cd73a67");
+/* harmony import */ var _ReportsV2Component_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReportsV2Component.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=script&lang=js");
 /* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TutorPaymentJournalComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TutorPaymentJournalComponent_vue_vue_type_template_id_d28a37c8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ReportsV2Component_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ReportsV2Component_vue_vue_type_template_id_2cd73a67__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1511,10 +1458,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=script&lang=js":
-/*!**********************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=script&lang=js ***!
-  \**********************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=script&lang=js":
+/*!***********************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=script&lang=js ***!
+  \***********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1522,23 +1469,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=script&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=script&lang=js":
-/*!*****************************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=script&lang=js ***!
-  \*****************************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorPaymentJournalComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ReportsV2Component_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorPaymentJournalComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TutorPaymentJournalComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ReportsV2Component_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ReportsV2Component.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -1575,34 +1522,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=template&id=3e74feae":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=template&id=3e74feae ***!
-  \****************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=template&id=78f29a0f":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=template&id=78f29a0f ***!
+  \*****************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_3e74feae__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_78f29a0f__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_3e74feae__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=template&id=3e74feae */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/DataTable.vue?vue&type=template&id=3e74feae");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_78f29a0f__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=template&id=78f29a0f */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/DataTable.vue?vue&type=template&id=78f29a0f");
 
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=template&id=d28a37c8":
-/*!***********************************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=template&id=d28a37c8 ***!
-  \***********************************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=template&id=2cd73a67":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=template&id=2cd73a67 ***!
+  \**************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorPaymentJournalComponent_vue_vue_type_template_id_d28a37c8__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ReportsV2Component_vue_vue_type_template_id_2cd73a67__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorPaymentJournalComponent_vue_vue_type_template_id_d28a37c8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TutorPaymentJournalComponent.vue?vue&type=template&id=d28a37c8 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/tutor-payment-journal/TutorPaymentJournalComponent.vue?vue&type=template&id=d28a37c8");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ReportsV2Component_vue_vue_type_template_id_2cd73a67__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ReportsV2Component.vue?vue&type=template&id=2cd73a67 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/tutor/reports-v2/ReportsV2Component.vue?vue&type=template&id=2cd73a67");
 
 
 /***/ })
