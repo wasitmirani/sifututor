@@ -68,6 +68,11 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/tutor/tutor-reports/edit/:slug/:id','tutor-reports-edit','tutor/reports/EditReport'),
     setRoute('/student-invoices/payment','student-payment-view','student-invoice/payments/Payment'),
     setRoute('/student-invoices/payment/payment-slip/:slug/:id','student-paymentslip-view','student-invoice/payments/ViewPaymentSlip'),
+    setRoute('/student-invoices/invoice','invocie-list-view','student-invoice/invoice/Invoice'),
+    setRoute('/student-invoices/invoice/create','invocie-list-create','student-invoice/invoice/CreateInvoice'),
+    setRoute('/student-invoices/invoice/edit/:slug/:id','invocie-list-edit','student-invoice/invoice/EditInvoice'),
+
+
 
 
     

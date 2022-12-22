@@ -26,7 +26,7 @@
         </table>
     </div>
 </template>
-<script lang="ts">
+<script>
 export default {
     name: "DataTableComponent",
     props: ["headers", "desserts"],

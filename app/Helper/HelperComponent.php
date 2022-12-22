@@ -114,7 +114,7 @@ class HelperComponent
                         "Invoice",
                         null,
                         "invocie-list-view",
-                        "/student/invoice",
+                        "/student-invoices/invoice",
                     ),
                     setSubMenu(
                         "Payments",
