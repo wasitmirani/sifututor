@@ -11,8 +11,8 @@
                 <tr v-for="(item, index) in studentList?.data" :key="index">
                     <td> {{ item.id ?? "N/A" }}</td>
                     <td> {{ item.student_id ?? "N/A" }}</td>
-                    <td> {{ item.students[0]?.fullname ?? "N/A" }}</td>
-                    <td> {{ item.students[0]?.gender ?? "N/A" }}</td>
+                    <td> {{ item?.students[0]?.fullname ?? "N/A" }}</td>
+                    <td> {{ item?.students[0]?.gender ?? "N/A" }}</td>
                     <td> {{ item.admin_charge ?? "N/A" }}</td>
                     <td> <span class="badge bg-label-primary me-1">{{ item.status ?? "N/A" }}</span></td>
                     <td> {{ $filters.DateTimeFormat(item.register_date) ?? "N/A" }}</td>

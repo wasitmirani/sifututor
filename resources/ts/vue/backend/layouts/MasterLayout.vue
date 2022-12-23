@@ -56,9 +56,9 @@
         <div class="drag-target"></div>
     </div>
     <!-- / Layout wrapper -->
-    <div class="buy-now">
+    <!-- <div class="buy-now">
         <a href="#" target="_blank" class="btn btn-danger btn-buy-now">Test</a>
-    </div>
+    </div> -->
 
 </template>
 <script>
