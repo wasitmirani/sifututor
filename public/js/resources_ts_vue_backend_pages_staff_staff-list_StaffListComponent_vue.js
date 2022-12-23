@@ -433,7 +433,7 @@ var _hoisted_5 = {
 };
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti ti-cash-banknote ti-sm me-2 text-primary"
+  "class": "ti ti-cash-banknote ti-sm me-2 text-success"
 }, null, -1
 /* HOISTED */
 );

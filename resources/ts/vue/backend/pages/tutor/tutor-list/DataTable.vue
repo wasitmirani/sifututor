@@ -11,7 +11,7 @@
                 <tr v-for="(item, index) in desserts" :key="index">
                     <td> {{ item.uid ?? "N/A" }}</td>
                     <td> {{ item.tutor_id ?? "N/A" }}</td>
-                    <td> {{ item.fullname ?? "N/A" }}</td>
+                    <td> {{ item.full_name ?? "N/A" }}</td>
                     <td> {{ item.email ?? "N/A" }}</td>
                     <td> {{ item.phone_number ?? "N/A" }}</td>
                     <td> <span class="badge bg-label-primary me-1">{{ item.status ?? "N/A" }}</span></td>

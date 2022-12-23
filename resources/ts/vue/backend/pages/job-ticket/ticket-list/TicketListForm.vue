@@ -135,8 +135,9 @@
                         v-model="studentInfo.nric" />
                 </div>
                 <div class="col-md-6 align-self-end text-end" v-if="index !== 0">
-                    <button type="button" class="btn btn-danger" @click="removeStudent(index)"> <i
-                            class="fa-solid fa-trash me-2"></i> Remove Student </button>
+                    <button type="button" class="btn btn-label-danger mt-4 waves-effect"
+                        @click="removeStudent(index)"> <i class="fa-solid fa-trash me-2"></i> Remove Student 
+                    </button>
                 </div>
             </div>
             <button type="button" class="btn btn-primary mt-3" @click="addStudent"> <i class="fa fa-plus me-2"></i> Add
@@ -353,8 +354,9 @@
                     <input type="daye" id="multicol-Time" class="form-control" placeholder="Subject" />
                 </div>
                 <div class="mb-3 col-lg-12 col-xl-2 col-12 d-flex align-items-center mb-0" v-if="index !== 0">
-                    <button type="button" class="btn btn-label-danger mt-4 waves-effect" @click="removeSubjectSubscription(index)"> <i
-                            class="fa-solid fa-trash me-2"></i> Remove Item </button>
+                    <button type="button" class="btn btn-label-danger mt-4 waves-effect"
+                        @click="removeSubjectSubscription(index)"> <i class="fa-solid fa-trash me-2"></i> Remove Item
+                    </button>
                 </div>
             </div>
             <button type="button" class="btn btn-primary mt-3" @click="addSubjectSubscription"> <i
