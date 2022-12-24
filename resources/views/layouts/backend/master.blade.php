@@ -77,8 +77,6 @@
 
     <script src="{{asset('assets/vendor/js/menu.js')}}"></script>
     <!-- endbuild -->
-    <script src="{{mix('js/app.js')}}" ></script>
-
     <script>
         window.app_config={app_name:"{{config('app.name')}}"};
         @auth
@@ -93,6 +91,9 @@
        localStorage.removeItem('permissions');
        localStorage.setItem('permissions', JSON.stringify(permissions))
     </script>
+    <script src="{{mix('js/app.js')}}" ></script>
+
+
     <!-- Vendors JS -->
     <script src="{{asset('assets/vendor/libs/apex-charts/apexcharts.js')}}"></script>
 
