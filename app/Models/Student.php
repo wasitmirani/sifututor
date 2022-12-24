@@ -15,8 +15,10 @@ class Student extends Model
         'subjects' => 'array',
         'students'=>'array',
     ];
+
     public function customer()
     {
-        return $this->belongsTo(Customer::class, 'id', 'student_id');
+        return $this->morphOne('App\Models\Customer', 'customerable');
+        // return $this->belongsTo(Customer::class, 'id', 'student_id');
     }
 }

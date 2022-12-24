@@ -20,6 +20,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // window.axios.defaults.headers.common['Authorization'] = `Bearer `+token ;
 window.axios.defaults.baseURL = window.location.origin + "/api/backend";
 console.log("test");
+const Swal = require('sweetalert2')
+import * as moment from 'moment';
+window.Swal=Swal;
+window.moment=moment;
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

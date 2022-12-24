@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-        <DataTable :headers="headers" :desserts="desserts"  v-on:deleteItem="deleteItem($event)" />
+        <DataTable :headers="headers" :tickets="tickets"  v-on:deleteItem="deleteItem($event)" />
     </div>
     </div>
 </template>
@@ -42,38 +42,19 @@ export default {
             { text: 'Created On', value: 'Created On' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
-        desserts: [
-            {
-                "uid": "1",
-                "ticket_no": "J22014379",
-                "students": "Nur Alesha,Adam Muaz",
-                "ticket_status": 'Open',
-                "application_status": "Incomplete",
-                "created_at": "	14/12/2022",
-                "slug": "Nur",
-            },
-            {
-                "uid": "2",
-                "ticket_no": "J22014379",
-                "students": "Muhammad  Alesha,Adam Muaz",
-                "ticket_status": 'Open',
-                "application_status": "Incomplete",
-                "created_at": "	14/12/2022",
-                "slug": "Nurnisrina",
-                "slug": "Noor",
-            }
-        ],
+
         page_num: 1,
         loading: false,
         query: "",
         ticketList: [],
+        tickets:{},
     }),
     methods: {
         getTickets(page = 1) {
             this.loading = true;
             this.page_num = page;
-            axios.get('/tickets?page=' + page + '&query=' + this.query).then((res) => {
-                this.ticketList = res.data.subjects;
+            axios.get('/job-ticket?page=' + page + '&query=' + this.query).then((res) => {
+                this.tickets = res.data.tickets;
                 this.loading = false;
             }).catch((err) => {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -89,24 +70,24 @@ export default {
             this.loading = value;
         },
         deleteItem(item) {
-            // Swal.fire({
-            //     title: "Are you sure?",
-            //     text: "You won't be able to revert this!",
-            //     icon: "warning",
-            //     showCancelButton: true,
-            //     confirmButtonColor: "#3085d6",
-            //     cancelButtonColor: "#d33",
-            //     confirmButtonText: "Yes, delete it!",
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
-            axios.delete(`/tickets/${item.id}`).then((res) => {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+            }).then((result) => {
+                if (result.isConfirmed) {
+            axios.delete(`/job-ticket/${item.id}`).then((res) => {
                 this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
                 this.getTickets();
             }).catch((err) => {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
             });
-            //     }
-            // });
+                }
+            });
         },
     },
     mounted() {

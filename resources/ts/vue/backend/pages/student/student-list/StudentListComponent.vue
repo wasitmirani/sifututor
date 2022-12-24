@@ -14,7 +14,7 @@
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
                     <search-box class="ml-2" label="Search by name" :apiurl="'/students?page=' + this.page_num"
-                        v-on:query="isQuery($event)" v-on:loading="loadingStart($event)" v-on:reload="getStudents()"
+                        v-on:query="isQuery($event)" v-on:loading="loadingStart($event)" v-on:reload="getStudentss()"
                         v-on:filterData="filterData($event)">
                     </search-box>
                 </div>
@@ -49,7 +49,7 @@ export default {
         studentList: [],
     }),
     methods: {
-        getStudent(page = 1) {
+        getStudents(page = 1) {
             this.loading = true;
             this.page_num = page;
             axios.get('/student?page=' + page + '&query=' + this.query).then((res) => {
@@ -69,28 +69,28 @@ export default {
             this.loading = value;
         },
         deleteItem(item) {
-            // Swal.fire({
-            //     title: "Are you sure?",
-            //     text: "You won't be able to revert this!",
-            //     icon: "warning",
-            //     showCancelButton: true,
-            //     confirmButtonColor: "#3085d6",
-            //     cancelButtonColor: "#d33",
-            //     confirmButtonText: "Yes, delete it!",
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+            }).then((result) => {
+                if (result.isConfirmed) {
             axios.delete(`/student/${item.id}`).then((res) => {
                 this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
-                this.getSubjects();
+                this.getStudents();
             }).catch((err) => {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
             });
-            //     }
-            // });
+                }
+            });
         },
     },
     mounted() {
-        this.getStudent();
+        this.getStudents();
     }
 }
 </script>

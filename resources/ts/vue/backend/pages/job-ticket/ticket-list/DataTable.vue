@@ -9,11 +9,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in desserts" :key="index">
-                    <td> {{ item.uid ?? "N/A" }}</td>
-                    <td> {{ item.ticket_no ?? "N/A" }}</td>
-                    <td> {{ item.students ?? "N/A" }}</td>
-                    <td>  <span class="badge bg-label-primary me-1">{{ item.ticket_status ?? "N/A" }}</span></td>
+                <tr v-for="(item, index) in tickets?.data" :key="index">
+                    <td> {{ item.id ?? "N/A" }}</td>
+                    <td> {{ item.slug ?? "N/A" }}</td>
+                    <td> <span class="badge bg-dark bg-glow me-1"  v-for="std in mapStudentsFullName(item.students)">{{std}}</span> </td>
+                    <td>  <span class="badge bg-label-primary me-1">{{ item.status ?? "N/A" }}</span></td>
                     <td> <span class="badge bg-label-danger me-1">{{ item.application_status ?? "N/A" }} </span> </td>
                     <td> {{ $filters.DateTimeFormat(item.created_at) ?? "N/A"}}</td>
                     <td class="" style=""><div class="d-flex align-items-center">
@@ -30,10 +30,13 @@
 <script>
 export default {
     name: "DataTableComponent",
-    props: ["headers", "desserts"],
+    props: ["headers", "tickets"],
     data: () => ({
     }),
     methods: {
+        mapStudentsFullName(items){
+            return items.map(item => item.fullname);
+        },
         deleteItem(item) {
             return this.$emit("deleteItem", item);
         },

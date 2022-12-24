@@ -1,0 +1,44 @@
+<template>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <caption class="ms-4">Users List</caption>
+            <thead>
+                <tr>
+                    <th v-for="(head, index) in headers" :key="index"> {{ head.text }} </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in users?.data" :key="index">
+                    <td> {{ item.id ?? "N/A" }}</td>
+                    <td> {{ item.student_id ?? "N/A" }}</td>
+                    <td> {{ item.fullname ?? "N/A" }}</td>
+                    <td> {{ item.gender ?? "N/A" }}</td>
+                    <td> {{ item.staff_in_charge ?? "N/A" }}</td>
+                    <td> <span class="badge bg-label-primary me-1">{{ item.status ?? "N/A" }}</span></td>
+                    <td> {{ item.register_date ?? "N/A" }}</td>
+                    <td>
+                        <router-link to="" class="btn btn-icon btn-primary waves-effect waves-light btn-sm me-2">
+                            <i class="fa-solid fa-eye"> </i>
+                        </router-link>
+                        <router-link to="/students/student-list/edit" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
+                            <i class="fa-solid fa-pen-to-square"> </i>
+                        </router-link>
+                        <a href="" class="btn btn-icon btn-danger waves-effect waves-light btn-sm">
+                            <i class="fa-solid fa-trash"> </i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</template>
+<script>
+export default {
+    name: "DataTableComponent",
+    props: ["headers", "users"],
+    data: () => ({
+    }),
+    mounted() {
+    }
+}
+</script>

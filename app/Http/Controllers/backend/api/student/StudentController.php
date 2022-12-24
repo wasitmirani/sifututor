@@ -81,9 +81,10 @@ class StudentController extends Controller
             $name = "";
 
 
-        DB::beginTransaction();
+        // DB::beginTransaction();
 
-try {
+// try {
+
 
 
     $student = Student::create([
@@ -91,43 +92,57 @@ try {
         'admin_charge'=>$request->admin_charge,
         'slug' => Str::slug($request->admin_charge,'-'),
         'uid'=>Str::uuid(),
-
         'payment_attachment'=>$name ,
         'fee_payment_date'=>$request->fee_payment_date,
         'receiving_account'=>$request->receiving_account,
         'hour_per_subject'=>$request->hour_per_subject,
         'subscription_duration'=>$request->subscription_duration,
         'subjects'=>$request->subjects,
-        'students'=>$request->students,
+        'students'=>$this->mapStudents($request->students),
     ]);
             $customer =(object) $request->customer;
+            $new_custormer= $student->customer()->create(
+                [
+                    'full_name'=>$customer->full_name,
+                    'slug' => $this->generateCustomerNumber(),
+                    'uid'=>Str::uuid(),
+                    'email'=>$customer->email,
+                    'nric'=>$customer->nric,
+                    'phone'=>$customer->phone,
+                    'address'=>$customer->address,
+                    'age'=>$customer->age,
+                    'student_id'=>$student->id,
+                    'dob'=>$customer->dob,
+                    'gender'=>$customer->gender,
+                ]
+            );
+//    $new_custormer= Customer::create([
+//         'full_name'=>$customer->full_name,
+//         'slug' => $this->generateCustomerNumber(),
+//         'uid'=>Str::uuid(),
+//         'email'=>$customer->email,
+//         'nric'=>$customer->nric,
+//         'phone'=>$customer->phone,
+//         'address'=>$customer->address,
+//         'age'=>$customer->age,
+//         'student_id'=>$student->id,
+//         'dob'=>$customer->dob,
+//         'gender'=>$customer->gender,
+//     ]);
 
-   $new_custormer= Customer::create([
-        'full_name'=>$customer->full_name,
-        'slug' => Str::slug($customer->full_name,'-'),
-        'uid'=>Str::uuid(),
-        'email'=>$customer->email,
-        'phone'=>$customer->phone,
-        'address'=>$customer->address,
-        'age'=>$customer->age,
-        'student_id'=>$student->id,
-        'dob'=>$customer->dob,
-        'gender'=>$customer->gender,
-    ]);
-
-    DB::commit();
+    // DB::commit();
     if($new_custormer){
         return response()->json([
            'status' => true,
             'message' =>'student has been created successfully']);
     }
     // all good
-} catch (Exception $e) {
-    DB::rollback();
+// } catch (Exception $e) {
+//     DB::rollback();
 
-    return response()->json(['message' => $e->getMessage(),'status' => false]);
-    // something went wrong
-}
+//     return response()->json(['message' => $e->getMessage(),'status' => false]);
+//     // something went wrong
+// }
         //
     }
 
@@ -137,6 +152,66 @@ try {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function mapStudents($students){
+        $index = 0;
+        $students_list = [];
+        foreach($students as $student){
+            $index++;
+            $students_list[]=[
+                'age' => $student['age'],
+                'dob' => $student['dob'],
+                'nric' => $student['nric'],
+                'gender' => $student['gender'],
+                'fullname' =>  $student['fullname'],
+                'student_id'=>"STD-00".rand(10,1000),
+            ];
+        }
+
+
+        return $students_list;
+    }
+     public function generateStudentId($index){
+        $student=Student::orderBy('id','desc')->first();
+
+        if(!empty($student)){
+            $last_student = collect($student->students)->last();
+
+            if(!empty($last_student['student_id']))
+            {
+                    $id=str_replace('STD-00', '', $last_student['student_id']);
+                    $student_id= (int)$id+$index+1;
+
+            }
+            else{
+                $id=str_replace('STD-00', '', $last_student['student_id']);
+                $student_id= (int)$id+$index+1;
+            }
+
+        }
+        else{
+            $student_id= 1;
+        }
+
+        $student_id=str_pad($student_id, 3, "0", STR_PAD_LEFT);
+
+        $student_id = "STD". '-' . $student_id;
+        return $student_id;
+    }
+
+     public function generateCustomerNumber(){
+        $customer=Customer::orderBy('id','desc')->first();
+        if(!empty($customer)){
+           $customer_number= (int)$customer['id']+1;
+        }
+        else{
+            $customer_number= 1;
+        }
+        $perfix_name = Str::slug('CM', '-');
+        $customer_number=str_pad($customer_number, 4, "0", STR_PAD_LEFT);
+        // '-'.date('Ymd');
+        $customer_number = $perfix_name . '-' . $customer_number;
+        return $customer_number;
+    }
     public function show($id)
     {
         //

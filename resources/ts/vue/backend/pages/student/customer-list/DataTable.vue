@@ -1,7 +1,7 @@
 <template>
     <div class="table-responsive text-nowrap">
         <table class="table">
-            <caption class="ms-4">Customer List</caption>
+            <caption class="ms-4">Customers List</caption>
             <thead>
                 <tr>
                     <th v-for="(head, index) in headers" :key="index"> {{ head.text }} </th>
@@ -10,7 +10,7 @@
             <tbody>
                 <tr v-for="(item, index) in customertList?.data" :key="index">
                     <td> {{ item.id ?? "N/A" }}</td>
-                    <td> {{ item.customer_id ?? "N/A" }}</td>
+                    <td> {{ item.slug ?? "N/A" }}</td>
                     <td> {{ item.full_name ?? "N/A" }}</td>
                     <td> {{ item.phone ?? "N/A" }}</td>
                     <td> {{ item.email ?? "N/A" }}</td>

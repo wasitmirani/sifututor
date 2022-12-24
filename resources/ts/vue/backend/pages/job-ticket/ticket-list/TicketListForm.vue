@@ -1,100 +1,38 @@
 <template>
     <div class="card mb-4">
-        <form class="card-body">
+        <form class="card-body" v-on:submit.prevent="onSubmit">
             <div class="row g-3 mb-4">
                 <div class="col-md-4 col-sm-12">
                     <label class="form-label" for="multicol-Register Date">Register Date</label>
-                    <input type="date" id="multicol-Register Date" class="form-control" placeholder="Register Date" />
+
+                    <input type="date" v-model="submitData.register_date" id="multicol-Register Date"
+                    :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'register_date')}`"
+                    placeholder="Register Date" />
+                <validate-input :errors="errors?.errors" value="register_date"></validate-input>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <label class="form-label" for="multicol-EstimateCommission">Estimate Commission</label>
-                    <input type="text" id="multicol-EstimateCommission" class="form-control"
-                        placeholder="Estimate Commission" />
+
+                        <input type="text" v-model="submitData.estimate_commission" id="multicol-Register Date"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'estimate_commission')}`"
+                        placeholder="estimate_commission" />
+                    <validate-input :errors="errors?.errors" value="estimate_commission"></validate-input>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <label class="form-label" for="multicol-AdmininCharge">Admin in Charge</label>
-                    <select id="multicol-AdmininCharge" class="select2 form-select" data-allow-clear="true">
-                        <option value="45"> Sorfina</option>
-                        <option value="8">Fazira</option>
-                        <option value="77">ADIB AZMI</option>
-                        <option value="34">Aidid </option>
-                        <option value="57">Alif Naquiddin</option>
-                        <option value="24">Amin</option>
-                        <option value="81">'Arisya Sofea </option>
-                        <option value="83">Assayidatun Najihah </option>
-                        <option value="74">AZFAHSHAZ ZULKEPLI</option>
-                        <option value="62">Customer Service (Test)</option>
-                        <option value="30">Faris</option>
-                        <option value="47">Farisd</option>
-                        <option value="13">Gaya</option>
-                        <option value="3">Hafiz</option>
-                        <option value="9">Haizuran</option>
-                        <option value="61">Hariz Irfan</option>
-                        <option value="10">Juliza</option>
-                        <option value="21">Mas</option>
-                        <option value="75">BADRUL HISYAM</option>
-                        <option value="51">Najmy</option>
-                        <option value="73">Afiq Noromi</option>
-                        <option value="32">Firdaus</option>
-                        <option value="2">Syamil</option>
-                        <option value="53">Afif</option>
-                        <option value="67">Monisha A/p Chandran</option>
-                        <option value="14">Asyraf</option>
-                        <option value="12">Ameer</option>
-                        <option value="52">Amirul</option>
-                        <option value="42">Azreen</option>
-                        <option value="16">Harith</option>
-                        <option value="59">HAZMAN SHAHRILL</option>
-                        <option value="18">Imran</option>
-                        <option value="41">Irfan</option>
-                        <option value="36">KHAIRUL</option>
-                        <option value="70">Muhammad Syafi Amin Bin Mohd Fadzil</option>
-                        <option value="58">Syafiq Syazwan</option>
-                        <option value="28">AREEP</option>
-                        <option value="23">Husna</option>
-                        <option value="40">Batrisyia</option>
-                        <option value="26">Nazira</option>
-                        <option value="38">EEZA</option>
-                        <option value="72">Nor Asyiqin Binti Toni</option>
-                        <option value="6">Nadia</option>
-                        <option value="37">SHAHIRAH</option>
-                        <option value="50">Shahirah</option>
-                        <option value="19">Rina</option>
-                        <option value="35">Fazira</option>
-                        <option value="54">Syelis</option>
-                        <option value="65">ATHIRAH SOLIHEN</option>
-                        <option value="22">ATIRAH</option>
-                        <option value="79">Fatihah Roslan</option>
-                        <option value="5">Azera</option>
-                        <option value="44">Hafizah</option>
-                        <option value="43">AMIR</option>
-                        <option value="20">Shahirah</option>
-                        <option value="25">Suhaila</option>
-                        <option value="1">Suziani</option>
-                        <option value="69">Nur Syafiqah Radhuan</option>
-                        <option value="55">Nurfatin Munirah Binti Mohd Azman</option>
-                        <option value="76">Safwah Shaharin</option>
-                        <option value="49">Nurizan</option>
-                        <option value="64">Nurul Azuha Binti Nazmi</option>
-                        <option value="60">Azwani Sulaiman</option>
-                        <option value="82">Tehah</option>
-                        <option value="68">Nurul Hasmida Azmi</option>
-                        <option value="31">Syida</option>
-                        <option value="39">Aqila</option>
-                        <option value="71">QAISARAH</option>
-                        <option value="80">Ros Nabilah</option>
-                        <option value="27">Shafiqa</option>
-                        <option value="33">Siti </option>
-                        <option value="15">Syaza</option>
-                        <option value="4">Adda</option>
-                        <option value="29">Sitinor</option>
-                        <option value="78">SYARIFAH</option>
-                        <option value="11">Tutor Coordinator</option>
-                        <option value="56">Wazeerah Azmi </option>
-                        <option value="17">Izyan</option>
-                        <option value="7">Zam</option>
+                    <select id="multicol-AdmininCharge"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'admin_charge')}`"
+                        data-allow-clear="true" v-model="submitData.admin_charge">
+                        <option value="Sorfina"> Sorfina</option>
+                        <option value="Fazira">Fazira</option>
+                        <option value="ADIB AZMI">ADIB AZMI</option>
+                        <option value="Aidid">Aidid </option>
+                        <option value="Alif Naquiddin">Alif Naquiddin</option>
+
                     </select>
+                    <validate-input :errors="errors?.errors" value="admin_charge"></validate-input>
                 </div>
+
             </div>
             <h6 class="mb-0">Student Information</h6>
             <div class="row g-3 mb-3">
@@ -122,21 +60,21 @@
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Fullname">Age</label>
                     <input type="number" id="multicol-Age" class="form-control" placeholder="Age"
-                        v-model="studentInfo.age" />
+                        v-model="stdInfo[index].age" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Dob">Date of Birth</label>
                     <input type="date" id="multicol-Dob" class="form-control" placeholder="Dob"
-                        v-model="studentInfo.dob" />
+                        v-model="stdInfo[index].dob" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Nric">Nric</label>
                     <input type="text" id="multicol-Nric" class="form-control" placeholder="Nric"
-                        v-model="studentInfo.nric" />
+                        v-model="stdInfo[index].nric" />
                 </div>
                 <div class="col-md-6 align-self-end text-end" v-if="index !== 0">
                     <button type="button" class="btn btn-label-danger mt-4 waves-effect"
-                        @click="removeStudent(index)"> <i class="fa-solid fa-trash me-2"></i> Remove Student 
+                        @click="removeStudent(index)"> <i class="fa-solid fa-trash me-2"></i> Remove Student
                     </button>
                 </div>
             </div>
@@ -146,57 +84,53 @@
             <hr class="my-4 mx-n4" />
             <h6>Student Address</h6>
             <div class="row g-3">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label class="form-label" for="multicol-StreetAddress1">Street Address 1</label>
-                    <input type="text" id="multicol-StreetAddress1" class="form-control"
+                    <input v-model="submitData.student_address.address" type="text" id="multicol-StreetAddress1" class="form-control"
                         placeholder="Street Address 1" />
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-StreetAddress2">Street Address2</label>
-                    <input type="text" id="multicol-StreetAddress2" class="form-control"
-                        placeholder="Street Address 2" />
-                </div>
+
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-City">City</label>
-                    <input type="text" id="multicol-City" class="form-control" placeholder="City" />
+                    <input type="text" v-model="submitData.student_address.city" id="multicol-City" class="form-control" placeholder="City" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-PostCode">PostCode</label>
-                    <input type="text" id="multicol-PostCode" class="form-control" placeholder="PostCode" />
+                    <input type="text" v-model="submitData.student_address.postcode" id="multicol-PostCode" class="form-control" placeholder="PostCode" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Latitude">Latitude</label>
-                    <input type="text" id="multicol-Latitude" class="form-control" placeholder="Latitude" />
+                    <input type="text" id="multicol-Latitude" v-model="submitData.student_address.latitude" class="form-control" placeholder="Latitude" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Longitude">Longitude</label>
-                    <input type="text" id="multicol-Longitude" class="form-control" placeholder="Longitude" />
+                    <input type="text" id="multicol-Longitude" v-model="submitData.student_address.longitude" class="form-control" placeholder="Longitude" />
                 </div>
                 <div class="col-md-12">
                     <label class="form-label" for="multicol-State">State</label>
-                    <select id="multicol-State" class="select2 form-select" data-allow-clear="true">
+                    <select id="multicol-State"  v-model="submitData.student_address.state"  class="select2 form-select" data-allow-clear="true">
                         <option value="">Select</option>
-                        <option>Selangor</option>
-                        <option>Penang</option>
-                        <option>Johor</option>
-                        <option>Kuala Lumpur</option>
-                        <option>Negeri Sembilan</option>
-                        <option>Melaka</option>
-                        <option>Pahang</option>
-                        <option>Perlis</option>
-                        <option>Perak</option>
-                        <option>Kedah</option>
-                        <option>Terengganu</option>
-                        <option>Kelantan</option>
-                        <option>Serawak</option>
-                        <option>Sabah</option>
-                        <option>Putrajaya</option>
+                        <option value="Selangor">Selangor</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Johor">Johor</option>
+                        <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Negeri Sembilan">Negeri Sembilan</option>
+                        <option value="Melaka">Melaka</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Perlis">Perlis</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Terengganu">Terengganu</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Serawak"> Serawak</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Putrajaya">Putrajaya</option>
                     </select>
                 </div>
                 <div class="col-md-12">
-                    <label class="form-label" for="basic-icon-default-message">Remark</label>
+                    <label class="form-label" for="basic-icon-default-message">Remarks</label>
                     <div class="input-group input-group-merge">
-                        <textarea id="basic-icon-default-message" class="form-control" placeholder="Remark"></textarea>
+                        <textarea id="basic-icon-default-message"  rows="3" v-model="submitData.remarks" class="form-control" placeholder="Remark"></textarea>
                     </div>
                 </div>
             </div>
@@ -205,36 +139,56 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-FullName">FullName</label>
-                    <input type="text" id="multicol-FullName" class="form-control" placeholder="FullName" />
+                    <input type="text" id="multicol-FullName"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.full_name')}`"
+                        placeholder="FullName" v-model="customer.full_name" />
+                    <validate-input :errors="errors?.errors" value="full_name"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Gender">Gender</label>
-                    <select id="multicol-Gender" class="select2 form-select" data-allow-clear="true">
+                    <select id="multicol-Gender"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.gender')}`"
+                        data-allow-clear="true" v-model="customer.gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
+                    <validate-input :errors="errors?.errors" value="gender"></validate-input>
                 </div>
                 <div class="col-md-6"><label class="form-label" for="multicol-email">Email</label>
-                    <div class="input-group input-group-merge"><input type="text" id="multicol-email"
-                            class="form-control" placeholder="john.doe" aria-label="john.doe"
-                            aria-describedby="multicol-email2"><span class="input-group-text"
-                            id="multicol-email2">@example.com</span></div>
+                    <div class="input-group input-group-merge">
+                        <input type="email" id="multicol-email"
+                            :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.email')}`"
+                            placeholder="john.doe" aria-label="john.doe" v-model="customer.email"
+                            aria-describedby="multicol-email2">
+                    </div>
+                    <validate-input :errors="errors?.errors" value="email"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Phone-No">Phone No</label>
-                    <input type="number" id="multicol-Phone-No" class="form-control" placeholder="Phone No" />
+                    <input type="number" id="multicol-Phone-No" v-model="customer.phone" placeholder="Phone No"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.phone')}`" />
+                    <validate-input :errors="errors?.errors" value="phone"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Fullname">Age</label>
-                    <input type="number" id="multicol-Age" class="form-control" placeholder="Age" />
+                    <input type="number" id="multicol-Age"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.age')}`"
+                        placeholder="Age" v-model="customer.age" />
+                    <validate-input :errors="errors?.errors" value="age"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Dob">Date of Birth</label>
-                    <input type="date" id="multicol-Dob" class="form-control" placeholder="Dob" />
+                    <input type="date" id="multicol-Dob"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.dob')}`"
+                        placeholder="Dob" v-model="customer.dob" />
+                    <validate-input :errors="errors?.errors" value="dob"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Nric">Nric</label>
-                    <input type="text" id="multicol-Nric" class="form-control" placeholder="Nric" />
+                    <input type="text" id="multicol-Nric"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.nric')}`"
+                        placeholder="Nric" v-model="customer.nric" />
+                    <validate-input :errors="errors?.errors" value="nric"></validate-input>
                 </div>
             </div>
             <hr class="my-4 mx-n4" />
@@ -242,63 +196,64 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-StreetAddress1">Street Address 1</label>
-                    <input type="text" id="multicol-StreetAddress1" class="form-control"
-                        placeholder="Street Address 1" />
+                    <input type="text" id="multicol-StreetAddress1"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.street_address_1')}`"
+                        placeholder="Street Address 1" v-model="customer.address.street_address_1" />
+                    <validate-input :errors="errors?.errors" value="street_address_1"></validate-input>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="multicol-StreetAddress2">Street Address 1</label>
-                    <input type="text" id="multicol-StreetAddress2" class="form-control"
-                        placeholder="Street Address 2" />
+                    <label class="form-label" for="multicol-StreetAddress2">Street Address 2</label>
+                    <input type="text" id="multicol-StreetAddress2"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.street_address_2')}`"
+                        v-model="customer.address.street_address_2" placeholder="Street Address 2" />
+                    <validate-input :errors="errors?.errors" value="street_address_2"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-State">State</label>
-                    <select id="multicol-State" class="select2 form-select" data-allow-clear="true">
+                    <select id="multicol-State"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.address.state')}`"
+                        data-allow-clear="true" v-model="customer.address.state">
                         <option value="">Select</option>
-                        <option>Selangor</option>
-                        <option>Penang</option>
-                        <option>Johor</option>
-                        <option>Kuala Lumpur</option>
-                        <option>Negeri Sembilan</option>
-                        <option>Melaka</option>
-                        <option>Pahang</option>
-                        <option>Perlis</option>
-                        <option>Perak</option>
-                        <option>Kedah</option>
-                        <option>Terengganu</option>
-                        <option>Kelantan</option>
-                        <option>Serawak</option>
-                        <option>Sabah</option>
-                        <option>Putrajaya</option>
+                        <option value="Selangor">Selangor</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Johor">Johor</option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Negeri Sembilan">Negeri Sembilan</option>
+                        <option value="Melaka">Melaka</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Perlis">Perlis</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Terengganu">Terengganu</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Serawak"> Serawak</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Putrajaya">Putrajaya</option>
                     </select>
+                    <validate-input :errors="errors?.errors" value="state"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-City">City</label>
-                    <select id="multicol-State" class="select2 form-select" data-allow-clear="true">
-                        <option>Pulau Indah</option>
-                        <option>Pulau Ketam</option>
-                        <option>Puncak Alam</option>
-                        <option>Rasa</option>
-                        <option>Rawang</option>
-                        <option>Sabak Bernam</option>
-                        <option>Sekinchan</option>
-                        <option>Semenyih</option>
-                        <option>Sepang</option>
-                        <option>Serdang</option>
-                        <option>Serendah</option>
-                        <option>Seri Kembangan</option>
-                        <option>Shah Alam</option>
-                        <option>Subang Jaya</option>
-                        <option>Sungai Besar</option>
-                        <option>Sungai Buloh</option>
-                        <option>Sungai Pelek</option>
-                        <option>Tanjong Karang</option>
-                        <option>Tanjong Sepat</option>
-                        <option>Telok Panglima Garang</option>
+                    <select id="multicol-State"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.address.city')}`"
+                        data-allow-clear="true" v-model="customer.address.city">
+                        <option value="Pulau Inda">Pulau Indah</option>
+                        <option value="Pulau Ketam">Pulau Ketam</option>
+                        <option value="Puncak Alam">Puncak Alam</option>
+                        <option value="Rasa">Rasa</option>
+                        <option value="Rawang">Rawang</option>
+                        <option value="Sabak Bernam">Sabak Bernam</option>
+                        <option value="Sekinchan">Sekinchan</option>
+
                     </select>
+                    <validate-input :errors="errors?.errors" value="customer.address.city"></validate-input>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-PostCode">PostCode</label>
-                    <input type="text" id="multicol-PostCode" class="form-control" placeholder="PostCode" />
+                    <input type="text" id="multicol-PostCode"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'customer.address.post_code')}`"
+                        placeholder="PostCode" v-model="customer.address.post_code" />
+                    <validate-input :errors="errors?.errors" value="post_code"></validate-input>
                 </div>
             </div>
             <hr class="my-4 mx-n4" />
@@ -306,24 +261,31 @@
             <div class="row g-3">
                 <small class="mt-0">RM 50 payment receipt is required to be uploaded for a new student
                     registration.</small>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6">
                     <label class="form-label" for="multicol-PaymentAttachment">Payment Attachment</label>
-                    <input type="file" id="multicol-PaymentAttachment" class="form-control"
+                    <input type="file" id="multicol-PaymentAttachment" @change="previewFiles"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'payment_attachment')}`"
                         placeholder="Payment Attachment" />
+                    <validate-input :errors="errors?.errors" value="payment_attachment"></validate-input>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6">
                     <label class="form-label" for="multicol-PaymentDate">Fee Payment Date</label>
-                    <input type="date" id="multicol-PaymentDate" class="form-control" placeholder="Fee Payment Date" />
+                    <input type="date" id="multicol-PaymentDate"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'fee_payment_date')}`"
+                        placeholder="Fee Payment Date" v-model="submitData.fee_payment_date" />
+                    <validate-input :errors="errors?.errors" value="fee_payment_date"></validate-input>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6">
                     <label class="form-label" for="multicol-ReceivingAccountId">Receiving Account</label>
-                    <select id="multicol-ReceivingAccountId" class="select2 form-select" data-allow-clear="true">
-                        <option value="45">Cash In Hand</option>
-                        <option value="73">Payment Gateway - BillPlz Sdn Bhd</option>
-                        <option value="76">Payment Gateway - Ipay88</option>
-                        <option value="68">Public Bank</option>
-
+                    <select id="multicol-ReceivingAccountId"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'receiving_account')}`"
+                        data-allow-clear="true" v-model="submitData.receiving_account">
+                        <option value="Cash In Hand">Cash In Hand</option>
+                        <option value="Payment Gateway - BillPlz Sdn Bhd ">Payment Gateway - BillPlz Sdn Bhd</option>
+                        <option value="Payment Gateway - Ipay88">Payment Gateway - Ipay88</option>
+                        <option value="Public Bank">Public Bank</option>
                     </select>
+                    <validate-input :errors="errors?.errors" value="receiving_account"></validate-input>
                 </div>
             </div>
             <hr class="my-4 mx-n4" />
@@ -351,7 +313,7 @@
                 </div>
                 <div class="mb-3 col-lg-6 col-xl-2 col-12 mb-0">
                     <label class="form-label" for="multicol-Time">Time (24hrs format)</label>
-                    <input type="daye" id="multicol-Time" class="form-control" placeholder="Subject" />
+                    <input type="time" id="multicol-Time" class="form-control" placeholder="Subject" />
                 </div>
                 <div class="mb-3 col-lg-12 col-xl-2 col-12 d-flex align-items-center mb-0" v-if="index !== 0">
                     <button type="button" class="btn btn-label-danger mt-4 waves-effect"
@@ -365,10 +327,13 @@
             <div class="row g-3 mt-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-SubscriptionDurationTerm">Subscription Duration Term</label>
-                    <select id="multicol-SubscriptionDurationTerm" class="select2 form-select" data-allow-clear="true">
+                    <select id="multicol-SubscriptionDurationTerm"
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'subscription_duration')}`"
+                        data-allow-clear="true" v-model="submitData.subscription_duration">
                         <option>Short Term</option>
                         <option>Long Term</option>
                     </select>
+                    <validate-input :errors="errors?.errors" value="subscription_duration"></validate-input>
                 </div>
             </div>
             <hr class="my-4 mx-n4" />
@@ -384,6 +349,7 @@ import Multiselect from 'vue-multiselect';
 export default {
     name: "TicketListForm",
     components: { Multiselect },
+    props: ['edit_mode', 'form'],
     data: () => ({
         studentInfo: [{
             fullname: "",
@@ -402,6 +368,13 @@ export default {
         }],
         subjectSub: [{}],
         studentList: [],
+        submitData:{
+            student_address:{},
+        },
+        customer: {
+            address: {},
+        },
+        customer_address: {},
         student: [],
     }),
     methods: {
@@ -462,12 +435,46 @@ export default {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
             });
         },
+        updateTicket(data) {
+            axios.put('/job-ticket/' + this.submitData.id, data).then((res) => {
+                this.$router.push('/job-ticket/ticket-list');
+            }).catch((err) => {
+                this.errors = err.response.data;
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            });
+        },
+        createTicket(data) {
+            axios.post('/job-ticket', data).then((res) => {
+                this.$router.push('/job-ticket/ticket-list');
+            }).catch((err) => {
+                this.errors = err.response.data;
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+            });
+        },
+        onSubmit() {
+            this.loading = true;
+            let data = { ...this.submitData, customer_address: this.customer_address, customer: this.customer, students: this.stdInfo, subjects: this.subjects };
+            if (!this.edit_mode) {
+                this.createTicket(data);
+            } else {
+                this.updateTicket(data);
+            }
+            setTimeout(() => {
+                this.loading = false;
+            }, 1000);
+
+        },
     },
     mounted() {
         this.getStudent();
         if (this.edit_mode) {
-            // this.stdInfo = [];
-            // this.stdInfo = this.form;
+            this.submitData = [];
+            this.submitData = this.form;
+            this.subjects = this.form?.subjects;
+            this.customer = this.form?.customer;
+            this.studentInfo = this.form?.students
+            this.stdInfo = this.form?.students;
+            // console.log('this.submitData', this.submitData);
         }
     }
 }

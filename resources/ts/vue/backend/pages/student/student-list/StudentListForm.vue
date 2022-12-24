@@ -14,85 +14,12 @@
                     <select id="multicol-AdmininCharge"
                         :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'admin_charge')}`"
                         data-allow-clear="true" v-model="submitData.admin_charge">
-                        <option value="45"> Sorfina</option>
-                        <option value="8">Fazira</option>
-                        <option value="77">ADIB AZMI</option>
-                        <option value="34">Aidid </option>
-                        <option value="57">Alif Naquiddin</option>
-                        <option value="24">Amin</option>
-                        <option value="81">'Arisya Sofea </option>
-                        <option value="83">Assayidatun Najihah </option>
-                        <option value="74">AZFAHSHAZ ZULKEPLI</option>
-                        <option value="62">Customer Service (Test)</option>
-                        <option value="30">Faris</option>
-                        <option value="47">Farisd</option>
-                        <option value="13">Gaya</option>
-                        <option value="3">Hafiz</option>
-                        <option value="9">Haizuran</option>
-                        <option value="61">Hariz Irfan</option>
-                        <option value="10">Juliza</option>
-                        <option value="21">Mas</option>
-                        <option value="75">BADRUL HISYAM</option>
-                        <option value="51">Najmy</option>
-                        <option value="73">Afiq Noromi</option>
-                        <option value="32">Firdaus</option>
-                        <option value="2">Syamil</option>
-                        <option value="53">Afif</option>
-                        <option value="67">Monisha A/p Chandran</option>
-                        <option value="14">Asyraf</option>
-                        <option value="12">Ameer</option>
-                        <option value="52">Amirul</option>
-                        <option value="42">Azreen</option>
-                        <option value="16">Harith</option>
-                        <option value="59">HAZMAN SHAHRILL</option>
-                        <option value="18">Imran</option>
-                        <option value="41">Irfan</option>
-                        <option value="36">KHAIRUL</option>
-                        <option value="70">Muhammad Syafi Amin Bin Mohd Fadzil</option>
-                        <option value="58">Syafiq Syazwan</option>
-                        <option value="28">AREEP</option>
-                        <option value="23">Husna</option>
-                        <option value="40">Batrisyia</option>
-                        <option value="26">Nazira</option>
-                        <option value="38">EEZA</option>
-                        <option value="72">Nor Asyiqin Binti Toni</option>
-                        <option value="6">Nadia</option>
-                        <option value="37">SHAHIRAH</option>
-                        <option value="50">Shahirah</option>
-                        <option value="19">Rina</option>
-                        <option value="35">Fazira</option>
-                        <option value="54">Syelis</option>
-                        <option value="65">ATHIRAH SOLIHEN</option>
-                        <option value="22">ATIRAH</option>
-                        <option value="79">Fatihah Roslan</option>
-                        <option value="5">Azera</option>
-                        <option value="44">Hafizah</option>
-                        <option value="43">AMIR</option>
-                        <option value="20">Shahirah</option>
-                        <option value="25">Suhaila</option>
-                        <option value="1">Suziani</option>
-                        <option value="69">Nur Syafiqah Radhuan</option>
-                        <option value="55">Nurfatin Munirah Binti Mohd Azman</option>
-                        <option value="76">Safwah Shaharin</option>
-                        <option value="49">Nurizan</option>
-                        <option value="64">Nurul Azuha Binti Nazmi</option>
-                        <option value="60">Azwani Sulaiman</option>
-                        <option value="82">Tehah</option>
-                        <option value="68">Nurul Hasmida Azmi</option>
-                        <option value="31">Syida</option>
-                        <option value="39">Aqila</option>
-                        <option value="71">QAISARAH</option>
-                        <option value="80">Ros Nabilah</option>
-                        <option value="27">Shafiqa</option>
-                        <option value="33">Siti </option>
-                        <option value="15">Syaza</option>
-                        <option value="4">Adda</option>
-                        <option value="29">Sitinor</option>
-                        <option value="78">SYARIFAH</option>
-                        <option value="11">Tutor Coordinator</option>
-                        <option value="56">Wazeerah Azmi </option>
-                        <option value="17">Izyan</option>
-                        <option value="7">Zam</option>
+                        <option value="Sorfina"> Sorfina</option>
+                        <option value="Fazira">Fazira</option>
+                        <option value="ADIB AZMI">ADIB AZMI</option>
+                        <option value="Aidid">Aidid </option>
+                        <option value="Alif Naquiddin">Alif Naquiddin</option>
+
                     </select>
                     <validate-input :errors="errors?.errors" value="admin_charge"></validate-input>
                 </div>
@@ -215,21 +142,21 @@
                         :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'customer.address.state')}`"
                         data-allow-clear="true" v-model="customer.address.state">
                         <option value="">Select</option>
-                        <option>Selangor</option>
-                        <option>Penang</option>
-                        <option>Johor</option>
-                        <option>Kuala Lumpur</option>
-                        <option>Negeri Sembilan</option>
-                        <option>Melaka</option>
-                        <option>Pahang</option>
-                        <option>Perlis</option>
-                        <option>Perak</option>
-                        <option>Kedah</option>
-                        <option>Terengganu</option>
-                        <option>Kelantan</option>
-                        <option>Serawak</option>
-                        <option>Sabah</option>
-                        <option>Putrajaya</option>
+                        <option value="Selangor">Selangor</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Johor">Johor</option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Negeri Sembilan">Negeri Sembilan</option>
+                        <option value="Melaka">Melaka</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Perlis">Perlis</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Terengganu">Terengganu</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Serawak"> Serawak</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Putrajaya">Putrajaya</option>
                     </select>
                     <validate-input :errors="errors?.errors" value="state"></validate-input>
                 </div>

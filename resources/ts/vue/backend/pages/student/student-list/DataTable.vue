@@ -10,11 +10,13 @@
             <tbody>
                 <tr v-for="(item, index) in studentList?.data" :key="index">
                     <td> {{ item.id ?? "N/A" }}</td>
-                    <td> {{ item.student_id ?? "N/A" }}</td>
-                    <td> {{ item?.students[0]?.fullname ?? "N/A" }}</td>
+                    <td>
+                        <span class="badge bg-primary bg-glow me-1"  v-for="std in mapStudentsStudentID(item.students)">{{std}}</span>
+                         </td>
+                    <td> <span class="badge bg-dark bg-glow me-1"  v-for="std in mapStudentsFullName(item.students)">{{std}}</span> </td>
                     <td> {{ item?.students[0]?.gender ?? "N/A" }}</td>
                     <td> {{ item.admin_charge ?? "N/A" }}</td>
-                    <td> <span class="badge bg-label-primary me-1">{{ item.status ?? "N/A" }}</span></td>
+                    <td> <span class="badge bg-success bg-glow me-1">{{ item.status ?? "N/A" }}</span></td>
                     <td> {{ $filters.DateTimeFormat(item.register_date) ?? "N/A" }}</td>
                     <td>
                         <!-- <router-link to="" class="btn btn-icon btn-primary waves-effect waves-light btn-sm me-2">
@@ -40,6 +42,12 @@ export default {
     data: () => ({
     }),
     methods: {
+        mapStudentsStudentID(items){
+            return items.map(item => item.student_id);
+        },
+        mapStudentsFullName(items){
+            return items.map(item => item.fullname);
+        },
         deleteItem(item) {
             return this.$emit("deleteItem", item);
         },

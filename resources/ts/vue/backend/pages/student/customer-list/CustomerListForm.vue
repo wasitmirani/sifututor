@@ -5,7 +5,7 @@
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-ClientCustomerId">ClientCustomerId</label>
                     <input type="text" id="multicol-ClientCustomerId" class="form-control"
-                        placeholder="ClientCustomerId" />
+                        placeholder="ClientCustomerId"   v-model="customer.slug" readonly/>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-Status">Status</label>

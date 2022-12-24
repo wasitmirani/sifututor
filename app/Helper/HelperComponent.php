@@ -74,7 +74,7 @@ class HelperComponent
             [
                 "title" => 'Students',
                 'can' => 'student-dropdown',
-                "icon" => "ti-settings",
+                "icon" => "ti-school",
                 'type' => 'multi',
                 "sub_menu" => [
                     setSubMenu(
@@ -107,7 +107,7 @@ class HelperComponent
             [
                 "title" => 'Student Invoices',
                 'can' => 'students-invoices-dropdown',
-                "icon" => "ti-settings",
+                "icon" => "ti-file-invoice",
                 'type' => 'multi',
                 "sub_menu" => [
                     setSubMenu(
@@ -128,7 +128,7 @@ class HelperComponent
             [
                 "title" => 'Tutors',
                 'can' => 'tutor-dropdown',
-                "icon" => "ti-settings",
+                "icon" => "ti-user-plus",
                 'type' => 'multi',
                 "sub_menu" => [
                     setSubMenu(
@@ -185,7 +185,7 @@ class HelperComponent
             [
                 "title" => 'Staffs',
                 'can' => 'staff-dropdown',
-                "icon" => "ti-settings",
+                "icon" => "ti-users",
                 'type' => 'multi',
                 "sub_menu" => [
                     setSubMenu(
@@ -212,7 +212,7 @@ class HelperComponent
             [
                 "title" => 'Products',
                 'can' => 'product-dropdown',
-                "icon" => "ti-settings",
+                "icon" => "ti-package",
                 'type' => 'multi',
                 "sub_menu" => [
                     setSubMenu(
@@ -227,7 +227,7 @@ class HelperComponent
             [
                 "title" => 'Job Tickets',
                 'can' => 'job-tickets-dropdown',
-                "icon" => "ti-settings",
+                "icon" => "ti-ticket",
                 'type' => 'multi',
                 "sub_menu" => [
                     setSubMenu(
@@ -245,7 +245,7 @@ class HelperComponent
                 ]
 
             ],
-            setSingleLink("Chart of Accounts", "ti-settings", "chart-account-view", "/chart-account"),
+            setSingleLink("Chart of Accounts", "ti-file-analytics", "chart-account-view", "/chart-account"),
 
             [
                 "heading" => "Tools",

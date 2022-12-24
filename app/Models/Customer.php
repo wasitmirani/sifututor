@@ -18,6 +18,11 @@ class Customer extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+
+     public function customerable()
+    {
+        return $this->morphTo();
+    }
     public function student()
     {
         return $this->belongsTo(Student::class, 'student_id', 'id');
