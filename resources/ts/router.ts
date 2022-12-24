@@ -77,6 +77,12 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/permissions','permissions','permission/Permissions'),
     setRoute('/settings','settings','setting/Settings'),
     setRoute('/app-settings','app-settings','setting/AppSettings'),
+    setRoute('/class-schedules','class-schedule-view','class-schedule/ClassSchedule'),
+    setRoute('/class-schedules/schedule-history/:slug/:id','schedule-history-view','class-schedule/schedule-history/ScheduleHistory'),
+    setRoute('/class-schedules/schedule-history/create/:slug/:id','schedule-history-create','class-schedule/schedule-history/CreateScheduleHistory'),
+    setRoute('/class-schedules/schedule-history/edit/:slug/:id','schedule-history-edit','class-schedule/schedule-history/EditScheduleHistory'),
+
+
 
 
 

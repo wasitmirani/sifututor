@@ -1,13 +1,13 @@
 <template >
     <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo ">
-            <a router-link="/" class="app-brand-link">
+            <router-link to="/" class="app-brand-link">
                 <!-- <span class="app-brand-logo demo">
 
                 </span> -->
-                <img src="/assets/img/logo/logo.png" width="150" alt class="h-auto rounded-circle">
+                <img src="/assets/img/logo/logo.png" width="150" alt class="h-auto">
                 <span class="app-brand-text demo menu-text fw-bold">{{ config?.app_name }}</span>
-            </a>
+            </router-link>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
                 <i class="ti menu-toggle-icon d-none d-xl-block ti-sm align-middle"></i>
