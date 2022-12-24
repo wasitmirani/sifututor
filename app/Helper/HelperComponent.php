@@ -71,6 +71,7 @@ class HelperComponent
                 ]
 
             ],
+            setSingleLink("Class Schedules", "ti ti-calendar", "class-schedule-view", "/class-schedules"),
             [
                 "title" => 'Students',
                 'can' => 'student-dropdown',
@@ -246,7 +247,6 @@ class HelperComponent
 
             ],
             setSingleLink("Chart of Accounts", "ti-settings", "chart-account-view", "/chart-account"),
-
             [
                 "heading" => "Tools",
                 "heading_can" => "tools-heading-view",
