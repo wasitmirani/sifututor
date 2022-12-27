@@ -40,7 +40,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="organization" class="form-label">Organization</label>
-                  <input type="text" class="form-control" id="organization" name="organization" value="Pixinvent">
+                  <input type="text" class="form-control" id="organization" name="organization" value="">
                 </div>
                 <div class="mb-3 col-md-6">
                   <label class="form-label" for="phoneNumber">Phone Number</label>
