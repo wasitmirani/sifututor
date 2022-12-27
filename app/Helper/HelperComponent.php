@@ -247,7 +247,13 @@ class HelperComponent
 
             ],
             setSingleLink("Chart of Accounts", "ti-file-analytics", "chart-account-view", "/chart-account"),
+            [
+                "heading" => "Cash Flow",
+                "heading_can" => "cash-flow-view",
 
+            ],
+            setSingleLink("Journal Ledger", "ti-books", "journal-ledger-view", "/cash-flow/journal-ledger"),
+            setSingleLink("Expenditures", "ti-database", "expenditures-view", "/cash-flow/expenditures"),
             [
                 "heading" => "Tools",
                 "heading_can" => "tools-heading-view",
