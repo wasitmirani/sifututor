@@ -31,7 +31,7 @@ Route::get('/unauthorized/user',function(){
     return abort(401,'Unauthorized User');
 });
 Route::get('/{any?}',[BackendController::class,'index'])
-       ->middleware('auth')
+    //    ->middleware('auth')
        ->name('dashboard')
        ->where('any', '[\/\w\.-]*');
 

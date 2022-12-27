@@ -81,6 +81,14 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/class-schedules/schedule-history/:slug/:id','schedule-history-view','class-schedule/schedule-history/ScheduleHistory'),
     setRoute('/class-schedules/schedule-history/create/:slug/:id','schedule-history-create','class-schedule/schedule-history/CreateScheduleHistory'),
     setRoute('/class-schedules/schedule-history/edit/:slug/:id','schedule-history-edit','class-schedule/schedule-history/EditScheduleHistory'),
+    setRoute('/cash-flow/journal-ledger','journal-ledger-view','cash-flow/journal-ledger/JournalLedger'),
+    setRoute('/cash-flow/journal-ledger/create','journal-ledger-create','cash-flow/journal-ledger/CreateJournalLedger'),
+    setRoute('/cash-flow/journal-ledger/edit/:slug/:id','journal-ledger-edit','cash-flow/journal-ledger/EditJournalLedger'),
+    setRoute('/cash-flow/expenditures','expenditures-view','cash-flow/expenditure/Expenditure'),
+    setRoute('/cash-flow/expenditures/create','expenditures-create','cash-flow/expenditure/CreateExpenditure'),
+    setRoute('/cash-flow/expenditures/edit/:slug/:id','expenditures-edit','cash-flow/expenditure/EditExpenditure'),
+
+
 
 
 
