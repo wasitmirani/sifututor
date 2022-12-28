@@ -39,7 +39,7 @@
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label" for="multicol-EstimateCommission">Search Exising Student</label>
                     <multiselect v-model="student" :options="studentList" track-by="id" label="name"
-                        placeholder="Search by student name" :multiple="true">
+                        placeholder="Search by student name">
                     </multiselect>
                 </div>
             </div>
@@ -377,6 +377,19 @@ export default {
         customer_address: {},
         student: [],
     }),
+    watch: {
+        student: function (newValue, oldValue) {
+            console.log("new", newValue);
+            console.log("old", oldValue);
+            const arr = this.studentList?.filter(item => item.student_id === newValue.student_id);
+            console.log('arr', arr);
+            // this.stdInfo = 
+            // this.SupplierList.filter((v) => ())
+            // setTimeout(() => {
+            //     this.supplierAddress = { ...this.supplierAddress, supplier_address: arr[0]?.address, supplier_city: arr[0]?.city, supplier_zipcode: arr[0]?.zip_code }
+            // }, 1000);
+        },
+    },
     methods: {
         addSubjectSubscription() {
             this.SubjectSubscribe.push({
@@ -426,8 +439,8 @@ export default {
         },
         getStudent() {
             axios.get('/student-list').then((res) => {
-                this.studentList = res.data.students.map((item) => {
-                    return { id: item.fullname.ubstring(0, 2) + Math.floor((Math.random() * 10000000)), name: item.fullname }
+                this.studentList = res.data.students.map((item, index) => {
+                    return { id: index + Math.floor((Math.random() * 10000000)), name: item.fullname }
                 });
 
             }).catch((err) => {

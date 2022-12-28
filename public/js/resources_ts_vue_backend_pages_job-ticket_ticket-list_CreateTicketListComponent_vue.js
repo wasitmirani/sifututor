@@ -107,6 +107,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       student: []
     };
   },
+  watch: {
+    student: function student(newValue, oldValue) {
+      var _this$studentList;
+
+      console.log("new", newValue);
+      console.log("old", oldValue);
+      var arr = (_this$studentList = this.studentList) === null || _this$studentList === void 0 ? void 0 : _this$studentList.filter(function (item) {
+        return item.student_id === newValue.student_id;
+      });
+      console.log('arr', arr); // this.stdInfo = 
+      // this.SupplierList.filter((v) => ())
+      // setTimeout(() => {
+      //     this.supplierAddress = { ...this.supplierAddress, supplier_address: arr[0]?.address, supplier_city: arr[0]?.city, supplier_zipcode: arr[0]?.zip_code }
+      // }, 1000);
+    }
+  },
   methods: {
     addSubjectSubscription: function addSubjectSubscription() {
       this.SubjectSubscribe.push({
@@ -158,9 +174,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios.get('/student-list').then(function (res) {
-        _this.studentList = res.data.students.map(function (item) {
+        _this.studentList = res.data.students.map(function (item, index) {
           return {
-            id: item.fullname.ubstring(0, 2) + Math.floor(Math.random() * 10000000),
+            id: index + Math.floor(Math.random() * 10000000),
             name: item.fullname
           };
         });
@@ -1010,8 +1026,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     options: _ctx.studentList,
     "track-by": "id",
     label: "name",
-    placeholder: "Search by student name",
-    multiple: true
+    placeholder: "Search by student name"
   }, null, 8
   /* PROPS */
   , ["modelValue", "options"])])]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.studentInfo, function (item, index) {
