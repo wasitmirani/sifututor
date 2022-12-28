@@ -638,10 +638,7 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   href: "javascript:void(0);"
 };
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Dashboard");
-
-var _hoisted_6 = {
+var _hoisted_5 = {
   "class": "breadcrumb-item active"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -651,7 +648,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     to: "/dashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_5];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Dashboard")];
     }),
     _: 1
     /* STABLE */
@@ -676,7 +673,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["to"])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.active_name), 1
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.active_name), 1
   /* TEXT */
   )])]);
 }
@@ -1059,30 +1056,27 @@ var _hoisted_9 = {
 var _hoisted_10 = {
   "class": "avatar-group"
 };
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" | ");
-
-var _hoisted_12 = {
+var _hoisted_11 = {
   "class": "badge bg-label-dark"
 };
-var _hoisted_13 = ["onClick"];
+var _hoisted_12 = ["onClick"];
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "ti ti-edit ti-sm me-2"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_15 = [_hoisted_14];
-var _hoisted_16 = ["onClick"];
+var _hoisted_14 = [_hoisted_13];
+var _hoisted_15 = ["onClick"];
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "ti ti-trash ti-sm mx-2"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_18 = [_hoisted_17];
+var _hoisted_17 = [_hoisted_16];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_avatar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("avatar");
 
@@ -1118,7 +1112,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       list: role.permissions
     }, null, 8
     /* PROPS */
-    , ["list"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(role === null || role === void 0 ? void 0 : (_role$permissions = role.permissions) === null || _role$permissions === void 0 ? void 0 : _role$permissions.length), 1
+    , ["list"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" | "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(role === null || role === void 0 ? void 0 : (_role$permissions = role.permissions) === null || _role$permissions === void 0 ? void 0 : _role$permissions.length), 1
     /* TEXT */
     )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$filters.DateTimeFormat(role.created_at)), 1
     /* TEXT */
@@ -1128,17 +1122,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return $options.editItem(role);
       },
       "class": "text-dark"
-    }, _hoisted_15, 8
+    }, _hoisted_14, 8
     /* PROPS */
-    , _hoisted_13), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    , _hoisted_12), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       role: "button",
       onClick: function onClick($event) {
         return $options.deleteItem(role);
       },
       "class": "text-danger delete-record"
-    }, _hoisted_18, 8
+    }, _hoisted_17, 8
     /* PROPS */
-    , _hoisted_16)])]);
+    , _hoisted_15)])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_table_footer, {
