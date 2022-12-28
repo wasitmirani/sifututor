@@ -1,25 +1,25 @@
 <template>
-    <ul class="list-unstyled d-flex align-items-center avatar-group mb-0" v-if="list">
-                    <li v-for="item in list.slice(0,2)" :key="item.id" data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                    data-bs-placement="top" :title="item.name"
-                    class="avatar avatar-sm pull-up">
-                        <avatar :name="item.name"></avatar>
-                    </li>
 
-    </ul>
+
+    <div class=" avatar-group ">
+      <div class="avatar" v-for="item in list.slice(0,2)">
+        <avatar  :name="item.name"></avatar>
+
+      </div>
+
+      <!-- <div class="avatar">
+        <span class="avatar-initial rounded-circle pull-up" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="3 more">+3</span>
+      </div> -->
+ </div>
 </template>
 
 <script>
 import Avatar from "./AvatarComponent.vue";
 export default {
-    props:['list'],
-    components:{Avatar},
+props:['list'],
+components:{Avatar},
 
 }
 </script>
 
-<style>
-.avatar-group .avatar .avatar-content {
-    background-color: transparent !important;
-}
-</style>
+

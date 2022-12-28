@@ -73,6 +73,7 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/student-invoices/invoice/edit/:slug/:id','invocie-list-edit','student-invoice/invoice/EditInvoice'),
     setRoute('/users','users','user/Users'),
     setRoute('/user/create','user-create','user/CreateUser'),
+    setRoute('/user/edit/:uid','user-edit','user/EditUser'),
     setRoute('/roles','roles','role/Roles'),
     setRoute('/permissions','permissions','permission/Permissions'),
     setRoute('/settings','settings','setting/Settings'),

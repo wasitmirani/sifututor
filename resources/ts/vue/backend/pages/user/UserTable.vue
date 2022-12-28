@@ -10,22 +10,23 @@
             <tbody>
                 <tr v-for="(item, index) in users?.data" :key="index">
                     <td> {{ item.id ?? "N/A" }}</td>
-                    <td> {{ item.student_id ?? "N/A" }}</td>
-                    <td> {{ item.fullname ?? "N/A" }}</td>
-                    <td> {{ item.gender ?? "N/A" }}</td>
-                    <td> {{ item.staff_in_charge ?? "N/A" }}</td>
-                    <td> <span class="badge bg-label-primary me-1">{{ item.status ?? "N/A" }}</span></td>
-                    <td> {{ item.register_date ?? "N/A" }}</td>
+                    <td> {{ item.name ?? "N/A" }}</td>
+                    <td> {{ item.email ?? "N/A" }}</td>
+                    <td> {{ item.phone ?? "N/A" }}</td>
+                    <td> {{ getRoleName(item)  }}</td>
+                    <td> {{ item.city ?? "N/A" }}</td>
+                    <td> {{ item.country ?? "N/A" }}</td>
                     <td>
-                        <router-link to="" class="btn btn-icon btn-primary waves-effect waves-light btn-sm me-2">
-                            <i class="fa-solid fa-eye"> </i>
-                        </router-link>
-                        <router-link to="/students/student-list/edit" class="btn btn-icon btn-success waves-effect waves-light btn-sm me-2">
-                            <i class="fa-solid fa-pen-to-square"> </i>
-                        </router-link>
-                        <a href="" class="btn btn-icon btn-danger waves-effect waves-light btn-sm">
-                            <i class="fa-solid fa-trash"> </i>
-                        </a>
+                        <span class="badge bg-label-success" text-capitalized="">Active</span>
+                    </td>
+                    <td> {{$filters.DateTimeFormat(item.created_at)}}</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <router-link  :to="`/portal/user/edit/${item.uid}`"  class="text-dark"><i class="ti ti-edit ti-sm me-2"></i></router-link>
+                            <a role="button" @click="deleteItem(item)" class="text-danger delete-record"><i class="ti ti-trash ti-sm mx-2"></i></a>
+
+                        </div>
+
                     </td>
                 </tr>
             </tbody>
@@ -38,6 +39,22 @@ export default {
     props: ["headers", "users"],
     data: () => ({
     }),
+    methods: {
+        getRoleName(user){
+
+        const role=user?.roles[0];
+        if(role?.name)
+          return role.name;
+        return  "N/A";
+        },
+        deleteItem: function (item) {
+            return this.$emit("deleteItem", item);
+        },
+        editItem: function (item) {
+            // console.log(item);
+            return this.$emit("editItem", item);
+        }
+    },
     mounted() {
     }
 }

@@ -2,21 +2,19 @@
     <div class="col-md-12">
 
         <div class="card mb-4">
-          <h5 class="card-header">Profile Details</h5>
+          <h5 class="card-header">Add User Details</h5>
           <!-- Account -->
           <div class="card-body">
             <div class="d-flex align-items-start align-items-sm-center gap-4">
-              <img src="/assets/img/avatars/14.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded" id="uploadedAvatar">
+
               <div class="button-wrapper">
-                <label for="upload" class="btn btn-primary me-2 mb-3 waves-effect waves-light" tabindex="0">
-                  <span class="d-none d-sm-block">Upload new photo</span>
-                  <i class="ti ti-upload d-block d-sm-none"></i>
-                  <input type="file" id="upload" class="account-file-input" hidden="" accept="image/png, image/jpeg">
-                </label>
-                <button type="button" class="btn btn-label-secondary account-image-reset mb-3 waves-effect">
-                  <i class="ti ti-refresh-dot d-block d-sm-none"></i>
-                  <span class="d-none d-sm-block">Reset</span>
-                </button>
+
+                <upload-media
+                server="/upload/user-thumbanail"
+                @media='Media'
+                ref="upload-media"
+                >
+              </upload-media>
 
                 <div class="text-muted">Allowed JPG, GIF or PNG. Max size of 800K</div>
               </div>
@@ -24,46 +22,79 @@
           </div>
           <hr class="my-0">
           <div class="card-body">
-            <form id="formAccountSettings" method="POST" onsubmit="return false" class="fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+            <form id="formAccountSettings"  v-on:submit.prevent="onSubmit" class="fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
               <div class="row">
                 <div class="mb-3 col-md-6 fv-plugins-icon-container">
-                  <label for="firstName" class="form-label">First Name</label>
-                  <input class="form-control" type="text" id="firstName" name="firstName" value="John" autofocus="">
-                <div class="fv-plugins-message-container invalid-feedback"></div></div>
-                <div class="mb-3 col-md-6 fv-plugins-icon-container">
-                  <label for="lastName" class="form-label">Last Name</label>
-                  <input class="form-control" type="text" name="lastName" id="lastName" value="Doe">
-                <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                  <label for="firstName" class="form-label">Full Name</label>
+                  <input type="text" v-model="user.name"
+                    :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'name')}`"
+                    placeholder="Full Name" />
+                <validate-input :errors="errors?.errors" value="name"></validate-input>
+                </div>
+
                 <div class="mb-3 col-md-6">
                   <label for="email" class="form-label">E-mail</label>
-                  <input class="form-control" type="text" id="email" name="email" value="john.doe@example.com" placeholder="john.doe@example.com">
+                  <input  :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'email')}`" type="text" v-model="user.email" id="email" name="email"  placeholder="john.doe@example.com">
+                  <validate-input :errors="errors?.errors" value="email"></validate-input>
                 </div>
-                <div class="mb-3 col-md-6">
-                  <label for="organization" class="form-label">Organization</label>
-                  <input type="text" class="form-control" id="organization" name="organization" value="">
+                <div class="row">
+                  <div class="mb-3 col-md-6 form-password-toggle fv-plugins-icon-container">
+                    <label class="form-label" for="newPassword"> Password</label>
+                    <div class="input-group input-group-merge has-validation">
+                      <input :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'password')}`" v-model="user.password" type="password" id="newPassword" name="newPassword" placeholder="············">
+                      <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                    </div>
+
+
+                    <validate-input :errors="errors?.errors" value="password"></validate-input>
+                  </div>
+
+                  <div class="mb-3 col-md-6 form-password-toggle fv-plugins-icon-container">
+                    <label class="form-label" for="confirmPassword">Confirm  Password</label>
+                    <div class="input-group input-group-merge has-validation">
+                      <input v-model="user.password_confirmation" class="form-control" type="password" name="confirmPassword" id="confirmPassword" placeholder="············">
+                      <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i>
+                      </span>
+                    </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                  <div class="col-12 mb-4">
+                    <h6>Password Requirements:</h6>
+                    <ul class="ps-3 mb-0">
+                      <li class="mb-1">Minimum 8 characters long - the more, the better</li>
+                      <li class="mb-1">At least one lowercase character</li>
+                      <li>At least one number, symbol, or whitespace character</li>
+                    </ul>
+                  </div>
+
                 </div>
                 <div class="mb-3 col-md-6">
                   <label class="form-label" for="phoneNumber">Phone Number</label>
                   <div class="input-group input-group-merge">
-                    <span class="input-group-text">US (+1)</span>
-                    <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="202 555 0111">
+                    <!-- <span class="input-group-text">US (+1)</span> -->
+                    <input type="text" id="phoneNumber" v-model="user.phone" name="phoneNumber"  :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'phone')}`" placeholder="202 555 0111">
+
+                    <validate-input :errors="errors?.errors" value="phone"></validate-input>
                   </div>
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="address" class="form-label">Address</label>
-                  <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+
+                  <input type="text" id="phoneNumber" v-model="user.address" name="phoneNumber"  :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'address')}`" placeholder="Address">
+
+                  <validate-input :errors="errors?.errors" value="address"></validate-input>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="state" class="form-label">City</label>
+                  <input class="form-control" type="text" v-model="user.city" id="state" name="state" placeholder="San ">
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="state" class="form-label">State</label>
-                  <input class="form-control" type="text" id="state" name="state" placeholder="California">
-                </div>
-                <div class="mb-3 col-md-6">
-                  <label for="zipCode" class="form-label">Zip Code</label>
-                  <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="231465" maxlength="6">
+                  <input class="form-control" type="text" v-model="user.state" id="state" name="state" placeholder="California">
                 </div>
                 <div class="mb-3 col-md-6">
                   <label class="form-label" for="country">Country</label>
-                  <div class="position-relative"><select id="country" class="select2 form-select select2-hidden-accessible" data-select2-id="country" tabindex="-1" aria-hidden="true">
+                  <div class="position-relative">
+                    <select v-model="user.country" id="country" class="select2 form-select select2-hidden-accessible" data-select2-id="country" tabindex="-1" aria-hidden="true">
                     <option value="" data-select2-id="2">Select</option>
                     <option value="Australia">Australia</option>
                     <option value="Bangladesh">Bangladesh</option>
@@ -89,21 +120,25 @@
                     <option value="United Arab Emirates">United Arab Emirates</option>
                     <option value="United Kingdom">United Kingdom</option>
                     <option value="United States">United States</option>
-                  </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 652.222px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-country-container"><span class="select2-selection__rendered" id="select2-country-container" role="textbox" aria-readonly="true" title="Select">Select</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+                  </select></div>
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="language" class="form-label">Language</label>
-                  <div class="position-relative"><select id="language" class="select2 form-select select2-hidden-accessible" data-select2-id="language" tabindex="-1" aria-hidden="true">
+                  <div class="position-relative">
+                    <select id="language"  v-model="user.language"  :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'language')}`" data-select2-id="language" tabindex="-1" aria-hidden="true">
                     <option value="" data-select2-id="4">Select Language</option>
                     <option value="en">English</option>
                     <option value="fr">French</option>
                     <option value="de">German</option>
                     <option value="pt">Portuguese</option>
-                  </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="3" style="width: 652.222px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-language-container"><span class="select2-selection__rendered" id="select2-language-container" role="textbox" aria-readonly="true" title="Select Language">Select Language</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+                  </select>
+                  <validate-input :errors="errors?.errors" value="language"></validate-input>
+                </div>
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="timeZones" class="form-label">Timezone</label>
-                  <div class="position-relative"><select id="timeZones" class="select2 form-select select2-hidden-accessible" data-select2-id="timeZones" tabindex="-1" aria-hidden="true">
+                  <div class="position-relative">
+                    <select id="timeZones" v-model="user.timezone" class="select2 form-select select2-hidden-accessible" data-select2-id="timeZones" tabindex="-1" aria-hidden="true">
                     <option value="" data-select2-id="6">Select Timezone</option>
                     <option value="-12">(GMT-12:00) International Date Line West</option>
                     <option value="-11">(GMT-11:00) Midway Island, Samoa</option>
@@ -123,24 +158,26 @@
                     <option value="-5">(GMT-05:00) Indiana (East)</option>
                     <option value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
                     <option value="-4">(GMT-04:00) Caracas, La Paz</option>
-                  </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="5" style="width: 652.222px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-timeZones-container"><span class="select2-selection__rendered" id="select2-timeZones-container" role="textbox" aria-readonly="true" title="Select Timezone">Select Timezone</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+                  </select></div>
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="currency" class="form-label">Currency</label>
-                  <div class="position-relative"><select id="currency" class="select2 form-select select2-hidden-accessible" data-select2-id="currency" tabindex="-1" aria-hidden="true">
+                  <div class="position-relative">
+                    <select id="currency" v-model="user.currency" class="select2 form-select select2-hidden-accessible" data-select2-id="currency" tabindex="-1" aria-hidden="true">
                     <option value="" data-select2-id="8">Select Currency</option>
                     <option value="usd">USD</option>
                     <option value="euro">Euro</option>
                     <option value="pound">Pound</option>
                     <option value="bitcoin">Bitcoin</option>
-                  </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="7" style="width: 652.222px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-currency-container"><span class="select2-selection__rendered" id="select2-currency-container" role="textbox" aria-readonly="true" title="Select Currency">Select Currency</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+                  </select></div>
                 </div>
               </div>
               <div class="mt-2">
-                <button type="submit" class="btn btn-primary me-2 waves-effect waves-light">Save changes</button>
+                <button type="submit" class="btn btn-primary me-2 waves-effect waves-light" v-if="!edit_mode">Submit</button>
+                <button type="submit" class="btn btn-success me-2 waves-effect waves-light" v-else>Update</button>
                 <button type="reset" class="btn btn-label-secondary waves-effect">Cancel</button>
               </div>
-            <input type="hidden"></form>
+           </form>
           </div>
           <!-- /Account -->
         </div>
@@ -148,7 +185,73 @@
       </div>
 </template>
 <script>
+import { UploadMedia, UpdateMedia } from 'vue-media-upload';
+import ValidateInput from "../../components/ValidateInputComponent.vue";
 export default {
+  props:['edit_mode','form'],
+  components: {
+    UploadMedia,
+    UpdateMedia,
+    ValidateInput
+  },
+  data:()=>({
+    user:{},
+    media:[],
+    errors:[],
+    // url:this.hosturl,
+  }),
+  methods: {
+    restForm(){
+            this.user={};
+        },
+      async  onSubmit(){
+            if(!this.edit_mode){
+               await axios.post('/user', this.user).then((res)=>{
+                this.$router.push("/portal/users" );
+                this.$root.alertNotify(res.status,'Created Successfuly','success',res.data);
+                this.restForm();
+                }).catch((err)=>{
+                  this.errors = err.response.data;
+                this.$root.alertNotify(err.response.status, null, "error", err.response.data);
+
+                })
+            } else{
+              await axios.put('/user/' + this.form.id, this.user).then((res)=>{
+                this.$router.push("/portal/users" );
+                  this.$root.alertNotify(res.status,'Updated Successfuly','success',res.data);
+                //   this.restForm();
+              }).catch((err)=>{
+                this.$router.push("/users" );
+                  this.$root.alertNotify(err.response.status,null,'error', err.response.data);
+              })
+          }
+      },
+    Media(value){
+            if(this.media.length > 1){
+                this.media.splice(0,1);
+                if(this.$refs['upload-media'] != undefined)
+                    this.$refs['upload-media'].reset();
+            }
+            this.media = [];
+            this.media = value;
+            if(this.media){
+                console.log(this?.$refs['upload-media'].media);
+                // console.log(this.$refs?.upload-media?.media);
+                this.user.thumbnail = this.media[0]?.name;
+            }
+        },
+        restForm(){
+            this.wastage={};
+        },
+        onSavedMedia(media){
+            console.log(media);
+        },
+  },
+  mounted() {
+    if(this.edit_mode){
+      this.user=this.form;
+    }
+  },
 
 }
 </script>
