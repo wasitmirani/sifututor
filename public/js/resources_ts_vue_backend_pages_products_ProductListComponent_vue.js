@@ -146,7 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "DataTableComponent",
-  props: ["headers", "desserts"],
+  props: ["headers", "products"],
   data: function data() {
     return {};
   },
@@ -178,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "ProductListComponent",
+  name: "productsComponent",
   components: {
     DataTable: _DataTable__WEBPACK_IMPORTED_MODULE_0__["default"],
     breadcrumb: _components_BreadcrumbComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -211,27 +211,10 @@ __webpack_require__.r(__webpack_exports__);
         value: 'actions',
         sortable: false
       }],
-      desserts: [{
-        "uid": "1",
-        "product_name": "Mathematics (UPSR) - PHYSICAL",
-        "product_code": "Mathematics (UPSR) - PHYSICAL",
-        "category": 'UPSR',
-        "purchase_cost": "RM 0.00",
-        "sell_price": "RM 50.00",
-        "slug": "Mathematics"
-      }, {
-        "uid": "2",
-        "product_name": "Add Maths (IGCSE) - PHYSICAL",
-        "product_code": "Add Maths (IGCSE) - PHYSICAL",
-        "category": 'IGCSE',
-        "purchase_cost": "RM 0.00",
-        "sell_price": "RM 70.00",
-        "slug": "Maths"
-      }],
       page_num: 1,
       loading: false,
       query: "",
-      productList: []
+      products: []
     };
   },
   methods: {
@@ -242,7 +225,7 @@ __webpack_require__.r(__webpack_exports__);
       this.loading = true;
       this.page_num = page;
       axios.get('/product?page=' + page + '&query=' + this.query).then(function (res) {
-        _this.productList = res.data.products;
+        _this.products = res.data.products;
         _this.loading = false;
       })["catch"](function (err) {
         _this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -252,7 +235,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.query = query;
     },
     filterData: function filterData(data) {
-      this.productList = data.products;
+      this.products = data.products;
     },
     loadingStart: function loadingStart(value) {
       this.loading = value;
@@ -280,7 +263,8 @@ __webpack_require__.r(__webpack_exports__);
       // });
     }
   },
-  mounted: function mounted() {// this.getSubjects();
+  mounted: function mounted() {
+    this.getProduct();
   }
 });
 
@@ -446,6 +430,8 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_9 = [_hoisted_8];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _$props$products;
+
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.headers, function (head, index) {
@@ -456,7 +442,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.desserts, function (item, index) {
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)((_$props$products = $props.products) === null || _$props$products === void 0 ? void 0 : _$props$products.data, function (item, index) {
     var _item$uid, _item$product_name, _item$product_code, _item$category, _item$purchase_cost, _item$sell_price;
 
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
@@ -583,13 +569,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["apiurl"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     headers: _ctx.headers,
-    desserts: _ctx.desserts,
+    products: _ctx.products,
     onDeleteItem: _cache[4] || (_cache[4] = function ($event) {
       return $options.deleteItem($event);
     })
   }, null, 8
   /* PROPS */
-  , ["headers", "desserts"])])])], 64
+  , ["headers", "products"])])])], 64
   /* STABLE_FRAGMENT */
   );
 }

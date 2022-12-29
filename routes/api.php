@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\api\role\RoleController;
 use App\Http\Controllers\backend\api\user\UserController;
 use App\Http\Controllers\backend\api\job\TicketController;
 use App\Http\Controllers\backend\api\layout\LayoutController;
+use App\Http\Controllers\backend\api\product\ProductController;
 use App\Http\Controllers\backend\api\role\PermissionController;
 use App\Http\Controllers\backend\api\student\StudentController;
 use App\Http\Controllers\backend\api\subject\SubjectController;
@@ -47,7 +48,7 @@ Route::resource('client', ClientController::class);
 Route::resource('role', RoleController::class);
 Route::resource('permission', PermissionController::class);
 Route::get('roles', [RoleController::class, 'getRoles']);
-
+Route::resource('product', ProductController::class);
 
 
 

@@ -106,7 +106,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   props: ['edit_mode', 'form'],
   data: function data() {
     return {
-      product: {},
+      product: {
+        tuition_service: 0,
+        services: {
+          incentive_rate_before: 0,
+          incentive_rate_after: 0,
+          commision_rate_after: 0,
+          commision_rate_before: 0
+        }
+      },
       errors: [],
       loading: false,
       service: ""
@@ -341,11 +349,15 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "SifuTutor", -1
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "sifuTutor"
+}, "SifuTutor", -1
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "NakNgaji", -1
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "nakNgaji"
+}, "NakNgaji", -1
 /* HOISTED */
 );
 
@@ -498,16 +510,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.product.product_name = $event;
+      return _ctx.product.name = $event;
     }),
     id: "ProductName",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors = _ctx.errors) === null || _ctx$errors === void 0 ? void 0 : _ctx$errors.errors, 'product_name'))),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors = _ctx.errors) === null || _ctx$errors === void 0 ? void 0 : _ctx$errors.errors, 'name'))),
     placeholder: "Product Name"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.product_name]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.name]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors2 = _ctx.errors) === null || _ctx$errors2 === void 0 ? void 0 : _ctx$errors2.errors,
-    value: "product_name"
+    value: "name"
   }, null, 8
   /* PROPS */
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -515,14 +527,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "multicol-ProductCode",
     placeholder: "Product Code",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.product.product_code = $event;
+      return _ctx.product.code = $event;
     }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors3 = _ctx.errors) === null || _ctx$errors3 === void 0 ? void 0 : _ctx$errors3.errors, 'product_code')))
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors3 = _ctx.errors) === null || _ctx$errors3 === void 0 ? void 0 : _ctx$errors3.errors, 'code')))
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.product_code]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.code]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors4 = _ctx.errors) === null || _ctx$errors4 === void 0 ? void 0 : _ctx$errors4.errors,
-    value: "product_code"
+    value: "code"
   }, null, 8
   /* PROPS */
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
@@ -559,14 +571,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "multicol-PurchaseCost",
     placeholder: "Purchase Cost",
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
-      return _ctx.product.purchase_cost = $event;
+      return _ctx.product.cost = $event;
     }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors9 = _ctx.errors) === null || _ctx$errors9 === void 0 ? void 0 : _ctx$errors9.errors, 'purchase_cost')))
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors9 = _ctx.errors) === null || _ctx$errors9 === void 0 ? void 0 : _ctx$errors9.errors, 'cost')))
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.purchase_cost]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.cost]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors10 = _ctx.errors) === null || _ctx$errors10 === void 0 ? void 0 : _ctx$errors10.errors,
-    value: "purchase_cost"
+    value: "cost"
   }, null, 8
   /* PROPS */
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -574,14 +586,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "multicol-SellPrice",
     placeholder: "Sell Price",
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-      return _ctx.product.sell_price = $event;
+      return _ctx.product.price = $event;
     }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors11 = _ctx.errors) === null || _ctx$errors11 === void 0 ? void 0 : _ctx$errors11.errors, 'sell_price')))
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors11 = _ctx.errors) === null || _ctx$errors11 === void 0 ? void 0 : _ctx$errors11.errors, 'price')))
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.sell_price]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.price]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors12 = _ctx.errors) === null || _ctx$errors12 === void 0 ? void 0 : _ctx$errors12.errors,
-    value: "sell_price"
+    value: "price"
   }, null, 8
   /* PROPS */
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
@@ -602,16 +614,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     rows: "3",
     id: "basic-icon-default-Remark",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors15 = _ctx.errors) === null || _ctx$errors15 === void 0 ? void 0 : _ctx$errors15.errors, 'remark'))),
-    placeholder: "Remark",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors15 = _ctx.errors) === null || _ctx$errors15 === void 0 ? void 0 : _ctx$errors15.errors, 'remarks'))),
+    placeholder: "Remarks",
     "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
-      return _ctx.product.remark = $event;
+      return _ctx.product.remarks = $event;
     })
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.remark]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.remarks]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors16 = _ctx.errors) === null || _ctx$errors16 === void 0 ? void 0 : _ctx$errors16.errors,
-    value: "remark"
+    value: "remarks"
   }, null, 8
   /* PROPS */
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -620,24 +632,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: "",
     id: "customCheckPrimary",
     "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
-      return _ctx.service = $event;
+      return _ctx.product.tuition_service = $event;
     }),
     "true-value": 1,
     "false-value": 0
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, _ctx.service]]), _hoisted_26])])]), _ctx.service === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, _ctx.product.tuition_service]]), _hoisted_26])])]), _ctx.product.tuition_service === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "number",
     id: "multicol-Commision",
     placeholder: "Commision Rate (Before Training)",
     "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
-      return _ctx.product.commision_rate_before = $event;
+      return _ctx.product.services.commision_rate_before = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors17 = _ctx.errors) === null || _ctx$errors17 === void 0 ? void 0 : _ctx$errors17.errors, 'commision_rate_before'))),
     min: "0"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.commision_rate_before]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.services.commision_rate_before]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors18 = _ctx.errors) === null || _ctx$errors18 === void 0 ? void 0 : _ctx$errors18.errors,
     value: "commision_rate_before"
   }, null, 8
@@ -647,13 +659,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "multicol-Incentive",
     placeholder: "Incentive Rate (Before Training)",
     "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
-      return _ctx.product.incentive_rate_before = $event;
+      return _ctx.product.services.incentive_rate_before = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors19 = _ctx.errors) === null || _ctx$errors19 === void 0 ? void 0 : _ctx$errors19.errors, 'incentive_rate_before'))),
     min: "0"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.incentive_rate_before]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.services.incentive_rate_before]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors20 = _ctx.errors) === null || _ctx$errors20 === void 0 ? void 0 : _ctx$errors20.errors,
     value: "incentive_rate_before"
   }, null, 8
@@ -663,13 +675,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "multicol-Commisionafter",
     placeholder: "Commision Rate (After Training)",
     "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
-      return _ctx.product.commision_rate_after = $event;
+      return _ctx.product.services.commision_rate_after = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors21 = _ctx.errors) === null || _ctx$errors21 === void 0 ? void 0 : _ctx$errors21.errors, 'commision_rate_after'))),
     min: "0"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.commision_rate_after]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.services.commision_rate_after]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors22 = _ctx.errors) === null || _ctx$errors22 === void 0 ? void 0 : _ctx$errors22.errors,
     value: "commision_rate_after"
   }, null, 8
@@ -679,13 +691,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "multicol-Incentiveafter",
     placeholder: "Incentive Rate (After Training)",
     "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
-      return _ctx.product.incentive_rate_after = $event;
+      return _ctx.product.services.incentive_rate_after = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors23 = _ctx.errors) === null || _ctx$errors23 === void 0 ? void 0 : _ctx$errors23.errors, 'incentive_rate_after'))),
     min: "0"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.incentive_rate_after]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.product.services.incentive_rate_after]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors24 = _ctx.errors) === null || _ctx$errors24 === void 0 ? void 0 : _ctx$errors24.errors,
     value: "incentive_rate_after"
   }, null, 8

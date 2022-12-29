@@ -710,7 +710,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["name"])]);
   }), 256
   /* UNKEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"avatar\">\n        <span class=\"avatar-initial rounded-circle pull-up\" data-bs-toggle=\"tooltip\" data-bs-placement=\"bottom\" data-bs-original-title=\"3 more\">+3</span>\n      </div> ")]);
+  ))]);
 }
 
 /***/ }),

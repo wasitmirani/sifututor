@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend\api\student;
 
 use Exception;
+use App\Models\Product;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Customer;
@@ -28,7 +29,7 @@ class StudentController extends Controller
         return response()->json(['status' => true, 'students' => $students]);
     }
     public function getStudentList(Request $request){
-        $students = Student::latest()->get()->pluck('students')->all();
+        $students = Product::latest()->get()->pluck('students')->all();
         $students= array_filter( $students);
         $students = collect($students)->collapse();
         return response()->json(['status' => true,'students' => $students]);

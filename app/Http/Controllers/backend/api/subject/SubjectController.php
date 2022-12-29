@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\backend\api\subject;
 
+use App\Models\Product;
 use App\Models\Subject;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class SubjectController extends Controller
     }
 
     public function getSubjectList(Request $request){
-        $subjects = Subject::latest()->orderBy('category', 'asc')->get();
+        $subjects = Product::latest()->orderBy('category', 'asc')->get();
         $subjects=collect($subjects)->groupBy('category');
         $subjects = collect($subjects)->map(function ($item) {
             return ['category' => $item->first()->category, 'subjects' => $item->all()];
