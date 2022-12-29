@@ -88,6 +88,16 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/cash-flow/expenditures','expenditures-view','cash-flow/expenditure/Expenditure'),
     setRoute('/cash-flow/expenditures/create','expenditures-create','cash-flow/expenditure/CreateExpenditure'),
     setRoute('/cash-flow/expenditures/edit/:slug/:id','expenditures-edit','cash-flow/expenditure/EditExpenditure'),
+    setRoute('/sales-invoice/invoice','sale-invoices-view','sale-invoice/invoice/Invoice'),
+    setRoute('/sales-invoice/invoice/create','sale-invoices-create','sale-invoice/invoice/CreateInvoice'),
+    setRoute('/sales-invoice/invoice/edit/:slug/:id','sale-invoices-edit','sale-invoice/invoice/EditInvoice'),
+    setRoute('/sales-invoice/payments','sales-payments-view','sale-invoice/payment/Payment'),
+    setRoute('/sales-invoice/payments/payment-slip/:slug/:id','sales-paymentslip-view','sale-invoice/payment/ViewPaymentSlip'),
+
+
+
+
+
 
 
 
