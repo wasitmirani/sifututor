@@ -276,6 +276,27 @@ class HelperComponent
 
             ],
             [
+                "title" => 'Creditors',
+                'can' => 'creditors-invoice-dropdown',
+                "icon" => "ti-timeline",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Creditor Invoice",
+                        null,
+                        "creditor-invoices-view",
+                        "/creditor/invoice",
+                    ),
+                    setSubMenu(
+                        "Creditor Payment",
+                        null,
+                        "creditor-payments-view",
+                        "/creditor/payments",
+                    ),
+                ]
+
+            ],
+            [
                 "heading" => "Tools",
                 "heading_can" => "tools-heading-view",
             ],
