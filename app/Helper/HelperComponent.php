@@ -255,6 +255,48 @@ class HelperComponent
             setSingleLink("Journal Ledger", "ti-books", "journal-ledger-view", "/cash-flow/journal-ledger"),
             setSingleLink("Expenditures", "ti-database", "expenditures-view", "/cash-flow/expenditures"),
             [
+                "title" => 'Sales Invoices',
+                'can' => 'sales-invoice-dropdown',
+                "icon" => "ti-file-invoice",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Invoices",
+                        null,
+                        "sale-invoices-view",
+                        "/sales-invoice/invoice",
+                    ),
+                    setSubMenu(
+                        "Payments",
+                        null,
+                        "sales-payments-view",
+                        "/sales-invoice/payments",
+                    ),
+                ]
+
+            ],
+            [
+                "title" => 'Creditors',
+                'can' => 'creditors-invoice-dropdown',
+                "icon" => "ti-timeline",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Creditor Invoice",
+                        null,
+                        "creditor-invoices-view",
+                        "/creditor/invoice",
+                    ),
+                    setSubMenu(
+                        "Creditor Payment",
+                        null,
+                        "creditor-payments-view",
+                        "/creditor/payments",
+                    ),
+                ]
+
+            ],
+            [
                 "heading" => "Tools",
                 "heading_can" => "tools-heading-view",
             ],
