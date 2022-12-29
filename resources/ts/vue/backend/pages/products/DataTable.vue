@@ -9,12 +9,12 @@
             </thead>
             <tbody>
                 <tr v-for="(item, index) in products?.data" :key="index">
-                    <td> {{ item.uid ?? "N/A" }}</td>
-                    <td> {{ item.product_name ?? "N/A" }}</td>
-                    <td> {{ item.product_code ?? "N/A" }}</td>
+                    <td> {{ item.slug ?? "N/A" }}</td>
+                    <td> {{ item.name ?? "N/A" }}</td>
+                    <td> {{ item.code ?? "N/A" }}</td>
                     <td> {{ item.category ?? "N/A" }} </td>
-                    <td> {{ item.purchase_cost ?? "N/A" }}</td>
-                    <td> {{  item.sell_price ?? "N/A"}}</td>
+                    <td> {{ item.cost ?? "N/A" }}</td>
+                    <td> {{  item.price ?? "N/A"}}</td>
                     <td class="" style=""><div class="d-flex align-items-center">
                         <router-link :to="`/products/product-list/edit/${item.slug}/${item.uid}`" class="text-body"><i class="ti ti-edit ti-sm me-2 text-primary"></i></router-link > |
                         <a role="button" @click="deleteItem(item)" class="text-body delete-record"><i class="ti ti-trash ti-sm mx-2 text-danger"></i></a>

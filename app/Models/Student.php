@@ -13,8 +13,13 @@ class Student extends Model
     protected $dates = ['created_at', 'updated_at'];
     protected $casts = [
         'subjects' => 'array',
-        'students'=>'array',
     ];
+
+    public function students()
+    {
+        return $this->morphMany('App\Models\StudentList', 'studentable');
+        // return $this->belongsTo(Customer::class, 'id', 'student_id');
+    }
 
     public function customer()
     {

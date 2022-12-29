@@ -19,7 +19,7 @@ export default {
     }),
     methods:{
         getInvoice(id) {
-            axios.get('/invoice/' + id).then((res) => {
+            axios.get('/student-invoice/' + id).then((res) => {
                 // console.log('res', res.data.student);
                 this.form = res.data.invoice;
                 this.edit_mode = true;

@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/product/' + id).then(function (res) {
-        _this.form = res.data.products;
+        _this.form = res.data.product;
         _this.edit_mode = true;
       })["catch"](function (err) {
         _this.errors = err.response.data;
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.slug = this.$route.params.slug;
-    this.getProduct(this.$route.params.id);
+    this.getProduct(this.$route.params.uid);
   }
 });
 
@@ -148,6 +148,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios.put('/product/' + this.product.id, data).then(function (res) {
+        _this.$root.alertNotify(res.status, 'Update Successfuly', 'success', res.data);
+
         _this.$router.push('/products/product-list');
       })["catch"](function (err) {
         _this.errors = err.response.data;
@@ -159,6 +161,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       axios.post('/product', data).then(function (res) {
+        _this2.$root.alertNotify(res.status, 'Created Successfuly', "success", res.data);
+
         _this2.$router.push('/products/product-list');
       })["catch"](function (err) {
         _this2.errors = err.response.data;
@@ -185,8 +189,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mounted: function mounted() {
-    if (this.edit_mode) {// this.product = [];
-      // this.product = this.form;
+    if (this.edit_mode) {
+      this.product = [];
+      this.product = this.form;
     }
   }
 });
@@ -510,15 +515,24 @@ var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_36 = {
   "class": "pt-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+};
+var _hoisted_37 = {
+  key: 0,
   type: "submit",
   "class": "btn btn-primary me-sm-3 me-1"
-}, "Submit"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+};
+var _hoisted_38 = {
+  key: 1,
+  type: "submit",
+  "class": "btn btn-success me-sm-3 me-1"
+};
+
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "reset",
   "class": "btn btn-label-secondary"
-}, "Cancel")], -1
+}, "Cancel", -1
 /* HOISTED */
 );
 
@@ -727,7 +741,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: "incentive_rate_after"
   }, null, 8
   /* PROPS */
-  , ["errors"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_36], 32
+  , ["errors"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [!$props.edit_mode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_37, "Submit")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_38, "Update")), _hoisted_39])], 32
   /* HYDRATE_EVENTS */
   )]);
 }

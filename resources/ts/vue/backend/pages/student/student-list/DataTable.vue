@@ -11,19 +11,19 @@
                 <tr v-for="(item, index) in studentList?.data" :key="index">
                     <td> {{ item.id ?? "N/A" }}</td>
                     <td>
-                        <span class="badge bg-primary bg-glow me-1"  v-for="std in mapStudentsStudentID(item.students)">{{std}}</span>
+                        <small class="badge bg-primary bg-glow me-1"  v-for="std in mapStudentsStudentID(item.students)">{{std}}</small>
                          </td>
-                    <td> <span class="badge bg-dark bg-glow me-1"  v-for="std in mapStudentsFullName(item.students)">{{std}}</span> </td>
+                    <td> <small class="badge bg-dark bg-glow me-1"  v-for="std in mapStudentsFullName(item.students)">{{std}}</small> </td>
                     <td> {{ item?.students[0]?.gender ?? "N/A" }}</td>
                     <td> {{ item.admin_charge ?? "N/A" }}</td>
                     <td> <span class="badge bg-success bg-glow me-1">{{ item.status ?? "N/A" }}</span></td>
                     <td> {{ $filters.DateTimeFormat(item.register_date) ?? "N/A" }}</td>
                     <td>
-                        <!-- <router-link to="" class="btn btn-icon btn-primary waves-effect waves-light btn-sm me-2">
-                            <i class="fa-solid fa-eye"> </i>
-                        </router-link>
-                        </a> -->
+
+
                         <div class="d-flex align-items-center">
+
+                            
                             <router-link :to="`/students/student-list/edit/${item.slug}/${item.uid}`"
                                 class="text-body"><i class="ti ti-edit ti-sm me-2 text-primary"></i></router-link> |
                             <a role="button" @click="deleteItem(item)" class="text-body delete-record"><i

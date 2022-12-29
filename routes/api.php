@@ -13,6 +13,7 @@ use App\Http\Controllers\backend\api\role\PermissionController;
 use App\Http\Controllers\backend\api\student\StudentController;
 use App\Http\Controllers\backend\api\subject\SubjectController;
 use App\Http\Controllers\backend\api\customer\CustomerController;
+use App\Http\Controllers\backend\api\student\StudentInvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::resource('student', StudentController::class);
 Route::resource('customer', CustomerController::class);
 Route::resource('job-ticket', TicketController::class);
 Route::get('/student-list', [StudentController::class, 'getStudentList']);
+Route::get('/customer-list', [CustomerController::class, 'getCustomerList']);
 Route::resource('user', UserController::class);
 Route::post('/update-auth-user', [UserController::class, 'updateAuthUser']);
 Route::resource('client', ClientController::class);
@@ -49,6 +51,7 @@ Route::resource('role', RoleController::class);
 Route::resource('permission', PermissionController::class);
 Route::get('roles', [RoleController::class, 'getRoles']);
 Route::resource('product', ProductController::class);
+Route::resource('student-invoice', StudentInvoiceController::class);
 
 
 

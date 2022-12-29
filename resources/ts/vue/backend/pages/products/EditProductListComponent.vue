@@ -3,7 +3,7 @@
     <breadcrumb :active_name="slug"  :previous="[{name:'Products' , link:'/products/product-list'}]"></breadcrumb>
      <!-- /breadcrumb -->
      <ProductListForm :edit_mode="edit_mode" :form="form" v-if="edit_mode" />
- 
+
  </template>
  <script>
  import breadcrumb from "../../components/BreadcrumbComponent.vue";
@@ -19,7 +19,7 @@
      methods:{
          getProduct(id) {
              axios.get('/product/' + id).then((res) => {
-                 this.form = res.data.products;
+                 this.form = res.data.product;
                  this.edit_mode = true;
              }).catch((err) => {
                  this.errors = err.response.data;
@@ -30,8 +30,7 @@
      },
      mounted() {
          this.slug = this.$route.params.slug;
-         this.getProduct(this.$route.params.id);
+         this.getProduct(this.$route.params.uid);
      }
  }
  </script>
- 

@@ -17,6 +17,11 @@ class CustomerController extends Controller
 
         return response()->json(['status' => true, 'customers' => $customers]);
     }
+    public function getCustomerList(){
+        $customers = Customer::latest()->get();
+
+        return response()->json(['status' => true, 'customers'=>$customers]);
+    }
     public function edit($id)
     {
         //

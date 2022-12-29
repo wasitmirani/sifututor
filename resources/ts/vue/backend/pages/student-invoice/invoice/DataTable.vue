@@ -9,17 +9,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in desserts" :key="index">
-                    <td> {{ item.uid ?? "N/A" }}</td>
+                <tr v-for="(item, index) in invoices?.data" :key="index">
+                    <td> {{ item.id ?? "N/A" }}</td>
                     <td> {{ item.reference_no ?? "N/A" }}</td>
-                    <td> {{ item.student_id ?? "N/A" }}</td>
-                    <td> {{ item.full_name ?? "N/A" }}</td>
+                    <td> {{ item.payer_name ?? "N/A" }}</td>
+                    <td> {{ item.payer?.full_name ?? "N/A" }}</td>
                     <td> {{ item.payer_name ?? "N/A" }}</td>
                     <td> {{ item.invoice_date ?? "N/A" }}</td>
-                    <td> {{ item.total_price ?? "N/A" }}</td>
+                    <td> {{ item.total_amount ?? "N/A" }}</td>
                     <td> <span class="badge bg-label-warning me-1">{{ item.status ?? "N/A" }} </span></td>
-                    <td> {{ item.email_customer_on ?? "N/A" }}</td>
+                    <td> {{ item.payer?.email ?? "N/A" }}</td>
                     <td class="" style=""><div class="d-flex align-items-center">
+
+                        <router-link :to="`/student-invoices/invoice/view/${item.slug}/${item.uid}`" class="text-body"><i class="ti ti-eye ti-sm me-2 text-primary"></i></router-link > |
                         <router-link :to="`/student-invoices/invoice/edit/${item.slug}/${item.uid}`" class="text-body"><i class="ti ti-edit ti-sm me-2 text-primary"></i></router-link > |
                         <a  role="button" @click="deleteItem(item)" class="text-body delete-record"><i class="ti ti-trash ti-sm mx-2 text-danger"></i></a>
                         </div>
@@ -33,7 +35,7 @@
 <script>
 export default {
     name: "DataTableComponent",
-    props: ["headers", "invoiceList", "desserts"],
+    props: ["headers", "invoices", "desserts"],
     data: () => ({
     }),
     methods: {

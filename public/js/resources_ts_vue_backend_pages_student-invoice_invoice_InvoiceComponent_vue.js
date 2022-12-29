@@ -146,7 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "DataTableComponent",
-  props: ["headers", "invoiceList", "desserts"],
+  props: ["headers", "invoices", "desserts"],
   data: function data() {
     return {};
   },
@@ -220,44 +220,10 @@ __webpack_require__.r(__webpack_exports__);
         value: 'actions',
         sortable: false
       }],
-      desserts: [{
-        "uid": "1",
-        "reference_no": "ST069121",
-        "student_id": "S225033",
-        "full_name": "Ikmal hakeem b Noor Azmeer",
-        "payer_name": "S225033",
-        "invoice_date": "22/12/2022",
-        "total_price": "RM 25.00",
-        "status": "Unpaid",
-        "email_customer_on": "21/12/2022",
-        "slug": "Ikmal"
-      }, {
-        "uid": "2",
-        "reference_no": "ST069121",
-        "student_id": "S225033",
-        "full_name": "Ikmal hakeem b Noor Azmeer",
-        "payer_name": "S225033",
-        "invoice_date": "22/12/2022",
-        "total_price": "RM 25.00",
-        "status": "Unpaid",
-        "email_customer_on": "21/12/2022",
-        "slug": "Bushra"
-      }, {
-        "uid": "3",
-        "reference_no": "ST069121",
-        "student_id": "S225033",
-        "full_name": "Ikmal hakeem b Noor Azmeer",
-        "payer_name": "S225033",
-        "invoice_date": "22/12/2022",
-        "total_price": "RM 25.00",
-        "status": "Unpaid",
-        "email_customer_on": "21/12/2022",
-        "slug": "Nur"
-      }],
       page_num: 1,
       loading: false,
       query: "",
-      invoiceList: []
+      invoices: []
     };
   },
   methods: {
@@ -267,8 +233,8 @@ __webpack_require__.r(__webpack_exports__);
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       this.loading = true;
       this.page_num = page;
-      axios.get('/std-invoice?page=' + page + '&query=' + this.query).then(function (res) {
-        _this.invoiceList = res.data.invoice;
+      axios.get('/student-invoice?page=' + page + '&query=' + this.query).then(function (res) {
+        _this.invoices = res.data.invoices;
         _this.loading = false;
       })["catch"](function (err) {
         _this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -278,7 +244,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.query = query;
     },
     filterData: function filterData(data) {
-      this.invoiceList = data.invoice;
+      this.invoices = data.invoices;
     },
     loadingStart: function loadingStart(value) {
       this.loading = value;
@@ -286,24 +252,25 @@ __webpack_require__.r(__webpack_exports__);
     deleteItem: function deleteItem(item) {
       var _this2 = this;
 
-      // Swal.fire({
-      //     title: "Are you sure?",
-      //     text: "You won't be able to revert this!",
-      //     icon: "warning",
-      //     showCancelButton: true,
-      //     confirmButtonColor: "#3085d6",
-      //     cancelButtonColor: "#d33",
-      //     confirmButtonText: "Yes, delete it!",
-      // }).then((result) => {
-      //     if (result.isConfirmed) {
-      axios["delete"]("/std-invoice/".concat(item.id)).then(function (res) {
-        _this2.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios["delete"]("/student-invoice/".concat(item.id)).then(function (res) {
+            _this2.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
 
-        _this2.getInvoice();
-      })["catch"](function (err) {
-        _this2.$root.alertNotify(err.response.status, null, "error", err.response.data);
-      }); //     }
-      // });
+            _this2.getInvoice();
+          })["catch"](function (err) {
+            _this2.$root.alertNotify(err.response.status, null, "error", err.response.data);
+          });
+        }
+      });
     }
   },
   mounted: function mounted() {
@@ -461,21 +428,29 @@ var _hoisted_6 = {
 };
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "ti ti-eye ti-sm me-2 text-primary"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "ti ti-edit ti-sm me-2 text-primary"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_8 = ["onClick"];
+var _hoisted_9 = ["onClick"];
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "ti ti-trash ti-sm mx-2 text-danger"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_10 = [_hoisted_9];
+var _hoisted_11 = [_hoisted_10];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _$props$invoices;
+
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.headers, function (head, index) {
@@ -486,35 +461,47 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.desserts, function (item, index) {
-    var _item$uid, _item$reference_no, _item$student_id, _item$full_name, _item$payer_name, _item$invoice_date, _item$total_price, _item$status, _item$email_customer_;
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)((_$props$invoices = $props.invoices) === null || _$props$invoices === void 0 ? void 0 : _$props$invoices.data, function (item, index) {
+    var _item$id, _item$reference_no, _item$payer_name, _item$payer$full_name, _item$payer, _item$payer_name2, _item$invoice_date, _item$total_amount, _item$status, _item$payer$email, _item$payer2;
 
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$uid = item.uid) !== null && _item$uid !== void 0 ? _item$uid : "N/A"), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$id = item.id) !== null && _item$id !== void 0 ? _item$id : "N/A"), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$reference_no = item.reference_no) !== null && _item$reference_no !== void 0 ? _item$reference_no : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$student_id = item.student_id) !== null && _item$student_id !== void 0 ? _item$student_id : "N/A"), 1
-    /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$full_name = item.full_name) !== null && _item$full_name !== void 0 ? _item$full_name : "N/A"), 1
-    /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$payer_name = item.payer_name) !== null && _item$payer_name !== void 0 ? _item$payer_name : "N/A"), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$payer$full_name = (_item$payer = item.payer) === null || _item$payer === void 0 ? void 0 : _item$payer.full_name) !== null && _item$payer$full_name !== void 0 ? _item$payer$full_name : "N/A"), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$payer_name2 = item.payer_name) !== null && _item$payer_name2 !== void 0 ? _item$payer_name2 : "N/A"), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$invoice_date = item.invoice_date) !== null && _item$invoice_date !== void 0 ? _item$invoice_date : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$total_price = item.total_price) !== null && _item$total_price !== void 0 ? _item$total_price : "N/A"), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$total_amount = item.total_amount) !== null && _item$total_amount !== void 0 ? _item$total_amount : "N/A"), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$status = item.status) !== null && _item$status !== void 0 ? _item$status : "N/A"), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$email_customer_ = item.email_customer_on) !== null && _item$email_customer_ !== void 0 ? _item$email_customer_ : "N/A"), 1
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$payer$email = (_item$payer2 = item.payer) === null || _item$payer2 === void 0 ? void 0 : _item$payer2.email) !== null && _item$payer$email !== void 0 ? _item$payer$email : "N/A"), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-      to: "/student-invoices/invoice/edit/".concat(item.slug, "/").concat(item.uid),
+      to: "/student-invoices/invoice/view/".concat(item.slug, "/").concat(item.uid),
       "class": "text-body"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [_hoisted_7];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" | "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+      to: "/student-invoices/invoice/edit/".concat(item.slug, "/").concat(item.uid),
+      "class": "text-body"
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [_hoisted_8];
       }),
       _: 2
       /* DYNAMIC */
@@ -527,9 +514,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return $options.deleteItem(item);
       },
       "class": "text-body delete-record"
-    }, _hoisted_10, 8
+    }, _hoisted_11, 8
     /* PROPS */
-    , _hoisted_8)])])]);
+    , _hoisted_9)])])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))])])]);
@@ -601,8 +588,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_search_box, {
     "class": "ml-2",
-    label: "Search by name",
-    apiurl: '/std-invoice?page=' + this.page_num,
+    label: "Search by REFERENCE NO",
+    apiurl: '/student-invoice?page=' + this.page_num,
     onQuery: _cache[0] || (_cache[0] = function ($event) {
       return $options.isQuery($event);
     }),
@@ -619,14 +606,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["apiurl"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     headers: _ctx.headers,
-    invoiceList: _ctx.invoiceList,
+    invoices: _ctx.invoices,
     desserts: _ctx.desserts,
     onDeleteItem: _cache[4] || (_cache[4] = function ($event) {
       return $options.deleteItem($event);
     })
   }, null, 8
   /* PROPS */
-  , ["headers", "invoiceList", "desserts"])])])], 64
+  , ["headers", "invoices", "desserts"])])])], 64
   /* STABLE_FRAGMENT */
   );
 }

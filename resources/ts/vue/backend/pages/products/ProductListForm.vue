@@ -101,7 +101,8 @@
 
             </div>
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                <button type="submit"  v-if="!edit_mode" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                <button type="submit"  v-else class="btn btn-success me-sm-3 me-1">Update</button>
                 <button type="reset" class="btn btn-label-secondary">Cancel</button>
             </div>
         </form>
@@ -130,6 +131,8 @@ export default {
     methods: {
         updateProduct(data) {
             axios.put('/product/' + this.product.id, data).then((res) => {
+                this.$root.alertNotify(res.status,'Update Successfuly','success',res.data);
+
                 this.$router.push('/products/product-list');
             }).catch((err) => {
                 this.errors = err.response.data;
@@ -138,6 +141,7 @@ export default {
         },
         createProduct(data) {
             axios.post('/product', data).then((res) => {
+                this.$root.alertNotify(res.status, 'Created Successfuly', "success", res.data);
                 this.$router.push('/products/product-list');
             }).catch((err) => {
                 this.errors = err.response.data;
@@ -160,8 +164,8 @@ export default {
     },
     mounted() {
         if (this.edit_mode) {
-            // this.product = [];
-            // this.product = this.form;
+            this.product = [];
+            this.product = this.form;
         }
     }
 }
