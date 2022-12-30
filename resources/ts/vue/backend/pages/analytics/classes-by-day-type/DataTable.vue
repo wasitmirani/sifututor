@@ -1,7 +1,8 @@
-<template>
+
+a<template>
     <div class="table-responsive text-nowrap">
         <table class="table">
-            <caption class="ms-4">Tutor Vs Subject</caption>
+            <caption class="ms-4">Total Class By Weekday/Weekend </caption>
             <thead>
                 <tr>
                     <th v-for="(head, index) in headers" :key="index"> {{ head.text }} </th>
@@ -9,9 +10,11 @@
             </thead>
             <tbody>
                 <tr v-for="(item, index) in desserts" :key="index">
-                    <td> {{ item.subject ?? "N/A" }}</td>
-                    <td> {{ item.assined_tutor ?? "N/A" }}</td>
-                    <td> {{ item.teaching_tutor ?? "N/A" }}</td>
+                    <td> Weekday </td>
+                    <td> {{ item.first ?? "N/A" }}</td>
+                    <td> {{ item.second ?? "N/A" }}</td>
+                    <td> {{ item.third ?? "N/A" }}</td>
+                    <td> {{ item.four ?? "N/A" }}</td>
                 </tr>
             </tbody>
         </table>

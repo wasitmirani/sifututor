@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_ts_vue_backend_pages_analytics_tutor-vs-subject_TutorVsSubjectComponent_vue"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_ts_vue_backend_pages_financial-reports_trial-balance_TrailBalanceComponent_vue"],{
 
 /***/ "./node_modules/@babel/runtime/regenerator/index.js":
 /*!**********************************************************!*\
@@ -133,10 +133,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js":
-/*!*************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js ***!
-  \*************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=script&lang=js":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=script&lang=js ***!
+  \******************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -156,10 +156,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=script&lang=js":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=script&lang=js ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -167,14 +167,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DataTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue");
+/* harmony import */ var _DataTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable */ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue");
 /* harmony import */ var _components_BreadcrumbComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/BreadcrumbComponent.vue */ "./resources/ts/vue/backend/components/BreadcrumbComponent.vue");
 /* harmony import */ var _components_SearchBoxComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/SearchBoxComponent.vue */ "./resources/ts/vue/backend/components/SearchBoxComponent.vue");
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "TutorVsSubjectComponent",
+  name: "TrailBalanceComponent",
   components: {
     DataTable: _DataTable__WEBPACK_IMPORTED_MODULE_0__["default"],
     breadcrumb: _components_BreadcrumbComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -183,45 +183,63 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       headers: [{
-        text: 'Subject',
+        text: '#',
         align: 'start',
         sortable: false,
-        value: 'Subject'
+        value: '#'
       }, {
-        text: 'Assigned Tutors',
-        value: 'Assigned Tutors'
+        text: 'Account Name',
+        value: 'Account Name'
       }, {
-        text: 'Teaching Tutors',
-        value: 'Teaching Tutors'
+        text: 'Account Type',
+        value: 'Account Type'
+      }, {
+        text: 'Opening Balance',
+        value: 'Opening Balance'
+      }, {
+        text: 'Debit',
+        value: 'Debit'
+      }, {
+        text: 'Credit',
+        value: 'Credit'
+      }, {
+        text: 'Balance',
+        value: 'Balance'
       }],
       desserts: [{
         "uid": "1",
-        "subject": "Bahasa Arab (UPSR) - ONLINE",
-        "assined_tutor": "26",
-        "teaching_tutor": "6",
+        "account_name": "Staff - Zakat",
+        "account_type": "Expense",
+        "opening_balance": "RM 0.00	",
+        "debit": "RM 5,136.50",
+        "credit": "RM 0.00",
+        "balance": "RM 5,136.50",
         "slug": "Bahasa"
       }, {
         "uid": "2",
-        "subject": "Bahasa Arab (UPSR) - ONLINE",
-        "assined_tutor": "26",
-        "teaching_tutor": "6",
+        "account_name": "Staff - Zakat",
+        "account_type": "Expense",
+        "opening_balance": "RM 0.00	",
+        "debit": "RM 5,136.50",
+        "credit": "RM 0.00",
+        "balance": "RM 5,136.50",
         "slug": "topup"
       }],
       page_num: 1,
       loading: false,
       query: "",
-      tutorVsSubject: []
+      trailBalance: []
     };
   },
   methods: {
-    getTutorVsSubject: function getTutorVsSubject() {
+    getTrailBalance: function getTrailBalance() {
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       this.loading = true;
       this.page_num = page;
-      axios.get('/tutorVsSubject?page=' + page + '&query=' + this.query).then(function (res) {
-        _this.tutorVsSubject = res.data.tutorVsSubject;
+      axios.get('/trailBalance?page=' + page + '&query=' + this.query).then(function (res) {
+        _this.trailBalance = res.data.trailBalance;
         _this.loading = false;
       })["catch"](function (err) {
         _this.$root.alertNotify(err.response.status, null, "error", err.response.data);
@@ -231,13 +249,13 @@ __webpack_require__.r(__webpack_exports__);
       return this.query = query;
     },
     filterData: function filterData(data) {
-      this.tutorVsSubject = data.tutorVsSubject;
+      this.trailBalance = data.trailBalance;
     },
     loadingStart: function loadingStart(value) {
       this.loading = value;
     }
   },
-  mounted: function mounted() {// this.getTutorVsSubject();
+  mounted: function mounted() {// this.getTrailBalance();
   }
 });
 
@@ -353,10 +371,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648 ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=template&id=196cdd82":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=template&id=196cdd82 ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -375,7 +393,7 @@ var _hoisted_2 = {
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("caption", {
   "class": "ms-4"
-}, "Tutor Vs Subject", -1
+}, "Trail Balance", -1
 /* HOISTED */
 );
 
@@ -389,15 +407,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128
   /* KEYED_FRAGMENT */
   ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.desserts, function (item, index) {
-    var _item$subject, _item$assined_tutor, _item$teaching_tutor;
+    var _item$uid, _item$account_name, _item$account_type, _item$opening_balance, _item$debit, _item$credit, _item$balance;
 
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$subject = item.subject) !== null && _item$subject !== void 0 ? _item$subject : "N/A"), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$uid = item.uid) !== null && _item$uid !== void 0 ? _item$uid : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$assined_tutor = item.assined_tutor) !== null && _item$assined_tutor !== void 0 ? _item$assined_tutor : "N/A"), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$account_name = item.account_name) !== null && _item$account_name !== void 0 ? _item$account_name : "N/A"), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$teaching_tutor = item.teaching_tutor) !== null && _item$teaching_tutor !== void 0 ? _item$teaching_tutor : "N/A"), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$account_type = item.account_type) !== null && _item$account_type !== void 0 ? _item$account_type : "N/A"), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$opening_balance = item.opening_balance) !== null && _item$opening_balance !== void 0 ? _item$opening_balance : "N/A"), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$debit = item.debit) !== null && _item$debit !== void 0 ? _item$debit : "N/A"), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$credit = item.credit) !== null && _item$credit !== void 0 ? _item$credit : "N/A"), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_item$balance = item.balance) !== null && _item$balance !== void 0 ? _item$balance : "N/A"), 1
     /* TEXT */
     )]);
   }), 128
@@ -407,10 +433,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230 ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=template&id=10a644a2":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=template&id=10a644a2 ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -425,7 +451,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "d-flex justify-content-between align-items-center mb-3"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "card-title"
-}, "Tutor Vs Subject")])], -1
+}, "Trail Balance")])], -1
 /* HOISTED */
 );
 
@@ -452,11 +478,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_DataTable = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("DataTable");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breadcrumb, {
-    active_name: "Tutor Vs Subject"
+    active_name: "Trail Balance"
   }), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_search_box, {
     "class": "ml-2",
     label: "Search by description",
-    apiurl: '/tutorVsSubject?page=' + this.page_num,
+    apiurl: '/Student?page=' + this.page_num,
     onQuery: _cache[0] || (_cache[0] = function ($event) {
       return $options.isQuery($event);
     }),
@@ -464,7 +490,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.loadingStart($event);
     }),
     onReload: _cache[2] || (_cache[2] = function ($event) {
-      return $options.getTutorVsSubject();
+      return $options.getTrailBalance();
     }),
     onFilterData: _cache[3] || (_cache[3] = function ($event) {
       return $options.filterData($event);
@@ -1303,10 +1329,10 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue":
-/*!*********************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue ***!
-  \*********************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue":
+/*!**************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue ***!
+  \**************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1314,15 +1340,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DataTable_vue_vue_type_template_id_66d98648__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=66d98648 */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648");
-/* harmony import */ var _DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js");
+/* harmony import */ var _DataTable_vue_vue_type_template_id_196cdd82__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=196cdd82 */ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=template&id=196cdd82");
+/* harmony import */ var _DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=script&lang=js");
 /* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DataTable_vue_vue_type_template_id_66d98648__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DataTable_vue_vue_type_template_id_196cdd82__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1331,10 +1357,10 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue":
-/*!***********************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue ***!
-  \***********************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue":
+/*!**************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue ***!
+  \**************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1342,15 +1368,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _TutorVsSubjectComponent_vue_vue_type_template_id_498bd230__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TutorVsSubjectComponent.vue?vue&type=template&id=498bd230 */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230");
-/* harmony import */ var _TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TutorVsSubjectComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js");
+/* harmony import */ var _TrailBalanceComponent_vue_vue_type_template_id_10a644a2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrailBalanceComponent.vue?vue&type=template&id=10a644a2 */ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=template&id=10a644a2");
+/* harmony import */ var _TrailBalanceComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TrailBalanceComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=script&lang=js");
 /* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TutorVsSubjectComponent_vue_vue_type_template_id_498bd230__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TrailBalanceComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TrailBalanceComponent_vue_vue_type_template_id_10a644a2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1391,10 +1417,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js ***!
-  \*********************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1402,23 +1428,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=script&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js ***!
-  \***********************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrailBalanceComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TutorVsSubjectComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrailBalanceComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrailBalanceComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -1455,34 +1481,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648":
-/*!***************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648 ***!
-  \***************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=template&id=196cdd82":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=template&id=196cdd82 ***!
+  \********************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_66d98648__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_196cdd82__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_66d98648__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=template&id=66d98648 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_196cdd82__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=template&id=196cdd82 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/DataTable.vue?vue&type=template&id=196cdd82");
 
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230":
-/*!*****************************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230 ***!
-  \*****************************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=template&id=10a644a2":
+/*!********************************************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=template&id=10a644a2 ***!
+  \********************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_template_id_498bd230__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrailBalanceComponent_vue_vue_type_template_id_10a644a2__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_template_id_498bd230__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TutorVsSubjectComponent.vue?vue&type=template&id=498bd230 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TrailBalanceComponent_vue_vue_type_template_id_10a644a2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TrailBalanceComponent.vue?vue&type=template&id=10a644a2 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/financial-reports/trial-balance/TrailBalanceComponent.vue?vue&type=template&id=10a644a2");
 
 
 /***/ })

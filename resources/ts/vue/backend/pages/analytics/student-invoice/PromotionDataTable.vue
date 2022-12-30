@@ -1,7 +1,7 @@
 <template>
     <div class="table-responsive text-nowrap">
         <table class="table">
-            <caption class="ms-4">Tutor Vs Subject</caption>
+            <caption class="ms-4">Promotion Invoices</caption>
             <thead>
                 <tr>
                     <th v-for="(head, index) in headers" :key="index"> {{ head.text }} </th>
@@ -9,9 +9,10 @@
             </thead>
             <tbody>
                 <tr v-for="(item, index) in desserts" :key="index">
-                    <td> {{ item.subject ?? "N/A" }}</td>
-                    <td> {{ item.assined_tutor ?? "N/A" }}</td>
-                    <td> {{ item.teaching_tutor ?? "N/A" }}</td>
+                    <td> {{ item.month_year ?? "N/A" }}</td>
+                    <td> {{ item.total_invoice ?? "N/A" }}</td>
+                    <td> {{ item.total_promo_invoice ?? "N/A" }}</td>
+                    <td> {{ item.total_paid_promo_invoice ?? "N/A" }}</td>
                 </tr>
             </tbody>
         </table>
@@ -19,7 +20,7 @@
 </template>
 <script>
 export default {
-    name: "DataTableComponent",
+    name: "PromotionDataTableComponent",
     props: ["headers", "desserts"],
     data: () => ({
     }),

@@ -391,6 +391,66 @@ class HelperComponent
 
             ],
             [
+                "title" => 'Financial Reports',
+                'can' => 'financial-reports-dropdown',
+                "icon" => "ti-vocabulary",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Cash Flow",
+                        null,
+                        "cash-flow-view",
+                        "/financial-reports/cash-flow",
+                    ),
+                    setSubMenu(
+                        "Balance Sheet",
+                        null,
+                        "balance-sheet-view",
+                        "/financial-reports/balance-sheet",
+                    ),
+                    setSubMenu(
+                        "Trial Balance",
+                        null,
+                        "trial-balance-view",
+                        "/financial-reports/trial-balance",
+                    ),
+                    setSubMenu(
+                        "Income Statement",
+                        null,
+                        "income-statement-view",
+                        "/financial-reports/income-statement",
+                    ),
+                    setSubMenu(
+                        "Income By Product",
+                        null,
+                        "income-by-product-view",
+                        "/financial-reports/income-by-product",
+                    ),
+                    setSubMenu(
+                        "General Ledger",
+                        null,
+                        "general-ledger-view",
+                        "/financial-reports/general-ledger",
+                    ),
+                ]
+
+            ],
+            [
+                "title" => 'Billing',
+                'can' => 'billing-dropdown',
+                "icon" => "ti-receipt",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Invoices",
+                        null,
+                        "billing-invoice-view",
+                        "/billing/invoice",
+                    ),
+                ]
+
+            ],
+            [
                 "heading" => "Tools",
                 "heading_can" => "tools-heading-view",
             ],

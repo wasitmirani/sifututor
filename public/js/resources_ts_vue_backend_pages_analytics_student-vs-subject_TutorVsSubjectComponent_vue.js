@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_ts_vue_backend_pages_analytics_tutor-vs-subject_TutorVsSubjectComponent_vue"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_ts_vue_backend_pages_analytics_student-vs-subject_TutorVsSubjectComponent_vue"],{
 
 /***/ "./node_modules/@babel/runtime/regenerator/index.js":
 /*!**********************************************************!*\
@@ -133,10 +133,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js":
-/*!*************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js ***!
-  \*************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=script&lang=js":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -150,16 +150,20 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  methods: {},
+  methods: {
+    deleteItem: function deleteItem(item) {
+      return this.$emit("deleteItem", item);
+    }
+  },
   mounted: function mounted() {}
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -167,7 +171,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DataTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue");
+/* harmony import */ var _DataTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable */ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue");
 /* harmony import */ var _components_BreadcrumbComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/BreadcrumbComponent.vue */ "./resources/ts/vue/backend/components/BreadcrumbComponent.vue");
 /* harmony import */ var _components_SearchBoxComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/SearchBoxComponent.vue */ "./resources/ts/vue/backend/components/SearchBoxComponent.vue");
 
@@ -353,10 +357,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648 ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=template&id=d64c4e3a":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=template&id=d64c4e3a ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -407,10 +411,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230 ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=391c3e43":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=391c3e43 ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1303,10 +1307,10 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue":
-/*!*********************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue ***!
-  \*********************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue ***!
+  \***********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1314,15 +1318,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DataTable_vue_vue_type_template_id_66d98648__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=66d98648 */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648");
-/* harmony import */ var _DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js");
+/* harmony import */ var _DataTable_vue_vue_type_template_id_d64c4e3a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=d64c4e3a */ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=template&id=d64c4e3a");
+/* harmony import */ var _DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=script&lang=js");
 /* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DataTable_vue_vue_type_template_id_66d98648__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DataTable_vue_vue_type_template_id_d64c4e3a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1331,10 +1335,10 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue":
-/*!***********************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue ***!
-  \***********************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue":
+/*!*************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue ***!
+  \*************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1342,15 +1346,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _TutorVsSubjectComponent_vue_vue_type_template_id_498bd230__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TutorVsSubjectComponent.vue?vue&type=template&id=498bd230 */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230");
-/* harmony import */ var _TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TutorVsSubjectComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js");
+/* harmony import */ var _TutorVsSubjectComponent_vue_vue_type_template_id_391c3e43__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TutorVsSubjectComponent.vue?vue&type=template&id=391c3e43 */ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=391c3e43");
+/* harmony import */ var _TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TutorVsSubjectComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js");
 /* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TutorVsSubjectComponent_vue_vue_type_template_id_498bd230__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TutorVsSubjectComponent_vue_vue_type_template_id_391c3e43__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1391,10 +1395,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js ***!
-  \*********************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=script&lang=js":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=script&lang=js ***!
+  \***********************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1402,15 +1406,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=script&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js ***!
-  \***********************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1418,7 +1422,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TutorVsSubjectComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TutorVsSubjectComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -1455,34 +1459,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648":
-/*!***************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648 ***!
-  \***************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=template&id=d64c4e3a":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=template&id=d64c4e3a ***!
+  \*****************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_66d98648__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_d64c4e3a__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_66d98648__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=template&id=66d98648 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/DataTable.vue?vue&type=template&id=66d98648");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DataTable_vue_vue_type_template_id_d64c4e3a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DataTable.vue?vue&type=template&id=d64c4e3a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/DataTable.vue?vue&type=template&id=d64c4e3a");
 
 
 /***/ }),
 
-/***/ "./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230":
-/*!*****************************************************************************************************************************!*\
-  !*** ./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230 ***!
-  \*****************************************************************************************************************************/
+/***/ "./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=391c3e43":
+/*!*******************************************************************************************************************************!*\
+  !*** ./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=391c3e43 ***!
+  \*******************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_template_id_498bd230__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_template_id_391c3e43__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_template_id_498bd230__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TutorVsSubjectComponent.vue?vue&type=template&id=498bd230 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/tutor-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=498bd230");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TutorVsSubjectComponent_vue_vue_type_template_id_391c3e43__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TutorVsSubjectComponent.vue?vue&type=template&id=391c3e43 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/ts/vue/backend/pages/analytics/student-vs-subject/TutorVsSubjectComponent.vue?vue&type=template&id=391c3e43");
 
 
 /***/ })

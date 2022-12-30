@@ -1,7 +1,7 @@
 <template>
     <div class="table-responsive text-nowrap">
         <table class="table">
-            <caption class="ms-4">Tutor Vs Subject</caption>
+            <caption class="ms-4">Cash Flow</caption>
             <thead>
                 <tr>
                     <th v-for="(head, index) in headers" :key="index"> {{ head.text }} </th>
@@ -9,9 +9,11 @@
             </thead>
             <tbody>
                 <tr v-for="(item, index) in desserts" :key="index">
-                    <td> {{ item.subject ?? "N/A" }}</td>
-                    <td> {{ item.assined_tutor ?? "N/A" }}</td>
-                    <td> {{ item.teaching_tutor ?? "N/A" }}</td>
+                    <td> {{ item.uid ?? "N/A" }}</td>
+                    <td> {{ item.transction_date ?? "N/A" }}</td>
+                    <td> {{ item.desciption ?? "N/A" }}</td>
+                    <td> {{ item.money_in ?? "N/A" }}</td>
+                    <td> {{ item.money_out ?? "N/A" }}</td>
                 </tr>
             </tbody>
         </table>

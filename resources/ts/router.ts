@@ -105,7 +105,19 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/operation-report/monthly-nakngji-product-vs-commission','monthly-nakngji-product-vs-commission-view','operation-reports/monthly-product-vs-commission/MonthlyProductVsCommission'),
     setRoute('/analytics/overview','overview-view','analytics/overview/OverView'),
     setRoute('/analytics/tutor-vs-subject','tutor-vs-subject-view','analytics/tutor-vs-subject/TutorVsSubject'),
-
+    setRoute('/analytics/student-vs-subject','student-vs-subject-view','analytics/student-vs-subject/StudentVsSubject'),
+    setRoute('/analytics/customer-vs-subject','customer-vs-subject-view','analytics/customer-vs-subject/CustomerVsSubject'),
+    setRoute('/analytics/classes-by-day-type','classes-by-day-type-view','analytics/classes-by-day-type/ClassesByDayType'),
+    setRoute('/analytics/ticket-status','ticket-status-view','analytics/ticket-status/TicketStatus'),
+    setRoute('/analytics/student-invoices','student-invoices-view','analytics/student-invoice/StudentInvoice'),
+    setRoute('/analytics/pic-sales-performance','pic-sales-performance-view','analytics/pic-sales-performance/PicSalesPerformance'),
+    setRoute('/analytics/platform-usage','platform-usage-view','analytics/platform-usage/PlatformUsage'),
+    setRoute('/financial-reports/cash-flow','cash-flow-view','financial-reports/cash-flow/CashFlow'),
+    setRoute('/financial-reports/balance-sheet','balance-sheet-view','financial-reports/balance-sheet/BalanceSheet'),
+    setRoute('/financial-reports/trial-balance','trial-balance-view','financial-reports/trial-balance/TrailBalance'),
+    setRoute('/financial-reports/income-statement','income-statement-view','financial-reports/income-statement/IncomeStatement'),
+    setRoute('/financial-reports/income-by-product','income-by-product-view','financial-reports/income-by-product/IncomeByProduct'),
+    setRoute('/billing/invoice','billing-invoice-view','billing/invoice/Invoice'),
 
 
 ];
