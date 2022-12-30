@@ -100,19 +100,11 @@ let setRoute=(url:string,name:string,path:string)=>{
     setRoute('/creditor/payments','creditor-payment-view','creditor/payment/Payment'),
     setRoute('/creditor/payments/create','creditor-payment-create','creditor/payment/CreatePayment'),
     setRoute('/creditor/payments/edit/:slug/:id','creditor-payment-edirt','creditor/payment/EditPayment'),
-
-
-
-
-
-
-
-
-
-
-
-
-
+    setRoute('/operation-report/daily-ticket-application','daily-ticket-application-view','operation-reports/daily-ticket-application/DailyTicketApplication'),
+    setRoute('/operation-report/monthly-invoice-charge-status','monthly-invoice-charge-status-view','operation-reports/monthly-invoice-charge-status/MonthlyInvoiceChargeStatus'),
+    setRoute('/operation-report/monthly-nakngji-product-vs-commission','monthly-nakngji-product-vs-commission-view','operation-reports/monthly-product-vs-commission/MonthlyProductVsCommission'),
+    setRoute('/analytics/overview','overview-view','analytics/overview/OverView'),
+    setRoute('/analytics/tutor-vs-subject','tutor-vs-subject-view','analytics/tutor-vs-subject/TutorVsSubject'),
 
 
 

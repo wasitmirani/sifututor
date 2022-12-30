@@ -297,6 +297,100 @@ class HelperComponent
 
             ],
             [
+                "heading" => "Others",
+                "heading_can" => "others-heading-view",
+            ],
+            [
+                "title" => 'Operation Reports',
+                'can' => 'operation-reports-dropdown',
+                "icon" => "ti-vocabulary",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Daily Ticket Application",
+                        null,
+                        "daily-ticket-application-view",
+                        "/operation-report/daily-ticket-application",
+                    ),
+                    setSubMenu(
+                        "Monthly Invoice Charge Status",
+                        null,
+                        "monthly-invoice-charge-status-view",
+                        "/operation-report/monthly-invoice-charge-status",
+                    ),
+                    setSubMenu(
+                        "Monthly NakNgaji Product Vs Commission",
+                        null,
+                        "monthly-nakngji-product-vs-commission-view",
+                        "/operation-report/monthly-nakngji-product-vs-commission",
+                    ),
+                ]
+
+            ],
+            [
+                "title" => 'Analytics',
+                'can' => 'analytics-dropdown',
+                "icon" => "ti-vocabulary",
+                'type' => 'multi',
+                "sub_menu" => [
+                    setSubMenu(
+                        "Overview",
+                        null,
+                        "overview-view",
+                        "/analytics/overview",
+                    ),
+                    setSubMenu(
+                        "Tutor Vs Subject",
+                        null,
+                        "tutor-vs-subject-view",
+                        "/analytics/tutor-vs-subject",
+                    ),
+                    setSubMenu(
+                        "Student Vs Subject",
+                        null,
+                        "student-vs-subject-view",
+                        "/analytics/student-vs-subject",
+                    ),
+                    setSubMenu(
+                        "Customer Vs Subject",
+                        null,
+                        "customer-vs-subject-view",
+                        "/analytics/customer-vs-subject",
+                    ),
+                    setSubMenu(
+                        "Classes By Weekday/Weekend",
+                        null,
+                        "classes-by-day-type-view",
+                        "/analytics/classes-by-day-type",
+                    ),
+                    setSubMenu(
+                        "Ticket Status",
+                        null,
+                        "ticket-status-view",
+                        "/analytics/ticket-status",
+                    ),
+                    setSubMenu(
+                        "Student Invoices",
+                        null,
+                        "student-invoices-view",
+                        "/analytics/student-invoices",
+                    ),
+                    setSubMenu(
+                        "Pic Sales Performance",
+                        null,
+                        "pic-sales-performance-view",
+                        "/analytics/pic-sales-performance",
+                    ),
+                    setSubMenu(
+                        "Platform Usage",
+                        null,
+                        "platform-usage-view",
+                        "/analytics/platform-usage",
+                    ),
+                ]
+
+            ],
+            [
                 "heading" => "Tools",
                 "heading_can" => "tools-heading-view",
             ],
