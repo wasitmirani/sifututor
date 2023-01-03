@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-BasicSalary">Basic Salary</label>
-                    <input type="text" id="multicol-BasicSalary" placeholder="Basic Salary" v-model="staff.basic_salary"
+                    <input type="number" id="multicol-BasicSalary" placeholder="Basic Salary" v-model="staff.basic_salary"
                         :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'basic_salary')}`" />
                     <validate-input :errors="errors?.errors" value="basic_salary"></validate-input>
                 </div>
@@ -185,7 +185,7 @@
             </div>
             <div class="pt-4">
                 <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                <router-link to="/staff/staff-list" class="btn btn-label-secondary">Cancel</router-link>
             </div>
         </form>
     </div>

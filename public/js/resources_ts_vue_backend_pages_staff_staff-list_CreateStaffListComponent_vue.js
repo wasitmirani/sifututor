@@ -668,15 +668,14 @@ var _hoisted_70 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_71 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_71 = {
   "class": "pt-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+};
+
+var _hoisted_72 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
   "class": "btn btn-primary me-sm-3 me-1"
-}, "Submit"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "reset",
-  "class": "btn btn-label-secondary"
-}, "Cancel")], -1
+}, "Submit", -1
 /* HOISTED */
 );
 
@@ -684,6 +683,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _ctx$errors, _ctx$errors2, _ctx$errors3, _ctx$errors4, _ctx$errors5, _ctx$errors6, _ctx$errors7, _ctx$errors8, _ctx$errors9, _ctx$errors10, _ctx$errors11, _ctx$errors12, _ctx$errors13, _ctx$errors14, _ctx$errors15, _ctx$errors16, _ctx$errors17, _ctx$errors18, _ctx$errors19, _ctx$errors20, _ctx$errors21, _ctx$errors22, _ctx$errors23, _ctx$errors24, _ctx$errors25, _ctx$errors26, _ctx$errors27, _ctx$errors28, _ctx$errors29, _ctx$errors30, _ctx$errors31, _ctx$errors32, _ctx$errors33, _ctx$errors34, _ctx$errors35, _ctx$errors36, _ctx$errors37, _ctx$errors38, _ctx$errors39, _ctx$errors40, _ctx$errors41, _ctx$errors42, _ctx$errors43, _ctx$errors44;
 
   var _component_validate_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("validate-input");
+
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     "class": "card-body",
@@ -721,7 +722,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
+    type: "number",
     id: "multicol-BasicSalary",
     placeholder: "Basic Salary",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
@@ -1046,7 +1047,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: "tax_no"
   }, null, 8
   /* PROPS */
-  , ["errors"])])]), _hoisted_71], 32
+  , ["errors"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [_hoisted_72, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/staff/staff-list",
+    "class": "btn btn-label-secondary"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Cancel")];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])], 32
   /* HYDRATE_EVENTS */
   )]);
 }
