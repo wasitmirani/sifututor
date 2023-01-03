@@ -237,7 +237,7 @@ export default {
     }),
     methods: {
         updateStaffList(data) {
-            axios.put('/staff-list/' + this.staff.id, data).then((res) => {
+            axios.put('/staff/' + this.staff.id, data).then((res) => {
                 this.$router.push('/staff/staff-list');
             }).catch((err) => {
                 this.errors = err.response.data;
@@ -245,7 +245,7 @@ export default {
             });
         },
         createStaffList(data) {
-            axios.post('/staff-list', data).then((res) => {
+            axios.post('/staff', data).then((res) => {
                 this.$router.push('/staff/staff-list');
             }).catch((err) => {
                 this.errors = err.response.data;
