@@ -188,7 +188,7 @@ var _hoisted_5 = {
   "class": "d-flex justify-content-between flex-xl-row flex-md-column flex-sm-row flex-column m-sm-3 m-0"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mb-xl-0 mb-4\"><div class=\"d-flex svg-illustration mb-4 gap-2 align-items-center\"><img src=\"/assets/img/logo/blacklogo.png\" width=\"120\" alt=\"\" srcset=\"\"><span class=\"app-brand-text fw-bold fs-4\"><!-- Sifututor --></span></div><h4 class=\"mb-2\">Student Invoice</h4><!-- &lt;p class=&quot;mb-2&quot;&gt;San Diego County, CA 91905, USA&lt;/p&gt;\r\n                  &lt;p class=&quot;mb-0&quot;&gt;+1 (123) 456 7891, +44 (876) 543 2198&lt;/p&gt; --></div>", 1);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mb-xl-0 mb-4\"><div class=\"d-flex svg-illustration mb-4 gap-2 align-items-center\"><img src=\"/assets/img/logo/blacklogo.png\" width=\"120\" alt=\"\" srcset=\"\"><span class=\"app-brand-text fw-bold fs-4\"><!-- Sifututor --></span></div><h4 class=\"mb-2\">Student Invoice</h4><!-- &lt;p class=&quot;mb-2&quot;&gt;San Diego County, CA 91905, USA&lt;/p&gt;\n                  &lt;p class=&quot;mb-0&quot;&gt;+1 (123) 456 7891, +44 (876) 543 2198&lt;/p&gt; --></div>", 1);
 
 var _hoisted_7 = {
   "class": "fw-semibold mb-2"
@@ -213,7 +213,7 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "card-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"row p-sm-3 p-0\">\r\n                <div class=\"col-xl-6 col-md-12 col-sm-5 col-12 mb-xl-0 mb-md-4 mb-sm-0 mb-4\">\r\n                  <h6 class=\"mb-3\">Invoice To:</h6>\r\n                  <p class=\"mb-1\">Thomas shelby</p>\r\n                  <p class=\"mb-1\">Shelby Company Limited</p>\r\n                  <p class=\"mb-1\">Small Heath, B10 0HF, UK</p>\r\n                  <p class=\"mb-1\">718-986-6062</p>\r\n                  <p class=\"mb-0\">peakyFBlinders@gmail.com</p>\r\n                </div>\r\n                <div class=\"col-xl-6 col-md-12 col-sm-7 col-12\">\r\n                  <h6 class=\"mb-4\">Bill To:</h6>\r\n                  <table>\r\n                    <tbody>\r\n                      <tr>\r\n                        <td class=\"pe-4\">Total Due:</td>\r\n                        <td><strong>$12,110.55</strong></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td class=\"pe-4\">Bank name:</td>\r\n                        <td>American Bank</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td class=\"pe-4\">Country:</td>\r\n                        <td>United States</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td class=\"pe-4\">IBAN:</td>\r\n                        <td>ETD95476213874685</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td class=\"pe-4\">SWIFT code:</td>\r\n                        <td>BR91905</td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div> ")], -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"row p-sm-3 p-0\">\n                <div class=\"col-xl-6 col-md-12 col-sm-5 col-12 mb-xl-0 mb-md-4 mb-sm-0 mb-4\">\n                  <h6 class=\"mb-3\">Invoice To:</h6>\n                  <p class=\"mb-1\">Thomas shelby</p>\n                  <p class=\"mb-1\">Shelby Company Limited</p>\n                  <p class=\"mb-1\">Small Heath, B10 0HF, UK</p>\n                  <p class=\"mb-1\">718-986-6062</p>\n                  <p class=\"mb-0\">peakyFBlinders@gmail.com</p>\n                </div>\n                <div class=\"col-xl-6 col-md-12 col-sm-7 col-12\">\n                  <h6 class=\"mb-4\">Bill To:</h6>\n                  <table>\n                    <tbody>\n                      <tr>\n                        <td class=\"pe-4\">Total Due:</td>\n                        <td><strong>$12,110.55</strong></td>\n                      </tr>\n                      <tr>\n                        <td class=\"pe-4\">Bank name:</td>\n                        <td>American Bank</td>\n                      </tr>\n                      <tr>\n                        <td class=\"pe-4\">Country:</td>\n                        <td>United States</td>\n                      </tr>\n                      <tr>\n                        <td class=\"pe-4\">IBAN:</td>\n                        <td>ETD95476213874685</td>\n                      </tr>\n                      <tr>\n                        <td class=\"pe-4\">SWIFT code:</td>\n                        <td>BR91905</td>\n                      </tr>\n                    </tbody>\n                  </table>\n                </div>\n              </div> ")], -1
 /* HOISTED */
 );
 
@@ -352,7 +352,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.form.invoice_date), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"pt-1\">\r\n                    <span>Date Due:</span>\r\n                    <span class=\"fw-semibold\">May 25, 2021</span>\r\n                  </div> ")])])]), _hoisted_11, _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.form.invoice_items, function (item) {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"pt-1\">\n                    <span>Date Due:</span>\n                    <span class=\"fw-semibold\">May 25, 2021</span>\n                  </div> ")])])]), _hoisted_11, _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.form.invoice_items, function (item) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.subject.name) + "--", 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.subject.code), 1
@@ -401,13 +401,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _BreadcrumbComponent_vue_vue_type_template_id_49bd74a6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BreadcrumbComponent.vue?vue&type=template&id=49bd74a6 */ "./resources/ts/vue/backend/components/BreadcrumbComponent.vue?vue&type=template&id=49bd74a6");
 /* harmony import */ var _BreadcrumbComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BreadcrumbComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/components/BreadcrumbComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_BreadcrumbComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_BreadcrumbComponent_vue_vue_type_template_id_49bd74a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/components/BreadcrumbComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_BreadcrumbComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_BreadcrumbComponent_vue_vue_type_template_id_49bd74a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/components/BreadcrumbComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -428,13 +428,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ViewInvoiceComponent_vue_vue_type_template_id_7f19ae7c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ViewInvoiceComponent.vue?vue&type=template&id=7f19ae7c */ "./resources/ts/vue/backend/pages/student-invoice/invoice/ViewInvoiceComponent.vue?vue&type=template&id=7f19ae7c");
 /* harmony import */ var _ViewInvoiceComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ViewInvoiceComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/student-invoice/invoice/ViewInvoiceComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ViewInvoiceComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ViewInvoiceComponent_vue_vue_type_template_id_7f19ae7c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/student-invoice/invoice/ViewInvoiceComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ViewInvoiceComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ViewInvoiceComponent_vue_vue_type_template_id_7f19ae7c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/student-invoice/invoice/ViewInvoiceComponent.vue"]])
 /* hot reload */
 if (false) {}
 

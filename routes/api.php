@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\api\role\RoleController;
 use App\Http\Controllers\backend\api\user\UserController;
 use App\Http\Controllers\backend\api\job\TicketController;
+use App\Http\Controllers\backend\api\staff\StaffController;
 use App\Http\Controllers\backend\api\layout\LayoutController;
 use App\Http\Controllers\backend\api\product\ProductController;
 use App\Http\Controllers\backend\api\role\PermissionController;
@@ -52,6 +53,7 @@ Route::resource('permission', PermissionController::class);
 Route::get('roles', [RoleController::class, 'getRoles']);
 Route::resource('product', ProductController::class);
 Route::resource('student-invoice', StudentInvoiceController::class);
+Route::resource('staff', StaffController::class);
 
 
 
