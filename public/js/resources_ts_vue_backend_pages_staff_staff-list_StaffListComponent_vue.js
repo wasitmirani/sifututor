@@ -252,7 +252,7 @@ __webpack_require__.r(__webpack_exports__);
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       this.loading = true;
       this.page_num = page;
-      axios.get('/staff-list?page=' + page + '&query=' + this.query).then(function (res) {
+      axios.get('/staff?page=' + page + '&query=' + this.query).then(function (res) {
         _this.staffList = res.data.staffs;
         _this.loading = false;
       })["catch"](function (err) {
@@ -271,7 +271,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteItem: function deleteItem(item) {
       var _this2 = this;
 
-      axios["delete"]("/staff-list/".concat(item.id)).then(function (res) {
+      axios["delete"]("/staff/".concat(item.id)).then(function (res) {
         _this2.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
 
         _this2.getStaffList();
@@ -572,7 +572,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "float": "right"
     },
     "class": "btn btn-primary",
-    to: "/staff/staff-list/create"
+    to: "/staff-list/staff/create"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Add Staff")];
@@ -583,7 +583,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_search_box, {
     "class": "ml-2",
     label: "Search by name",
-    apiurl: '/staff-list?page=' + this.page_num,
+    apiurl: '/staff?page=' + this.page_num,
     onQuery: _cache[0] || (_cache[0] = function ($event) {
       return $options.isQuery($event);
     }),

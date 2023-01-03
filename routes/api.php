@@ -4,6 +4,7 @@ use App\Models\Subject;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StateController;
 use App\Http\Controllers\backend\api\role\RoleController;
 use App\Http\Controllers\backend\api\user\UserController;
 use App\Http\Controllers\backend\api\job\TicketController;
@@ -54,7 +55,12 @@ Route::get('roles', [RoleController::class, 'getRoles']);
 Route::resource('product', ProductController::class);
 Route::resource('student-invoice', StudentInvoiceController::class);
 Route::resource('staff', StaffController::class);
+Route::get('/states', [StateController::class, 'getStates']);
+Route::get('/cities/{state_id}', [StateController::class, 'getCityByState']);
 
 
 
 });
+
+
+Route::post('/import-state',[StateController::class, 'importState']);
