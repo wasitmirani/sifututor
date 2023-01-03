@@ -5,14 +5,14 @@
             <h5 class="card-title">Staff List</h5>
         </div>
         <div>
-            <router-link style="float:right" class="btn btn-primary" to="/staff/staff-list/create"> Add Staff</router-link>
+            <router-link style="float:right" class="btn btn-primary" to="/staff-list/staff/create"> Add Staff</router-link>
         </div>
     </div>
     <div class="card">
         <div class="card-header border-bottom pb-0">
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-5 user_role">
-                    <search-box class="ml-2" label="Search by name" :apiurl="'/staff-list?page=' + this.page_num"
+                    <search-box class="ml-2" label="Search by name" :apiurl="'/staff?page=' + this.page_num"
                         v-on:query="isQuery($event)" v-on:loading="loadingStart($event)" v-on:reload="getStaffList()"
                         v-on:filterData="filterData($event)">
                     </search-box>
@@ -83,7 +83,7 @@ export default {
         getStaffList(page = 1) {
             this.loading = true;
             this.page_num = page;
-            axios.get('/staff-list?page=' + page + '&query=' + this.query).then((res) => {
+            axios.get('/staff?page=' + page + '&query=' + this.query).then((res) => {
                 this.staffList = res.data.staffs;
                 this.loading = false;
             }).catch((err) => {
@@ -100,7 +100,7 @@ export default {
             this.loading = value;
         },
         deleteItem(item) {
-            axios.delete(`/staff-list/${item.id}`).then((res) => {
+            axios.delete(`/staff/${item.id}`).then((res) => {
                 this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
                 this.getStaffList();
             }).catch((err) => {

@@ -24,13 +24,13 @@
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-StaffType">Staff Type</label>
                     <select id="multicol-StaffType"
-                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'staff_type')}`"
-                        data-allow-clear="true" v-model="staff.staff_type">
-                        <option>Probation</option>
-                        <option>Intern</option>
-                        <option>Part-Time</option>
+                        :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'type')}`"
+                        data-allow-clear="true" v-model="staff.type">
+                        <option value="probation">Probation</option>
+                        <option value="intern">Intern</option>
+                        <option value="part-time">Part-Time</option>
                     </select>
-                    <validate-input :errors="errors?.errors" value="staff_type"></validate-input>
+                    <validate-input :errors="errors?.errors" value="type"></validate-input>
                 </div>
             </div>
             <!-- <hr class="my-4 mx-n4" /> -->
@@ -89,15 +89,15 @@
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-child">No of Children</label>
-                    <input type="number" id="multicol-child" placeholder="No Of Children" v-model="staff.no_of_children"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'no_of_children')}`" />
-                    <validate-input :errors="errors?.errors" value="no_of_children"></validate-input>
+                    <input type="number" id="multicol-child" placeholder="No Of Children" v-model="staff.no_children"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'no_children')}`" />
+                    <validate-input :errors="errors?.errors" value="no_children"></validate-input>
                 </div>
 
                 <div class="col-sm-12">
                     <div class="form-check form-check-primary">
                         <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"
-                            v-model="staff.spouse_is_Working" :true-value="1" :false-value="0">
+                            v-model="staff.spouse_working" :true-value="1" :false-value="0">
                         <label class="form-check-label" for="customCheckPrimary">Spouse Is Working</label>
                     </div>
                 </div>
@@ -106,8 +106,7 @@
                         <input type="email" id="multicol-email"
                             :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'email')}`"
                             placeholder="john.doe" aria-label="john.doe" v-model="staff.email"
-                            aria-describedby="multicol-email2"><span class="input-group-text"
-                            id="multicol-email2">@example.com</span>
+                            aria-describedby="multicol-email2">
                     </div>
                     <validate-input :errors="errors?.errors" value="email"></validate-input>
                 </div>
@@ -146,23 +145,8 @@
                     <label class="form-label" for="multicol-State">State</label>
                     <select id="multicol-State"
                         :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'state')}`"
-                        data-allow-clear="true" v-model="staff.state">
-                        <option value="">Select</option>
-                        <option>Selangor</option>
-                        <option>Penang</option>
-                        <option>Johor</option>
-                        <option>Kuala Lumpur</option>
-                        <option>Negeri Sembilan</option>
-                        <option>Melaka</option>
-                        <option>Pahang</option>
-                        <option>Perlis</option>
-                        <option>Perak</option>
-                        <option>Kedah</option>
-                        <option>Terengganu</option>
-                        <option>Kelantan</option>
-                        <option>Serawak</option>
-                        <option>Sabah</option>
-                        <option>Putrajaya</option>
+                        data-allow-clear="true" @change="changeCity($event)"  v-model="staff.address.state">
+                        <option  v-for="item in states" :value="item.id">{{item.name}}</option>
                     </select>
                     <validate-input :errors="errors?.errors" value="state"></validate-input>
                 </div>
@@ -170,27 +154,9 @@
                     <label class="form-label" for="multicol-City">City</label>
                     <select id="multicol-State"
                         :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'city')}`"
-                        data-allow-clear="true" v-model="staff.city">
-                        <option>Pulau Indah</option>
-                        <option>Pulau Ketam</option>
-                        <option>Puncak Alam</option>
-                        <option>Rasa</option>
-                        <option>Rawang</option>
-                        <option>Sabak Bernam</option>
-                        <option>Sekinchan</option>
-                        <option>Semenyih</option>
-                        <option>Sepang</option>
-                        <option>Serdang</option>
-                        <option>Serendah</option>
-                        <option>Seri Kembangan</option>
-                        <option>Shah Alam</option>
-                        <option>Subang Jaya</option>
-                        <option>Sungai Besar</option>
-                        <option>Sungai Buloh</option>
-                        <option>Sungai Pelek</option>
-                        <option>Tanjong Karang</option>
-                        <option>Tanjong Sepat</option>
-                        <option>Telok Panglima Garang</option>
+                        data-allow-clear="true" v-model="staff.address.city">
+                        <option v-for="item in cities">{{item.name}}</option>
+
                     </select>
                     <validate-input :errors="errors?.errors" value="city"></validate-input>
                 </div>
@@ -231,13 +197,32 @@ export default {
     components: { ValidateInput },
     props: ['edit_mode', 'form'],
     data: () => ({
-        staff: {},
+        staff: {
+            address:{},
+        },
         errors: [],
+        states:[],
+        cities:[],
         loading: false,
+        state:1,
     }),
     methods: {
+        changeCity(event){
+            console.log(event.target.value)
+            this.getCities(event.target.value);
+        },
+        getStates(){
+            axios.get('/states').then((res)=>{
+                this.states=res.data.states;
+            });
+        },
+        getCities(state_id){
+            axios.get('/cities/'+state_id).then((res)=>{
+                this.cities=res.data.cities;
+            });
+        },
         updateStaffList(data) {
-            axios.put('/staff-list/' + this.staff.id, data).then((res) => {
+            axios.put('/staff/' + this.staff.id, data).then((res) => {
                 this.$router.push('/staff/staff-list');
             }).catch((err) => {
                 this.errors = err.response.data;
@@ -245,7 +230,7 @@ export default {
             });
         },
         createStaffList(data) {
-            axios.post('/staff-list', data).then((res) => {
+            axios.post('/staff', data).then((res) => {
                 this.$router.push('/staff/staff-list');
             }).catch((err) => {
                 this.errors = err.response.data;
@@ -267,6 +252,7 @@ export default {
         },
     },
     mounted() {
+        this.getStates();
         if (this.edit_mode) {
             // this.product = [];
             // this.product = this.form;
