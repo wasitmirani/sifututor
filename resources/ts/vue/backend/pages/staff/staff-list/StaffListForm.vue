@@ -254,8 +254,8 @@ export default {
     mounted() {
         this.getStates();
         if (this.edit_mode) {
-            // this.product = [];
-            // this.product = this.form;
+            this.staff = [];
+            this.staff = this.form;
         }
     }
 }

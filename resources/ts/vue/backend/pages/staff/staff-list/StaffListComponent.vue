@@ -5,7 +5,7 @@
             <h5 class="card-title">Staff List</h5>
         </div>
         <div>
-            <router-link style="float:right" class="btn btn-primary" to="/staff-list/staff/create"> Add Staff</router-link>
+            <router-link style="float:right" class="btn btn-primary" to="/staff/staff-list/create"> Add Staff</router-link>
         </div>
     </div>
     <div class="card">
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :desserts="desserts" v-on:deleteItem="deleteItem($event)" />
+            <DataTable :headers="headers" :desserts="desserts" :staffList="staffList" v-on:deleteItem="deleteItem($event)" />
         </div>
     </div>
 </template>
@@ -109,7 +109,7 @@ export default {
         },
     },
     mounted() {
-        // this.getStaffList();
+        this.getStaffList();
     }
 }
 </script>

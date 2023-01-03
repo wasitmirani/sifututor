@@ -83,8 +83,8 @@ __webpack_require__.r(__webpack_exports__);
     getStaff: function getStaff(id) {
       var _this = this;
 
-      axios.get('/staff-list/' + id).then(function (res) {
-        _this.form = res.data.products;
+      axios.get('/staff/' + id).then(function (res) {
+        _this.form = res.data.staff;
         _this.edit_mode = true;
       })["catch"](function (err) {
         _this.errors = err.response.data;
@@ -201,8 +201,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.getStates();
 
-    if (this.edit_mode) {// this.product = [];
-      // this.product = this.form;
+    if (this.edit_mode) {
+      this.staff = [];
+      this.staff = this.form;
     }
   }
 });

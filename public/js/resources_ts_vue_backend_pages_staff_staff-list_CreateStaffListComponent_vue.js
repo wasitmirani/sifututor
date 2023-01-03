@@ -178,8 +178,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.getStates();
 
-    if (this.edit_mode) {// this.product = [];
-      // this.product = this.form;
+    if (this.edit_mode) {
+      this.staff = [];
+      this.staff = this.form;
     }
   }
 });
