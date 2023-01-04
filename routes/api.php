@@ -9,12 +9,14 @@ use App\Http\Controllers\backend\api\role\RoleController;
 use App\Http\Controllers\backend\api\user\UserController;
 use App\Http\Controllers\backend\api\job\TicketController;
 use App\Http\Controllers\backend\api\staff\StaffController;
+use App\Http\Controllers\backend\api\tutor\TutorController;
 use App\Http\Controllers\backend\api\layout\LayoutController;
 use App\Http\Controllers\backend\api\product\ProductController;
 use App\Http\Controllers\backend\api\role\PermissionController;
 use App\Http\Controllers\backend\api\student\StudentController;
 use App\Http\Controllers\backend\api\subject\SubjectController;
 use App\Http\Controllers\backend\api\customer\CustomerController;
+use App\Http\Controllers\backend\api\staff\StaffPaymentController;
 use App\Http\Controllers\backend\api\student\StudentInvoiceController;
 
 /*
@@ -57,7 +59,8 @@ Route::resource('student-invoice', StudentInvoiceController::class);
 Route::resource('staff', StaffController::class);
 Route::get('/states', [StateController::class, 'getStates']);
 Route::get('/cities/{state_id}', [StateController::class, 'getCityByState']);
-
+Route::resource('tutor', TutorController::class);
+Route::resource('staff-payment', StaffPaymentController::class);
 
 
 });

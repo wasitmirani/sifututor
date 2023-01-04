@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\backend\api\staff;
+namespace App\Http\Controllers\backend\api\tutor;
 
-use App\Models\Staff;
+use App\Models\Tutor;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class StaffController extends Controller
+class TutorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +18,12 @@ class StaffController extends Controller
     {
         //
         $q = !empty(request('query')) ? request('query') : '';
-        $staffs = Staff::latest()
+        $tutors = Tutor::latest()
             ->where('full_name', 'like', '%'.$q . '%')
+            ->orWhere('email', 'like', '%'.$q . '%')
             ->paginate(env('PAR_PAGE'));
 
-        return response()->json(['staffs' => $staffs]);
+        return response()->json(['tutors' => $tutors]);
     }
 
     /**
@@ -43,12 +44,8 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
             'start_date'=>'required',
-            'designation'=>'required',
-            'basic_salary'=>'required|integer',
-            'type'=>'required',
             'full_name'=>'required',
             'nick_name'=>'required',
             'gender'=>'required',
@@ -56,23 +53,28 @@ class StaffController extends Controller
             'dob'=>'required',
             'nric'=>'required',
             'marital_status'=>'required',
-            'no_children'=>'required|integer',
-            'spouse_working'=>'boolean',
-            'email'=>'required|unique:staffs',
-            'phone'=>'required|unique:staffs',
+            'training_date'=>'required',
+            'shirt_size'=>'required|integer',
+            'bank_name'=>'required',
+            'back_account_no'=>'required',
+            'email'=>'required|unique:tutors',
+            'phone'=>'required|unique:tutors',
             'address'=>'array',
             'remark'=>'required|min:10',
-            'epf_no'=>'required',
-            'tax_no'=>'required',
+            'fee_payment_date'=>'required',
+            'receiving_account'=>'required',
             ]);
-
-        $staff = Staff::create([
+        $last_tutor = Tutor::latest()->first();
+        $last_tutor = !empty($last_tutor) ? $last_tutor->id  : 1;
+        $staff = Tutor::create([
             'uid'=>Str::uuid(),
             'slug'=>Str::slug($request->full_name,'-'),
+            'tutor_id'=>"T00".$last_tutor+1,
             'start_date'=>$request->start_date,
-            'designation'=>$request->designation,
-            'basic_salary'=>$request->basic_salary,
-            'type'=>$request->type,
+            'training_date'=>$request->training_date,
+            'shirt_size'=>$request->shirt_size,
+            'bank_name'=>$request->bank_name,
+            'bank_account'=>$request->bank_account,
             'full_name'=>$request->full_name,
             'nick_name'=>$request->nick_name,
             'gender'=>$request->gender,
@@ -80,17 +82,17 @@ class StaffController extends Controller
             'dob'=>$request->dob,
             'nric'=>$request->nric,
             'marital_status'=>$request->marital_status,
-            'no_children'=>$request->no_children,
-            'spouse_working'=>$request->spouse_working,
+            'fee_payment_date'=>$request->fee_payment_date,
+            'receiving_account'=>$request->receiving_account,
             'email'=>$request->email,
             'phone'=>$request->phone,
             'address'=>$request->address,
             'remark'=>$request->remark,
-            'epf_no'=>$request->epf_no,
-            'tax_no'=>$request->tax_no,
+
         ]);
 
-        return response()->json(['message' => 'staff has been created successfully']);
+        return response()->json(['message' => 'tutor has been created successfully']);
+
     }
 
     /**
@@ -102,9 +104,9 @@ class StaffController extends Controller
     public function show($id)
     {
         //
-        $staff = Staff::where('uid',$id)->first();
+        $tutor = Tutor::where('uid',$id)->first();
 
-        return response()->json(['staff' => $staff]);
+        return response()->json(['tutor' => $tutor]);
     }
 
     /**
@@ -130,9 +132,6 @@ class StaffController extends Controller
         //
         $request->validate([
             'start_date'=>'required',
-            'designation'=>'required',
-            'basic_salary'=>'required|integer',
-            'type'=>'required',
             'full_name'=>'required',
             'nick_name'=>'required',
             'gender'=>'required',
@@ -140,22 +139,28 @@ class StaffController extends Controller
             'dob'=>'required',
             'nric'=>'required',
             'marital_status'=>'required',
-            'no_children'=>'required|integer',
-            'spouse_working'=>'boolean',
-            'email'=>'required|unique:staffs,id,'.$id,
-            'phone'=>'required|unique:staffs,id,'.$id,
+            'training_date'=>'required',
+            'shirt_size'=>'required|integer',
+            'bank_name'=>'required',
+            'back_account_no'=>'required',
+            'email'=>'required|unique:tutors,id,'.$id,
+            'phone'=>'required|unique:tutors,id'.$id,
             'address'=>'array',
             'remark'=>'required|min:10',
-            'epf_no'=>'required',
-            'tax_no'=>'required',
+            'fee_payment_date'=>'required',
+            'receiving_account'=>'required',
             ]);
-
-        $staff = Staff::where('id',$id)->update([
+        $last_tutor = Tutor::latest()->first();
+        $last_tutor = !empty($last_tutor) ? $last_tutor->id  : 1;
+        $staff = Tutor::create([
+            'uid'=>Str::uuid(),
             'slug'=>Str::slug($request->full_name,'-'),
+            'tutor_id'=>"T00".$last_tutor+1,
             'start_date'=>$request->start_date,
-            'designation'=>$request->designation,
-            'basic_salary'=>$request->basic_salary,
-            'type'=>$request->type,
+            'training_date'=>$request->training_date,
+            'shirt_size'=>$request->shirt_size,
+            'bank_name'=>$request->bank_name,
+            'bank_account'=>$request->bank_account,
             'full_name'=>$request->full_name,
             'nick_name'=>$request->nick_name,
             'gender'=>$request->gender,
@@ -163,17 +168,15 @@ class StaffController extends Controller
             'dob'=>$request->dob,
             'nric'=>$request->nric,
             'marital_status'=>$request->marital_status,
-            'no_children'=>$request->no_children,
-            'spouse_working'=>$request->spouse_working,
+            'fee_payment_date'=>$request->fee_payment_date,
+            'receiving_account'=>$request->receiving_account,
             'email'=>$request->email,
             'phone'=>$request->phone,
             'address'=>$request->address,
             'remark'=>$request->remark,
-            'epf_no'=>$request->epf_no,
-            'tax_no'=>$request->tax_no,
+
         ]);
 
-        return response()->json(['message'=>'staff has been updated successfully']);
     }
 
     /**
@@ -185,12 +188,12 @@ class StaffController extends Controller
     public function destroy($id)
     {
         //
-        $staff = Staff::where('id',$id)->first();
-
-        if ($staff) {
-            $staff->delete();
-            return response()->json(['message'=>'staff has been deleted successfully']);
+        $tutor = Tutor::where('uid',$id)->first();
+        if($tutor){
+             $tutor->delete();
+            return response()->json(['message' => 'tutor has been deleted']);
         }
-        return response()->json(['message' => 'staff has been removed successfully']);
+
+        return response()->json(['message' => 'tutor not found'],404);
     }
 }
