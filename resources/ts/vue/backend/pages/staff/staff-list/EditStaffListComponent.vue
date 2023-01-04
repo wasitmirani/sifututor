@@ -18,8 +18,8 @@ export default {
     }),
     methods: {
         getStaff(id) {
-            axios.get('/staff-list/' + id).then((res) => {
-                this.form = res.data.products;
+            axios.get('/staff/' + id).then((res) => {
+                this.form = res.data.staff;
                 this.edit_mode = true;
             }).catch((err) => {
                 this.errors = err.response.data;

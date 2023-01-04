@@ -18,14 +18,14 @@
       mapStatus(status) {
         switch (status) {
           case 1:
-            return '<span class="status-badge-success me-1">Active</span>';
+            return '<span class="badge bg-label-primary me-1">Active</span>';
             break;
           case 0:
-            return '<span class="status-badge-danger me-1">InActive</span>';
+            return '<span class="badge bg-label-primary me-1">InActive</span>';
             break;
 
           default:
-          return '<span class="status-badge-success me-1">Active</span>';
+          return '<span class="badge bg-label-primary me-1">Active</span>';
             break;
         }
       },
