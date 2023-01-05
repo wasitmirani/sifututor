@@ -62,7 +62,7 @@ export default {
             return (this.query = query);
         },
         filterData(data) {
-            this.accountList = data.accounts;
+            this.chartaccounts= data.chart_accounts;
         },
         loadingStart(value) {
             this.loading = value;
@@ -78,7 +78,7 @@ export default {
                 confirmButtonText: "Yes, delete it!",
             }).then((result) => {
                 if (result.isConfirmed) {
-            axios.delete(`/account/${item.id}`).then((res) => {
+            axios.delete(`/chart-account/${item.id}`).then((res) => {
                 this.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
                 this.getAccount();
             }).catch((err) => {

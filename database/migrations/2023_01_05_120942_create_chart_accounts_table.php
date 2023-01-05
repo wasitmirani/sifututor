@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('code');
             $table->string('name');
             $table->string('type');
-            $table->boolean('is_cash_source')->default(0);
+            $table->boolean('is_cash_source')->nullable()->default(0);
             $table->string('description')->nullable();
             $table->timestamps();
         });

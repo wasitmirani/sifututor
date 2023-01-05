@@ -206,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.query = query;
     },
     filterData: function filterData(data) {
-      this.accountList = data.accounts;
+      this.chartaccounts = data.chart_accounts;
     },
     loadingStart: function loadingStart(value) {
       this.loading = value;
@@ -224,7 +224,7 @@ __webpack_require__.r(__webpack_exports__);
         confirmButtonText: "Yes, delete it!"
       }).then(function (result) {
         if (result.isConfirmed) {
-          axios["delete"]("/account/".concat(item.id)).then(function (res) {
+          axios["delete"]("/chart-account/".concat(item.id)).then(function (res) {
             _this2.$root.alertNotify(res.status, "Destroyed Successfuly", "info", res.data);
 
             _this2.getAccount();
