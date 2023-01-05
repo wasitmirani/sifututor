@@ -42,41 +42,14 @@ export default {
             { text: 'Payment Date', value: 'Payment Date' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
-        desserts: [
-            {
-                "uid": "1",
-                "staff": "Wazeeraah Binti Azmi",
-                "date": "November - 2022",
-                "nett_pay": "RM 96.82",
-                "total_ammount": "RM 130.02",
-                "payment_Date": "30/11/2022",
-                "slug": "Nur",
-            },
-            {
-                "uid": "2",
-                "staff": "MOHAMAD BADRUL HISYAM BIN MOHD JAPRI",
-                "date": "November - 2022",
-                "nett_pay": "RM 96.82",
-                "total_ammount": "RM 130.02",
-                "payment_Date": "30/11/2022",
-                "slug": "Nur",
-            },
-            {
-                "uid": "3",
-                "staff": "Muhd Ariffullah B Muhd Ismail",
-                "date": "November - 2022",
-                "nett_pay": "RM 96.82",
-                "total_ammount": "RM 130.02",
-                "payment_Date": "30/11/2022",
-                "slug": "Nur",
-            },
-        ],
+        staff_payments: [],
         page_num: 1,
         loading: false,
         query: "",
         paymentList: [],
     }),
     methods: {
+    
         getStaffPayment(page = 1) {
             this.loading = true;
             this.page_num = page;
@@ -106,7 +79,7 @@ export default {
         },
     },
     mounted() {
-        // this.getStaffPayment();
+        this.getStaffPayment();
     }
 }
 </script>

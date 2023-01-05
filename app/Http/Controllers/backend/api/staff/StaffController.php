@@ -24,6 +24,10 @@ class StaffController extends Controller
 
         return response()->json(['staffs' => $staffs]);
     }
+    public function getStaffs(){
+        $staffs = Staff::latest()->get();
+        return response()->json(['staffs' =>$staffs ]);
+    }
 
     /**
      * Show the form for creating a new resource.

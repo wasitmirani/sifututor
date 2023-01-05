@@ -59,7 +59,7 @@ class StaffPaymentController extends Controller
                 'salary_year'=>$request->salary_year,
                 'basic_salary_description'=>$request->basic_salary_description,
                 'basic_salary'=>$request->basic_salary,
-                'bounus_amount'=>$request->bounus_amount,
+                'bonus_amount'=>$request->bonus_amount,
                 'overtime_amount_perhour'=>$request->overtime_amount_perhour,
                 'overtime_hour'=>$request->overtime_hour,
                 'no_unpaid_leave'=>$request->no_unpaid_leave,

@@ -58,6 +58,7 @@ Route::get('roles', [RoleController::class, 'getRoles']);
 Route::resource('product', ProductController::class);
 Route::resource('student-invoice', StudentInvoiceController::class);
 Route::resource('staff', StaffController::class);
+Route::get('/staffs', [StaffController::class,'getStaffs']);
 Route::get('/states', [StateController::class, 'getStates']);
 Route::get('/cities/{state_id}', [StateController::class, 'getCityByState']);
 Route::resource('tutor', TutorController::class);

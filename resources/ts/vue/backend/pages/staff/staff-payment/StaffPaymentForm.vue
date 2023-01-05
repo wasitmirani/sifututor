@@ -7,10 +7,10 @@
                     <!-- <input type="text" v-model="payment.staff_name" id="staffName"
                         :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'staff_name')}`"
                         placeholder="Staff Name" /> -->
-                    <multiselect v-model="payment.staff_name" :options="staff" :multiple="true"  placeholder="Search by subject name" track-by="staffId" label="fullname">
+                    <multiselect v-model="payment.staff" :options="staffs" :multiple="false"  placeholder="Search by staff name" track-by="id" label="full_name">
                         <span slot="noResult">Oops! No elements found. Consider changing the search query.</span>
                     </multiselect>
-                    <validate-input :errors="errors?.errors" value="staff_name"></validate-input>
+                    <validate-input :errors="errors?.errors" value="staff"></validate-input>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-payment_date">Payment Date</label>
@@ -24,18 +24,18 @@
                     <select id="multicol-salary_month"
                         :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'salary_month')}`"
                         data-allow-clear="true" v-model="payment.salary_month">
-                        <option>January</option>
-                        <option>February</option>
-                        <option>March</option>
-                        <option>April</option>
-                        <option>May</option>
-                        <option>June</option>
-                        <option>July</option>
-                        <option>August</option>
-                        <option>September</option>
-                        <option>October</option>
-                        <option>November</option>
-                        <option>December</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
                     </select>
                     <validate-input :errors="errors?.errors" value="salary_month"></validate-input>
                 </div>
@@ -44,18 +44,19 @@
                     <select id="multicol-salary_month"
                         :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'salary_year')}`"
                         data-allow-clear="true" v-model="payment.salary_year">
-                        <option>2019</option>
-                        <option>2020</option>
-                        <option>2021</option>
-                        <option>2022</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
                     </select>
                     <validate-input :errors="errors?.errors" value="salary_year"></validate-input>
                 </div>
 
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-salary_description">Basic Salary Description</label>
-                    <input type="text" v-model="payment.salary_description" id="salary_description"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'salary_description')}`"
+                    <input type="text" v-model="payment.basic_salary_description" id="basic_salary_description"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'basic_salary_description')}`"
                         placeholder="Basic Salary Description" />
                     <validate-input :errors="errors?.errors" value="salary_description"></validate-input>
                 </div>
@@ -83,16 +84,16 @@
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-over_time">Overtime Amount (Per Hour)</label>
                     <input type="number" id="multicol-over_time" placeholder="Overtime Amount (Per Hour)"
-                        v-model="payment.over_time"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'over_time')}`" />
-                    <validate-input :errors="errors?.errors" value="over_time"></validate-input>
+                        v-model="payment.overtime_amount_perhour"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'overtime_amount_perhour')}`" />
+                    <validate-input :errors="errors?.errors" value="overtime_amount_perhour"></validate-input>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-over_time_hour">Overtime (Hour)</label>
                     <input type="number" id="multicol-over_time_hour" placeholder="Overtime (Hour)"
-                        v-model="payment.over_time_hour"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'over_time_hour')}`" />
-                    <validate-input :errors="errors?.errors" value="over_time_hour"></validate-input>
+                        v-model="payment.overtime_hour"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'overtime_hour')}`" />
+                    <validate-input :errors="errors?.errors" value="overtime_hour"></validate-input>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-claim">Claim</label>
@@ -142,10 +143,16 @@
                     <select id="multicol-salary_month"
                         :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'paying_account')}`"
                         data-allow-clear="true" v-model="payment.paying_account">
-                        <option value="45">Cash In Hand</option>
-                        <option value="73">Payment Gateway - BillPlz Sdn Bhd</option>
-                        <option value="76">Payment Gateway - Ipay88</option>
-                        <option value="68">Public Bank</option>
+                        <option value="Cash In Hand">
+                        Cash In Hand
+                        </option>
+                        <option value="Payment Gateway - BillPlz Sdn Bhd">
+                        Payment Gateway - BillPlz Sdn Bhd
+                        </option>
+                        <option value="Payment Gateway - Ipay88">Payment Gateway - Ipay88
+
+                        </option>
+                        <option value="Public Bank">Public Bank</option>
                     </select>
                     <validate-input :errors="errors?.errors" value="paying_account"></validate-input>
                 </div>
@@ -175,35 +182,15 @@ export default {
         errors: [],
         loading: false,
         service: "",
-        staff: [
-            {
-                "fullname": "Assayidatun Najihah Binti Muhammad Nasution",
-                "staffId": 83,
-                "designation": "Internship - Admin Support"
-            },
-            {
-                "fullname": "Muhammad Harith Na'im bin Abdul Kadir",
-                "staffId": 16,
-                "designation": "Customer Service"
-            },
-            {
-                "fullname": "MUHAMMAD HAZMAN BIN MOHD SHAHRILL",
-                "staffId": 59,
-                "designation": "Customer Service"
-            },
-            {
-                "fullname": "Muhammad Khairul Ikhwan Bin Mohamad Rosli",
-                "staffId": 36,
-                "designation": "Customer Service"
-            },
-            {
-                "fullname": "Muhammad Syafiq Syazwan Bin Che Omar",
-                "staffId": 58,
-                "designation": "Customer Service"
-            }
-        ]
+        staffs: [],
     }),
     methods: {
+
+        getStaffs(){
+            axios.get('/staffs').then((res)=>{
+                this.staffs = res.data.staffs;
+            });
+        },
         updateStaffPayment(data) {
             axios.put('/staff-payment/' + this.payment.id, data).then((res) => {
                 this.$router.push('/staff/staff-payment-list');
@@ -235,6 +222,7 @@ export default {
         },
     },
     mounted() {
+        this.getStaffs();
         if (this.edit_mode) {
             // this.product = [];
             // this.product = this.form;
