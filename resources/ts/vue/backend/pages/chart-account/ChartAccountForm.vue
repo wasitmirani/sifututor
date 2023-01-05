@@ -4,31 +4,31 @@
             <div class="row g-3">
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-AccountCode">Account Code</label>
-                    <input type="text" v-model="account.account_code" id="AccountCode"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'account_code')}`"
+                    <input type="text" v-model="account.code" id="AccountCode"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'code')}`"
                         placeholder="Account Code" />
-                    <validate-input :errors="errors?.errors" value="account_code"></validate-input>
+                    <validate-input :errors="errors?.errors" value="code"></validate-input>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-AccountName">Account Name</label>
                     <input type="text" id="multicol-AccountName" placeholder="Account Name"
-                        v-model="account.account_name"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'account_name')}`" />
-                    <validate-input :errors="errors?.errors" value="account_name"></validate-input>
+                        v-model="account.name"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'name')}`" />
+                    <validate-input :errors="errors?.errors" value="name"></validate-input>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-AccountType">Account Type</label>
-                    <select id="multicol-Gender" :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'account_type')}`" data-allow-clear="true"
-                        v-model="account.account_type">
-                        <option>Expense</option>
-                        <option>Equity</option>
-                        <option>Current assets</option>
-                        <option>Non-current assets</option>
-                        <option>Current liabilities</option>
-                        <option>Non-current liabilities</option>
-                        <option>Cost of sales</option>
+                    <select id="multicol-Gender" :class="`select2 form-select ${this.$root.appendValidateClass(errors?.errors, 'type')}`" data-allow-clear="true"
+                        v-model="account.type">
+                        <option value="Expense">Expense</option>
+                        <option value="Equity">Equity</option>
+                        <option value="Current assets">Current assets</option>
+                        <option value="Non-current assets">Non-current assets</option>
+                        <option value="Current liabilities">Current liabilities</option>
+                        <option value="Non-current liabilities">Non-current liabilities</option>
+                        <option value="Cost of sales">Cost of sales</option>
                     </select>
-                    <validate-input :errors="errors?.errors" value="account_type"></validate-input>
+                    <validate-input :errors="errors?.errors" value="type"></validate-input>
                 </div>
                 <div class="col-md-12"><label class="form-label" for="basic-icon-default-message">Description</label>
                     <div class="input-group input-group-merge"><textarea rows="3" id="basic-icon-default-message"
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="form-check form-check-primary">
-                        <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary" v-model="account.source" :true-value="1" :false-value="0">
+                        <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary" v-model="account.is_cash_source" :true-value="1" :false-value="0">
                         <label class="form-check-label" for="customCheckPrimary">Is a cash source</label>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ export default {
     }),
     methods: {
         updateAccount(data) {
-            axios.put('/account/' + this.account.id, data).then((res) => {
+            axios.put('/chart-account/' + this.account.id, data).then((res) => {
                 this.$router.push('/chart-account');
             }).catch((err) => {
                 this.errors = err.response.data;
@@ -72,7 +72,7 @@ export default {
             });
         },
         createAccount(data) {
-            axios.post('/account', data).then((res) => {
+            axios.post('/chart-account', data).then((res) => {
                 this.$router.push('/chart-account');
             }).catch((err) => {
                 this.errors = err.response.data;

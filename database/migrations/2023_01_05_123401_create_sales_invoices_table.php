@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('payer_email');
             $table->string('payer_phone');
             $table->string('total_price');
-            $table->json('invoice_items');
-            $table->json('invoice_deductions');
+            $table->json('invoice_items')->nullable();
+            $table->json('invoice_deductions')->nullable();
             $table->string('remarks');
             $table->boolean('status');
             $table->timestamps();

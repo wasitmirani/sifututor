@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\backend\api\chartaccount;
 
+use Illuminate\Support\Str;
 use App\Models\ChartAccount;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -49,8 +50,19 @@ class ChartAccountController extends Controller
             'type'=>'required',
             'description'=>'required',
             'is_cash_source'=>'boolean',
-            
         ]);
+
+        $chart_account = ChartAccount::create([
+            'code'=>$request->code,
+            'name'=>$request->name,
+            'uid'=>Str::uuid(),
+            'description'=>$request->description,
+            'slug'=>Str::slug($request->code,'-'),
+            'type'=>$request->type,
+            'is_cash_source'=>$request->is_cash_source,
+        ]);
+
+        return response()->json(['message' => 'chart account created successfully']);
     }
 
     /**
@@ -62,6 +74,10 @@ class ChartAccountController extends Controller
     public function show($id)
     {
         //
+        $chart_account=ChartAccount::where('uid', $id)->first();
+
+        return response()->json(['chart_account' => $chart_account]);
+
     }
 
     /**
@@ -85,6 +101,26 @@ class ChartAccountController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $request->validate([
+            'code'=>'required',
+            'name'=>'required',
+            'type'=>'required',
+            'description'=>'required',
+            'is_cash_source'=>'boolean',
+        ]);
+
+        $chart_account = ChartAccount::where('id',$id)->update([
+            'code'=>$request->code,
+            'name'=>$request->name,
+            'slug'=>Str::slug($request->code,'-'),
+            'description'=>$request->description,
+            'type'=>$request->type,
+            'is_cash_source'=>$request->is_cash_source,
+        ]);
+
+        return response()->json(['message' => 'chart account updated successfully']);
+
     }
 
     /**
@@ -96,5 +132,10 @@ class ChartAccountController extends Controller
     public function destroy($id)
     {
         //
+        $del = ChartAccount::where('id', $id)->first();
+        if($del){
+          $del->delete();
+            return response()->json(['message' => 'chart account deleted successfully']);
+        }
     }
 }

@@ -3,7 +3,7 @@
     <breadcrumb :active_name="slug"  :previous="[{name:'Chart Accounts' , link:'/chart-account'}]"></breadcrumb>
      <!-- /breadcrumb -->
      <ChartAccountForm :edit_mode="edit_mode" :form="form" v-if="edit_mode" />
- 
+
  </template>
  <script>
  import breadcrumb from "../../components/BreadcrumbComponent.vue";
@@ -18,8 +18,8 @@
      }),
      methods:{
          getAccount(id) {
-             axios.get('/account/' + id).then((res) => {
-                 this.form = res.data.subject;
+             axios.get('/chart-account/' + id).then((res) => {
+                 this.form = res.data.chart_account;
                  this.edit_mode = true;
              }).catch((err) => {
                  this.errors = err.response.data;
@@ -34,4 +34,3 @@
      }
  }
  </script>
- 

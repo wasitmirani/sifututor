@@ -1,7 +1,7 @@
 <template>
     <div class="table-responsive text-nowrap">
         <table class="table">
-            <caption class="ms-4">Chart Account 
+            <caption class="ms-4">Chart Account
             </caption>
             <thead>
                 <tr>
@@ -9,10 +9,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in desserts" :key="index">
-                    <td> {{ item.uid ?? "N/A" }}</td>
-                    <td> {{ item.account_code ?? "N/A" }}</td>
-                    <td> {{ item.account_name ?? "N/A" }}</td>
+                <tr v-for="(item, index) in chartaccounts.data" :key="index">
+                    <td> {{ item.slug ?? "N/A" }}</td>
+                    <td> {{ item.code ?? "N/A" }}</td>
+                    <td> {{ item.name ?? "N/A" }}</td>
                     <td> {{ item.type ?? "N/A" }} </td>
                     <td> {{ item.description ?? "N/A" }}</td>
                     <td class="" style=""><div class="d-flex align-items-center">
@@ -28,7 +28,7 @@
 <script>
 export default {
     name: "DataTableComponent",
-    props: ["headers", "desserts"],
+    props: ["headers", "chartaccounts"],
     data: () => ({
     }),
     methods: {
