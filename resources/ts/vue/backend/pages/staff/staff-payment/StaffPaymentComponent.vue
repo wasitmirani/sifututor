@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :desserts="desserts" v-on:deleteItem="deleteItem($event)" />
+            <DataTable :headers="headers" :staff_payments="staff_payments" v-on:deleteItem="deleteItem($event)" />
         </div>
     </div>
 </template>
@@ -46,15 +46,15 @@ export default {
         page_num: 1,
         loading: false,
         query: "",
-        paymentList: [],
+        staff_payments: [],
     }),
     methods: {
-    
+
         getStaffPayment(page = 1) {
             this.loading = true;
             this.page_num = page;
             axios.get('/staff-payment?page=' + page + '&query=' + this.query).then((res) => {
-                this.paymentList = res.data.payments;
+                this.staff_payments = res.data.staff_payments;
                 this.loading = false;
             }).catch((err) => {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);

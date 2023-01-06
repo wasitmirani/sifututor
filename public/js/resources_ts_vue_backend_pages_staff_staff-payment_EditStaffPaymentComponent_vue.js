@@ -166,6 +166,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       axios.post('/staff-payment', data).then(function (res) {
         _this3.$router.push('/staff/staff-payment-list');
+
+        _this3.$root.alertNotify(res.status, null, "error", err.response.data);
       })["catch"](function (err) {
         _this3.errors = err.response.data;
 
@@ -800,14 +802,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "multicol-unpaide_leave",
     placeholder: "No. of Unpaid leave",
     "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
-      return _ctx.payment.unpaide_leave = $event;
+      return _ctx.payment.no_unpaid_leave = $event;
     }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors22 = _ctx.errors) === null || _ctx$errors22 === void 0 ? void 0 : _ctx$errors22.errors, 'unpaide_leave')))
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("form-control ".concat(this.$root.appendValidateClass((_ctx$errors22 = _ctx.errors) === null || _ctx$errors22 === void 0 ? void 0 : _ctx$errors22.errors, 'no_unpaid_leave')))
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.payment.unpaide_leave]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.payment.no_unpaid_leave]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors23 = _ctx.errors) === null || _ctx$errors23 === void 0 ? void 0 : _ctx$errors23.errors,
-    value: "unpade_leave"
+    value: "no_unpaid_leave"
   }, null, 8
   /* PROPS */
   , ["errors"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -917,13 +919,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _BreadcrumbComponent_vue_vue_type_template_id_49bd74a6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BreadcrumbComponent.vue?vue&type=template&id=49bd74a6 */ "./resources/ts/vue/backend/components/BreadcrumbComponent.vue?vue&type=template&id=49bd74a6");
 /* harmony import */ var _BreadcrumbComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BreadcrumbComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/components/BreadcrumbComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_BreadcrumbComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_BreadcrumbComponent_vue_vue_type_template_id_49bd74a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/components/BreadcrumbComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_BreadcrumbComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_BreadcrumbComponent_vue_vue_type_template_id_49bd74a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/components/BreadcrumbComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -944,13 +946,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ValidateInputComponent_vue_vue_type_template_id_57e2a366__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ValidateInputComponent.vue?vue&type=template&id=57e2a366 */ "./resources/ts/vue/backend/components/ValidateInputComponent.vue?vue&type=template&id=57e2a366");
 /* harmony import */ var _ValidateInputComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ValidateInputComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/components/ValidateInputComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ValidateInputComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ValidateInputComponent_vue_vue_type_template_id_57e2a366__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/components/ValidateInputComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ValidateInputComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ValidateInputComponent_vue_vue_type_template_id_57e2a366__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/components/ValidateInputComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -971,13 +973,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _EditStaffPaymentComponent_vue_vue_type_template_id_cbf1f0fe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditStaffPaymentComponent.vue?vue&type=template&id=cbf1f0fe */ "./resources/ts/vue/backend/pages/staff/staff-payment/EditStaffPaymentComponent.vue?vue&type=template&id=cbf1f0fe");
 /* harmony import */ var _EditStaffPaymentComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditStaffPaymentComponent.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/staff/staff-payment/EditStaffPaymentComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_EditStaffPaymentComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_EditStaffPaymentComponent_vue_vue_type_template_id_cbf1f0fe__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/staff/staff-payment/EditStaffPaymentComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_EditStaffPaymentComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_EditStaffPaymentComponent_vue_vue_type_template_id_cbf1f0fe__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/staff/staff-payment/EditStaffPaymentComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -998,13 +1000,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _StaffPaymentForm_vue_vue_type_template_id_5d0fb446__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StaffPaymentForm.vue?vue&type=template&id=5d0fb446 */ "./resources/ts/vue/backend/pages/staff/staff-payment/StaffPaymentForm.vue?vue&type=template&id=5d0fb446");
 /* harmony import */ var _StaffPaymentForm_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StaffPaymentForm.vue?vue&type=script&lang=js */ "./resources/ts/vue/backend/pages/staff/staff-payment/StaffPaymentForm.vue?vue&type=script&lang=js");
-/* harmony import */ var F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,F_xampp_htdocs_sifututor_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_StaffPaymentForm_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_StaffPaymentForm_vue_vue_type_template_id_5d0fb446__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/staff/staff-payment/StaffPaymentForm.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_laragon_www_vuexy_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_StaffPaymentForm_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_StaffPaymentForm_vue_vue_type_template_id_5d0fb446__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/ts/vue/backend/pages/staff/staff-payment/StaffPaymentForm.vue"]])
 /* hot reload */
 if (false) {}
 

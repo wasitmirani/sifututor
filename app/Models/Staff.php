@@ -13,4 +13,11 @@ class Staff extends Model
     protected $casts = [
         'address' => 'array',
     ];
+
+    /**
+     * Get the user that owns the Staff
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+
 }

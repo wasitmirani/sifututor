@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('salary_year');
             $table->string('basic_salary_description')->nullable();
             $table->integer('basic_salary');
-            $table->integer('bounus_amount')->default(0);
+            $table->integer('bonus_amount')->default(0);
             $table->integer('overtime_amount_perhour')->default(0);
             $table->integer('overtime_hour')->default(0);
             $table->string('claim')->nullable();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\backend\api\staff;
 
+use Illuminate\Support\Str;
 use App\Models\StaffPayment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,6 +17,13 @@ class StaffPaymentController extends Controller
     public function index()
     {
         //
+        $q = !empty(request('query')) ? request('query') : '';
+        $staff_payments = StaffPayment::latest()
+            ->where('slug', 'like', '%'.$q . '%')
+            ->with('staff')
+            ->paginate(env('PAR_PAGE'));
+
+        return response()->json(['staff_payments' => $staff_payments]);
     }
 
     /**
@@ -42,9 +50,10 @@ class StaffPaymentController extends Controller
             'payment_date'=>'required',
             'salary_month'=>'required',
             'salary_year'=>'required',
+            'staff'=>'required',
             'basic_salary_description'=>'required',
             'basic_salary'=>'required|integer',
-            'bounus_amount'=>'required',
+            'bonus_amount'=>'required',
             'overtime_amount_perhour'=>'required',
             'overtime_hour'=>'required',
             'no_unpaid_leave'=>'integer',
@@ -53,9 +62,14 @@ class StaffPaymentController extends Controller
             'remark'=>'required|min:10',
 
         ]);
+        $last_staff=StaffPayment::latest()->first();
+        $last_staff=!empty($last_staff) ? $last_staff->id+1 : 1;
         $staff_payment = StaffPayment::create([
                 'payment_date'=>$request->payment_date,
                 'salary_month'=>$request->salary_month,
+                'uid'=>Str::uuid(),
+                'staff_id'=>$request->staff['id'],
+                'slug'=>'SP-00'.$last_staff,
                 'salary_year'=>$request->salary_year,
                 'basic_salary_description'=>$request->basic_salary_description,
                 'basic_salary'=>$request->basic_salary,
@@ -79,6 +93,9 @@ class StaffPaymentController extends Controller
      */
     public function show($id)
     {
+        $staff_payment = StaffPayment::where('uid', $id)->first();
+
+        return response()->json(['staff_payment' => $staff_payment]);
         //
     }
 

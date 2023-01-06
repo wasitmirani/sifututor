@@ -20,6 +20,7 @@ class StaffController extends Controller
         $q = !empty(request('query')) ? request('query') : '';
         $staffs = Staff::latest()
             ->where('full_name', 'like', '%'.$q . '%')
+            
             ->paginate(env('PAR_PAGE'));
 
         return response()->json(['staffs' => $staffs]);

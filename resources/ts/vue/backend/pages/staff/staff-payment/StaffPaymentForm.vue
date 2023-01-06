@@ -101,9 +101,9 @@
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-unpaide_leave">No. of Unpaid leave</label>
                     <input type="number" id="multicol-unpaide_leave" placeholder="No. of Unpaid leave"
-                        v-model="payment.unpaide_leave"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'unpaide_leave')}`" />
-                    <validate-input :errors="errors?.errors" value="unpade_leave"></validate-input>
+                        v-model="payment.no_unpaid_leave"
+                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'no_unpaid_leave')}`" />
+                    <validate-input :errors="errors?.errors" value="no_unpaid_leave"></validate-input>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="multicol-deduction">Deduction</label>
@@ -202,6 +202,7 @@ export default {
         createStaffPayment(data) {
             axios.post('/staff-payment', data).then((res) => {
                 this.$router.push('/staff/staff-payment-list');
+                this.$root.alertNotify(res.status, null, "error", err.response.data);
             }).catch((err) => {
                 this.errors = err.response.data;
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
