@@ -178,8 +178,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mounted: function mounted() {
-    if (this.edit_mode) {// this.product = [];
-      // this.product = this.form;
+    if (this.edit_mode) {
+      this.payment = []; // this.payment = this.form;
     }
   }
 });

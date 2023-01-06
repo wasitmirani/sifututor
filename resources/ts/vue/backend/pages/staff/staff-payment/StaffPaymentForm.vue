@@ -236,8 +236,8 @@ export default {
     },
     mounted() {
         if (this.edit_mode) {
-            // this.product = [];
-            // this.product = this.form;
+            this.payment = [];
+            // this.payment = this.form;
         }
     }
 }
