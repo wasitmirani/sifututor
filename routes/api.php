@@ -19,6 +19,7 @@ use App\Http\Controllers\backend\api\customer\CustomerController;
 use App\Http\Controllers\backend\api\staff\StaffPaymentController;
 use App\Http\Controllers\backend\api\student\StudentInvoiceController;
 use App\Http\Controllers\backend\api\chartaccount\ChartAccountController;
+use App\Http\Controllers\backend\api\salesinvoice\SalesInvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,7 @@ Route::get('/cities/{state_id}', [StateController::class, 'getCityByState']);
 Route::resource('tutor', TutorController::class);
 Route::resource('staff-payment', StaffPaymentController::class);
 Route::resource('chart-account', ChartAccountController::class);
+Route::resource('sale-invoice', SalesInvoiceController::class);
 
 
 });
