@@ -4,10 +4,7 @@
             <div class="row g-3">
                 <div class="col-md-12">
                     <label class="form-label" for="multicol-staffName">Staff Name</label>
-                    <!-- <input type="text" v-model="payment.staff_name" id="staffName"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'staff_name')}`"
-                        placeholder="Staff Name" /> -->
-                    <multiselect v-model="payment.staff" :options="staffs" :multiple="false"  placeholder="Search by staff name" track-by="id" label="full_name">
+                    <multiselect v-model="payment.staff" :options="staffs" :multiple="false"  placeholder="Search by staff name" track-by="id" label="full_name" @select="onChangeStaff">
                         <span slot="noResult">Oops! No elements found. Consider changing the search query.</span>
                     </multiselect>
                     <validate-input :errors="errors?.errors" value="staff"></validate-input>
@@ -185,7 +182,10 @@ export default {
         staffs: [],
     }),
     methods: {
-
+        onChangeStaff(selectedOption){
+            this.payment.basic_salary = selectedOption.basic_salary;
+            // console.log('selectedOption',selectedOption);
+        },
         getStaffs(){
             axios.get('/staffs').then((res)=>{
                 this.staffs = res.data.staffs;
@@ -224,8 +224,8 @@ export default {
     mounted() {
         this.getStaffs();
         if (this.edit_mode) {
-            // this.product = [];
-            // this.product = this.form;
+            // this.payment = [];
+            // this.payment = this.form;
         }
     }
 }

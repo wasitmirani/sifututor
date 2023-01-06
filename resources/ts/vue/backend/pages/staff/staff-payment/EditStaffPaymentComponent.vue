@@ -18,8 +18,8 @@
      }),
      methods:{
          getStaffPayment(id) {
-             axios.get('/payment/' + id).then((res) => {
-                 this.form = res.data.products;
+             axios.get('/staff-payment/' + id).then((res) => {
+                 this.form = res.data.payment;
                  this.edit_mode = true;
              }).catch((err) => {
                  this.errors = err.response.data;

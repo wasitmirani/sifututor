@@ -117,6 +117,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   methods: {
+    onChangeStaff: function onChangeStaff(selectedOption) {
+      this.payment.basic_salary = selectedOption.basic_salary; // console.log('selectedOption',selectedOption);
+    },
     getStaffs: function getStaffs() {
       var _this = this;
 
@@ -167,8 +170,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.getStaffs();
 
-    if (this.edit_mode) {// this.product = [];
-      // this.product = this.form;
+    if (this.edit_mode) {// this.payment = [];
+      // this.payment = this.form;
     }
   }
 });
@@ -594,7 +597,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSubmit: _cache[19] || (_cache[19] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.onSubmit && $options.onSubmit.apply($options, arguments);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input type=\"text\" v-model=\"payment.staff_name\" id=\"staffName\"\r\n                        :class=\"`form-control ${this.$root.appendValidateClass(errors?.errors, 'staff_name')}`\"\r\n                        placeholder=\"Staff Name\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_multiselect, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_multiselect, {
     modelValue: _ctx.payment.staff,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return _ctx.payment.staff = $event;
@@ -603,7 +606,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     multiple: false,
     placeholder: "Search by staff name",
     "track-by": "id",
-    label: "full_name"
+    label: "full_name",
+    onSelect: $options.onChangeStaff
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_5];
@@ -613,7 +617,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modelValue", "options"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
+  , ["modelValue", "options", "onSelect"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_validate_input, {
     errors: (_ctx$errors = _ctx.errors) === null || _ctx$errors === void 0 ? void 0 : _ctx$errors.errors,
     value: "staff"
   }, null, 8
