@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('staff_payments', function (Blueprint $table) {
             //
-            // $table->integer('bonus_amount')->default(0);
+            $table->integer('bonus_amount')->default(0);
             // $table->integer('no_unpaid_leave')->default(0);
         });
     }
