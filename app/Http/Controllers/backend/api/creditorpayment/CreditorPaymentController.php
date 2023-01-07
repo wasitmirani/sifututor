@@ -115,8 +115,6 @@ class CreditorPaymentController extends Controller
         }
         
         $creditor_payment = CreditorPayment::where('id',$id)->update([
-                'uid'=>Str::uuid(),
-                'slug'=>Str::slug($request->creditor_name,'-'),
                 'creditor_name'=>$request->creditor_name,
                 'payment_amount'=>$request->payment_amount,
                 'payment_date'=>$request->payment_date,

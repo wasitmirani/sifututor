@@ -103,7 +103,29 @@ class SalesInvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'refernce_no'=>'required',
+            'invoice_date'=>'required',
+            'payer_name'=>'required',
+            'payer_email'=>'required|email',
+            'payer_phone'=>'required',
+            'remarks'=>'required',
+            'item_description'=>'required',
+            'item_quantity'=>'required',
+            'item_price'=>'required',
+            ]);
+
+        $invoice = SalesInvoice::where('id',$id)->update([
+            'start_date'=>$request->invoice_date,
+            'payer_name'=>$request->payer_name,
+            'payer_email'=>$request->payer_email,
+            'payer_phone'=>$request->payer_phone,
+            'invoice_items'=>$request->invoice_items,
+            'invoice_deductions'=>$request->invoice_deductions,
+            'remarks'=>$request->required,
+        ]);
+
+        return response()->json(['message' => 'invoice has been updated successfully']);
     }
 
     /**
@@ -114,6 +136,12 @@ class SalesInvoiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $invoice = SalesInvoice::where('id',$id)->first();
+
+        if ($invoice) {
+            $invoice->delete();
+            return response()->json(['message'=>'invoice has been deleted successfully']);
+        }
+        return response()->json(['message' => 'invoice has been removed successfully']);
     }
 }

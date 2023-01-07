@@ -62,7 +62,7 @@ class CreditorInvoiceController extends Controller
         
         $creditor_invoice = CreditorInvoice::create([
             'uid'=>Str::uuid(),
-            'slug'=>Str::slug($request->refernce_no,'-'),
+            'slug'=>Str::slug($request->creditor_name,'-'),
             'occurance_date'=>$request->occurance_date,
             'creditor_name'=>$request->creditor_name,
             'description'=>$request->description,
@@ -128,8 +128,6 @@ class CreditorInvoiceController extends Controller
         }
         
         $creditor_invoice = CreditorInvoice::where('id',$id)->update([
-            'uid'=>Str::uuid(),
-            'slug'=>Str::slug($request->refernce_no,'-'),
             'occurance_date'=>$request->occurance_date,
             'category'=>$request->category,
             'description'=>$request->description,

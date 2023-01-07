@@ -63,7 +63,7 @@ class ExpenditureController extends Controller
         
         $expenditure = Expenditure::create([
             'uid'=>Str::uuid(),
-            'slug'=>Str::slug($request->refernce_no,'-'),
+            'slug'=>Str::slug($request->description,'-'),
             'occurance_date'=>$request->occurance_date,
             'category'=>$request->category,
             'description'=>$request->description,
@@ -132,8 +132,6 @@ class ExpenditureController extends Controller
         }
         
         $expenditure = Expenditure::where('id',$id)->update([
-            'uid'=>Str::uuid(),
-            'slug'=>Str::slug($request->refernce_no,'-'),
             'occurance_date'=>$request->occurance_date,
             'category'=>$request->category,
             'description'=>$request->description,

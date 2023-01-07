@@ -103,8 +103,6 @@ class JournalLedgerController extends Controller
             ]);
 
         $ledger = JournalLedger::where('id',$id)->update([
-            'uid'=>Str::uuid(),
-            'slug'=>Str::slug($request->description,'-'),
             'description'=>$request->description,
             'transaction_date'=>$request->transaction_date,
             'supporting_document_date'=>$request->supporting_document_date,
