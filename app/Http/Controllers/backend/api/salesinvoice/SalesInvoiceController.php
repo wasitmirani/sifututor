@@ -19,12 +19,21 @@ class SalesInvoiceController extends Controller
     {
         $q = !empty(request('query')) ? request('query') : '';
         $invoices = SalesInvoice::latest()
-            ->where('refernce_no', 'like', '%'.$q . '%')
+            ->where('payer_name', 'like', '%'.$q . '%')
             ->paginate(env('PAR_PAGE'));
 
         return response()->json(['invoices' => $invoices]);
     }
+    public function salesInvoicePayments()
+    {
+        $q = !empty(request('query')) ? request('query') : '';
+        $invoices = SalesInvoice::latest()
+            ->where('payer_name', 'like', '%'.$q . '%')
+            ->paginate(env('PAR_PAGE'));
 
+        return response()->json(['invoices' => $invoices]);
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -57,7 +66,7 @@ class SalesInvoiceController extends Controller
 
         $invoice = SalesInvoice::create([
             'uid'=>Str::uuid(),
-            'slug'=>Str::slug($request->refernce_no,'-'),
+            'slug'=>Str::slug($request->payer_name,'-'),
             'start_date'=>$request->invoice_date,
             'payer_name'=>$request->payer_name,
             'payer_email'=>$request->payer_email,

@@ -24,6 +24,15 @@ class CreditorInvoiceController extends Controller
         return response()->json(['creditor_invoices' => $creditor_invoices]);
     
     }
+    public function creditorInvoicePayments()
+    {
+        $q = !empty(request('query')) ? request('query') : '';
+        $creditor_invoices = CreditorInvoice::latest()
+            ->where('description', 'like', '%'.$q . '%')
+            ->paginate(env('PAR_PAGE'));
+
+        return response()->json(['creditor_invoices' => $creditor_invoices]);
+    }
 
     /**
      * Show the form for creating a new resource.
