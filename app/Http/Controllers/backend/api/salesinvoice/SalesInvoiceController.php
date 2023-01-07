@@ -18,7 +18,7 @@ class SalesInvoiceController extends Controller
     public function index()
     {
         $q = !empty(request('query')) ? request('query') : '';
-        $invoices = SalesInvoice::with('invoiceItems', 'invoiceDeductions')->latest()
+        $invoices = SalesInvoice::latest()
             ->where('refernce_no', 'like', '%'.$q . '%')
             ->paginate(env('PAR_PAGE'));
 
@@ -78,7 +78,9 @@ class SalesInvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        $invoice = SalesInvoice::where('uid',$id)->first();
+
+        return response()->json(['invoice' => $invoice]);
     }
 
     /**
