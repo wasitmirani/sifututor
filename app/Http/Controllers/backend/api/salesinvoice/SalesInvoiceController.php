@@ -18,13 +18,22 @@ class SalesInvoiceController extends Controller
     public function index()
     {
         $q = !empty(request('query')) ? request('query') : '';
-        $invoices = SalesInvoice::with('invoiceItems', 'invoiceDeductions')->latest()
-            ->where('refernce_no', 'like', '%'.$q . '%')
+        $invoices = SalesInvoice::latest()
+            ->where('payer_name', 'like', '%'.$q . '%')
             ->paginate(env('PAR_PAGE'));
 
         return response()->json(['invoices' => $invoices]);
     }
+    public function salesInvoicePayments()
+    {
+        $q = !empty(request('query')) ? request('query') : '';
+        $invoices = SalesInvoice::latest()
+            ->where('payer_name', 'like', '%'.$q . '%')
+            ->paginate(env('PAR_PAGE'));
 
+        return response()->json(['invoices' => $invoices]);
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -57,7 +66,7 @@ class SalesInvoiceController extends Controller
 
         $invoice = SalesInvoice::create([
             'uid'=>Str::uuid(),
-            'slug'=>Str::slug($request->refernce_no,'-'),
+            'slug'=>Str::slug($request->payer_name,'-'),
             'start_date'=>$request->invoice_date,
             'payer_name'=>$request->payer_name,
             'payer_email'=>$request->payer_email,
@@ -78,7 +87,9 @@ class SalesInvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        $invoice = SalesInvoice::where('uid',$id)->first();
+
+        return response()->json(['invoice' => $invoice]);
     }
 
     /**
@@ -101,7 +112,29 @@ class SalesInvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'refernce_no'=>'required',
+            'invoice_date'=>'required',
+            'payer_name'=>'required',
+            'payer_email'=>'required|email',
+            'payer_phone'=>'required',
+            'remarks'=>'required',
+            'item_description'=>'required',
+            'item_quantity'=>'required',
+            'item_price'=>'required',
+            ]);
+
+        $invoice = SalesInvoice::where('id',$id)->update([
+            'start_date'=>$request->invoice_date,
+            'payer_name'=>$request->payer_name,
+            'payer_email'=>$request->payer_email,
+            'payer_phone'=>$request->payer_phone,
+            'invoice_items'=>$request->invoice_items,
+            'invoice_deductions'=>$request->invoice_deductions,
+            'remarks'=>$request->required,
+        ]);
+
+        return response()->json(['message' => 'invoice has been updated successfully']);
     }
 
     /**
@@ -112,6 +145,12 @@ class SalesInvoiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $invoice = SalesInvoice::where('id',$id)->first();
+
+        if ($invoice) {
+            $invoice->delete();
+            return response()->json(['message'=>'invoice has been deleted successfully']);
+        }
+        return response()->json(['message' => 'invoice has been removed successfully']);
     }
 }

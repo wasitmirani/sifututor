@@ -19,7 +19,14 @@ use App\Http\Controllers\backend\api\customer\CustomerController;
 use App\Http\Controllers\backend\api\staff\StaffPaymentController;
 use App\Http\Controllers\backend\api\student\StudentInvoiceController;
 use App\Http\Controllers\backend\api\chartaccount\ChartAccountController;
+use App\Http\Controllers\backend\api\creditorinvoice\CreditorInvoiceController;
+use App\Http\Controllers\backend\api\expenditure\ExpenditureController;
+use App\Http\Controllers\backend\api\journalledger\JournalLedgerController;
 use App\Http\Controllers\backend\api\salesinvoice\SalesInvoiceController;
+use App\Models\CreditorInvoice;
+use App\Models\Expenditure;
+use App\Models\JournalLedger;
+use App\Models\SalesInvoice;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +49,15 @@ Route::prefix('config')->group(function () {
     Route::get('/sidebar-menu',[LayoutController::class,'getSideBarMenu']);
 
 });
+//CASH FLOW SECTION
 
+Route::resource('journal-ledger', JournalLedgerController::class);
+Route::resource('expenditure', ExpenditureController::class);
+Route::resource('sales-invoice', SalesInvoiceController::class);
+Route::get('/sales-invoice-payments',[SalesInvoiceController::class,'salesInvoicePayments']);
+Route::resource('creditor-invoice', CreditorInvoiceController::class);
+Route::get('/creditor-invoice-payments',[CreditorInvoiceController::class,'creditorInvoicePayments']);
+//END CASH FLOW
 Route::resource('subject', SubjectController::class);
 Route::get('/subject-list',[SubjectController::class,'getSubjectList']);
 Route::resource('student', StudentController::class);
