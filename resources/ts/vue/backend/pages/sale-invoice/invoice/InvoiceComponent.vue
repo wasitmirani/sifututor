@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="card-datatable table-responsive">
-            <DataTable :headers="headers" :invoiceList="invoiceList" :desserts="desserts" v-on:deleteItem="deleteItem($event)" />
+            <DataTable :headers="headers" :invoices="invoices"  v-on:deleteItem="deleteItem($event)" />
         </div>
     </div>
 </template>
@@ -43,55 +43,17 @@ export default {
             { text: 'Status', value: 'Status' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
-        desserts: [
-            {
-                "uid": "1",
-                "reference_no": "ST069121",
-                "student_id": "S225033",
-                "full_name": "Ikmal hakeem b Noor Azmeer",
-                "payer_name": "S225033",
-                "invoice_date": "22/12/2022",
-                "total_price": "RM 25.00",
-                "status": "Unpaid",
-                "email_customer_on": "21/12/2022",
-                "slug": "Ikmal",
-            },
-            {
-                "uid": "2",
-                "reference_no": "ST069121",
-                "student_id": "S225033",
-                "full_name": "Ikmal hakeem b Noor Azmeer",
-                "payer_name": "S225033",
-                "invoice_date": "22/12/2022",
-                "total_price": "RM 25.00",
-                "status": "Unpaid",
-                "email_customer_on": "21/12/2022",
-                "slug": "Bushra",
-            },
-            {
-                "uid": "3",
-                "reference_no": "ST069121",
-                "student_id": "S225033",
-                "full_name": "Ikmal hakeem b Noor Azmeer",
-                "payer_name": "S225033",
-                "invoice_date": "22/12/2022",
-                "total_price": "RM 25.00",
-                "status": "Unpaid",
-                "email_customer_on": "21/12/2022",
-                "slug": "Nur",
-            },
-        ],
         page_num: 1,
         loading: false,
         query: "",
-        invoiceList: [],
+        invoices: [],
     }),
     methods: {
         getInvoice(page = 1) {
             this.loading = true;
             this.page_num = page;
-            axios.get('/std-invoice?page=' + page + '&query=' + this.query).then((res) => {
-                this.invoiceList = res.data.invoice;
+            axios.get('/sale-invoice?page=' + page + '&query=' + this.query).then((res) => {
+                this.invoices = res.data.invoices;
                 this.loading = false;
             }).catch((err) => {
                 this.$root.alertNotify(err.response.status, null, "error", err.response.data);
