@@ -23,10 +23,12 @@ use App\Http\Controllers\backend\api\creditorinvoice\CreditorInvoiceController;
 use App\Http\Controllers\backend\api\expenditure\ExpenditureController;
 use App\Http\Controllers\backend\api\journalledger\JournalLedgerController;
 use App\Http\Controllers\backend\api\salesinvoice\SalesInvoiceController;
+use App\Http\Controllers\backend\api\tutorReport\TutorReportController;
 use App\Models\CreditorInvoice;
 use App\Models\Expenditure;
 use App\Models\JournalLedger;
 use App\Models\SalesInvoice;
+use App\Models\TutorReport;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +60,10 @@ Route::get('/sales-invoice-payments',[SalesInvoiceController::class,'salesInvoic
 Route::resource('creditor-invoice', CreditorInvoiceController::class);
 Route::get('/creditor-invoice-payments',[CreditorInvoiceController::class,'creditorInvoicePayments']);
 //END CASH FLOW
+
+//TUTOR REPORTS
+Route::resource('tutor-report', TutorReportController::class);
+//END TUTOR REPORTS
 Route::resource('subject', SubjectController::class);
 Route::get('/subject-list',[SubjectController::class,'getSubjectList']);
 Route::resource('student', StudentController::class);
