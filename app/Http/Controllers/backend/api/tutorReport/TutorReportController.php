@@ -17,7 +17,7 @@ class TutorReportController extends Controller
     public function index()
     {
         $q = !empty(request('query')) ? request('query') : '';
-        $tutor_reports = TutorReport::latest()
+        $tutor_reports = TutorReport::latest()->with('tutor','student')
             // ->where('description', 'like', '%'.$q . '%')
             ->paginate(env('PAR_PAGE'));
 
@@ -79,7 +79,7 @@ class TutorReportController extends Controller
      */
     public function show($id)
     {
-        $tutor_report = TutorReport::where('uid',$id)->first();
+        $tutor_report = TutorReport::where('uid',$id)->with('tutor','student')->first();
 
         return response()->json(['tutor_report' => $tutor_report]);
     }
