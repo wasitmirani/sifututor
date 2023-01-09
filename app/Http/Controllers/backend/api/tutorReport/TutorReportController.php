@@ -23,6 +23,15 @@ class TutorReportController extends Controller
 
         return response()->json(['tutor_reports' => $tutor_reports]);
     }
+    public function getTutorReportV2()
+    {
+        $q = !empty(request('query')) ? request('query') : '';
+        $tutor_reports = TutorReport::latest()->with('tutor','student')
+            // ->where('description', 'like', '%'.$q . '%')
+            ->paginate(env('PAR_PAGE'));
+
+        return response()->json(['tutor_reports' => $tutor_reports]);
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -63,6 +63,7 @@ Route::get('/creditor-invoice-payments',[CreditorInvoiceController::class,'credi
 
 //TUTOR REPORTS
 Route::resource('tutor-report', TutorReportController::class);
+Route::get('/tutor-report-v2',[TutorReportController::class,'getTutorReportV2']);
 //END TUTOR REPORTS
 Route::resource('subject', SubjectController::class);
 Route::get('/subject-list',[SubjectController::class,'getSubjectList']);
