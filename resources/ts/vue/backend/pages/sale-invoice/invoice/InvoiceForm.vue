@@ -2,13 +2,6 @@
     <div class="card mb-4">
         <form class="card-body" v-on:submit.prevent="onSubmit">
             <div class="row g-3">
-                <div class="col-md-12 col-sm-12">
-                    <label class="form-label" for="multicol-reference_no">Reference No</label>
-                    <input type="text" id="multicol-reference_no"
-                        :class="`form-control ${this.$root.appendValidateClass(errors?.errors, 'reference_no')}`"
-                        placeholder="Reference No" disabled v-model="invoice.reference_no" />
-                    <validate-input :errors="errors?.errors" value="reference_no"></validate-input>
-                </div>
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label" for="multicol-invoice_date">Invoice Date</label>
                     <input type="date" id="multicol-reference_no"
@@ -93,7 +86,7 @@
                     </button>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary mt-3" @click="addDeduction"> 
+            <button type="button" class="btn btn-primary mt-3" @click="addDeduction">
                     <i class="fa fa-plus me-2"></i> Add Deduction</button>
             <hr class="my-4 mx-n4" />
             <div>
@@ -165,7 +158,7 @@ export default {
             });
         },
         createInvoice(data) {
-            axios.post('/invoice', data).then((res) => {   
+            axios.post('/invoice', data).then((res) => {
                 this.$router.push('/sales-invoice/invoice');
             }).catch((err) => {
                 this.errors = err.response.data;
